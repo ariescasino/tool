@@ -1,0 +1,294 @@
+<%- include('../../includes/header') %>
+<style>
+
+  .register-v2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-image: url(/images/register-v2/reg-bg.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding: 40px;
+  }
+
+  .register-v2 .modal-dialog {
+    width: 800px;
+  }
+
+  .register-v2 .modal-dialog .modal-content {
+    border-radius: 20px;
+  }
+</style>
+<!-- Register V2 -->
+<section class="register-v2">
+  <div class="modal-dialog" style="padding: 28px">
+    <div class="modal-content">
+      <gupw-register resolve="$resolve" modal-instance="$uibModalInstance" close="$close($value)" dismiss="$dismiss($value)" class="ng-scope ng-isolate-scope">
+        <article ng-class="$ctrl.styles.article" class="_3Ep7x5F8gsaERZQuGfyGNo">
+          <div ng-class="$ctrl.styles.title" class="_1_Ib3et6YkodyIb6NDva3w">
+            <p translate="Register_Account_Registration" class="ng-scope">Đăng ký tài khoản</p>
+          </div>
+          <div ng-class="$ctrl.styles.content" class="_3jqXktvTialDzXUMLf4RzN">
+            <gupw-register-info class="ng-isolate-scope">
+              <div ng-if="!$ctrl.pending" ng-class="$ctrl.styles.wrapper" class="ng-scope">
+                <div ng-if="!$ctrl.enable" class="ng-scope">
+                </div>
+              </div>
+            </gupw-register-info>
+            <gupw-register-form class="ng-isolate-scope">
+              <div ng-class="$ctrl.styles.wrapper" class="lSU-UeevMWDFTc7xVRq_g">
+                <form class="form-horizontal ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-parse" novalidate="" ng-if="$ctrl.user" ng-submit="$ctrl.submit()" id="registerForm">
+                  <fieldset>
+                    <legend translate="Register_Account_Registration" class="ng-scope">đăng ký
+                      tài khoản</legend>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">
+                        <i class="fa fa-star"></i>
+                        <i ng-class="[$ctrl.styles.icon, $ctrl.styles.account]" class="RTZW2yuoquNB9325NBM64 _2UiMXOFnWdZw3Smbu-3B1s"></i>
+                        <span translate="Register_Member_Account" class="ng-scope">Tên tài
+                          khoản</span>
+                      </label>
+                      <div class="col-sm-6 ng-isolate-scope" field-error="" field-error-title="$ctrl.user.account.errorMessage" field-error-is-open="$ctrl.user.account.invalid" ng-class="{ 'has-error': $ctrl.user.account.invalid }" style="position: relative;">
+                        <input type="text" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" placeholder="Từ 2-15 kí tự, phải bắt đầu bằng chữ cái, có thể  gồm cả chữ cái, số và gạch dưới." ng-model="$ctrl.user.account.value" ng-blur="$ctrl.user.account.validate()" id="username">
+                      </div>
+                      <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z" ng-class="$ctrl.styles['control-info']" translate="Register_Account_Rules">Từ 2-15 kí tự, phải bắt đầu bằng
+                        chữ cái, có thể gồm cả chữ cái, số và gạch dưới.</div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">
+                        <i class="fa fa-star"></i> <i ng-class="[$ctrl.styles.icon, $ctrl.styles.password]" class="RTZW2yuoquNB9325NBM64 cYKQ6PMli6tgNqBPXifEE"></i>
+                        <span translate="Register_Member_Password" class="ng-scope">Mật khẩu
+                          đăng nhập</span>
+                      </label>
+                      <div class="col-sm-6 ng-isolate-scope" field-error="" field-error-title="$ctrl.user.password.errorMessage" field-error-is-open="$ctrl.user.password.invalid" ng-class="{ 'has-error': $ctrl.user.password.invalid }" style="position: relative;">
+                        <input type="password" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" placeholder="Hơn 6 ký tự phải bao gồm chữ cái và số" ng-model="$ctrl.user.password.value" ng-blur="$ctrl.user.password.validate()" ng-change="$ctrl.user.checkPasswordStrength()" id="password">
+                      </div>
+                      <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z" ng-class="$ctrl.styles['control-info']" translate="Register_Enter_Password">Hơn 6 ký tự phải bao gồm chữ cái
+                        và số</div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">
+                        <i class="fa fa-star"></i> <i ng-class="[$ctrl.styles.icon, $ctrl.styles.confirmPassword]" class="RTZW2yuoquNB9325NBM64 _3_CY-cI3LmxyXzViEulfBi"></i>
+                        <span translate="Register_Confirm_Password" class="ng-scope">Xác
+                          nhận
+                          mật khẩu</span>
+                      </label>
+                      <div class="col-sm-6 ng-isolate-scope" field-error="" field-error-title="$ctrl.user.confirmPassword.errorMessage" field-error-is-open="$ctrl.user.confirmPassword.invalid" ng-class="{ 'has-error': $ctrl.user.confirmPassword.invalid }" style="position: relative;">
+                        <input type="password" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Vui lòng xác nhận lại mật khẩu của bạn" ng-model="$ctrl.user.confirmPassword.value" ng-blur="$ctrl.user.confirmPassword.validate()" id="password_cf">
+                        <!-- ngIf: isOpen -->
+                      </div>
+                      <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z" ng-class="$ctrl.styles['control-info']" translate="Register_Enter_Confirm_Password">Vui lòng xác nhận lại
+                        mật khẩu đăng nhập của bạn</div>
+                    </div>
+                    <legend translate="Register_Member_Profile" class="ng-scope">Thông tin hội
+                      viên</legend>
+                    <!-- ngIf: $ctrl.user.name.visible -->
+                    <div class="form-group name ng-scope" ng-if="$ctrl.user.name.visible">
+                      <label class="col-sm-2 control-label">
+                        <!-- ngIf: $ctrl.user.name.required -->
+                        <i class="fa fa-star ng-scope" ng-if="$ctrl.user.name.required"></i>
+                        <!-- end ngIf: $ctrl.user.name.required -->
+                        <i ng-class="[$ctrl.styles.icon, $ctrl.styles.name]" class="RTZW2yuoquNB9325NBM64 _1d4AoeHEaIWHY0n4MUXmjZ"></i>
+                        <span translate="Register_Real_Name" class="ng-scope">Họ và tên
+                          (không dấu)</span>
+                      </label>
+                      <div class="col-sm-6 ng-isolate-scope" field-error="" field-error-title="$ctrl.user.name.errorMessage" field-error-is-open="$ctrl.user.name.invalid" ng-class="{ 'has-error': $ctrl.user.name.invalid }" style="position: relative;">
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Dùng họ tên giống với tên trên thẻ ngân hàng để đăng kí tài khoản" ng-model="$ctrl.user.name.value" ng-blur="$ctrl.user.name.validate()" id="name">
+                        <!-- ngIf: isOpen -->
+                      </div>
+                    </div>
+
+                    <!-- ngIf: $ctrl.user.name.visible -->
+                    <div class="form-group name ng-scope" ng-if="$ctrl.user.name.visible">
+                      <label class="col-sm-2 control-label">
+                        <!-- ngIf: $ctrl.user.name.required -->
+                        <i class="fa fa-star ng-scope" ng-if="$ctrl.user.name.required"></i>
+                        <!-- end ngIf: $ctrl.user.name.required -->
+                        <i ng-class="[$ctrl.styles.icon, $ctrl.styles.name]" class="RTZW2yuoquNB9325NBM64 _1d4AoeHEaIWHY0n4MUXmjZ"></i>
+                        <span translate="Register_Real_Name" class="ng-scope">Số điện
+                          thoại</span>
+                      </label>
+                      <div class="col-sm-6 ng-isolate-scope" field-error="" field-error-title="$ctrl.user.name.errorMessage" field-error-is-open="$ctrl.user.name.invalid" ng-class="{ 'has-error': $ctrl.user.name.invalid }" style="position: relative;">
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Dùng họ tên giống với tên trên thẻ ngân hàng để đăng kí tài khoản" ng-model="$ctrl.user.name.value" ng-blur="$ctrl.user.name.validate()" id="phone" value="+84">
+                        <!-- ngIf: isOpen -->
+                      </div>
+                      <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z" ng-class="$ctrl.styles['control-info']" translate="Register_Name_Rules">Dùng số điện thoại thật để lấy lại
+                        mật khẩu</div>
+                    </div>
+
+                    <div class="form-group name ng-scope" ng-if="$ctrl.user.name.visible">
+                      <label class="col-sm-2 control-label">
+                        <!-- ngIf: $ctrl.user.name.required -->
+                        <i class="fa fa-star ng-scope" ng-if="$ctrl.user.name.required"></i>
+                        <!-- end ngIf: $ctrl.user.name.required -->
+                        <!-- <i ng-class="[$ctrl.styles.icon, $ctrl.styles.name]"
+                                                            class="RTZW2yuoquNB9325NBM64 _1d4AoeHEaIWHY0n4MUXmjZ"></i> -->
+                        <span translate="Register_Real_Name" class="ng-scope">Mã đại
+                          lý</span>
+                      </label>
+                      <div class="col-sm-6 ng-isolate-scope" field-error="" field-error-title="$ctrl.user.name.errorMessage" field-error-is-open="$ctrl.user.name.invalid" ng-class="{ 'has-error': $ctrl.user.name.invalid }" style="position: relative;">
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Nhập mã đại lý" ng-model="$ctrl.user.name.value" ng-blur="$ctrl.user.name.validate()" id="refcode">
+                        <!-- ngIf: isOpen -->
+                      </div>
+                      <div class="col-sm-4 ng-scope _2R3q5yrRUVZFToMQlonV0z" ng-class="$ctrl.styles['control-info']" translate="Register_Name_Rules">Vui lòng nhập mã đại lý của bạn (Nếu
+                        có)</div>
+                    </div>
+                    <input id="email" style="display: none;" />
+
+                  </fieldset>
+                  <fieldset>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button id="submitRegisterForm"  type="submit" ng-class="$ctrl.styles.submit" ng-disabled="$ctrl.registerPending" class="btn btn-default _1SkHEsu5miBpcpNXUNtIoM">
+                          <span ng-if="!$ctrl.registerPending" translate="Register_Sign_Up" class="ng-scope">Đăng ký
+                            ngay</span>
+                        </button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </gupw-register-form>
+          </div>
+        </article>
+      </gupw-register>
+    </div>
+  </div>
+</section>
+
+<script>
+function findGetParameter(parameterName) {
+  var result = null,
+    tmp = [];
+  location.search
+    .substr(1)
+    .split("&")
+    .forEach(function(item) {
+      tmp = item.split("=");
+      if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    });
+  return result;
+}
+
+$(document).ready(() => {
+  const checkRef = findGetParameter('refcode');
+  if (checkRef) {
+    $('#refcode').val(checkRef);
+    $('#refcode').attr("readonly", true);
+    $('#refcode').attr("style", "background-color: #e6e5e5");
+  }
+
+  $('button[id="submitRegisterForm"]').on('click', (event) => {
+    event.preventDefault(); // Prevent form from submitting immediately
+
+    try {
+      if (!$('#registerForm input#username').val() ||
+          !$('#registerForm input#password').val() ||
+          !$('#registerForm input#password_cf').val() ||
+          !$('#registerForm input#name').val() ||
+          !$('#registerForm input#phone').val() ||
+          !$('#registerForm input#email').val()) {
+        initAuthNotifyModal(true, "Gợi ý", "Vui lòng nhập đầy đủ thông tin!");
+        return;
+      }
+
+      const testUsername = new RegExp('^[a-zA-Z0-9_]+$');
+      const testName = new RegExp("^[a-zA-Z0-9 \s\.\!\?\"\-]+$");
+      const testEmail = new RegExp("[a-z0-9]+@[a-z]+\.[a-z]{2,3}");
+
+      // Validate input type
+      if (!testUsername.test($('#registerForm input#username').val())) {
+        initAuthNotifyModal(true, "Gợi ý", "Tên tài khoản không hợp lệ!");
+        return;
+      }
+      if (!testName.test($('#registerForm input#name').val())) {
+        initAuthNotifyModal(true, "Gợi ý", "Họ và tên không hợp lệ!");
+        return;
+      }
+      if (!testEmail.test($('#registerForm input#email').val())) {
+        initAuthNotifyModal(true, "Gợi ý", "Email không hợp lệ");
+        return;
+      }
+
+      // Validate string length
+      if ($('#registerForm input#username').val().length < 2 || $('#registerForm input#username').val().length > 15) {
+        initAuthNotifyModal(true, "Gợi ý", "Tên tài khoản phải từ 2-15 ký tự!");
+        return;
+      }
+      if ($('#registerForm input#name').val().length <= 5 || $('#registerForm input#name').val().length > 50) {
+        initAuthNotifyModal(true, "Gợi ý", "Họ và tên phải từ 5-50 ký tự!");
+        return;
+      }
+      if ($('#registerForm input#email').val().length < 5 || $('#registerForm input#email').val().length > 50) {
+        initAuthNotifyModal(true, "Gợi ý", "Email không hợp lệ");
+        return;
+      }
+      if ($('#registerForm input#phone').val().length < 9 || $('#registerForm input#phone').val().length > 15) {
+        initAuthNotifyModal(true, "Gợi ý", "Số điện thoại không hợp lệ!");
+        return;
+      }
+      if ($('#registerForm input#password').val().length < 6 || $('#registerForm input#password').val().length > 30) {
+        initAuthNotifyModal(true, "Gợi ý", "Mật khẩu phải từ 6-30 ký tự!");
+        return;
+      }
+      if ($('#registerForm input#password').val() !== $('#registerForm input#password_cf').val()) {
+        initAuthNotifyModal(true, "Gợi ý", "Mật khẩu xác nhận không khớp!");
+        return;
+      }
+
+      // If validation passes, disable submit button and show loading message
+      $('button[id="submitRegisterForm"]').prop("disabled", true);
+      $('button[id="submitRegisterForm"]').css({
+        "color": "#000"
+      });
+      $('button[id="submitRegisterForm"]').html(`Vui lòng chờ...`);
+
+      // Submit form via AJAX
+      $.ajax({
+        url: "/auth/register",
+        method: "POST",
+        timeout: 0,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: JSON.stringify({
+          name: $('#registerForm input#name').val(),
+          username: $('#registerForm input#username').val(),
+          refcode: $('#registerForm input#refcode').val() || null,
+          email: $('#registerForm input#email').val(),
+          phone: $('#registerForm input#phone').val(),
+          password: $('#registerForm input#password').val()
+        }),
+      }).done(function(response) {
+        $('button[id="submitRegisterForm"]').prop("disabled", false);
+        $('button[id="submitRegisterForm"]').css({
+          "color": "#fff"
+        });
+        $('button[id="submitRegisterForm"]').html(`Đăng ký ngay`);
+
+        if (response.status) {
+          alert("Đăng ký thành công!");
+          setTimeout(() => {
+            window.location = "/";
+          }, 500);
+        } else {
+          initAuthNotifyModal(true, "Thông báo", response.msg);
+        }
+      }).fail(function() {
+        initAuthNotifyModal(true, "Thông báo", "Có lỗi xảy ra, vui lòng thử lại!");
+      });
+    } catch (e) {
+      console.log('Có lỗi xảy ra, vui lòng thử lại!', e);
+    }
+  });
+});
+
+</script>
+<%- include('../../includes/footer') %>

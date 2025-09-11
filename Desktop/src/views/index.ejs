@@ -1,0 +1,1469 @@
+<style>
+     
+  .notificationList-right {
+         overflow: hidden;        
+         white-space: nowrap;
+         box-sizing: border-box;
+         position: relative;
+     }
+     .notificationList-right ul {
+         display: inline-block;
+         padding: 0;
+         margin: 0;
+         list-style: none;
+         animation: scroll-left 120s linear 0s infinite normal none running;
+     }
+     .notificationList-right li {
+         display: inline;
+         padding-right: 50px;
+     }
+     @keyframes scroll-left {
+         0% {
+             transform: translateX(100%);
+         }
+         100% {
+             transform: translateX(-100%);
+         }
+     }
+     .list-logo-game .listLogo-child ul li{
+         position: relative;
+         width: 60px;
+         height: 60px;
+         border-radius: 60px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin: 5px 0 0 10px;
+         background-color: #e7f1fb;
+         cursor: pointer;
+     }
+     li{
+         list-style-type: none;
+     }
+     .list-logo-game .listLogo-child ul li span{
+         position: absolute;
+         z-index: 1;
+         opacity: 0;
+         color: #399fda;
+         transition: opacity 0.3s 0.2s, transform 0.3s 0.2s;
+         font-size: 14px;
+     }
+     .list-logo-game .listLogo-child ul li:hover span{
+         opacity: 1;
+         transform: rotate(1turn);
+     }
+     .list-logo-game .listLogo-child ul li .logoBrandGame{
+         transition: opacity 0.3s 0.2s, transform 0.3s 0.2s;
+     }
+     .list-logo-game .listLogo-child ul li:hover .logoBrandGame{
+         opacity: 0;
+         transform: rotate(180deg);
+     }
+     .nav--wapperListChild{
+         display: inline-block;
+         margin: 0 10px 10px 0;
+         vertical-align: top;
+         cursor: pointer;
+     }
+     .nav--wapperListChild span{
+         display: inline-block;
+         padding: 0 15px;
+         color: #fff;
+         border-radius: 15px;
+         font-size: 15px;
+         line-height: 30px;
+     }
+     .nav--wapperListChild:hover span{
+         color: #fff;
+         background: #642801;
+     }
+     .nav--wapperListChild:active span{
+         color: #fff;
+         background: #642801;
+     }
+     .Lobby-listChild{
+      width: 289px;
+      height: 312px;
+      position: relative;
+      overflow: hidden;
+      margin: 5px 2px;
+      cursor: pointer;
+     }
+     .Lobby-listChild img{
+      width: 100%;
+      
+     }
+     .containerListGame--child{
+      height: 220px;
+      padding: 10px 17px;
+      display: flex;
+      flex-direction: column;
+      color: #535867;
+      background-color: #e7f1fb;
+      border-radius: 10px;
+      text-align: center;
+     }
+     .containerListGame--child span{
+      margin: 10px 0 5px;
+      color: #535867;
+      font-size: 14px;
+      font-weight: bold;
+     }
+     .listGamePlayCompanyGame ul li{
+      width: 180px;
+      height: 250px;
+      margin: 10px 20px 0 0;
+     }
+     
+ </style>
+
+<%- include('includes/header') %>
+<div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _13SSqi-CXmhSukDpitbsQ2">
+  <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs Fyjjbbtu7ez2tp4P1u_9X">
+      <!-- uiView: --><ui-view class="ng-scope">
+          <gupw-home class="ng-scope ng-isolate-scope">
+              <!-- THONGBAOCHAY-->
+                     <div class="notificationBody" style="background-color: #252b38;height: 32px;">
+                        <div class="notificationList" style="max-width: 1200px; display: flex; align-items: center ;margin:auto;height: 32px;">
+                            <div class="notificationList-left" style="display: flex;align-items: center;">
+                                <span class="iconNotification" style="display: flex; align-items: center;">
+                                    <img src="img/e2a8788ae2f498941b483f3fe0e847fa.png" alt="">
+                                </span>
+                                <span class="textNotification" style="width: 130px;margin-left: 12px;">Tin Tức Mới Nhất :</span>
+                            </div>
+                            <div class="notificationList-right">
+                                <ul>
+                                    <li>🏆 NẠP RÚT KHÓ CỨ ĐỂ SHBET.COM  LO.Nếu bạn đang gặp bất khì khó khăn nào trong việc nạp rút tiền ở những nhà cái khác,hãy đến với SHBET.COM : </li>
+                                    <li>✅ Cổng nạp đa dạng,rút tiền nhanh chóng</li>
+                                    <li>✅ Tốc độ, bảo mật và hoàn nạp cao nhất thị trường</li>
+                                    <li>🏆 Cổng nạp quét mã siêu tốc,hoàn nạp 2% :</li>
+                                    <li>📣 Bước 1 : Công ty gửi tiền</li>
+                                    <li>📣 Bước 2 : Ngân hàng trực tuyến</li>
+                                    <li>📣 Bước 3 : Điền số tiền cần nạp</li>
+                                    <li>📣 Bước 4 : Tên người nạp tiền và nội dung khi chuyển khoản vui lòng điền "Tên đăng nhập game"</li>
+                                    <li>📣 Bước 5 : Gửi đơn và thực hiện chuyển tiền</li>
+                                    <li>📢 Quý khách hàng thân mến, SHBET.COM đã hoàn thành tất cả  những thủ tục Theo Quyết định 2345/QĐ-NHNN của Ngân hàng Nhà nước về triển khai các giải pháp an toàn, bảo mật trong thanh toán trực tuyến và thanh toán thẻ ngân hàng, tốc độ độ nạp rút hiện tại đã được ổn định,đảm bảo chất lượng và trải nghiệm tốt nhất đến với quý khách !Trân trọng cảm ơn sự tin tưởng, ủng hộ và thông cảm của quý khách cho những bất cập trong thời gian vừa qua !!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+              <!--BANNER-->
+              <gupw-slide-banner class="ng-isolate-scope">
+                  <!-- ngIf: $ctrl.loaded -->
+                  <section ng-class="$ctrl.styles.wrapper" class="ng-scope DQFgka5Xh4HQIYXhzIIT1">
+        
+                    <!-- Cach truyen slide dong -->
+                    <div ng-class="$ctrl.styles.slide" class="swiper mySwiperBanner swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                      <div class="swiper-wrapper" id="swiper-wrapper-57589196c97db227">
+                        <% 
+                          const images = [
+                            { url: 'https://qk3x72.katawee.net/system-assets/PortalManagement/Image/SlideShow/d574c531cd1b46a0b3fe31efacd33435.jpg', link: '/account/deposit' },
+                            { url: 'https://qk3x72.katawee.net/system-assets/PortalManagement/Image/SlideShow/7400f9b5f54b4336a4d77842fb26252f.jpg', link: '/account/deposit' },
+                            { url: 'https://qk3x72.katawee.net/system-assets/PortalManagement/Image/SlideShow/d9fea74155d04c098dc724497f4af9a8.jpg', link: '/account/deposit' },
+                            { url: 'https://qk3x72.katawee.net/system-assets/PortalManagement/Image/SlideShow/fd770de3c02c4de3b1dd39fd3d7cd9d1.jpg', link: '/account/deposit' },
+                            { url: 'https://qk3x72.katawee.net/system-assets/PortalManagement/Image/SlideShow/3505a0b990004ee18bc6f2907d6e9768.jpg', link: '/account/deposit' },
+                            { url: 'https://qk3x72.katawee.net/system-assets/PortalManagement/Image/SlideShow/7c1bb176daf14515a01f2b6911431c59.jpg', link: '/account/deposit' },
+                            { url: 'https://qk3x72.katawee.net/system-assets/PortalManagement/Image/SlideShow/68c1116a9ec6458ab9367fb964ed4f8a.jpg', link: '/account/deposit' }
+                          ];
+                          images.forEach((item, index) => { %>
+                        <div class="swiper-slide" role="group" style="width: 1394px;">
+                          <a href="javascript:window.location='<%= item.link %>';">
+                            <img src="<%= item.url %>" class="slide-img ls-is-cached lazyloaded" style="cursor: pointer;width: 100%;">
+                          </a>
+                        </div>
+                        <% }); %>
+                      </div>
+                    </div>
+        
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+          </div>
+          </section><!-- end ngIf: $ctrl.loaded -->
+          </gupw-slide-banner>        
+              <!-- GIUATRANG-->
+              <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _13SSqi-CXmhSukDpitbsQ2">
+                <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs Fyjjbbtu7ez2tp4P1u_9X">
+                    <!-- uiView: -->
+                     <ui-view class="ng-scope">
+                        <gupw-home class="ng-scope ng-isolate-scope">
+                            <div ng-class="$ctrl.styles.home" class="_1-yWFlhUDV6YxE5gmEsLcL">
+                                <section ng-class="$ctrl.styles.info" class="_3LoZp49K5CfZeIIBXXzJl3">
+                                    <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                                        <h3 ng-class="$ctrl.styles['big-title']"
+                                            class="_2vRQgHg9l4SuSwbkD6c-k">NHỮNG TÍNH NĂNG VƯỢT TRỘI CỦA
+                                            SHBET</h3>
+                                        <ul>
+                                            <li> <span ng-class="[$ctrl.styles.icon, $ctrl.styles.icon01]"
+                                                    class="_1gmUVQ59sITtImF_lHqmK2 _3yetCKse8TV8AU6dmIRjYU"></span>
+                                                <div>
+                                                    <p ng-class="$ctrl.styles.title"
+                                                        class="mStjgcADwBgprsQLlvjuO">Thương Hiệu Uy Tín</p>
+                                                    <p>Thương hiệu uy tín được nhiều người chơi lựa chọn.
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li> <span ng-class="[$ctrl.styles.icon, $ctrl.styles.icon02]"
+                                                    class="_1gmUVQ59sITtImF_lHqmK2 AWnHEtcNyYA2Yv83nmiOe"></span>
+                                                <div>
+                                                    <p ng-class="$ctrl.styles.title"
+                                                        class="mStjgcADwBgprsQLlvjuO">Đa Dạng Sản Phẩm</p>
+                                                    <p>Casino Trực Tuyến, Thể Thao, Nổ Hũ, Bắn Cá, Đá Gà...
+                                                        Nhiều sản phẩm đa dạng bạn có thể lựa chọn.</p>
+                                                </div>
+                                            </li>
+                                            <li> <span ng-class="[$ctrl.styles.icon, $ctrl.styles.icon03]"
+                                                    class="_1gmUVQ59sITtImF_lHqmK2 fyMhH1fLqHQ-PnRQXE6WF"></span>
+                                                <div>
+                                                    <p ng-class="$ctrl.styles.title"
+                                                        class="mStjgcADwBgprsQLlvjuO">An Ninh Bảo Mật</p>
+                                                    <p>Phương thức thanh toán đa dạng, đảm bảo an toàn và
+                                                        bảo mật cao.</p>
+                                                </div>
+                                            </li>
+                                            <li> <span ng-class="[$ctrl.styles.icon, $ctrl.styles.icon04]"
+                                                    class="_1gmUVQ59sITtImF_lHqmK2 _1KagPnhT0_wjWFvoqCY07F"></span>
+                                                <div>
+                                                    <p ng-class="$ctrl.styles.title"
+                                                        class="mStjgcADwBgprsQLlvjuO">Giao Dịch Nhanh Chóng
+                                                    </p>
+                                                    <p> Giao dịch gửi tiền được xử lý trong vòng 1-3 phút
+                                                        khi nhận được khoản chuyển. Thời gian rút tiền trong
+                                                        vòng 5-15 phút. </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section ng-class="$ctrl.styles.movie" class="oa8cG3PNnpHYKCLaolVrO">
+                                    <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                                        <h3 ng-class="$ctrl.styles['big-title']"
+                                            class="_2vRQgHg9l4SuSwbkD6c-k">đại sứ thương hiệu andrés iniesta
+                                        </h3>
+                                        <section> <iframe scrolling="no" frameborder="0"
+                                                allowfullscreen="true" allow="autoplay"
+                                                ng-src="https://shb32.com/SHBET_Media/20241010191845.mp4"
+                                                src="https://shb32.com/SHBET_Media/20241010191845.mp4">
+                                            </iframe>
+                                            <div> <img width="528" height="317"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/00be1f8fc9df00dd96b282ec063aa192.png"
+                                                    alt="">
+                                                <div ng-class="$ctrl.styles['slick-wrapper']"
+                                                    class="QCz2ydVmZhdFHfCNNaQfT">
+                                                    <ul slick="" settings="$ctrl.daisuSlickSetting"
+                                                        class="ng-isolate-scope slick-initialized slick-slider"
+                                                        style="display: block;"><button
+                                                            class="slick-prev slick-arrow"
+                                                            aria-label="Previous" type="button"
+                                                            style="display: block;">Previous</button>
+                                                        <div class="slick-list draggable">
+                                                            <div class="slick-track"
+                                                                style="opacity: 1; width: 3696px; transform: translate3d(-792px, 0px, 0px);">
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="-2" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/41ab10ea336072446bfae9644bec8d33.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="-1" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/9c57a123ac47ab216f38be7a4b46d9e1.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide"
+                                                                    data-slick-index="0" aria-hidden="true"
+                                                                    style="width: 264px;" tabindex="-1">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/b63e1adee9a0c5cc62e1dfecbf9950c4.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-current slick-active"
+                                                                    data-slick-index="1" aria-hidden="false"
+                                                                    style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/fd92a9b2c8930113114d3f269a1c82e7.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-active"
+                                                                    data-slick-index="2" aria-hidden="false"
+                                                                    style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/e17affc968c4e8384412da58d4c46ef1.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide"
+                                                                    data-slick-index="3" aria-hidden="true"
+                                                                    style="width: 264px;" tabindex="-1">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/b5d0b45de5f0b89fdeb93c364feae7dc.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide"
+                                                                    data-slick-index="4" aria-hidden="true"
+                                                                    style="width: 264px;" tabindex="-1">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/41ab10ea336072446bfae9644bec8d33.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide"
+                                                                    data-slick-index="5" aria-hidden="true"
+                                                                    style="width: 264px;" tabindex="-1">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/9c57a123ac47ab216f38be7a4b46d9e1.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="6" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/b63e1adee9a0c5cc62e1dfecbf9950c4.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="7" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/fd92a9b2c8930113114d3f269a1c82e7.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="8" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/e17affc968c4e8384412da58d4c46ef1.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="9" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/b5d0b45de5f0b89fdeb93c364feae7dc.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="10" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/41ab10ea336072446bfae9644bec8d33.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slick-slide slick-cloned"
+                                                                    data-slick-index="11" aria-hidden="true"
+                                                                    tabindex="-1" style="width: 264px;">
+                                                                    <div>
+                                                                        <li
+                                                                            style="width: 100%; display: inline-block;">
+                                                                            <img
+                                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/9c57a123ac47ab216f38be7a4b46d9e1.png">
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><button class="slick-next slick-arrow"
+                                                            aria-label="Next" type="button"
+                                                            style="display: block;">Next</button>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </section>
+                                <section ng-class="$ctrl.styles.lobby" class="XNisDZ1AJQihr1DR7Y0Q">
+                                    <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                                        <h3 ng-class="$ctrl.styles['big-title']"
+                                            class="_2vRQgHg9l4SuSwbkD6c-k">SẢN PHẨM</h3>
+                                        <ul> <!-- ngRepeat: item in $ctrl.lobbys -->
+                                            <li ng-repeat="item in $ctrl.lobbys"
+                                                ng-class="{ 'active': item.isActive }"
+                                                ng-mouseenter="$ctrl.hoverLobby(item)" class="ng-scope"
+                                                style="">
+                                                <div ng-class="$ctrl.styles['lobby-wrapper']"
+                                                    class="_32pTzTcd7z9BsChkxAe-0q">
+                                                    <div class="title">
+                                                        <h2 translate="Shared_Nav_Sports" class="ng-scope">
+                                                            THỂ THAO</h2> <img
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/778b5b31088c8992b874000514f9adac.png"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <div>
+                                                            <p><span>SẢNH HOT</span></p>
+                                                            <!-- ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">SABA Thể
+                                                                Thao</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">CMD Thể
+                                                                Thao</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">UG Thể
+                                                                Thao</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">SBO Thể
+                                                                Thao</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">CR Thể
+                                                                Thao</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">IM Thể
+                                                                Thao</button><!-- end ngRepeat: lobby in item.list -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="idol sport" ng-class="item.type"> <img
+                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/a8c10526fa4bed6aa6c0e6b840445b23.png"
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/a8c10526fa4bed6aa6c0e6b840445b23.png">
+                                                    </div>
+                                                </div>
+                                            </li><!-- end ngRepeat: item in $ctrl.lobbys -->
+                                            <li ng-repeat="item in $ctrl.lobbys"
+                                                ng-class="{ 'active': item.isActive }"
+                                                ng-mouseenter="$ctrl.hoverLobby(item)" class="ng-scope"
+                                                style="">
+                                                <div ng-class="$ctrl.styles['lobby-wrapper']"
+                                                    class="_32pTzTcd7z9BsChkxAe-0q">
+                                                    <div class="title">
+                                                        <h2 translate="Shared_Nav_LiveCasino"
+                                                            class="ng-scope">CASINO</h2> <img
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/778b5b31088c8992b874000514f9adac.png"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <div>
+                                                            <p><span>SẢNH HOT</span></p>
+                                                            <!-- ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope" style="">DG Trực
+                                                                Tuyến</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">SE Trực
+                                                                Tuyến</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">EVO Trực
+                                                                Tuyến</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">WM Trực
+                                                                Tuyến</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">MT Trực
+                                                                Tuyến</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">AG Trực
+                                                                Tuyến</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">SA Trực
+                                                                Tuyến</button><!-- end ngRepeat: lobby in item.list -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="idol live" ng-class="item.type"> <img
+                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/59154d8b4d3744054e5a3bae7584cc26.png"
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/59154d8b4d3744054e5a3bae7584cc26.png">
+                                                    </div>
+                                                </div>
+                                            </li><!-- end ngRepeat: item in $ctrl.lobbys -->
+                                            <li ng-repeat="item in $ctrl.lobbys"
+                                                ng-class="{ 'active': item.isActive }"
+                                                ng-mouseenter="$ctrl.hoverLobby(item)" class="ng-scope">
+                                                <div ng-class="$ctrl.styles['lobby-wrapper']"
+                                                    class="_32pTzTcd7z9BsChkxAe-0q">
+                                                    <div class="title">
+                                                        <h2 translate="Shared_Nav_Casino" class="ng-scope">
+                                                            NỔ HŨ</h2> <img
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/778b5b31088c8992b874000514f9adac.png"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <div>
+                                                            <p><span>SẢNH HOT</span></p>
+                                                            <!-- ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope" style="">PG Điện
+                                                                Tử</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">JILI Điện
+                                                                Tử</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">TP Điện
+                                                                Tử</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">FC Điện
+                                                                Tử</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">PP Điện
+                                                                Tử</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">MG Điện
+                                                                Tử</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">CQ9 Điện
+                                                                Tử</button><!-- end ngRepeat: lobby in item.list -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="idol slot" ng-class="item.type"> <img
+                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/74d18c619c5c371836f3a11adc556561.png"
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/74d18c619c5c371836f3a11adc556561.png">
+                                                    </div>
+                                                </div>
+                                            </li><!-- end ngRepeat: item in $ctrl.lobbys -->
+                                            <li ng-repeat="item in $ctrl.lobbys"
+                                                ng-class="{ 'active': item.isActive }"
+                                                ng-mouseenter="$ctrl.hoverLobby(item)" class="ng-scope">
+                                                <div ng-class="$ctrl.styles['lobby-wrapper']"
+                                                    class="_32pTzTcd7z9BsChkxAe-0q">
+                                                    <div class="title">
+                                                        <h2 translate="Lobby_Fish_Casino" class="ng-scope">
+                                                            BẮN CÁ</h2> <img
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/778b5b31088c8992b874000514f9adac.png"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <div>
+                                                            <p><span>SẢNH HOT</span></p>
+                                                            <!-- ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">JILI bắn
+                                                                cá</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">TP bắn
+                                                                cá</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">JDB bắn
+                                                                cá</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">BG bắn
+                                                                cá</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">KA bắn
+                                                                cá</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">FTG bắn
+                                                                cá</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">R88 bắn
+                                                                cá</button><!-- end ngRepeat: lobby in item.list -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="idol fish" ng-class="item.type"> <img
+                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/e1624edbe158b977648dc0b6168b1313.png"
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/e1624edbe158b977648dc0b6168b1313.png">
+                                                    </div>
+                                                </div>
+                                            </li><!-- end ngRepeat: item in $ctrl.lobbys -->
+                                            <li ng-repeat="item in $ctrl.lobbys"
+                                                ng-class="{ 'active': item.isActive }"
+                                                ng-mouseenter="$ctrl.hoverLobby(item)" class="ng-scope"
+                                                style="">
+                                                <div ng-class="$ctrl.styles['lobby-wrapper']"
+                                                    class="_32pTzTcd7z9BsChkxAe-0q">
+                                                    <div class="title">
+                                                        <h2 translate="Shared_Nav_Board" class="ng-scope">
+                                                            GAME BÀI</h2> <img
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/778b5b31088c8992b874000514f9adac.png"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <div>
+                                                            <p><span>SẢNH HOT</span></p>
+                                                            <!-- ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope" style="">KM Game
+                                                                Bài
+                                                                3d</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">R88 Game Bài
+                                                                3d</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">V8 Game Bài
+                                                                3d</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">JILI Game Bài
+                                                                3d</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">TP Game Bài
+                                                                3d</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">MG Game Bài
+                                                                3d</button><!-- end ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope">FTG Game Bài
+                                                                3d</button><!-- end ngRepeat: lobby in item.list -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="idol board" ng-class="item.type"> <img
+                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/6e72e923040debf7a330ed439b21e58a.png"
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/6e72e923040debf7a330ed439b21e58a.png">
+                                                    </div>
+                                                </div>
+                                            </li><!-- end ngRepeat: item in $ctrl.lobbys -->
+                                            
+                                            <li ng-repeat="item in $ctrl.lobbys"
+                                                ng-class="{ 'active': item.isActive }"
+                                                ng-mouseenter="$ctrl.hoverLobby(item)" class="ng-scope">
+                                                <div ng-class="$ctrl.styles['lobby-wrapper']"
+                                                    class="_32pTzTcd7z9BsChkxAe-0q">
+                                                    <div class="title">
+                                                        <h2 translate="Shared_Nav_CockFighting"
+                                                            class="ng-scope">ĐÁ GÀ</h2> <img
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/778b5b31088c8992b874000514f9adac.png"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="content">
+                                                        <div>
+                                                            <p><span>SẢNH HOT</span></p>
+                                                            <!-- ngRepeat: lobby in item.list --><button
+                                                                ng-repeat="lobby in item.list"
+                                                                ng-bind="lobby.displayName"
+                                                                ng-click="$ctrl.toGame(lobby)"
+                                                                class="ng-binding ng-scope" style="">Ws168
+                                                                Đá
+                                                                Gà</button><!-- end ngRepeat: lobby in item.list -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="idol cock" ng-class="item.type"> <img
+                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/5934a251f69aeb00abcd67274fcc2ce4.png"
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/5934a251f69aeb00abcd67274fcc2ce4.png">
+                                                    </div>
+                                                </div>
+                                            </li><!-- end ngRepeat: item in $ctrl.lobbys -->
+                                        </ul>
+                                    </div>
+                                </section> <!-- ngIf: $ctrl.visible -->
+                                <section ng-class="$ctrl.styles['game-hot']" ng-if="$ctrl.visible"
+                                    class="ng-scope sSjuPS4iQOOTyi0FRHDlB" style="">
+                                    <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                                        <h3 ng-class="$ctrl.styles['big-title']"
+                                            class="_2vRQgHg9l4SuSwbkD6c-k">TRÒ CHƠI YÊU THÍCH</h3>
+                                        <ul class="list-unstyled ng-isolate-scope _2APLVdiTol5Ao8YIbWo2AS slick-initialized slick-slider"
+                                            slick="" settings="$ctrl.slickSetting"
+                                            ng-class="$ctrl.styles['game-navigation']"
+                                            style="display: block;"><button class="slick-prev slick-arrow"
+                                                aria-label="Previous" type="button"
+                                                style="display: block;">Previous</button>
+                                            <div class="slick-list">
+                                                <div class="slick-track"
+                                                    style="opacity: 1; width: 6270px; transform: translate3d(-1320px, 0px, 0px); height: 200px;" >
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-8" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">PP Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-7" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">MG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-6" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">JDB Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-5" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">Spribe Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-4" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">VA Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-3" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">BNG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-2" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">KA Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="-1" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">R88 Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-current slick-active"
+                                                        data-slick-index="0" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope active"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">168G Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-active"
+                                                        data-slick-index="1" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">PG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-active"
+                                                        data-slick-index="2" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">TP Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-active"
+                                                        data-slick-index="3" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">JILI Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-active"
+                                                        data-slick-index="4" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">CQ9 Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-active"
+                                                        data-slick-index="5" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">FC Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-active"
+                                                        data-slick-index="6" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">JILI Bắn
+                                                                    Cá</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-active"
+                                                        data-slick-index="7" aria-hidden="false"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">PP Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide" data-slick-index="8"
+                                                        aria-hidden="true" tabindex="-1"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">MG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide" data-slick-index="9"
+                                                        aria-hidden="true" tabindex="-1"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">JDB Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide" data-slick-index="10"
+                                                        aria-hidden="true" tabindex="-1"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">Spribe Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide" data-slick-index="11"
+                                                        aria-hidden="true" tabindex="-1"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">VA Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide" data-slick-index="12"
+                                                        aria-hidden="true" tabindex="-1"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">BNG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide" data-slick-index="13"
+                                                        aria-hidden="true" tabindex="-1"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">KA Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide" data-slick-index="14"
+                                                        aria-hidden="true" tabindex="-1"
+                                                        style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">R88 Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="15" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope active"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">168G Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="16" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">PG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="17" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">TP Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="18" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">JILI Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="19" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">CQ9 Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="20" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">FC Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="21" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">JILI Bắn
+                                                                    Cá</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="22" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">PP Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="23" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">MG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="24" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">JDB Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="25" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">Spribe Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="26" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">VA Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="27" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">BNG Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="28" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">KA Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slick-slide slick-cloned"
+                                                        data-slick-index="29" aria-hidden="true"
+                                                        tabindex="-1" style="width: 165px;">
+                                                        <div>
+                                                            <li ng-repeat="item in $ctrl.viewer.gamelist"
+                                                                ng-class="{ 'active': item.isActive }"
+                                                                ng-click="$ctrl.viewer.selectLobby(item)"
+                                                                class="ng-scope"
+                                                                style="width: 100%; display: inline-block;">
+                                                                <span nav-link-display="" model="item"
+                                                                    class="ng-isolate-scope">R88 Điện
+                                                                    Tử</span> </li>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><button class="slick-next slick-arrow" aria-label="Next"
+                                                type="button" style="display: block;">Next</button>
+                                        </ul>
+                                        <ul class="list-unstyled _3ppcwOkSyQWl-WAP_h_oej"
+                                            ng-class="$ctrl.styles['game-viewer']">
+                                            <!-- ngRepeat: game in $ctrl.viewer.currentItem.games -->
+                                            <li ng-repeat="game in $ctrl.viewer.currentItem.games"
+                                                ng-click="$ctrl.toGame(game)" class="ng-scope" style="">
+                                                <figure> <img
+                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/96462697163da3379b5975866912b5ee.png"
+                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/96462697163da3379b5975866912b5ee.png">
+                                                </figure>
+                                                <p ng-class="$ctrl.styles['game-name']"
+                                                    ng-bind="game.displayName"
+                                                    class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Sư Phụ Wada 2
+                                                </p>
+                                            </li>
+                                            <!-- end ngRepeat: game in $ctrl.viewer.currentItem.games -->
+                                            <li ng-repeat="game in $ctrl.viewer.currentItem.games"
+                                                ng-click="$ctrl.toGame(game)" class="ng-scope">
+                                                <figure> <img
+                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/5da0e084f7dafe30bebb1802e1dbc246.png"
+                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/5da0e084f7dafe30bebb1802e1dbc246.png">
+                                                </figure>
+                                                <p ng-class="$ctrl.styles['game-name']"
+                                                    ng-bind="game.displayName"
+                                                    class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Heo Disco</p>
+                                            </li>
+                                            <!-- end ngRepeat: game in $ctrl.viewer.currentItem.games -->
+                                            <li ng-repeat="game in $ctrl.viewer.currentItem.games"
+                                                ng-click="$ctrl.toGame(game)" class="ng-scope">
+                                                <figure> <img
+                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/aad4706ef6d801dc57d8b76ee59e6ab1.png"
+                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/aad4706ef6d801dc57d8b76ee59e6ab1.png">
+                                                </figure>
+                                                <p ng-class="$ctrl.styles['game-name']"
+                                                    ng-bind="game.displayName"
+                                                    class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Sư Phụ Wada
+                                                </p>
+                                            </li>
+                                            <!-- end ngRepeat: game in $ctrl.viewer.currentItem.games -->
+                                            <li ng-repeat="game in $ctrl.viewer.currentItem.games"
+                                                ng-click="$ctrl.toGame(game)" class="ng-scope">
+                                                <figure> <img
+                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/8c466726c308a9f53783ff7c2785d59e.png"
+                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/8c466726c308a9f53783ff7c2785d59e.png">
+                                                </figure>
+                                                <p ng-class="$ctrl.styles['game-name']"
+                                                    ng-bind="game.displayName"
+                                                    class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Thật Sảng
+                                                    Khoái 3</p>
+                                            </li>
+                                            <!-- end ngRepeat: game in $ctrl.viewer.currentItem.games -->
+                                            <li ng-repeat="game in $ctrl.viewer.currentItem.games"
+                                                ng-click="$ctrl.toGame(game)" class="ng-scope">
+                                                <figure> <img
+                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/765ba90646f4621b10b184f3e46b228d.png"
+                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/765ba90646f4621b10b184f3e46b228d.png">
+                                                </figure>
+                                                <p ng-class="$ctrl.styles['game-name']"
+                                                    ng-bind="game.displayName"
+                                                    class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Thật Sảng
+                                                    Khoái 2</p>
+                                            </li>
+                                            <!-- end ngRepeat: game in $ctrl.viewer.currentItem.games -->
+                                            <li ng-repeat="game in $ctrl.viewer.currentItem.games"
+                                                ng-click="$ctrl.toGame(game)" class="ng-scope">
+                                                <figure> <img
+                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/0e465d37cef2c1a792ecf7deb69598ae.png"
+                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/0e465d37cef2c1a792ecf7deb69598ae.png">
+                                                </figure>
+                                                <p ng-class="$ctrl.styles['game-name']"
+                                                    ng-bind="game.displayName"
+                                                    class="ng-binding _3BWGcllC2hbMA9nLJl5G7Y">Siêu Sạc Dự
+                                                    Phòng</p>
+                                            </li>
+                                            <!-- end ngRepeat: game in $ctrl.viewer.currentItem.games -->
+                                        </ul>
+                                    </div>
+                                </section><!-- end ngIf: $ctrl.visible -->
+                                <section ng-class="$ctrl.styles.app" class="_32RZPMC6RN8w5D_uvcwEmk">
+                                    <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                                        <h3 ng-class="$ctrl.styles['big-title']"
+                                            class="_2vRQgHg9l4SuSwbkD6c-k">TẢI APP</h3>
+                                        <section>
+                                            <div class="left">
+                                                <div class="title">
+                                                    <figure> <img
+                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/c1f2c2e72c2132c93fe273439cc4fffb.png">
+                                                    </figure>
+                                                    <div class="word">
+                                                        <h2>tải app shbet</h2>
+                                                        <p>Để có trải nghiệm tốt nhất</p>
+                                                    </div>
+                                                </div>
+                                                <ul class="icons">
+                                                    <li> <a target="_blank" rel="nofollow noopener"
+                                                            ng-href="https://shb27.com/taiapp"
+                                                            href="https://shb27.com/taiapp"> <img
+                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/dc957246d74f7cc5c210c4776e32856f.png">
+                                                            <img
+                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/91d481caa8b31a0024ad8368f4bcbc2c.png">
+                                                        </a> </li>
+                                                    <li> <a target="_blank" rel="nofollow noopener"
+                                                            ng-href="https://shb27.com/taiapp"
+                                                            href="https://shb27.com/taiapp"> <img
+                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/94086f06eb52cf9c08bf247d5bd09663.png">
+                                                            <img
+                                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/eaa0bb0370041356807a2cc4baf645c2.png">
+                                                        </a> </li>
+                                                </ul>
+                                            </div>
+                                            <figure> <img width="262" height="530"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/6f528d106e25711a99eace657424b535.png">
+                                            </figure>
+                                            <figure> <img width="567" height="585"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/dc4b8b1909dad9d7e2613b4c5c447757.png">
+                                            </figure>
+                                        </section>
+                                    </div>
+                                </section>
+                                <section ng-class="$ctrl.styles.video" class="_7k5oge2RnSaKBSLIpcYcR">
+                                    <div ng-class="$ctrl.styles.wrapper" class="Fyjjbbtu7ez2tp4P1u_9X">
+                                        <h3 ng-class="$ctrl.styles['big-title']"
+                                            class="_2vRQgHg9l4SuSwbkD6c-k">HƯỚNG DẪN</h3>
+                                        <ul>
+                                            <li ng-class="$ctrl.styles.video01"
+                                                ng-click="$ctrl.openVideoModal(1)"
+                                                class="JUsChE5KOE1_J_71ymv7p"> <span
+                                                    ng-class="$ctrl.styles.btn"
+                                                    class="_3g9tZbhQXlWlZAo_sc1U6v">XEM CHI TIẾT</span>
+                                            </li>
+                                            <li ng-class="$ctrl.styles.video02"
+                                                ng-click="$ctrl.openVideoModal(2)"
+                                                class="_2P-vaHZDmvirGdLtHl6iPM"> <span
+                                                    ng-class="$ctrl.styles.btn"
+                                                    class="_3g9tZbhQXlWlZAo_sc1U6v">XEM CHI TIẾT</span>
+                                            </li>
+                                            <li ng-class="$ctrl.styles.video03"
+                                                ng-click="$ctrl.openVideoModal(3)"
+                                                class="_2KuUmQILeFXSHU8b0GtqO5"> <span
+                                                    ng-class="$ctrl.styles.btn"
+                                                    class="_3g9tZbhQXlWlZAo_sc1U6v">XEM CHI TIẾT</span>
+                                            </li>
+                                            <li ng-class="$ctrl.styles.video04"
+                                                ng-click="$ctrl.openVideoModal(4)"
+                                                class="_2enxMMX6O1-wkuf-ecRGSa"> <span
+                                                    ng-class="$ctrl.styles.btn"
+                                                    class="_3g9tZbhQXlWlZAo_sc1U6v">XEM CHI TIẾT</span>
+                                            </li>
+                                            <li ng-class="$ctrl.styles.video05"
+                                                ng-click="$ctrl.openVideoModal(5)"
+                                                class="_2cGOHR59Vy4IDlaiUJfDBH"> <span
+                                                    ng-class="$ctrl.styles.btn"
+                                                    class="_3g9tZbhQXlWlZAo_sc1U6v">XEM CHI TIẾT</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section ng-class="$ctrl.styles.end" class="_3jmQvQUSvXDrCuYmhBPe9G">
+                                </section>
+                            </div>
+                        </gupw-home>
+                    </ui-view> 
+                </div>
+            </div> 
+
+  <!-- SCRIPT -->
+  <script src="/core/js/lobby/homepage.js"></script>
+
+  <%- include('includes/footer') %>

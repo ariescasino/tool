@@ -1,0 +1,529 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" type="text/css" href="/web/static/stylesheets/d-AppContainer.0bee9c16.css">
+    <link rel="stylesheet" type="text/css" href="/web/static/stylesheets/d-MemberCenterProfile.1510bffd.css">
+
+    <div id="body-web-info">
+        <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+        <div class="wrap-info">
+            <div class="info-container">
+
+                <!-- SIDEBAR MENU -->
+                <%- include('./sidebar') %>
+                    <!-- END SIDEBAR MENU -->
+
+                    <div class="right">
+                        <div class="main-content">
+                            <div class="title">Tài khoản của tôi</div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" style="cursor: pointer;"
+                                        onClick="showContent('info')">Hồ
+                                        Sơ</a></li>
+                                <li><a data-toggle="tab" style="cursor: pointer;" onClick="showContent('bank')">Ngân
+                                        Hàng</a></li>
+                                <li><a data-toggle="tab" style="cursor: pointer;"
+                                        onClick="showContent('changepassword')">Bảo
+                                        Mật</a></li>
+                                <li><a data-toggle="tab" style="cursor: pointer;" onClick="showContent('fund')">Ví
+                                        Tiền</a></li>
+                            </ul>
+
+                            <div class="tab-content" style="margin-top: 24px;">
+                                <div class="nrc-tab-pane fade in show" id="tab-content-info">
+                                    <div class="member-center-personal-info tab-box">
+                                        <div style="margin: 24px;"></div>
+                                        <div class="info-block">
+                                            <div class="data-box flex">
+                                                <div>
+                                                    <div class="label">Tên đăng nhập</div>
+                                                    <div class="value" id="username"></div>
+                                                </div>
+                                            </div>
+                                            <div class="data-box">
+                                                <div class="label">Cấp thành viên:</div>
+                                                <div class="value" style="font-size: 14px; font-family: revert;">Cấp phổ
+                                                    thông</div>
+                                            </div>
+                                            <div class="data-box">
+                                                <div class="label">Bảng xếp hạng nạp tiền:</div>
+                                                <div class="value" style="font-size: 14px; font-family: revert;">Đang
+                                                    cập nhật...</div>
+                                            </div>
+                                            <div class="data-box flex">
+                                                <div>
+                                                    <div class="label">Họ Và Tên</div>
+                                                    <div class="value" id="name"></div>
+                                                </div>
+                                            </div>
+                                            <div class="data-box flex">
+                                                <div>
+                                                    <div class="label">Số điện thoại</div>
+                                                    <div class="form-block">
+                                                        <div class="nrc-u-1-1 readOnly tel read-only-mobile-field">
+                                                            <div class="react-tel-input readOnly">
+                                                                <div class="flag-dropdown">
+                                                                    <div class="selected-flag">
+                                                                        <div class="flag vn">
+                                                                            <div class="arrow"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <label></label>
+                                                                <input
+                                                                    style="border: 0px #ffffff; background-color: #f1f1f1;"
+                                                                    type="tel" class="form-control" disabled=""
+                                                                    id="phone" value="">
+                                                            </div><input type="hidden" class="nrc-invisible">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="data-box flex">
+                                                <div>
+                                                    <div class="label">Email</div>
+                                                    <div class="value" id="email"></div>
+                                                </div>
+                                            </div>
+                                            <div class="data-box">
+                                                <div class="label">Thời gian đăng ký</div>
+                                                <div class="value" id="joined" style="font-family: monospace;"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nrc-tab-pane " id="tab-content-changepassword" style="display: none;">
+                                    <div class="tab-form">
+                                        <div class="input-field">
+                                            <div class="content d-input-field-content required">
+                                                <div class="input-block"><label class="title"
+                                                        for="oldpassword"></label><input style="margin-left: 15px;"
+                                                        id="oldpassword" type="password" placeholder="      Mật khẩu cũ"
+                                                        maxlength="20" value=""></div>
+                                                <div class="action-block">
+                                                    <div><i class="fa fa-eye-slash"
+                                                            onclick="showhidePassword('oldpassword')"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-field">
+                                            <div class="content d-input-field-content required">
+                                                <div class="input-block"><label class="title"
+                                                        for="newpassword"></label><input style="margin-left: 15px;"
+                                                        id="newpassword" type="password"
+                                                        placeholder="      Mật khẩu mới" maxlength="20" value=""></div>
+                                                <div class="action-block">
+                                                    <div><i class="fa fa-eye-slash"
+                                                            onclick="showhidePassword('newpassword')"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="info-msg"><i class="icon-info"></i><small>Mật khẩu phải bao gồm
+                                                    từ 8~20 ký tự / số</small></div>
+                                        </div>
+                                        <div class="input-field">
+                                            <div class="content d-input-field-content required">
+                                                <div class="input-block"><label class="title"
+                                                        for="confirmpassword"></label><input style="margin-left: 15px;"
+                                                        id="confirmpassword" type="password"
+                                                        placeholder="      Xác nhận mật khẩu mới" maxlength="20"
+                                                        value=""></div>
+                                                <div class="action-block">
+                                                    <div><i class="fa fa-eye-slash"
+                                                            onclick="showhidePassword('confirmpassword')"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btns">
+                                            <button onClick="changePassword()" class="nrc-button" type="button">Đổi Mật
+                                                Khẩu</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nrc-tab-pane " id="tab-content-fund" style="display: none;">
+                                    <div class="member-center-wallets">
+                                        <div class="top-info">
+                                            <div class="label">Tổng số tiền</div>
+                                            <div class="main-wallet"><span style="margin-left: 26px;" class="value"
+                                                    id="totalWalletBalance">0</span>
+                                                <i style="margin-left: 10px;" class="fa fa-refresh"
+                                                    onclick="getSubnames()"></i>
+                                            </div>
+                                        </div>
+                                        <div class="sub-wallets" id="fund-list"></div>
+                                    </div>
+                                </div>
+
+                                <div class="nrc-tab-pane " id="tab-content-bank" style="display: none;">
+                                    <div class="member-center-personal-info" id="btn-show-body-user-add-bank">
+                                        <div class="setting-btn" onclick="showFormUserAddBank()"><i
+                                                class="fa fa-plus"></i>Thêm tài khoản ngân hàng</div>
+                                    </div>
+
+                                    <div class="tab-form" style="display: none;" id="form-user-add-bank">
+
+                                        <div class="title-wrapper" onclick="clickBackToUserListBank()">
+                                        </div>
+                                        <br>
+
+                                        <div class="input-field">
+                                            <div class="content d-input-field-content required">
+                                                <div class="input-block">
+                                                    <select class="mc-input-field-value" id="bankProvide"
+                                                        style="background: transparent;border: none;color: #454545;flex: 1 100%;font-size: 14px;height: 100%;padding: 0;width: 100%;">
+                                                        <option value=""> Chọn ngân hàng/Ví điện tử</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-field">
+                                            <div class="content d-input-field-content required">
+                                                <div class="input-block">
+                                                    <label class="title" for="confirmpassword"></label>
+                                                    <input id="bankName" type="text"
+                                                        placeholder="      Nhập tên chủ tài khoản" maxlength="20"
+                                                        value="" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-field">
+                                            <div class="content d-input-field-content required">
+                                                <div class="input-block">
+                                                    <label class="title" for="confirmpassword"></label>
+                                                    <input id="bankNumber" type="number"
+                                                        placeholder="      Nhập số tài khoản" maxlength="20" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-field">
+                                            <div class="content d-input-field-content required">
+                                                <div class="input-block">
+                                                    <label class="title" for="confirmpassword"></label>
+                                                    <input id="bankBranch" type="text"
+                                                        placeholder="      Nhập chi nhánh ngân hàng" maxlength="20"
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="btns">
+                                            <button onclick="saveBank()" class="nrc-button" type="button">Thêm ngân
+                                                hàng</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="bank-card-list" style="display: none;" id="list-user-bank">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="sub-content">
+                            <div class="title">Khuyến mãi</div>
+                            <div class="ads-block">
+                                <div class="promo-container">
+                                </div>
+                                <!-- SIDEBAR PROMOTION -->
+                                <%- include('./promotionSidebar') %>
+                                    <!-- SIDEBAR PROMOTION -->
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        const getParamUrl = (param) => {
+            return new URLSearchParams(window.location.search).get(param);
+        }
+
+        $(document).ready(() => {
+            if (getParamUrl('action') && getParamUrl('action') == "add_profile_banking") {
+                getInfo();
+                showContent("bank");
+            } else {
+                getInfo();
+            }
+        });
+
+        const showContent = (target) => {
+            let arrTabElem = ['info', 'changepassword', 'fund', 'bank'];
+            arrTabElem.forEach((id) => {
+                let elementMenuProperti = $('#tab-menu-' + id);
+                let elementContentProperti = $('#tab-content-' + id);
+
+                if (target == id) {
+                    //elementMenuProperti.addClass("active");
+                    elementContentProperti.fadeIn();
+                } else {
+                    elementMenuProperti.removeClass("active");
+                    elementContentProperti.hide();
+                }
+            });
+            if (target == 'info') getInfo();
+            if (target == 'bank') getListUserBank();
+            if (target == 'fund') {
+                getSubnames();
+            }
+        }
+
+        const getInfo = () => {
+            var settings = {
+                "url": "<%=dataPage.config.MAIN_API%>/api/auth/me",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json"
+                },
+            };
+
+            $.ajax(settings).done(function (response) {
+                if (response.status) {
+                    const data = response.user;
+                    $('#username').html(data.username);
+                    $('#name').html(data.name);
+                    $('#phone').val(data.phone);
+                    $('#email').html(data.email);
+                    $('#joined').html(moment(data.createdAt).format("DD/MM/YYYY hh:m:s"));
+
+                    $('#bankName').val(data.name);
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const changePassword = () => {
+            const dailyOldPassword = $("#oldpassword").val();
+            const dailyPassword = $("#newpassword").val();
+            const dailyPasswordConfirm = $("#confirmpassword").val();
+
+            if (!dailyOldPassword ||
+                !dailyPassword ||
+                !dailyPasswordConfirm) {
+                alert(`Vui lòng điền đầy đủ thông tin.`);
+                return;
+            }
+
+            if (dailyPassword !== dailyPasswordConfirm) {
+                alert(` 2 mật khẩu không khớp.`);
+                return;
+            }
+
+            $.ajax({
+                "url": `<%=dataPage.config.MAIN_API%>/api/auth/change-password`,
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                "data": {
+                    oldPassword: dailyOldPassword,
+                    newPassword: dailyPassword,
+                    newPasswordConfirm: dailyPasswordConfirm
+                }
+            }).then((response) => {
+                if (response.status) {
+                    alert(`Đổi mật khẩu thành công!`);
+                    return;
+                } else {
+                    alert(`${response.msg}`);
+                    return;
+                }
+            }).catch((err) => {
+                console.log(err);
+                alert(`${err.statusText}`);
+                return;
+            });
+        }
+
+        const getListUserBank = () => {
+            const listUserBank = $('#list-user-bank');
+            listUserBank.html(``);
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/payment/getListUserBank",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    $('#list-user-bank').fadeIn();
+                    const ListUserBank = response.data;
+                    for (const item of ListUserBank) {
+                        $('#list-user-bank').append(`
+                            <div class="card active">
+                                <div class="no">${item.bankNumber}</div>
+                                <div class="name">${item.bankName}</div>
+                                <div class="info">${item.bankProvide} / ${item.bankBranch}</div>
+                                <div class="status"><i class="fa fa-check-circle"></i> Verified</div>
+                            </div>
+                        `);
+                    }
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const getListBankProvide = () => {
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/payment/getListBankWithdraw",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    const ListBankDeposit = response.data;
+                    for (const item of ListBankDeposit) {
+                        $('#bankProvide').append(`
+                            <option value="${item.code}">${item.code}/${item.name}</option>
+                        `);
+                    }
+
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const clickBackToUserListBank = () => {
+            const btnShowForm = $('#btn-show-body-user-add-bank');
+            const formAddBank = $('#form-user-add-bank');
+            const listUserBank = $('#list-user-bank');
+            listUserBank.html(``);
+            listUserBank.fadeIn();
+            btnShowForm.fadeIn();
+            formAddBank.hide();
+            getListUserBank();
+        }
+
+        const showFormUserAddBank = () => {
+            const btnShowForm = $('#btn-show-body-user-add-bank');
+            const formAddBank = $('#form-user-add-bank');
+            const listUserBank = $('#list-user-bank');
+            listUserBank.hide();
+            btnShowForm.hide();
+            formAddBank.fadeIn();
+            getListBankProvide();
+        }
+
+        const saveBank = () => {
+            const bankProvide = $('#bankProvide').val();
+            const bankName = $('#bankName').val();
+            const bankNumber = $('#bankNumber').val();
+            const bankBranch = $('#bankBranch').val();
+
+            if (!bankProvide ||
+                !bankName ||
+                !bankNumber ||
+                !bankBranch
+            ) {
+                alert("Vui lòng nhập đầy đủ thông tin trước khi thêm ngân hàng!");
+                return;
+            }
+
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/payment/userAddBank",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+                "data": JSON.stringify({
+                    bankProvide,
+                    bankName,
+                    bankNumber,
+                    bankBranch
+                }),
+            }).done(function (response) {
+                if (response.status) {
+                    alert(response.msg);
+                    clickBackToUserListBank();
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const getSubnames = () => {
+            const fundListElement = $('#fund-list');
+            fundListElement.html(``);
+            const totalWalletBalance = $('#totalWalletBalance');
+            totalWalletBalance.html(`0`);
+            $('.fa-refresh').addClass('fa-spin');
+            setTimeout(() => {
+                $('.fa-refresh').removeClass('fa-spin');
+            }, 1000);
+
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/game/subnames",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    const ListSubname = response.data;
+                    for (const item of ListSubname) {
+                        fundListElement.append(`
+                            <div class="data-box">
+                                <div class="name" id="wallet-${item.toUpperCase()}">${item.toUpperCase()}</div>
+                                <div class="balance" id="balance-${item.toUpperCase()}">
+                                    <div class="nrc-loading active "></div>
+                                </div>
+                            </div>
+                        `);
+
+                        // check balance 
+                        setTimeout(() => {
+                            getWallet(item.toUpperCase());
+                        }, 800);
+                    }
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const getWallet = (gameID) => {
+            const totalWalletBalance = $('#totalWalletBalance');
+            //totalWalletBalance.html(`0.00`);
+            $.ajax({
+                "url": `<%=dataPage.config.MAIN_API%>/api/game/wallets/${gameID.toUpperCase()}`,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    $(`#balance-${gameID}`).html(response.balance);
+                    if (Number(response.balance) > 0) {
+                        const currentTotalWalletBalance = Number(totalWalletBalance.html());
+                        const addWalletBalance = currentTotalWalletBalance + Number(response.balance);
+                        totalWalletBalance.html(addWalletBalance);
+                    }
+                } else {
+                    //alert(response.msg);
+                    $(`#balance-${gameID}`).html(`0`);
+                }
+            });
+        }
+    </script>
+
+    <%- include('../../includes/footer') %>

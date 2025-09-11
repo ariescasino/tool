@@ -1,0 +1,407 @@
+<%- include('../../includes/header') %>
+<link href="/web/static/stylesheets/main.70e1e078.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/web/static/stylesheets/d-MemberCenter.1cbdaa6f.css">
+<link rel="stylesheet" type="text/css" href="/web/static/stylesheets/d-MemberCenter.4fdd35a5.css">
+<link rel="stylesheet" type="text/css" href="/web/static/stylesheets/d-MemberCenterAffiliate.5c2754d0.css">
+
+<style>
+  .copy-text {
+    cursor: pointer;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button */
+  .modal-content .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 10px;
+    background: red;
+    opacity: 1;
+    border-radius: 5px;
+  }
+
+  .modal-content th {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .modal-content td {
+    padding: 10px;
+  }
+
+  #totalMembersTrigger {
+    cursor: pointer;
+  }
+
+  #totalMembersTrigger:hover {
+    background-color: aquamarine;
+    color: black;
+  }
+
+  .member-center-affiliate .left-info .data-box .label {
+    color: black;
+    opacity: 1
+  }
+
+  .member-center-affiliate .left-info .data-box .value {
+    color: black;
+  }
+</style>
+
+<!-- The Modal -->
+<div id="memberModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Thông tin thành viên</h2>
+    </ul>
+    <table border="1" style="width: 100%; text-align: center">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Số dư</th>
+          <th>Tổng nạp tháng này</th>
+          <th>Tổng rút tháng này</th>
+        </tr>
+      </thead>
+      <tbody id="memberList">
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<div class="app-body">
+  <div class="member-center-main">
+    <div class="member-center-content">
+      <div class="block member-center-affiliate">
+        <div class="title" id="titleAgency">Thống kê đại lý tháng</div>
+        <div class="nav">
+          <div id="totalMembersTrigger" class="tab"><img src="/web/static/media/mypeople.1965fee6..svg" alt="direct-members" style="width: 50%; height: auto;">
+            <span>
+              Thành viên</span>
+            <span id="countRefUser" style="font-size: 23px;">0</span>
+          </div>
+          <div class="tab"><img src="/web/static/media/commission.2bd9b4c9..svg" alt="commission" style="width: 50%; height: auto;">
+            <span>Lợi nhuận đại lý </span>
+            <span id="countProfit" style="font-size: 23px;">0</span>
+          </div>
+          <a class="tab" href="https://t.me/congine">
+            <img src="/web/static/media/info.5fa7930d..svg" alt="rule-description" style="width: 50%; height: auto;">
+            <span>Hướng dẫn</span>
+          </a>
+        </div>
+        <div class="left-info">
+          <div class="data-box">
+            <div class="label">Tổng số thành viên của bạn</div>
+            <div class="value" id="countRefUser2">0</div>
+          </div>
+          <div class="data-box">
+            <div class="label">Số thành viên đăng ký hôm nay</div>
+            <div class="value" id="countRefUser3">0</div>
+          </div>
+
+          <div class="data-box">
+            <div class="label">Tổng nạp tháng này</div>
+            <div class="value" id="totalDeposit">0.00</div>
+          </div>
+
+          <div class="data-box">
+            <div class="label">Tổng rút tháng này</div>
+            <div class="value" id="totalWithdraw">0.00</div>
+          </div>
+
+          <div class="data-box">
+            <div class="label">Tổng volume cược tháng này</div>
+            <div class="value" id="totalVolume">0.00</div>
+          </div>
+        </div>
+      </div>
+      <div class="block member-center-affiliate">
+        <div class="title">Mã đăng ký</div>
+        <div class="right-info">
+          <div class="data-box">
+            <div>
+              <div class="label">ID giới thiệu của bạn</div>
+              <div class="data"><span class="affiliateid"></span></div>
+            </div>
+            <div class="copy-text"><i class="fa fa-2x fa-clone" aria-hidden="true" onclick="javascript:void(coppyToClipboard($('.affiliateid').html()))"></i>
+            </div>
+          </div>
+          <div class="data-box">
+            <div>
+              <div class="label">Liên kết giới thiệu của bạn</div>
+              <div class="data"><span class="link" id="affilate-link">
+                </span>
+              </div>
+            </div>
+            <div class="copy-text"><i class="fa fa-2x fa-clone" aria-hidden="true" onclick="javascript:void(coppyToClipboard($('#affilate-link').html()))"></i>
+            </div>
+          </div>
+          <div class="data-box">
+            <div>
+              <div class="label">Mã giới thiệu QR của bạn</div>
+              <div class="data">
+                <div class="link-qr-code">
+                  <img id="qr-affilate-share" src="" height="128" width="128" style="height: 128px; width: 128px;" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <button class="download-btn" id="qr-affilate-download">
+                <div class="icon"><i class="fa fa-download" aria-hidden="true" style="font-size: 14px;"></i></div>Tải xuống
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="right-drawer-root"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  const coppyToClipboard = (text) => {
+    var input = document.createElement('input');
+    input.setAttribute('value', text);
+    document.body.appendChild(input);
+    input.select();
+    var result = document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('Đã copy vào bộ nhớ tạm!');
+    return result;
+  }
+
+  $(document).ready(() => {
+    getMyRefInfo();
+    countRefererUser();
+    countRefererUserToday();
+    caculatorProfit();
+    $('#titleAgency').html(`Thống kê đại lý tháng ${moment().format("MM")}`);
+    $('#totalMembersTrigger').click(function() {
+      openMembersModal();
+    });
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      var modal = document.getElementById('memberModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      var modal = document.getElementById('memberModal');
+      modal.style.display = "none";
+    }
+  });
+
+  function openMembersModal() {
+    $.ajax({
+      url: "<%=dataPage.config.MAIN_API%>/api/agency/calculatorProfit",
+      method: "GET",
+      timeout: 0,
+      headers: {
+        "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+        "Content-Type": "application/json",
+      },
+    }).done((response) => {
+      if (response.status) {
+        populateMemberModal(response.data);
+        document.getElementById('memberModal').style.display = 'block';
+      } else {
+        alert('Không thể tải thông tin thành viên: ' + response.msg);
+      }
+    });
+  }
+
+  function populateMemberModal(members) {
+    const memberList = $('#memberList');
+    memberList.empty(); // Clear previous entries
+
+    members.forEach((member) => {
+      const userInfo = member.userInfo;
+      const currentMonth = new Date().getMonth(); // Lấy tháng hiện tại (0-11)
+      const currentYear = new Date().getFullYear(); // Lấy năm hiện tại
+
+      // Hàm kiểm tra xem một giao dịch có phải là trong tháng hiện tại không
+      const isCurrentMonth = (record) => {
+        const recordDate = new Date(record.createdAt);
+        return recordDate.getMonth() === currentMonth && recordDate.getFullYear() === currentYear;
+      };
+
+      // Tính tổng deposit trong tháng hiện tại
+      const totalDepositCurrentMonth = member.depositRecord.reduce((accumulator, item) => {
+        return isCurrentMonth(item) ? accumulator + item.amount : accumulator;
+      }, 0);
+
+      // Tính tổng withdraw trong tháng hiện tại
+      const totalWithdrawCurrentMonth = member.withdrawRecord.reduce((accumulator, item) => {
+        return isCurrentMonth(item) ? accumulator + item.amount : accumulator;
+      }, 0);
+      // Định dạng số tiền theo VND
+      const formatter = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+      });
+      const formattedTotalDeposit = formatter.format(totalDepositCurrentMonth);
+      const formattedTotalWithdraw = formatter.format(totalWithdrawCurrentMonth);
+      const listItem = `<tr>
+            <td>
+                ${userInfo.username}
+            </td>
+            <td>
+                ${userInfo.coin}
+            </td>
+            <td>
+                ${formattedTotalDeposit}
+            </td>
+            <td>
+                ${formattedTotalWithdraw}
+            </td>
+        </tr>`;
+      memberList.append(listItem);
+    });
+  }
+
+  const countRefererUser = () => {
+    $.ajax({
+      "url": "<%=dataPage.config.MAIN_API%>/api/agency/countRefUser",
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+        "Content-Type": "application/json",
+      },
+    }).done((response) => {
+      if (response.status) {
+        $('#countRefUser').html(numberWithCommas(response.count));
+        $('#countRefUser2').html(numberWithCommas(response.count));
+      } else {
+        alert(response.msg);
+      }
+    });
+  }
+  const countRefererUserToday = () => {
+    $.ajax({
+      "url": "<%=dataPage.config.MAIN_API%>/api/agency/countRefUserToday",
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+        "Content-Type": "application/json",
+      },
+    }).done((response) => {
+      if (response.status) {
+        $('#countRefUser3').html(numberWithCommas(response.count));
+      } else {
+        alert(response.msg);
+      }
+    });
+  }
+  const getMyRefInfo = () => {
+    $.ajax({
+      "url": "<%=dataPage.config.MAIN_API%>/api/agency/myRefShare",
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+        "Content-Type": "application/json",
+      },
+    }).done((response) => {
+      if (response.status) {
+        $('.affiliateid').html(response.agency.code);
+        $('#affilate-link').html(`<%=dataPage.config.SITE_URL;%>?affilate_id=${response.agency.code}`);
+        $('#qr-affilate-share').attr("src", `https://quickchart.io/qr?text=<%=dataPage.config.SITE_URL;%>?affilate_id=${response.agency.code}&ecLevel=H&margin=1&size=128`);
+        $('#qr-affilate-download').attr("onclick", `window.location='https://quickchart.io/qr?text=<%=dataPage.config.SITE_URL;%>?affilate_id=${response.agency.code}&ecLevel=H&margin=1&size=128'`);
+      } else {
+        alert(response.msg);
+      }
+    });
+  }
+
+  const caculatorProfit = () => {
+    $.ajax({
+      "url": "<%=dataPage.config.MAIN_API%>/api/agency/calculatorProfit",
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+        "Content-Type": "application/json",
+      },
+    }).done((response) => {
+      console.log(response);
+      if (response.status) {
+        const dataProfit = response.data;
+        let totalVolume = 0,
+          totalDeposit = 0,
+          totalWithdraw = 0;
+
+        response.data.forEach((user) => {
+          // caculator volume
+          user.betRecord.forEach((bet) => {
+            totalVolume += Number(bet.betAmount);
+          });
+          // caculator deposit
+          user.depositRecord.forEach((deposit) => {
+            totalDeposit += Number(deposit.amount);
+          });
+          // caculator withdraw
+          user.withdrawRecord.forEach((withdraw) => {
+            totalWithdraw += Number(withdraw.amount);
+          });
+        });
+        totalVolume = totalVolume * 1000;
+        $('#totalVolume').html(numberWithCommas(totalVolume));
+        $('#totalDeposit').html(numberWithCommas(totalDeposit));
+        $('#totalWithdraw').html(numberWithCommas(totalWithdraw));
+        // $('#countProfit').html(numberWithCommas(totalDeposit - totalWithdraw));
+        $('#countProfit').html(numberWithCommas(response.percentCommission));
+
+      } else {
+        alert(response.msg);
+      }
+    });
+
+
+  }
+</script>
+<%- include('../../includes/footer') %>

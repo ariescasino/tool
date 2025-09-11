@@ -1,0 +1,607 @@
+<style>
+     
+.banner {
+    background-image: url("~@assets/images/lobby/live/banner.jpg")
+}
+
+.background {
+    padding: 25px 0
+}
+
+.wrapper {
+    box-sizing: border-box
+}
+
+.entrance {
+    display: none;
+    opacity: 0;
+    transition-timing-function: linear;
+    transition-property: opacity;
+    transition-duration: 150ms
+}
+
+.entrance:global(.active) {
+    display: block;
+    opacity: 1
+}
+
+.entrance-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.entrance-content img {
+    max-width: 100%
+}
+
+.entrance-content>div {
+    width: 50%;
+    color: #1f607d;
+    font-size: 15px;
+    line-height: 1.6
+}
+
+.entrance-content>div p {
+    margin-bottom: 16px;
+    font-weight: 400;
+    text-align: justify;
+    word-wrap: break-word
+}
+
+.entrance-content>div h4 {
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.5
+}
+
+.entrance-content>div h3 {
+    padding: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.6;
+    background: linear-gradient(to right, #cff3ff, #fff)
+}
+
+.entrance-content:global(.AgLive) p,
+.entrance-content:global(.SaLive) p {
+    font-size: 14px
+}
+
+.entrance-content:global(.BgLive) p {
+    font-size: 13px
+}
+
+.live {
+    max-width: 110px;
+    margin-bottom: 16px
+}
+
+.title {
+    max-width: 420px;
+    margin-bottom: 16px
+}
+
+.btn-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+.btn-wrapper button {
+    width: 261px;
+    height: 55px;
+    margin-top: 16px;
+    padding: 0;
+    color: #357e9f;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 55px;
+    background: url("https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/13132f66af155d3a7519b232a2140cff.png") no-repeat center;
+    border: none
+}
+
+.game-list {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    max-width: 600px
+}
+
+.game-list li {
+    width: 90px;
+    height: 90px;
+    background: no-repeat center top;
+    -ms-transform: scale(0.83);
+    transform: scale(0.83);
+    cursor: pointer
+}
+
+.game-list li:global(.active) {
+    background-position: center bottom
+}
+       
+</style>
+
+<%- include('../../includes/header') %>
+
+    <!-- THONGBAO-->
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _13SSqi-CXmhSukDpitbsQ2">
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs Fyjjbbtu7ez2tp4P1u_9X">
+            <!-- uiView: --><ui-view class="ng-scope">
+                <gupw-home class="ng-scope ng-isolate-scope">
+                    <!-- THONGBAOCHAY-->
+                <!---    <div class="notificationBody" style="background-color: #252b38;height: 32px;">
+                        <div class="notificationList" style="max-width: 1200px; display: flex; align-items: center ;margin:auto;height: 32px;">
+                            <div class="notificationList-left" style="display: flex;align-items: center;">
+                                <span class="iconNotification" style="display: flex; align-items: center;">
+                                    <img src="img/e2a8788ae2f498941b483f3fe0e847fa.png" alt="">
+                                </span>
+                                <span class="textNotification" style="width: 130px;margin-left: 12px;">Tin Tức Mới Nhất :</span>
+                            </div>
+                            <div class="notificationList-right">
+                                <ul>
+                                    <li>🏆 NẠP RÚT KHÓ CỨ ĐỂ NEW88  LO.Nếu bạn đang gặp bất khì khó khăn nào trong việc nạp rút tiền ở những nhà cái khác,hãy đến với NEW88 : </li>
+                                    <li>✅ Cổng nạp đa dạng,rút tiền nhanh chóng</li>
+                                    <li>✅ Tốc độ, bảo mật và hoàn nạp cao nhất thị trường</li>
+                                    <li>🏆 Cổng nạp quét mã siêu tốc,hoàn nạp 2% :</li>
+                                    <li>📣 Bước 1 : Công ty gửi tiền</li>
+                                    <li>📣 Bước 2 : Ngân hàng trực tuyến</li>
+                                    <li>📣 Bước 3 : Điền số tiền cần nạp</li>
+                                    <li>📣 Bước 4 : Tên người nạp tiền và nội dung khi chuyển khoản vui lòng điền "Tên đăng nhập game"</li>
+                                    <li>📣 Bước 5 : Gửi đơn và thực hiện chuyển tiền</li>
+                                    <li>📢 Quý khách hàng thân mến, NEW88 đã hoàn thành tất cả  những thủ tục Theo Quyết định 2345/QĐ-NHNN của Ngân hàng Nhà nước về triển khai các giải pháp an toàn, bảo mật trong thanh toán trực tuyến và thanh toán thẻ ngân hàng, tốc độ độ nạp rút hiện tại đã được ổn định,đảm bảo chất lượng và trải nghiệm tốt nhất đến với quý khách !Trân trọng cảm ơn sự tin tưởng, ủng hộ và thông cảm của quý khách cho những bất cập trong thời gian vừa qua !!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+    <!--GAME-->
+    <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _19_PeyF_NqvFIS82KPWz6k"> 
+    <!-- uiView: -->
+     <ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+     <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _8XOzSmOOEZguY1YmMefoR">
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs _1BIEU2VALeTfh2iEbzGBn-">
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <ui-view class="ng-scope" style="">
+                        <gupw-lobby-live class="ng-scope ng-isolate-scope">
+                            <section ng-class="$ctrl.styles.main">
+                                <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz MtLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/2d0d108a421e9571753005ab9f943c60.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/2d0d108a421e9571753005ab9f943c60.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/f9c921069d35d630bc3129dc24f754fe.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/f9c921069d35d630bc3129dc24f754fe.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding"></p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL active"
+                                    style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz WmLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/f7139552dc9451364ad33e057d116d29.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/f7139552dc9451364ad33e057d116d29.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/9aeeb2ca26f00a80e78cc422d3cd68c0.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/cdba9e173a/images/9aeeb2ca26f00a80e78cc422d3cd68c0.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">SHBET là thương hiệu sòng bài hạng sang đến từ đất
+                                                    nước Singapore. Sòng bài không chỉ chứng minh đẳng cấp với dịch vụ hỗ
+                                                    trợ chuyên nghiệp mà còn cung cấp các trò chơi thịnh hành như: Xóc Đĩa,
+                                                    Tài Xỉu ....được nhiều người chơi lựa chọn tham gia.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Xóc Đĩa, Tài Xỉu, Baccarat, Rồng Hổ, Roulette, Bull
+                                                    Bull, Bầu Cua, Fantan , Roulette, Blackjack, Gameshow, Porker.</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz DgLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/d411c45df1088f05ca52b22cf45da486.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/d411c45df1088f05ca52b22cf45da486.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/d6239114124d6dcad3b3bb753064bad4.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/d6239114124d6dcad3b3bb753064bad4.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">DG sảnh game live trực tiếp từ nhiều sòng bài nổi
+                                                    tiếng Campuchia được giám sát nghiêm ngặt nên được nhiều người chơi lựa
+                                                    chọn tham gia, giao diện tối giản giúp người chơi đặt cược nhanh chóng.
+                                                </p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Roulette, Rồng Hổ, Bull Bull, Tài Xỉu, Xóc
+                                                    Đĩa, Fantan,3 Cây</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz SeLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/025a35e012f81e8ebb3b84431a9321a2.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/025a35e012f81e8ebb3b84431a9321a2.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/b62ac76b22f6be5e8a9373c6ea26d6f2.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/b62ac76b22f6be5e8a9373c6ea26d6f2.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">SEXY một trong những sòng bài nổi tiếng của Campuchia
+                                                    với giao diện đặt cược đơn giản, đặc biệt Dealer Sexy xinh đẹp tạo cảm
+                                                    giác chân thật như đang chơi trực tiếp tại casino.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Roulette, Rồng Hổ, Tài Xỉu</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz EvoLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/54f7112696ad3bc4278d1c13edb364e6.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/54f7112696ad3bc4278d1c13edb364e6.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/bc95b9c5f0e9ea4b42c89b4ab35a340b.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/bc95b9c5f0e9ea4b42c89b4ab35a340b.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">EVOLUTION được Ủy ban cờ bạc (GB) cấp phép và quản lý
+                                                    tại Vương quốc Anh theo số tài khoản lần lượt là 41655 và 39002.
+                                                    Evolution được cấp phép và quản lý bởi Cơ quan quản lý trò chơi Malta
+                                                    theo giấy phép MGA/B2B/187/2010. Cung cấp đa dạng trò chơi và những
+                                                    Gameshow truyền hình nổi tiếng thế giới.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Tài Xỉu, Rồng Hổ, Fantan, Roulette,
+                                                    Blackjack, Gameshow, Porker</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz AgLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/7879d624d89e92bc0e37297dd9cb7361.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/7879d624d89e92bc0e37297dd9cb7361.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/1f1f01701d6a985dbaddc6ea3fe5f57c.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/1f1f01701d6a985dbaddc6ea3fe5f57c.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">AG trực tuyến được thiết kế với tiêu chuẩn cao cấp,
+                                                    trang bị các thiết bị tiên tiến và không gian sang trọng, nhằm mang đến
+                                                    trải nghiệm chơi game trực tuyến tuyệt vời cho người chơi. Các trò chơi
+                                                    đa dạng bao gồm Baccarat, Tài Xỉu, và nhiều sự lựa chọn phong phú, cùng
+                                                    với việc quản lý giám sát liên tục 24/7, đảm bảo dịch vụ chơi game ổn
+                                                    định và mượt mà cho người chơi.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Rồng Hổ, 3 Cây, SicBo, Bull Bull, Roulette,
+                                                    Blackjack</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz SaLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/bfae46889fd4a9bc6dfec0d48bc38bd0.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/bfae46889fd4a9bc6dfec0d48bc38bd0.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/b98db05824f050f2a8cc145f7f678edc.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/b98db05824f050f2a8cc145f7f678edc.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">SA GAMING là nhà cung cấp nền tảng giải trí trực tuyến
+                                                    hàng đầu tại Châu Á. Sử dụng công nghệ hiện đại nhất, SA Gaming cung cấp
+                                                    rất đa dạng các Trò chơi Trực tuyến bao gồm Baccarat, Andar Bahar, v.v.
+                                                    Được Gaming Curacao cấp phép, mỗi sản phẩm đều được phát triển bởi các
+                                                    chuyên gia cần mẫn và đi kèm với những dịch vụ hỗ trợ đáng tin cậy. Sản
+                                                    phẩm của SA Gaming rất phổ biến với người chơi trên khắp thế giới.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Roulette, Blackjack, Tài Xỉu, Rồng Hổ,
+                                                    Andar Bahar</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz BgLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/26514c8bbd456124f7f8a6ecbc7d9fb5.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/26514c8bbd456124f7f8a6ecbc7d9fb5.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/9fb0b6315ffd98e1c97ef038bbe2011f.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/9fb0b6315ffd98e1c97ef038bbe2011f.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">BG LIVE VIDEO là thương hiệu video trực tiếp tiềm năng
+                                                    nhất ở Châu Á, cung cấp Baccarat, Baccarat thần tốc, Baccarat thông
+                                                    thường, Baccarat đầy màu sắc, Rồng hổ, Sic Bo, Roulette, Niu Niu, Fried
+                                                    Golden Flower, v.v. BG Live Video sử dụng studio trò chơi trực tiếp tiêu
+                                                    chuẩn quốc tế, với sự giám sát chặt chẽ toàn bộ địa điểm cũng như quy
+                                                    trình công bằng và cởi mở để cung cấp môi trường chơi game công bằng
+                                                    nhất. Video HD có độ trễ cực thấp, được trình chiếu ngay lập tức!</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Rồng Hổ, Roulette, Tài Xỉu, Bull Bull</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz TpLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/a4a0b28970c4f0d388939dc46ec7a3ca.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/a4a0b28970c4f0d388939dc46ec7a3ca.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/e24914f006ff24c4c41d19dba0ba1fb6.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/e24914f006ff24c4c41d19dba0ba1fb6.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">TP CASINO cung cấp 2 loại trò chơi Baccarat, Xóc Đĩa
+                                                    với hình thức vô cùng mới lạ dành cho những khách hàng thích khám phá
+                                                    những điều mới lạ.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Xóc Đĩa</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz MgDealer">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/db1cabe7dc9d1cc53ff6f6df969bef3f.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/db1cabe7dc9d1cc53ff6f6df969bef3f.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/a625321cfddc4888c11a3fcaf66fc3e0.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/a625321cfddc4888c11a3fcaf66fc3e0.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">MG LIVE mang phong cách phương tây, thiết kế giao diện
+                                                    cược tiện ích đặc biệt có tính năng đề xuất cược đây là điểm nổi bật duy
+                                                    nhất chỉ có tại sảnh này.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Roulette, SicBo</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz PmLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/938d93963f8fc8ce3201e0e08ee5e10c.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/938d93963f8fc8ce3201e0e08ee5e10c.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/40e5c339ac63630d83e7c0041273779c.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/40e5c339ac63630d83e7c0041273779c.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">DB LIVE CASINO một sự kết hợp tuyệt vời giữa Âu Mỹ và
+                                                    Châu Á cung cấp nhiều trò chơi đặc sắc mang lại cho người chơi nhiều lựa
+                                                    chọn khác biệt, không gian thiết kế thân thiện với người dùng, đặc biệt
+                                                    với sự xuất hiện của nhiều MC nổi tiếng xinh đẹp trên thế giới hứa hẹn
+                                                    nhiều điều thú vị khi tham gia sảnh này.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Rồng Hổ, Bull Bul,l Xóc Đĩa, Roulette, Ba
+                                                    Tây, Blackjack, Fantan</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz OnLive">
+                                        <div> <img
+                                                ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/85c5cd2cd860ce7294cc9676fff37856.png"
+                                                src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/85c5cd2cd860ce7294cc9676fff37856.png">
+                                        </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/ebc2e4440aa7f903b02a0fc281fe9657.png"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/ebc2e4440aa7f903b02a0fc281fe9657.png">
+                                            </div>
+                                            <div>
+                                                <p class="ng-binding">ON LIVE CASINO một sự kết hợp tuyệt vời giữa Âu Mỹ và
+                                                    Châu Á cung cấp nhiều trò chơi đặc sắc mang lại cho người chơi nhiều lựa
+                                                    chọn khác biệt, không gian thiết kế thân thiện với người dùng, đặc biệt
+                                                    với sự xuất hiện của nhiều MC nổi tiếng xinh đẹp trên thế giới hứa hẹn
+                                                    nhiều điều thú vị khi tham gia sảnh này.</p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                            <div ng-if="entrance.tag" class="ng-scope">
+                                                <h4>TRÒ CHƠI:</h4>
+                                                <h3 class="ng-binding">Baccarat, Rồng Hổ, Bull Bul,l Xóc Đĩa, Roulette, Ba
+                                                    Tây, Blackjack, Fantan</h3>
+                                            </div><!-- end ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz">
+                                        <div> <img> </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img> </div>
+                                            <div>
+                                                <p class="ng-binding"></p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                    ng-class="{ 'active': entrance.active }" class="_2yJpM9P7UcyRmnpCUu4ixL" style="">
+                                    <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                        class="_3qNRWowFJRGsfqtTp3AyQz">
+                                        <div> <img> </div>
+                                        <div>
+                                            <div ng-class="$ctrl.styles.title" class="_3VOdZ-DrOMEaAduZidGSa0"> <img> </div>
+                                            <div>
+                                                <p class="ng-binding"></p>
+                                            </div> <!-- ngIf: entrance.tag -->
+                                        </div>
+                                    </div>
+                                </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                            </section>
+                            <section ng-class="$ctrl.styles['btn-wrapper']" class="I56GALZlhxzx5ssVT_jpD">
+                                <ul class="list-unstyled _2DD0Jwig5tgNkOBPtpcM_W" ng-class="$ctrl.styles['game-list']">
+                                    <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)" ng-class="{ 'active': entrance.active }" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SEX', 'SEX001')"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/7834d03b2db978b097106f70afd69c4c.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('WM', 'WM0001')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style"
+                                        class="ng-scope active"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/e871751406c28cdf556e8bba41b4257b.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('DG', 'DG0013')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/9038b3d6230da8d3d1e0914b49d34d9a.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SEX', 'SEX001')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/2e8d2ea6ecdfa309b7657498f7e7b269.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('EG5', 'EG5001')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/8a700607babebac87e7d69548e1331a6.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('AG', 'A00070')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/fb64e45ec43d1f3dfc548619e6197aa8.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SA', 'SA001')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/1702022fdec8640dde5d7a77d5719f97.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('BG', 'BG001')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/01d23d073594c298c443454b8bb2357f.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('TP', 'TP001')"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/7e48cce61f242efb922d88c895957041.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/786811aa9b207260bcb3f5db32a5ba27.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/50dde1f398bee4548371182a4b2b163e.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/b3bb9a1eeaee215b01bda55e793d4c2b.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/7a3318de1e54a44207a27d6f73e76655.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                        ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                        ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                        style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/7a3318de1e54a44207a27d6f73e76655.png&quot;);">
+                                    </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                </ul>                            
+                            </section>
+                        </gupw-lobby-live>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+
+    <script src="/core/js/lobby/live.js"></script>
+    <%- include('../../includes/footer') %>

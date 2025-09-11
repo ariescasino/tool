@@ -1,0 +1,81 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" type="text/css" href="/web/static/stylesheets/d-Game.f1658510.css">
+
+
+    <div class="app gamelobby egame">
+        <div class="app-body">
+            <div class="egame-container PG">
+                <div class="egame-banner"><img alt="" src="https://csi.20icipp.com/img/static/desktop/banner-mask-g.png"
+                        class="banner-mask"></div>
+                <div class="egame-main">
+                    <div class="egame-tab">
+                        <div class="egame-providers">
+                            <div class="egame-gplogo <%=(location == 'BB') ? 'active': ''%>"
+                                onclick="window.location='/gamelobby/fish/BB'">
+                                <div class="pd-logo"
+                                    style="background-image: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-dark/ae_gaming.png&quot;);">
+                                </div>
+                                <span>BB</span>
+                            </div>
+                            <div class="egame-gplogo <%=(location == 'PTU') ? 'active': ''%>"
+                                onclick="window.location='/gamelobby/fish/PTU'">
+                                <div class="pd-logo"
+                                    style="background-image: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-dark/jili.png&quot;);">
+                                </div>
+                                <span>PTU</span>
+                            </div>
+                            <div class="egame-gplogo <%=(location == 'PG') ? 'active': ''%>"
+                                onclick="window.location='/gamelobby/fish/PG'">
+                                <div class="pd-logo"
+                                    style="background-image: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-dark/cq9.png&quot;);">
+                                </div>
+                                <span>PG</span>
+                            </div>
+                            <div class="egame-gplogo <%=(location == 'KA') ? 'active': ''%>"
+                                onclick="window.location='/gamelobby/fish/KA'">
+                                <div class="pd-logo"
+                                    style="background-image: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-dark/cq9.png&quot;);">
+                                </div>
+                                <span>KA</span>
+                            </div>
+                        </div>
+                        <div class="egame-tags scroll">
+                            <div class="all active">
+                                <%=dataPage.title%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="egame-content">
+                        <div class="egame-tools"></div>
+                        <div class="easein-enter-done">
+                            <ul class="egame-games">
+                                <% if(dataApi.data.games.length> 0) { %>
+                                    <% dataApi.data.games.forEach((data)=> { %>
+
+                                        <li class="game-item" data-pop=pop>
+                                            <div class="img">
+                                                <img src="<%=data.icon%>" class="cover"
+                                                    style="height: 200px;border-radius: 24px;">
+                                            </div>
+                                            <div class="title">
+                                                <%=data.gameName%>
+                                            </div>
+                                            <div class="link-cover">
+                                                <button class="nrc-button launch-game"
+                                                    onclick="launchgame(`<%=data.productCode%>`, `<%=data.tcgGameCode%>`)">Chơi
+                                                    Ngay</button>
+                                            </div>
+                                        </li>
+                                        <% }); %>
+                                            <% } %>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../includes/footer') %>

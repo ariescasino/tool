@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <link rel="shortcut icon" href="https://i.imgur.com/DEw5VbE.png" type="image/png">
+    <meta name="referrer" content="origin" />
+    <meta name="google" content="notranslate" />
+    <title>
+        <%=dataPage.title%>
+    </title>
+    <link href="/web/static/stylesheets/main.7f5f0377.css" rel="stylesheet">
+    <link href="/web/static/stylesheets/launcherGame.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-title" content="SHBET.COM" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff" />
+    <meta name="theme-color" content="#EFEFEF" />
+</head>
+
+<body>
+    <div id="root">
+        <div class="app-loading">
+            <div class="lds-spin">
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<% if (error !==null) { %>
+    <!-- Nếu xảy ra lỗi -->
+    <script>setTimeout(() => {
+            alert(`Khởi chạy trò chơi thất bại!`);
+            alert(`<%=error%>`);
+            // close tab
+            window.close();
+        }, 3000);</script>
+    <% }else { %>
+        <!-- Nếu thành công -->
+        <script>
+            const convertHTML = (string) => {
+                return string.replaceAll('&amp;', '&')
+                    .replaceAll("&gt;", ">")
+                    .replaceAll("&lt;", "<")
+                    .replaceAll("&quot;", '"')
+                    .replaceAll("&apos;", "'");
+            }
+
+            setTimeout(() => {
+                window.location = convertHTML("<%=dataApi.playUrl%>");
+            }, 3000);</script>
+        <% } %>
+
+</html>

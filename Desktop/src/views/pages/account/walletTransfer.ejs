@@ -1,0 +1,283 @@
+<%- include('../../includes/header') %>
+
+    <style>
+        .wallet-transfer-in {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            background: url(https://i.imgur.com/QCqGGoq.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .wallet-transfer-out {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            background: url(https://i.imgur.com/kZfiOZq.png) no-repeat center;
+            background-size: contain;
+        }
+    </style>
+
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _2Qr8R07mMXKa3GCsGT1Jx0">
+        <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs">
+            <!-- uiView: -->
+            <ui-view class="ng-scope">
+                <gupw-member-center-layout class="ng-scope ng-isolate-scope">
+                    <div class="gSkJpAc7IrbXlj3biLk1e">
+                        <div class="_5kpYNqHFkQun8HWfr-YDg">
+
+                            <!-- SIDEBAR MENU -->
+                            <%- include('./sidebar') %>
+                                <!-- END SIDEBAR MENU -->
+
+                                <div ng-class="$ctrl.styles.detail" class="_1OOV-q3ssZv9VpaFEYYwdD">
+                                    <!-- uiView: -->
+                                    <ui-view class="ng-scope">
+
+                                        <gupw-deposit class="ng-scope ng-isolate-scope">
+                                            <article ng-class="$ctrl.styles.article" class="_3OLEXTdkyZ3OH8vf_E4_N0">
+                                                <div class="ng-scope">
+                                                    <gupw-deposit-methods class="ng-isolate-scope">
+                                                        <div class="_1YrLHVe0eksXwask_nimCh">
+                                                            <ul class="list-method">
+                                                                <li class="ng-scope" data-method="cashin">
+                                                                    <i class="ng-scope wallet-transfer-in"></i>
+                                                                    <span class="ng-scope" style="font-weight: 600;">Nạp
+                                                                        vào trò chơi</span>
+                                                                </li>
+                                                                <li class="ng-scope" data-method="cashout">
+                                                                    <i class="ng-scope wallet-transfer-out"></i>
+                                                                    <span class="ng-scope" style="font-weight: 600;">Rút
+                                                                        ra quỹ chính</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </gupw-deposit-methods>
+
+                                                    <gupw-online-deposit class="ng-isolate-scope">
+
+                                                        <!-- Production Show -->
+                                                        <div class="_3lsn-9-R1KxDnv9_koaEkC wallet-transfer-product-element"
+                                                            style="display: none;">
+                                                            <div class="ng-scope">
+                                                                <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                                                                    <div class="panel-body">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-12">
+                                                                                <fieldset class="ng-scope">
+                                                                                    <p>
+                                                                                        <span class="ng-scope"
+                                                                                            style="font-weight: 600;color: #fff;">Chọn
+                                                                                            nhà
+                                                                                            cung cấp trò chơi：</span>
+                                                                                    </p>
+                                                                                    <ul
+                                                                                        class="list-unstyled list-inline _7xUDK8Nc4sibXVDvqFf9H wallet-transfer-product-body">
+                                                                                    </ul>
+                                                                                </fieldset>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- No Have Method Choose -->
+                                                        <div class="no-method-select">
+                                                            <div class="_3lsn-9-R1KxDnv9_koaEkC">
+                                                                <div class="panel panel-default ng-scope">
+                                                                    <div class="panel-heading">
+                                                                        <span class="ng-scope"></span>
+                                                                    </div>
+                                                                    <div class="panel-body">
+                                                                        <div class="alert alert-info">
+                                                                            <i class="fa fa-info-circle"></i>
+                                                                            <span class="ng-binding ng-scope">
+                                                                                Vui lòng chọn phương thức chuyển quỹ
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Cash In Show -->
+                                                        <div class="_3lsn-9-R1KxDnv9_koaEkC wallet-transfer-cashin-body"
+                                                            style="display: none;">
+                                                            <div class="ng-scope">
+                                                                <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                                                                    <div class="panel-body">
+                                                                        <div class="row">
+
+                                                                            <div class="col-sm-12">
+                                                                                <form
+                                                                                    class="form-horizontal _3GdzGvlVlZC4wGIHzMovTF">
+                                                                                    <fieldset class="ng-scope">
+                                                                                        <p>
+                                                                                            <span
+                                                                                                translate="OnlineDeposit_Recommand_Amount"
+                                                                                                class="ng-scope">Số tiền
+                                                                                                được đề xuất để thanh
+                                                                                                toán (VND)</span>：
+                                                                                        </p>
+                                                                                        <ul
+                                                                                            class="list-unstyled list-inline _7xUDK8Nc4sibXVDvqFf9H wallet-transfer-cashin-select-amount">
+                                                                                        </ul>
+                                                                                    </fieldset>
+
+                                                                                    <fieldset>
+                                                                                        <p>
+                                                                                            <span class="ng-scope">
+                                                                                                Nhập số tiền thủ
+                                                                                                công：</span>
+                                                                                        </p>
+                                                                                        <div>
+                                                                                            <div class="input-group">
+                                                                                                <div
+                                                                                                    class="input-group-addon ng-binding">
+                                                                                                    <span
+                                                                                                        class="input-group-text"
+                                                                                                        id="basic-addon1">Tiền nạp</span>
+                                                                                                </div>
+                                                                                                <input type="text"
+                                                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched input-amount-cashin"
+                                                                                                    placeholder="Vui lòng nhập số tiền">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </fieldset>
+
+                                                                                    <fieldset style="margin-top: 20px;">
+                                                                                        <p>
+                                                                                            <span class="ng-scope">
+                                                                                                Tỉ lệ quy đổi 1000 VND = 1 Điểm</span>
+                                                                                        </p>
+                                                                                        <div>
+                                                                                            <div class="input-group">
+                                                                                                <div
+                                                                                                    class="input-group-addon ng-binding">
+                                                                                                    <span
+                                                                                                        class="input-group-text"
+                                                                                                        id="basic-addon1">Điểm thực nhận</span>
+                                                                                                </div>
+                                                                                                <input type="text" readonly style="background-color: #575757;color: #fff;"
+                                                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched input-amount-exchange-cashin"
+                                                                                                    placeholder="Vui lòng nhập số tiền">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </fieldset>
+
+                                                                                    <div style="margin-top: 20px;">
+                                                                                        <button type="button" class="btn ng-scope _3J1NHh0Zndn3-YUPwUyPhw btn-submit-cashin">
+                                                                                            Thanh toán ngay bây giờ
+                                                                                        </button>
+                                                                                    </div>
+
+                                                                                </form>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div><!-- end ngIf: !$ctrl.viewModel.isLock -->
+                                                        </div>
+
+                                                        <!-- Cash Out Show -->
+                                                        <div class="_3lsn-9-R1KxDnv9_koaEkC wallet-transfer-cashout-body"
+                                                        style="display: none;">
+                                                        <div class="ng-scope">
+                                                            <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                                                                <div class="panel-body">
+                                                                    <div class="row">
+
+                                                                        <div class="col-sm-12">
+                                                                            <form
+                                                                                class="form-horizontal _3GdzGvlVlZC4wGIHzMovTF">
+                                                                                <fieldset class="ng-scope">
+                                                                                    <p>
+                                                                                        <span
+                                                                                            class="ng-scope">Số điểm rút
+                                                                                            được đề xuất để thanh
+                                                                                            toán (Điểm)</span>：
+                                                                                    </p>
+                                                                                    <ul
+                                                                                        class="list-unstyled list-inline _7xUDK8Nc4sibXVDvqFf9H wallet-transfer-cashout-select-amount">
+                                                                                    </ul>
+                                                                                </fieldset>
+
+                                                                                <fieldset>
+                                                                                    <p>
+                                                                                        <span class="ng-scope">
+                                                                                            Nhập số điểm thủ công：</span>
+                                                                                    </p>
+                                                                                    <div>
+                                                                                        <div class="input-group">
+                                                                                            <div
+                                                                                                class="input-group-addon ng-binding">
+                                                                                                <span
+                                                                                                    class="input-group-text"
+                                                                                                    id="basic-addon1">Điểm rút</span>
+                                                                                            </div>
+                                                                                            <input type="text"
+                                                                                                class="form-control ng-pristine ng-valid ng-empty ng-touched input-amount-cashout"
+                                                                                                placeholder="Vui lòng nhập số điểm">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </fieldset>
+
+                                                                                <fieldset style="margin-top: 20px;">
+                                                                                    <p>
+                                                                                        <span class="ng-scope">
+                                                                                            Tỉ lệ quy đổi 1 Điểm = 1000 VND</span>
+                                                                                    </p>
+                                                                                    <div>
+                                                                                        <div class="input-group">
+                                                                                            <div
+                                                                                                class="input-group-addon ng-binding">
+                                                                                                <span
+                                                                                                    class="input-group-text"
+                                                                                                    id="basic-addon1">Tiền thực nhận</span>
+                                                                                            </div>
+                                                                                            <input type="text" readonly style="background-color: #575757;color: #fff;"
+                                                                                                class="form-control ng-pristine ng-valid ng-empty ng-touched input-amount-exchange-cashout"
+                                                                                                placeholder="Vui lòng nhập số điểm">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </fieldset>
+
+                                                                                <div style="margin-top: 20px;">
+                                                                                    <button type="button" class="btn ng-scope _3J1NHh0Zndn3-YUPwUyPhw btn-submit-cashout">
+                                                                                        Thanh toán ngay bây giờ
+                                                                                    </button>
+                                                                                </div>
+
+                                                                            </form>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    </gupw-online-deposit>
+
+
+
+                                                </div>
+
+                                            </article>
+                                        </gupw-deposit></ui-view>
+                                </div>
+
+
+
+                        </div>
+                    </div>
+                </gupw-member-center-layout>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="/core/js/account/wallet-transfer.js"></script>
+    <%- include('../../includes/footer') %>

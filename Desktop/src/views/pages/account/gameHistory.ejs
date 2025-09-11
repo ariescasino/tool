@@ -1,0 +1,120 @@
+<%- include('../../includes/header') %>
+
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _2Qr8R07mMXKa3GCsGT1Jx0">
+        <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs">
+            <!-- uiView: -->
+            <ui-view class="ng-scope">
+                <gupw-member-center-layout class="ng-scope ng-isolate-scope">
+                    <div class="gSkJpAc7IrbXlj3biLk1e">
+                        <div class="_5kpYNqHFkQun8HWfr-YDg">
+
+                            <!-- SIDEBAR MENU -->
+                            <%- include('./sidebar') %>
+                                <!-- END SIDEBAR MENU -->
+
+
+                                <div class="_1OOV-q3ssZv9VpaFEYYwdD">
+                                    <ui-view class="ng-scope">
+                                        <gupw-bet-record class="ng-scope ng-isolate-scope">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading _1E-h2m4hlXgPeBtlUrqagO">
+                                                    <i id="showHideFullIcon" class="fas fa-chevron-left ng-scope"></i>
+                                                    <span class="ng-scope">Lịch sử đặt cược</span>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="panel-body">
+                                                        <table class="table table-striped _1tGoU1uNwPbJWNOXEOBnts">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-left">
+                                                                        <button class="btn btn-default btn-sm ng-scope"
+                                                                            type="button" onclick="filterTimeChanger('today')">
+                                                                            <span class="ng-scope">Hôm nay</span>
+                                                                        </button>
+                                                                        <button class="btn btn-default btn-sm ng-scope"
+                                                                            type="button" onclick="filterTimeChanger('yesterday')">
+                                                                            <span class="ng-scope">Hôm
+                                                                                qua</span>
+                                                                        </button>
+                                                                        <button class="btn btn-default btn-sm ng-scope"
+                                                                            type="button" onclick="filterTimeChanger('7dayago')">
+                                                                            <span class="ng-scope">Trong vòng 7
+                                                                                ngày</span>
+                                                                        </button>
+                                                                        <button class="btn btn-default btn-sm ng-scope"
+                                                                            type="button" onclick="filterTimeChanger('30dayago')">
+                                                                            <span class="ng-scope">Trong vòng 30
+                                                                                ngày</span>
+                                                                        </button>
+                                                                    </th>
+    
+                                                                    <th class="text-left">
+                                                                        <span class="ng-scope">Phân loại trò chơi: </span>
+                                                                        <div class="UaZsoRYx86pVfr_jmDCBu">
+                                                                            <select
+                                                                                class="pull-right form-control ng-pristine ng-valid ng-not-empty ng-touched filter-category">
+                                                                                <option value="">Tất cả</option>
+                                                                                <option value="LIVE">LIVE</option>
+                                                                                <option value="RNG">RNG</option>
+                                                                                <option value="PVP">PVP</option>
+                                                                                <option value="SPORT">SPORT</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </th>
+    
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                </div>
+
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center ng-scope" style="font-size: 14px;">Loại trò chơi
+                                                            </th>
+                                                            <th class="text-center ng-scope" style="font-size: 14px;">Tên trò chơi</th>
+                                                            <th class="text-center ng-scope" style="font-size: 14px;">Thời gian đặt
+                                                                cược</th>
+                                                            <th class="text-center ng-scope" style="font-size: 14px;">Thời gian thanh
+                                                                toán</th>
+                                                            <th class="text-center ng-scope" style="font-size: 14px;">Số tiền cược</th>
+                                                            <th class="text-center ng-scope" style="font-size: 14px;">Cược hợp lệ</th>
+                                                            <th class="text-center ng-scope" style="font-size: 14px;">Thanh toán </th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody id="transaction-content"> </tbody>
+                                                </table>
+
+
+                                                <div id="no-record-found" style="display: block; padding: 10px;">
+                                                    <div class="alert alert-warning ng-scope">
+                                                        <i class="fa fa-warning"></i>
+                                                        <span class="ng-scope">
+                                                            Không có bất kì thông tin nào
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <nav class="text-center">
+                                                    <ul class="pagination text-center ng-show" id="phantrangElement">
+                                                    </ul>
+                                                </nav>
+
+                                            </div>
+                                </div>
+                            </gupw-bet-record>
+                        </ui-view>
+                    </div>
+
+                    </div>
+                </div>
+            </gupw-member-center-layout>
+        </ui-view>
+    </div>
+</div>
+
+    <script src="/core/js/account/gameHistory.js"></script>
+    <%- include('../../includes/footer') %>

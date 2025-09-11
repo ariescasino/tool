@@ -1,0 +1,158 @@
+<%- include('../../includes/header') %>
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _2Qr8R07mMXKa3GCsGT1Jx0">
+        <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+
+
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs">
+            <!-- uiView: -->
+            <ui-view class="ng-scope" style="">
+                <gupw-member-center-layout class="ng-scope ng-isolate-scope">
+                    <div ng-class="$ctrl.styles.wrapper" class="gSkJpAc7IrbXlj3biLk1e">
+                        <div ng-class="$ctrl.styles.main" class="_5kpYNqHFkQun8HWfr-YDg">
+
+
+                            <!-- SIDEBAR MENU -->
+                            <%- include('./sidebar') %>
+                                <!-- END SIDEBAR MENU -->
+
+                                <div ng-class="$ctrl.styles.detail" class="_1OOV-q3ssZv9VpaFEYYwdD">
+
+                                    <ul class="list-unstyled list-inline zopmijz8rytdZWDDDhpNu"
+                                        ng-class="$ctrl.styles['type-tab']">
+                                        <!-- ngRepeat: tab in $ctrl.viewModel.tabs -->
+                                        <li ng-repeat="tab in $ctrl.viewModel.tabs"
+                                            ng-click="$ctrl.viewModel.selectTab(tab)"
+                                            ng-class="{ 'active': tab.isActive }" class="ng-binding ng-scope active"> <i
+                                                ng-class="tab.class" class="add"> </i> Thêm ngân hàng </li>
+                                        <!-- end ngRepeat: tab in $ctrl.viewModel.tabs -->
+                                    </ul>
+
+                                    <div ng-class="$ctrl.styles.main" class="_74QR1YC5jN2v1_8-p0t7B">
+
+                                        <section ng-if="$ctrl.viewModel.visible" class="ng-scope bankUserAddForm">
+                                            <div ng-class="$ctrl.styles.main" class="_74QR1YC5jN2v1_8-p0t7B">
+                                                <!-- ngIf: $ctrl.viewModel.bankAccountForm -->
+                                                <section ng-if="$ctrl.viewModel.bankAccountForm"
+                                                    ng-class="$ctrl.styles['add-bank']"
+                                                    class="ng-scope _1XYnvVSc_zEv3kNu71jQwo" style="">
+                                                    <ul class="list-unstyled list-inline">
+                                                        <li ng-repeat="tab in $ctrl.viewModel.bankAccountForm.tabs"
+                                                            ng-click="$ctrl.viewModel.bankAccountForm.clickTab(tab)"
+                                                            ng-class="{ 'active': tab.isActive }"
+                                                            class="ng-scope active"> <i ng-class="tab.class"
+                                                                class="bank"> </i>
+                                                            <span ng-if="tab.i18nKey"
+                                                                translate="WithdrawApplication_BankCard"
+                                                                class="ng-scope">Ngân
+                                                                hàng</span>
+                                                        </li>
+                                                    </ul>
+                                                    <form ng-submit="$ctrl.onBankAccountSubmit()" novalidate="" id="userAddBankForm"
+                                                        class="ng-pristine ng-valid">
+                                                        <section ng-if="$ctrl.viewModel.bankAccountForm.isBankTab"
+                                                            class="ng-scope">
+                                                            <div class="form-group"> <label
+                                                                    class="control-label ng-scope"
+                                                                    translate="Common_BankName">Ngân hàng</label>
+                                                                <select id="bankProvideUserAdd"
+                                                                    ng-model="$ctrl.viewModel.bankAccountForm.bankName.value"
+                                                                    class="form-control ng-pristine ng-valid ng-not-empty ng-touched"
+                                                                    ng-options="value.display for value in $ctrl.viewModel.bankAccountForm.bankOptions | orderBy:'sort' ">
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group ng-scope"
+                                                                ng-if="$ctrl.viewModel.bankAccountForm.city.visible">
+                                                                <label class="control-label ng-binding">Tên chủ tài khoản</label> 
+                                                                <input type="text" id="bankNameUserAdd"
+                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                                    ng-model="$ctrl.viewModel.bankAccountForm.city.value">
+                                                            </div>
+                                                            <div class="form-group"
+                                                                ng-class="{ 'has-error': $ctrl.viewModel.bankAccountForm.account.invalid }">
+                                                                <label class="control-label ng-scope"
+                                                                    translate="Common_BankAccount">Số tài khoản</label>
+                                                                <input id="bankNumberUserAdd"
+                                                                    ng-model="$ctrl.viewModel.bankAccountForm.account.value"
+                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                                    type="number" placeholder="ví dụ：6227002020690175526"
+                                                                    ng-change="$ctrl.viewModel.bankAccountForm.onAccountChanged()"
+                                                                    uib-tooltip-template="'ngTemplateAccountInvalid'"
+                                                                    tooltip-is-open="$ctrl.viewModel.bankAccountForm.account.invalid"
+                                                                    tooltip-trigger="'none'" style="">
+                                                            </div>
+                                                        </section>
+                                                        <div class="form-group">
+                                                            <button type="submit"
+                                                                class="btn btn-default btn-lg ng-scope"
+                                                                style="width: 100%; color: #ffffff; background-color: #4c9bb6; border: none;">Gửi
+                                                                đi</button>
+                                                        </div>
+                                                    </form>
+                                                </section>
+                                            </div>
+                                        </section>
+
+
+                                        <section class="ng-scope _1XYnvVSc_zEv3kNu71jQwo withdrawForm">
+                                            <form novalidate="" class="ng-pristine ng-valid" id="form-withdraw">
+                                                <section ng-if="$ctrl.viewModel.bankAccountForm.isBankTab"
+                                                    class="ng-scope">
+                                                    <div class="form-group">
+                                                        <label class="control-label ng-scope"
+                                                            translate="Common_BankName">Ngân hàng</label>
+                                                        <select
+                                                            class="form-control ng-pristine ng-valid ng-not-empty ng-touched"
+                                                            id="bankProvide">
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group ng-scope">
+                                                        <label class="control-label ng-binding">Chủ tài khoản</label>
+                                                        <input type="text"
+                                                            class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                            placeholder="ví dụ : Nguyen Van A" id="bankName" disabled>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label ng-scope">Số tài khoản</label>
+                                                        <input
+                                                            class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                            type="number" id="bankNumber"
+                                                            placeholder="ví dụ：6227002020690175526" disabled>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label ng-scope">Số tiền rút</label>
+                                                        <input
+                                                            class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                            type="text" id="amountWithdraw" value="0" oninput="">
+                                                    </div>
+
+                                                    <div class="form-group ng-scope">
+                                                        <label class="control-label ng-binding">Mật khẩu bảo mật</label>
+                                                        <input type="password"
+                                                            class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                            placeholder="mật khẩu bảo mật tài khoản..." id="passwd">
+                                                    </div>
+
+                                                </section>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-default btn-lg ng-scope"
+                                                        style="width: 100%; color: #ffffff; background-color: #4c9bb6; border: none;">Thanh
+                                                        toán ngay bây giờ</button>
+                                                </div>
+                                            </form>
+                                        </section>
+                                    </div>
+
+                                </div>
+                        </div>
+                    </div>
+                </gupw-member-center-layout>
+            </ui-view>
+        </div>
+    </div>
+
+
+    <script src="/core/js/account/withdraw.js"></script>
+    <%- include('../../includes/footer') %>

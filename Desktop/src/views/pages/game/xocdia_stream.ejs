@@ -1,0 +1,416 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="/cdn/sldp/sldp-v2.21.3.min.js"></script>
+  <script type="text/javascript" src="/game/xocdia-get-stream"></script>
+  <script src="/cdn/jquery/jquery.min.js"></script>
+  <script type="text/javascript">
+    let ENV_DEBUG = !true;  
+    let STREAM_URL = "wss://hwhkmgtm.vnkuvideo.com:8881/apps/eNJ-eWusv16ZJUdiccOWug/1700237710/fyzbj0112";
+  </script>
+
+  <style>
+    body,
+    html {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+  <style id="sldp_player_stylesheet">
+    @font-face {
+      font-family: 'glyphs';
+      src: url(data:font/opentype;base64,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);
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    [class^="sldp-icon-"],
+    [class*=" sldp-icon-"] {
+      /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: 'glyphs' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .sldp-icon-enlarge:before {
+      content: "\e98b";
+    }
+
+    .sldp-icon-cog:before {
+      content: "\e994";
+    }
+
+    .sldp-icon-play-o:before {
+      content: "\ea15";
+    }
+
+    .sldp-icon-pause-o:before {
+      content: "\ea16";
+    }
+
+    .sldp-icon-play:before {
+      content: "\ea1c";
+    }
+
+    .sldp-icon-pause:before {
+      content: "\ea1d";
+    }
+
+    .sldp-icon-volume-medium:before {
+      content: "\ea27";
+    }
+
+    .sldp-icon-volume-mute:before {
+      content: "\ea2a";
+    }
+
+    .sldp-icon-cc:before {
+      content: "\e900";
+    }
+
+    .sldp_player_wrp {
+      background-color: #000;
+      position: relative;
+    }
+
+    .sldp_player_wrp_video {
+      display: inline-block;
+    }
+
+    .sldp_player_wrp_audio {
+      display: flex;
+      height: 42px;
+    }
+
+    .sldp_cbar {
+      display: block;
+      padding: 5px;
+      padding-left: 5px;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .sldp_cbar_video {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      transition: opacity 0.5s linear;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .sldp_cbar_audio {
+      position: relative;
+      margin: auto 6px auto 12px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .sldp_mobile_ctrl {
+      position: absolute;
+      transition: opacity 0.5s linear;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      z-index: 5;
+      color: #008ee8;
+    }
+
+    .sldp_mobile_ctrl_icon {
+      margin: auto;
+      font-size: 5rem;
+      opacity: 0.7;
+    }
+
+    .sldp_message_wrp {
+      height: 100%;
+      color: white;
+      display: flex;
+      z-index: 1;
+    }
+
+    .sldp_message_wrp_video {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+    }
+
+    .sldp_message_wrp_audio_noctrl {
+      padding-left: 20px;
+    }
+
+    .sldp_message {
+      display: inline-block;
+      margin: auto;
+      background: #000;
+      font-family: Helvetica, Arial, sans-serif;
+      line-height: 22px;
+    }
+
+    .sldp_message_pad {
+      padding: 12px 20px;
+      align-self: center;
+    }
+
+    .ios_button {
+      text-align: center;
+      margin: 10px 0px;
+    }
+
+    .sldp_btn {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      margin-right: 10px;
+      color: #008ee8;
+      font-size: 18px;
+
+      -o-transition: .5s;
+      -ms-transition: .5s;
+      -moz-transition: .5s;
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+
+    .sldp_btn:hover {
+      color: #ff8814;
+    }
+
+    .sldp_play_pause_btn {
+      float: left;
+    }
+
+    .sldp_expand_btn {
+      float: right;
+      font-size: 16px;
+    }
+
+    .sldp_volume_btn {
+      float: left;
+    }
+
+    .sldp_config_btn {
+      float: right;
+    }
+
+    .sldp_captions_btn {
+      float: right;
+      font-size: 1.3rem;
+    }
+
+    .sldp_config_btn:hover {
+      transform: rotate(-30deg);
+    }
+
+    .sldp_cfg_dialog,
+    .sldp_capt_dialog {
+      background: black;
+      position: absolute;
+      bottom: 30px;
+      padding: 0;
+      margin: 0;
+      font-family: Arial;
+      font-size: 14px;
+      color: white;
+      z-index: 10;
+    }
+
+    .sldp_cfg_dialog {
+      right: 25px;
+      width: 100px;
+    }
+
+    .sldp_capt_dialog {
+      right: 50px;
+    }
+
+    .sldp_cfg_dialog li,
+    .sldp_capt_dialog li {
+      list-style: none;
+      text-align: center;
+      line-height: 24px;
+      cursor: pointer;
+    }
+
+    .sldp_capt_dialog li {
+      padding: 0 15px;
+    }
+
+    .sldp_cfg_dialog li:hover,
+    .sldp_capt_dialog li:hover {
+      background-color: grey;
+    }
+
+    .sldp_volume_wrp {
+      overflow: hidden;
+    }
+
+    .sldp_volume_desktop {
+      width: 150px;
+    }
+
+    .sldp_volume_mobile {
+      width: 20px;
+    }
+
+    .sldp_volume_slider_wrp {
+      float: left;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .sldp_volume_slider {
+      border-radius: 1px;
+      background: #008ee8;
+      width: 112px;
+      height: 3px;
+      margin-top: 9px;
+    }
+
+    .sldp_volume_thumb {
+      background: #008ee8;
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      position: relative;
+      left: 100px;
+      top: -4px;
+      cursor: pointer;
+    }
+
+    .sldp_volume_thumb:hover {
+      background: #ff8814;
+    }
+
+    .sldp_indicator {
+      height: 4px;
+      background-color: #008ee8;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @keyframes flasher {
+      0% {
+        opacity: 1.0;
+      }
+
+      50% {
+        opacity: 0.0;
+      }
+
+      100% {
+        opacity: 1.0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="1920" height="971"></canvas>
+  <div id="player"></div>
+
+  <script type="text/javascript">
+    function AudioSound() {
+      setTimeout(() => {
+        $('.sldp_volume_btn')[0].click();
+      }, 100);
+    }
+
+    (function () {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+
+      // resize the canvas to fill browser window dynamically
+      window.addEventListener('resize', resizeCanvas, false);
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        /**
+         * Your drawings need to be inside this function otherwise they will be reset when 
+         * you resize the browser window and the canvas goes will be cleared.
+         */
+        drawStuff();
+      }
+
+      resizeCanvas();
+
+      function drawStuff() {
+        // do your drawing stuff here
+      }
+    })();
+
+    // $('.sldp_volume_btn')[0].click()
+
+    document.addEventListener("DOMContentLoaded", initPlayer);
+
+    function initPlayer() {
+      //   setTimeout(()=>{
+      //     $('.sldp_volume_btn')[0].click();
+      // }, 5000);
+      if (!ENV_DEBUG) {
+        var mydata = JSON.parse(dataJson);
+        if (mydata.hasOwnProperty("Error")) {
+          console.log(mydata);
+          return;
+        }
+      }
+
+      !ENV_DEBUG ? STREAM_URL = mydata.Data.channelSource[Math.floor(Math.random() * (mydata.Data.channelSource.length))].url + mydata.Data.StreamTimestampKey + mydata.Data.channelTable.sfront : null;
+
+      sldpPlayer = SLDP.init({
+        container: 'player',
+        stream_url: STREAM_URL,
+        //   adaptive_bitrate: {
+        //     initial_rendition: '1080p'
+        //   },
+        buffering: 500,
+        autoplay: true,
+        height: 'parent',
+        width: 'parent',
+        muted: true
+      });
+    };
+
+    function removePlayer() {
+      sldpPlayer.destroy(function () {
+        console.log('SLDP Player is destroyed.');
+      });
+    }
+
+    var $this = this; //cache
+    setTimeout(() => {
+      try {
+        $(function () {
+          var canvas = document.getElementById('canvas');
+          var ctx = canvas.getContext('2d');
+          var video = document.querySelector('video');
+
+          (function loop() {
+            ctx.drawImage(video, 0, 0, window.innerWidth, window.innerHeight);
+            setTimeout(loop, 1000 / 60); // drawing at 60fps
+          })();
+        });
+      } catch (e) {
+        // console.log(e.message);
+      }
+    }, 500)
+  </script>
+
+</body>
+
+</html>

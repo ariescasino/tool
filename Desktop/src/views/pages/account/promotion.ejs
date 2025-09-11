@@ -1,0 +1,29 @@
+<script>
+    const getPromotionData = () => {
+        $.ajax({
+            "url": "<%=dataPage.config.MAIN_API%>/api/promotion",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }).done(function (response) {
+            if (response.status) {
+                response.data.forEach(promotion => {
+                    $(".promo-container").append(`
+                    <a href="/promotions" class="promo-item" style="min-height: 178px;">
+                        <img class=" ls-is-cached lazyloaded" data-src="${promotion.thumbnail}" alt="" src="${promotion.thumbnail}" alt="${promotion.title}">
+                        <h3 class="text-uppercase">${promotion.title}</h3>
+                    </a>
+                `);
+                });
+            } else {
+                alert(response.msg);
+            }
+        });
+    }
+
+    $(document).ready(() => {
+        getPromotionData();
+    });    
+</script>

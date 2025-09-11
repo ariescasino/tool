@@ -1,0 +1,183 @@
+<%- include('../../includes/header') %>
+<div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _2Qr8R07mMXKa3GCsGT1Jx0">
+    <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: -->
+        <ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+
+
+    <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs">
+        <!-- uiView: -->
+        <ui-view class="ng-scope" style="">
+            <gupw-member-center-layout class="ng-scope ng-isolate-scope">
+                <div ng-class="$ctrl.styles.wrapper" class="gSkJpAc7IrbXlj3biLk1e">
+                    <div ng-class="$ctrl.styles.main" class="_5kpYNqHFkQun8HWfr-YDg">
+
+
+                        <!-- SIDEBAR MENU -->
+                        <%- include('./sidebar') %>
+                            <!-- END SIDEBAR MENU -->
+
+                            <div ng-class="$ctrl.styles.detail" class="_1OOV-q3ssZv9VpaFEYYwdD">
+                    
+                        <ui-view class="ng-scope"><gupw-vip class="ng-scope ng-isolate-scope"><!-- ngIf: $ctrl.visible -->
+                            <section ng-if="$ctrl.visible" ng-class="$ctrl.styles.wrapper" class="ng-scope pR-rca7Y_Q5lLuRNi-TVG" style="">
+                                <div ng-class="$ctrl.styles.card" class="_3DC7cCjwpbapFv-Iysv7zj">
+                                    <!-- ngIf: $ctrl.info.levelCardImage.image --><img ng-if="$ctrl.info.levelCardImage.image"
+                                        ng-src="https://qk3x72.katawee.net/system-assets/PortalManagement/Image/Card/Card_6c11f128c856471b9ef1d5f6aeb56509.png"
+                                        width="450px" class="ng-scope"
+                                        src="https://qk3x72.katawee.net/system-assets/PortalManagement/Image/Card/Card_6c11f128c856471b9ef1d5f6aeb56509.png"><!-- end ngIf: $ctrl.info.levelCardImage.image -->
+                                    <!-- ngIf: !$ctrl.info.levelCardImage.image -->
+                                    <div ng-class="$ctrl.styles.txt" class="oUd9WHAffg72PpVodp7Vr">
+                                        <h4 translate="Vip_CurrentLevel" class="ng-scope">Cấp độ hiện tại</h4>
+                                        <h1> <b>VIP<span ng-bind="$ctrl.info.grade" class="ng-binding">12</span></b> </h1>
+                                        <h4 ng-class="$ctrl.styles.name" ng-bind="$ctrl.info.name" class="ng-binding Z0f2G-DSExs_irIhnfOe_">
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div ng-class="$ctrl.styles.upgrade" class="_3NlxIj2mspz67Uh0B6yOTs">
+                                    <div ng-class="$ctrl.styles.title" class="_2_kdvRde6YzUQvkQI91RF9"> <span> VIP <span
+                                                ng-bind="$ctrl.nextLevel" class="ng-binding">13</span> <span
+                                                translate="VIP_UpgradeConditionPoint" class="ng-scope">Điều kiện nâng cấp</span> </span>
+                                        <button ng-click="$ctrl.openConditionDialog()" translate="VIP_ConditionDialog"
+                                            class="ng-scope">Ngưỡng nâng cấp</button> </div>
+                                    <div ng-class="[{ 'noDeposit': !$ctrl.hasTotalDposit }, $ctrl.styles.point]"
+                                        class="_2-U5ipW_l1DtDNt0vib0jP"> <span ng-class="$ctrl.styles.conditionTitle" translate="VIP_Points"
+                                            class="ng-scope _7qsdPo1htPgWsqzFDY-ej">Điểm</span>
+                                        <div ng-class="$ctrl.styles.num" class="_2htSDFA8dEMtmKYDNruaPL"> <span> <span
+                                                    ng-class="$ctrl.styles.current" ng-bind="$ctrl.point.current | currencyDefault:'':0"
+                                                    class="ng-binding _2C_ekPPMgBRdLGeKx82XOn">8,054,391</span> <span>/</span> <span
+                                                    ng-bind="$ctrl.info.upgradeConditionPoint | currencyDefault:'':0"
+                                                    class="ng-binding">8,500,000</span> </span> <span> <span translate="VIP_Missing"
+                                                    class="ng-scope">Thiếu</span> <span>:</span> <span
+                                                    ng-bind="$ctrl.point.missing | currencyDefault:'':0" class="ng-binding">445,609</span>
+                                            </span> </div>
+                                        <div ng-class="$ctrl.styles['progress-wrapper']" class="_69cc9jdP7xL5OYFmHc0rk">
+                                            <div class="progress">
+                                                <div class="progress-bar" role="progressbar" ng-style="{ 'width': $ctrl.point.value + '%' }"
+                                                    aria-valuenow="77.71955" aria-valuemin="0" aria-valuemax="100" style="width: 77.7195%;">
+                                                </div>
+                                            </div>
+                                            <div ng-class="$ctrl.styles.upgradeConditionPoint" ng-style="
+                                $ctrl.info.upgradeConditionPoint == $ctrl.point.mid
+                                  ? $ctrl.point.midLineStyle
+                                  : { 'right': '0', 'border-radius': '0 50% 50% 0' }
+                              " class="_1yeTSXIGfqgHZO_Edqfl7v" style="right: 0px; border-radius: 0px 50% 50% 0px;"></div>
+                                            <div ng-class="$ctrl.styles.upgradeConditionPointValue"
+                                                ng-style="$ctrl.info.upgradeConditionPoint == $ctrl.point.mid ? $ctrl.point.midLineStyle : { 'right': '0' }"
+                                                class="_3yZwWZwNtsuTSmsLvFC9oC" style="right: 0px;"> <span translate="VIP_ConditionDialog"
+                                                    class="ng-scope">Ngưỡng nâng cấp</span> <span>:</span> <span
+                                                    ng-bind="$ctrl.info.upgradeConditionPoint | currencyDefault:'':0"
+                                                    class="ng-binding">8,500,000</span> </div> <!-- ngIf: $ctrl.hasDowngradeMonths -->
+                                        </div>
+                                    </div> <!-- ngIf: $ctrl.hasTotalDposit -->
+                                    <div ng-if="$ctrl.hasTotalDposit" ng-class="$ctrl.styles.deposits"
+                                        class="ng-scope _1MQ_aaYtM0vtyoVbuloxM_"> <span ng-class="$ctrl.styles.conditionTitle"
+                                            translate="VIP_TotalDeposit" class="ng-scope _7qsdPo1htPgWsqzFDY-ej">TÍch luỹ tiền gửi</span>
+                                        <div ng-class="$ctrl.styles.num" class="_2htSDFA8dEMtmKYDNruaPL"> <span> <span
+                                                    ng-class="$ctrl.styles.current"
+                                                    ng-bind="$ctrl.info.currentTotalDeposit | currencyDefault"
+                                                    class="ng-binding _2C_ekPPMgBRdLGeKx82XOn">542,982</span> <span>/</span> <span
+                                                    ng-bind="$ctrl.info.upgradeConditionTotalDeposit | currencyDefault"
+                                                    class="ng-binding">120,000</span> </span> <span> <span translate="VIP_Missing"
+                                                    class="ng-scope">Thiếu</span> <span>:</span> <span
+                                                    ng-bind="$ctrl.totalDeposit.missing | currencyDefault" class="ng-binding">0</span>
+                                            </span> </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar"
+                                                ng-style="{ 'width': $ctrl.totalDeposit.value + '%' }" aria-valuenow="452.48499999999996"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 452.485%;"></div>
+                                        </div>
+                                    </div><!-- end ngIf: $ctrl.hasTotalDposit -->
+                                </div>
+                                <ul>
+                                    <li ui-sref="vip-details" href="/VipDetails"> <img
+                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/04f64d39aeb7b2cab23f292f52d20665.png">
+                                        <span translate="Vip_Details" class="ng-scope">Chi tiết VIP</span> <i
+                                            class="fas fa-chevron-right"></i> </li>
+                                    <li ui-sref="vip-reward-list" href="/VipRewardList"> <img
+                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/25c754a1c3e3dde14db8977cd4aaf4ab.png">
+                                        <span translate="Vip_BonusClaim" class="ng-scope">Yêu cầu nhận thưởng</span> <i
+                                            class="fas fa-chevron-right"></i> <!-- ngIf: $ctrl.unclaimedBonus.count --> </li>
+                                    <li ui-sref="vip-grade-record" href="/VipGradeRecord"> <img
+                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/1b15a35c42/images/1b39334ac7aed76d88afdcf4f1b9cd99.png">
+                                        <span translate="Vip_UpgradeRecords" class="ng-scope">Lịch sử nâng cấp</span> <i
+                                            class="fas fa-chevron-right"></i> </li>
+                                </ul>
+                            </section><!-- end ngIf: $ctrl.visible -->
+                        </gupw-vip>
+                    </ui-view>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(() => {
+            getVipUser();
+        });
+
+        const getVipUser = () => {
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/vip",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    const VipData = response.data;
+                    let armorialImg = null;
+                    switch (VipData.current_vip) {
+                        case 0:
+                            armorialImg = "/web/nato888/web/Images/badge_21.png";
+                            break;
+                        case 1:
+                            armorialImg = "/web/nato888/storage/vip-icon/vip1.png";
+                            break;
+                        case 2:
+                            armorialImg = "/web/nato888/storage/vip-icon/vip2.png";
+                            break;
+                        case 3:
+                            armorialImg = "/web/nato888/storage/vip-icon/vip3.png";
+                            break;
+                        case 4:
+                            armorialImg = "/web/nato888/storage/vip-icon/vip4.png";
+                            break;
+                        case 5:
+                            armorialImg = "/web/nato888/storage/vip-icon/vip5.png";
+                            break;
+                        case 6:
+                            armorialImg = "/web/nato888/storage/vip-icon/vip6.png";
+                            break;
+                    }
+                    $("#armorial").attr("data-src", armorialImg).attr("src", armorialImg);
+
+                    let totalDeposit = (VipData.total_deposit >= VipData.next_vip_deposit_require) ? VipData.next_vip_deposit_require : VipData.total_deposit;
+
+                    $(".level").html(`VIP ${VipData.current_vip}`);
+                    $("#next_vip_level").html(`Điều kiện thăng cấp lên VIP ${VipData.next_vip_level}`);
+                    $("#total_deposit").html(numberWithCommas(totalDeposit));
+                    $("#deposit_require").html(numberWithCommas(VipData.next_vip_deposit_require));
+                    $(".codition-point").html(`Còn thiếu ${numberWithCommas(VipData.next_vip_deposit_require - VipData.total_deposit)}`)
+                    $(".bottom-box").html(`<p>Thưởng tháng = ${numberWithCommas(VipData.coin_monthly)}</p> <p>Nạp tiền >= ${numberWithCommas(VipData.deposit_require)}</p>`);
+                    $(".prog-2").css("width", (totalDeposit / VipData.next_vip_deposit_require) * 100 + "%");
+
+                    // nhận thưởng
+                    if (totalDeposit >= VipData.next_vip_deposit_require) {
+                        $(".msg-btn").attr("style", "color: rgb(24 190 57);border: 1px solid rgb(24 190 57);cursor: pointer;");
+                        $(".msg-btn").html(`Nhận thưởng & Thăng cấp`);
+                        $(".msg-btn").attr("onClick", `getReward(${VipData.current_vip + 1})`);
+                    }
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+    </script>
+
+    <%- include('../../includes/footer') %>

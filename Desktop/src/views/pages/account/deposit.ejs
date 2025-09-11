@@ -1,0 +1,750 @@
+<%- include('../../includes/header') %>
+<style>
+  .bank-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    background-color: #f9a21f;
+    -webkit-mask: url(/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/9f9c8df554bf188532e64d8387de062b.svg) no-repeat center;
+    mask: url(/cdn/system-requirement/Web.PortalNew/UA531-01/c8e37fbb36/images/9f9c8df554bf188532e64d8387de062b.svg) no-repeat center;
+  }
+
+  .toto-top-up__process {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #f8ad34;
+    padding: 8px 32px;
+    background: #efefef;
+  }
+
+  .toto-top-up__process-inner {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .toto-top-up__process-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .toto-top-up__process-item-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #f8ad34;
+    background: #efefef;
+    font-weight: bold;
+  }
+
+  .toto-top-up__process-item.active .toto-top-up__process-item-step {
+    background: #f8ad34;
+    color: #fff;
+  }
+
+  .toto-top-up__process-item-label {
+    text-align: center;
+  }
+
+  .toto-top-up__process-item::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: calc(100% + 32px);
+    height: 4px;
+    background: rgba(0, 0, 0, .1);
+    display: inline-block;
+    margin: 0 .6em;
+  }
+
+  /* Loại bỏ ::after cho phần tử thứ 3 */
+  .toto-top-up__process-item:nth-child(3)::after {
+    display: none;
+  }
+
+  .panel-body {
+    background: #fff;
+  }
+
+  ._3GdzGvlVlZC4wGIHzMovTF {
+    color: black;
+    padding: 0;
+  }
+
+  ._3CMDGIALq8HDo4XBIBIB0c .panel-body {
+    padding: 15px 30px;
+  }
+
+  .toto-top-up__stage {
+    margin: 0rem;
+    margin-top: 1.5rem
+  }
+
+  .toto-top-up__stage-content {
+    padding: .5rem 0rem;
+  }
+
+  .toto-top-up__payment-method-group {
+    margin: .5rem 0rem 1rem 0rem;
+  }
+
+  .toto-top-up__stage-subtitle {
+    padding: 0rem;
+    text-transform: uppercase;
+    color: #271800 !important;
+  }
+
+  .toto-top-up ul {
+    padding: 0;
+  }
+
+  .toto-top-up__payment-method-item {
+    display: inline-flex;
+    border: 1px solid #cdcdcd;
+    margin: .5rem;
+    margin-left: 0;
+    margin-right: 1rem;
+    width: 18rem;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    cursor: pointer;
+  }
+
+  .toto-top-up__payment-method-item--selected,
+  .toto-top-up__payment-method-item--selected:hover {
+    border: 2px solid #f8ad34;
+  }
+
+  .toto-top-up__payment-method-item button {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+  }
+
+  .lazy-load-image-background.blur.lazy-load-image-loaded {
+    filter: blur(0);
+    transition: filter .3s;
+  }
+
+  .lazy-load-image-background.blur.lazy-load-image-loaded>img {
+    opacity: 1;
+    transition: opacity .3s;
+  }
+
+  .toto-top-up__payment-method-item img {
+    width: 15rem;
+    height: 8rem;
+  }
+
+  .toto-top-up__payment-method-item::before {
+    content: "";
+    position: absolute;
+    top: .25rem;
+    left: .25rem;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #cdcdcd;
+    border-radius: 1rem;
+    display: none;
+  }
+
+  .toto-top-up__payment-method-item--selected::before,
+  .toto-top-up__payment-method-item--selected:hover::before {
+    display: inline-block;
+    border-color: #f8ad34;
+  }
+
+  .toto-top-up__payment-method-item::after {
+    content: "";
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    width: .5rem;
+    height: .5rem;
+    border-radius: .5rem;
+    background: #cdcdcd;
+    display: none;
+  }
+
+  .toto-top-up__payment-method-item--selected::after,
+  .toto-top-up__payment-method-item--selected:hover::after {
+    display: inline-block;
+    background-color: #f8ad34;
+  }
+
+  .toto-top-up__payment-method-item:hover {
+    border-color: #f8ad34;
+    outline: 4px solid #fbb71c;
+  }
+
+  .toto-top-up__payment-methods {
+    padding-left: 4px;
+  }
+
+  .btn.btn-primary {
+    background: linear-gradient(to top, #eabc52, #f8ad34) !important;
+    outline: none;
+    margin-top: 2rem;
+    border: none;
+    padding: 10px 20px;
+  }
+
+  .secondStep {
+    background: #efefef;
+    border: 2px solid #c6c1c1;
+    border-radius: 5px;
+    margin-top: 2rem;
+    padding: 20px 0;
+  }
+
+  .modal_secondStep {
+    margin: auto;
+    width: 50%;
+    background: white;
+    box-shadow: 0px 2px 5px 0px;
+  }
+
+  .modal_secondStep .title {
+    background: #f8ad34;
+    color: white;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .modal_secondStep .logo {
+    background: white;
+    text-align: center;
+  }
+
+  .modal_secondStep .logo img {
+    max-width: 100%;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .content div {
+    display: flex;
+    border-bottom: 1px solid #c6c4c4;
+    justify-content: space-between;
+    padding: 6px 10px;
+  }
+
+  .content p {
+    margin: 0;
+  }
+
+  .content__tentk {
+    border-top: 1px solid #c6c4c4;
+  }
+
+  .qrCode {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .qrCode img {
+    max-width: 225px;
+    max-height: 225px;
+  }
+
+  .confirmDeposit {
+    text-align: center;
+    padding: 0.5rem 0 2rem 0;
+  }
+
+  .confirmDeposit button {
+    padding: 8px 39px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    color: white;
+    background: #f8ad34;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* MODAL CONFIRM DEPOSIT */
+  .confirmDeposit-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .confirmDeposit-modal {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+  }
+
+  .confirmDeposit-modal__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9a21f;
+    padding: 10px 16px;
+    color: white;
+  }
+  .confirmDeposit-modal__title h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .confirmDeposit-modal__title button {
+    background: transparent;
+    border: none;
+  }
+
+  .confirmDeposit-modal__content {
+    padding: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #989797;
+  }
+
+  .confirmDeposit-modal__active {
+    display: flex;
+    justify-content: space-between;
+  }
+  .confirmDeposit-modal__active button {
+    width: 50%;
+    padding: 5px 0;
+    border: none;
+  }
+  .confirmDeposit-modal__active button:nth-child(1) {
+    background: #4b0b0b;
+    color: whitesmoke;
+  }
+  .confirmDeposit-modal__active button:nth-child(2) {
+    background: #f9a21f;
+    color: white;
+    font-weight: 600;
+  }
+  .timer{
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+</style>
+
+<div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _2Qr8R07mMXKa3GCsGT1Jx0">
+  <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+  <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs">
+    <!-- uiView: -->
+    <ui-view class="ng-scope">
+      <gupw-member-center-layout class="ng-scope ng-isolate-scope">
+        <div class="gSkJpAc7IrbXlj3biLk1e">
+          <div class="_5kpYNqHFkQun8HWfr-YDg">
+
+            <!-- SIDEBAR MENU -->
+            <%- include('./sidebar') %>
+            <!-- END SIDEBAR MENU -->
+
+            <div ng-class="$ctrl.styles.detail" class="_1OOV-q3ssZv9VpaFEYYwdD">
+              <ui-view class="ng-scope">
+                <gupw-deposit class="ng-scope ng-isolate-scope">
+                  <article ng-class="$ctrl.styles.article" class="_3OLEXTdkyZ3OH8vf_E4_N0">
+                    <div class="ng-scope">
+                      <gupw-deposit-methods class="ng-isolate-scope">
+                        <div class="_1YrLHVe0eksXwask_nimCh">
+                          <ul class="deposit-method-list">
+                            <li class="ng-scope" data-method="bank-transfer-manual">
+                                                                    <i class="ng-scope bank-icon"></i>
+                                                                    <span class="ng-scope">
+                                                                        Nạp tiền thủ công</span>
+                                                                </li>
+                                                                <li class="ng-scope" data-method="bank-transfer-auto">
+                                                                    <i class="ng-scope qrcode"></i>
+                                                                    <span class="ng-scope">Quét mã ngân
+                                                                        hàng</span>
+                                                                </li>
+                                                                <li class="ng-scope" data-method="momo-transfer-auto">
+                                                                    <i class="ng-scope momo"></i>
+                                                                    <span class="ng-scope">
+                                                                        Momo Pay</span>
+                                                                </li>                                                               
+                                                                <li class="ng-scope" data-method="usdt-transfer-auto">
+                                                                    <i class="ng-scope usdt"></i>
+                                                                    <span class="ng-scope">USDT</span>
+                                                                </li>
+                          </ul>
+                        </div>
+                      </gupw-deposit-methods>
+
+
+                      <!-- No Method Select -->
+                      <gupw-online-deposit class="ng-isolate-scope no-method-select">
+                        <div class="_3lsn-9-R1KxDnv9_koaEkC">
+                          <div class="panel panel-default ng-scope">
+                            <div class="panel-heading">
+                              <span class="ng-scope"></span>
+                            </div>
+                            <div class="panel-body">
+                              <div class="alert alert-info">
+                                <i class="fa fa-info-circle"></i>
+                                <span class="ng-binding ng-scope">
+                                  vui lòng
+                                  chọn phương thức nạp
+                                  tiền
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </gupw-online-deposit>
+
+
+                      <!-- Bank Transfer Manual -->
+                      <gupw-online-deposit class="ng-isolate-scope bank-transfer-manual-form" style="display: none;">
+                        <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+
+                          <div class="panel-body">
+                            <!-- thanh step by step -->
+                            <div class="toto-top-up__process">
+                              <div class="toto-top-up__process-inner">
+                                <div class="toto-top-up__process-item active">
+                                  <div class="toto-top-up__process-item-step ">1</div>
+                                  <div class="toto-top-up__process-item-label">Chọn ngân hàng chuyển khoản</div>
+                                </div>
+                                <div class="toto-top-up__process-item">
+                                  <div class="toto-top-up__process-item-step">2</div>
+                                  <div class="toto-top-up__process-item-label">Nhập đúng nội dung chuyển khoản</div>
+                                </div>
+                                <div class="toto-top-up__process-item">
+                                  <div class="toto-top-up__process-item-step">3</div>
+                                  <div class="toto-top-up__process-item-label">Hệ thống tự động lên điểm</div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- FIRST STEP -->
+                            <div class="row firstStep">
+                              <div class="col-sm-12">
+                                <form class="form-horizontal ng-valid _3GdzGvlVlZC4wGIHzMovTF ng-dirty ng-valid-parse">
+                                  <!-- Thong tin bank -->
+                                  <fieldset class="ng-scope toto-top-up__stage">
+                                    <div class="toto-top-up__stage-content">
+                                      <div class="toto-top-up__payment-method-group">
+                                        <h4 class="toto-top-up__stage-subtitle">NGÂN HÀNG</h4>
+                                        <ul class="toto-top-up__payment-methods">
+                                          <li class="toto-top-up__payment-method-item">
+                                            <button type="button">
+                                              <span class="lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                <img class="toto-top-up__payment-method-item-image" src="/images/banklist/logo-bidv-20220426071253.jpg" alt="BIVD">
+                                              </span>
+                                            </button>
+                                          </li>
+                                          <!-- <li class="toto-top-up__payment-method-item">
+                                            <button type="button">
+                                              <span class="lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                <img class="toto-top-up__payment-method-item-image" src="/images/banklist/techcombank.png" alt="TECHCOMBANK">
+                                              </span>
+                                            </button>
+                                          </li> -->
+                                          <!-- <li class="toto-top-up__payment-method-item">
+                                            <button type="button">
+                                              <span class="lazy-load-image-background blur lazy-load-image-loaded" style="color: transparent; display: inline-block;">
+                                                <img class="toto-top-up__payment-method-item-image" src="/images/banklist/vietcombank.jpg" alt="VIETCOMBANK">
+                                              </span>
+                                            </button>
+                                          </li> -->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+                                  <fieldset class="ng-scope">
+                                    <h4>
+                                      <span translate="OnlineDeposit_Recommand_Amount" class="ng-scope">SỐ TIỀN ĐỀ XUẤT (VND)</span>：
+                                    </h4>
+                                    <ul class="list-unstyled list-inline _7xUDK8Nc4sibXVDvqFf9H cashin-select-amount">
+                                    </ul>
+                                  </fieldset>
+
+                                  <fieldset>
+                                    <h4><span class="ng-scope">
+                                        NHẬP SỐ TIỀN NẠP:</span>
+                                    </h4>
+                                    <div class="input-group">
+                                      <div class="input-group-addon ng-binding">
+                                        <span class="input-group-text" id="basic-addon1">Tiền
+                                          nạp (VND)</span>
+                                      </div>
+                                      <input type="text" id="amount" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Vui lòng nhập số tiền">
+                                    </div>
+                                  </fieldset>
+                                  <button type="button" class="toto-top-up__open-deposit-modal-button btn btn-primary">XỬ LÝ THANH TOÁN</button>
+                                </form>
+                              </div>
+                            </div>
+                            <!-- SECOND STEP -->
+                            <div class="secondStep" style="display: none;">
+                              <div class="modal_secondStep">
+                                <div class="title">NẠP TỰ ĐỘNG</div>
+                                <div class="logo">
+                                  <img src="/images/banklist/vietcombank.jpg" alt="VIETCOMBANK_LOGO">
+                                </div>
+                                <div class="timer"></div>
+                                <div class="content">
+                                  <div class="content__tentk">
+                                    <p>Tên tài khoản: </p>
+                                    <p class="content__tentk__value"></p>
+                                  </div>
+                                  <div class="content__sotk">
+                                    <p>Số tài khoản: </p>
+                                    <p class="content__sotk__value"></p>
+                                  </div>
+                                  <div class="content__sotien">
+                                    <p>Số tiền: </p>
+                                    <p class="content__sotien__value"></p>
+                                  </div>
+                                  <div class="content__ndck">
+                                    <p>Nội dung chuyển khoản: </p>
+                                    <p class="content__ndck__value"></p>
+                                  </div>
+                                </div>
+                                <!-- <div class="qrCode">
+                                  <img src="/images/qr-test.png" alt="">
+                                </div> -->
+                                <div class="confirmDeposit ">
+                                  <button>Hoàn Thành</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </gupw-online-deposit>
+                      <!-- Confirm Modal -->
+                      <div id="modal-container"></div>
+
+                      <!-- Bank Transfer Auto -->
+                      <gupw-online-deposit class="ng-isolate-scope bank-transfer-auto-form" style="display: none;">
+                        <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <form class="form-horizontal ng-valid _3GdzGvlVlZC4wGIHzMovTF ng-dirty ng-valid-parse">
+                                  <fieldset class="ng-scope">
+                                    <p>
+                                      <span class="ng-scope">
+                                        Chọn ngân hàng mà bạn muốn
+                                        chuyển khoản:
+                                      </span>
+                                    </p>
+                                    <select class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched auto-bank-provide-select">
+                                      <option value="" class="ng-scope">
+                                        vui lòng chọn ngân hàng
+                                      </option>
+                                    </select>
+                                  </fieldset>
+
+                                  <fieldset class="ng-scope info-bank" style="padding: 15px;display: none;">
+                                    <section class="ng-scope">
+
+
+
+                                      <div class="form-group ng-scope">
+                                        <label class="control-label ng-binding">
+                                          Chủ
+                                          tài khoản</label>
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched" readonly id="bankName">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label class="control-label ng-scope">
+                                          Số tài khoản
+                                        </label>
+                                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text" id="bankNumber" readonly>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label class="control-label ng-scope">
+                                          Nội dung chuyển khoản
+                                        </label>
+                                        <input class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text" id="content" readonly>
+                                      </div>
+                                    </section>
+                                  </fieldset>
+
+                                  <fieldset style="padding: 15px;">
+                                    <div class="form-group">
+                                      <p><span class="ng-scope">
+                                          Số tiền yêu cầu nạp:</span>
+                                      </p>
+                                      <div class="input-group">
+                                        <div class="input-group-addon ng-binding">
+                                          <span class="input-group-text" id="basic-addon1">Tiền
+                                            nạp (VND)</span>
+                                        </div>
+                                        <input type="text" id="auto-amount" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Vui lòng nhập số tiền">
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+
+
+                                  <div>
+                                    <button type="button" class="btn ng-scope _3J1NHh0Zndn3-YUPwUyPhw auto-btn-submit-deposit">
+                                      Tạo Yêu Cầu Nạp Tiền
+                                    </button>
+                                  </div>
+
+                                  <div class="auto-bank-info-container" style="display: none;">
+                                    <div style="margin-top:20px;"></div>
+
+                                    <fieldset style="padding: 15px;">
+                                      <div class="form-group">
+                                        <p><span class="ng-scope">
+                                            Quét mã QrCode trong App
+                                            Banking:</span></p>
+                                        <div class="qrcode">
+                                          <img id="auto-info-qrcode" style="width: 30%; height: auto;" src="" class="img img-thumbnail" />
+                                        </div>
+                                      </div>
+                                    </fieldset>
+
+                                    <fieldset style="padding: 15px;">
+                                      <div class="form-group">
+                                        <p><span class="ng-scope">
+                                            Chủ tài khoản nhận
+                                            tiền:</span></p>
+                                        <div class="input-group">
+                                          <div class="input-group-addon ng-binding">
+                                            <span class="input-group-text" id="basic-addon1">Chủ
+                                              tài khoản:</span>
+                                          </div>
+                                          <input type="text" disabled id="auto-info-bankName" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Vui lòng nhập tên chủ tài khoản">
+                                        </div>
+                                      </div>
+                                    </fieldset>
+
+                                    <fieldset style="padding: 15px;">
+                                      <div class="form-group">
+                                        <p><span class="ng-scope">
+                                            Số tài khoản nhận
+                                            tiền:</span></p>
+                                        <div class="input-group">
+                                          <div class="input-group-addon ng-binding">
+                                            <span class="input-group-text" id="basic-addon1">Số
+                                              tài
+                                              khoản:</span>
+                                          </div>
+                                          <input type="number" disabled id="auto-info-bankAccount" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Vui lòng nhập số tài khoản">
+                                        </div>
+                                      </div>
+                                    </fieldset>
+
+                                    <fieldset style="padding: 15px;">
+                                      <div class="form-group">
+                                        <p><span class="ng-scope">
+                                            Nội dung gửi tiền
+                                            (bắt buộc):</span></p>
+                                        <div class="input-group">
+                                          <div class="input-group-addon ng-binding">
+                                            <span class="input-group-text" id="basic-addon1">Nội
+                                              dung:</span>
+                                          </div>
+                                          <input type="text" disabled id="auto-info-content" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Nội dung chyển khoản">
+                                        </div>
+                                      </div>
+                                    </fieldset>
+
+                                    <fieldset style="margin-top: 30px;margin-bottom: 30px;" class="text-left">
+                                      <p>
+                                        <span class="ng-scope">Thực hiện
+                                          chuyển khoản theo đúng các
+                                          thông tin, nếu sai sẽ không
+                                          được hoàn tiền
+                                        </span>
+                                      </p>
+                                    </fieldset>
+                                  </div>
+
+
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </gupw-online-deposit>
+
+                      <!-- Momo Transfer Auto -->
+                      <gupw-online-deposit class="ng-isolate-scope momo-transfer-auto-form" style="display: none;">
+                        <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                          <div class="panel-body">
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <form class="form-horizontal ng-valid _3GdzGvlVlZC4wGIHzMovTF ng-dirty ng-valid-parse">
+
+                                  <fieldset style="padding: 15px;">
+                                    <div class="form-group">
+                                      <p><span class="ng-scope">
+                                          Số tiền yêu cầu nạp:</span>
+                                      </p>
+                                      <div class="input-group">
+                                        <div class="input-group-addon ng-binding">
+                                          <span class="input-group-text" id="basic-addon1">Tiền
+                                            nạp (VND)</span>
+                                        </div>
+                                        <input type="text" id="momo-amount" class="form-control ng-pristine ng-valid ng-empty ng-touched" placeholder="Vui lòng nhập số tiền">
+                                      </div>
+                                    </div>
+                                  </fieldset>
+
+                                  <div>
+                                    <button type="button" class="btn ng-scope _3J1NHh0Zndn3-YUPwUyPhw momo-btn-submit-deposit">
+                                      Tạo Yêu Cầu Nạp Tiền
+                                    </button>
+                                  </div>
+
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </gupw-online-deposit>
+                    </div>
+                  </article>
+                </gupw-deposit>
+              </ui-view>
+            </div>
+
+
+          </div>
+        </div>
+      </gupw-member-center-layout>
+    </ui-view>
+  </div>
+</div>
+
+<script src="/core/js/account/deposit.js"></script>
+<data-script id="scriptMethod"></data-script>
+<%- include('../../includes/footer') %>

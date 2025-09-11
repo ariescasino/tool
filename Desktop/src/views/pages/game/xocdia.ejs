@@ -1,0 +1,249 @@
+<%- include('../../includes/header') %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Tinos&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Saira+Semi+Condensed:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.rawgit.com/turuslan/HackTimer/master/HackTimer.js" charset="utf-8"></script>
+    <link href="/core/plugins/toast/style.css" rel="stylesheet">
+    <script src="/core/plugins/toast/toast.js"></script>
+    <link href="/core/css/game/xocdia/style.css" rel="stylesheet">
+
+    <div class="BDw45cKhOY5X-HJyc5_2C _8XOzSmOOEZguY1YmMefoR">
+        <div class="_1h0fCbtWimc44r9dNSenvs _1BIEU2VALeTfh2iEbzGBn-">
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <ui-view class="ng-scope">
+                        <gupw-lobby-live class="ng-scope ng-isolate-scope">
+                            <section class="_32BGGm53XyuQqbr3GBlW0b">
+                                <div id="game-container">
+
+                                    <div class="row-container">
+                                        <div class="full-screen-icon"></div>
+                                        <div class="sound-audio-icon"></div>
+                                        <div class="dot-board-icon"></div>
+
+                                        <div class="history-icon"></div>
+                                        <div class="tutorial-icon"></div>
+                                        <iframe src="" class="iframe-row" id="game-iframe"></iframe>
+
+                                        <div class="node-dot-board-container" style="display: none;">
+                                            <div class="close-dot-board-icon"></div>
+                                            <div class="node-dot-board-txt-container">
+                                                <span class="dot-board-txt-total-even"></span>
+                                                <span class="dot-board-txt-total-odd"></span>
+                                                <span class="dot-board-txt-total-red4"></span>
+                                                <span class="dot-board-txt-total-red3"></span>
+                                                <span class="dot-board-txt-total-white4"></span>
+                                                <span class="dot-board-txt-total-white3"></span>
+                                            </div>
+                                            <div class="node-dot-line-1"></div>
+                                            <div class="node-dot-line-2"></div>
+                                        </div>
+
+                                        <div class="card-result-container" style="display: none;">
+                                            <div class="node-card-player">
+                                                <img class="dice-result" id="dice-result1" style="display: none;"
+                                                    src="/core/images/xocdia/dot/dot_white.png" />
+                                                <img class="dice-result" id="dice-result2" style="display: none;"
+                                                    src="/core/images/xocdia/dot/dot_white.png" />
+                                                <img class="dice-result" id="dice-result3" style="display: none;"
+                                                    src="/core/images/xocdia/dot/dot_white.png" />
+                                                <img class="dice-result" id="dice-result4" style="display: none;"
+                                                    src="/core/images/xocdia/dot/dot_white.png" />
+                                            </div>
+                                        </div>
+
+                                        <div class="node-time-remain" style="display: none;">
+                                            <div class="node-bg-time-remain"></div>
+                                            <div class="node-spinner-time-remain"></div>
+                                            <div class="node-text-time-remain" id="node-text-time-remain"></div>
+                                        </div>
+
+                                        <div class="board-node-container">
+                                            <div class="board-node-bet-container" id="board-node-bet-container">
+                                                <!-- Choise Door Button -->
+                                                <div class="board-node-select-bet" id="board-node-select-bet">
+                                                    <div class="node-player" data-value="node-player">
+                                                        <span class="current-amount"
+                                                            id="node-player-current-amount"></span>
+                                                        <span class="rate">1x15</span>
+                                                    </div>
+                                                    <div class="node-player-double" data-value="node-player-double">
+                                                        <span class="current-amount"
+                                                            id="node-player-double-current-amount"></span>
+                                                        <span class="rate">1x3.8</span>
+                                                    </div>
+                                                    <div class="node-draw" data-value="node-draw">
+                                                        <span class="current-amount"
+                                                            id="node-draw-current-amount"></span>
+                                                        <span class="rate">1x1.96</span>
+                                                    </div>
+                                                    <div class="node-super" data-value="node-super">
+                                                        <span class="current-amount"
+                                                            id="node-super-current-amount"></span>
+                                                        <span class="rate">1x1.96</span>
+                                                    </div>
+                                                    <div class="node-banker" data-value="node-banker">
+                                                        <span class="current-amount"
+                                                            id="node-banker-current-amount"></span>
+                                                        <span class="rate">1x15</span>
+                                                    </div>
+                                                    <div class="node-banker-double" data-value="node-banker-double">
+                                                        <span class="current-amount"
+                                                            id="node-banker-double-current-amount"></span>
+                                                        <span class="rate">1x3.8</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Choise Door Button Mask When Door Win -->
+                                                <div class="board-node-result-bet" id="board-node-result-bet">
+                                                    <div class="animate-flicker node-win-player" id="node-win-player"
+                                                        style="display: none;"></div>
+                                                    <div class="animate-flicker node-win-player-double"
+                                                        id="node-win-player-double" style="display: none;"></div>
+                                                    <div class="animate-flicker node-win-draw" id="node-win-draw"
+                                                        style="display: none;"></div>
+                                                    <div class="animate-flicker node-win-super" id="node-win-super"
+                                                        style="display: none;"></div>
+                                                    <div class="animate-flicker node-win-banker" id="node-win-banker"
+                                                        style="display: none;"></div>
+                                                    <div class="animate-flicker node-win-banker-double"
+                                                        id="node-win-banker-double" style="display: none;"></div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="board-node-select-chip-container">
+                                                <div class="node-chip-reset"></div>
+                                                <div class="board-main-chip-select-value">
+                                                    <div class="node-chip-1 active" data-value="1000"></div>
+                                                    <div class="node-chip-10" data-value="10000"></div>
+                                                    <div class="node-chip-100" data-value="100000"></div>
+                                                    <div class="node-chip-1000" data-value="1000000"></div>
+                                                    <div class="node-chip-10000" data-value="10000000"></div>
+                                                </div>
+                                                <div class="node-chip-confirm"></div>
+                                            </div>
+                                            <div class="footer-node-container">
+                                                <div class="node-current-balance">
+                                                    <span>Số Dư:&nbsp;</span> <span id="txt-current-balance">0</span>
+                                                </div>
+                                                <div class="node-current-round-id">
+                                                    <span>Phiên Trò Chơi:&nbsp;</span>#<span id="txt-round-id"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Notify  -->
+                                        <div id="fast-notify-container"></div>
+                                        <!-- Client Notify -->
+                                        <div class="fast-notify-client"></div>
+
+
+
+                                        <!-- History Modal -->
+                                        <div id="modal-history-bet" class="modal">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <span id="btn-close-modal-history-bet" class="close"
+                                                        style="margin-top: 15px;">&times;</span>
+                                                    <center>
+                                                        <h3 style="font-weight: 600;">Lịch sử đặt cược</h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body table-responsive" style="padding: 0px;">
+                                                    <table class="table table-bordered table-responsive"
+                                                        style="margin-bottom: 0px;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center">Phiên</th>
+                                                                <th class="text-center">Cược Chẵn</th>
+                                                                <th class="text-center">[Chẵn] 4 Trắng</th>
+                                                                <th class="text-center">[Chẵn] 4 Đỏ</th>
+                                                                <th class="text-center">Cược Lẻ</th>
+                                                                <th class="text-center">[Lẻ] 3 Trắng</th>
+                                                                <th class="text-center">[Lẻ] 3 Đỏ</th>
+                                                                <th class="text-center">Tổng Cược</th>
+                                                                <th class="text-center">Kết Quả</th>
+                                                                <th class="text-center">Tổng Thắng</th>
+                                                                <th class="text-center">Tổng Thua</th>
+                                                                <th class="text-center">Hoàn Trả</th>
+                                                                <th class="text-center">Thời gian</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="history-bet-content">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <nav class="text-center">
+                                                        <ul class="pagination text-center" id="history-bet-pagination"
+                                                            style="margin: 5px 0;"></ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Tutorial Modal -->
+                                        <div id="modal-tutorial" class="modal">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content" style="width: 60%;">
+                                                <div class="modal-header">
+                                                    <span id="btn-close-modal-tutorial" class="close"
+                                                        style="margin-top: 15px;">&times;</span>
+                                                    <center>
+                                                        <h3 style="font-weight: 600;">Hướng Dẫn Trò Chơi Xóc Đĩa</h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body" style="padding: 15px;">
+                                                    <div class="tutorial-container"
+                                                        style="overflow-y: scroll; overflow-x: hidden; max-height: 80%;">
+                                                        <h2><strong>Xóc Đĩa là gì?</strong></h2>
+
+                                                        <p>Xóc đĩa hay còn gọi là Xóc dĩa, là một trò chơi đổi thưởng
+                                                            quen thuộc tại Việt Nam và thường xuất hiện vào dịp Tết.
+                                                            <br>
+                                                            Cách chơi Xóc đĩa ngoài đời khá đơn giản so với những game
+                                                            đổi thưởng khác. Đây chính là nguyên do chính mà bộ môn này
+                                                            thu hút được số lượng người chơi tham gia đông đảo. Nhiệm vụ
+                                                            của người chơi chính là dự đoán chính xác xem sau khi mở
+                                                            bát, đồng xu để mặt úp hay mặt ngửa.
+                                                        </p>
+                                                        <h2><strong>Luật chơi game Xóc Đĩa</strong></h2>
+                                                        <p>Bạn sẽ phải suy đoán và đặt cược trước khi hệ thống mở bát
+                                                            (thông báo kết quả). Khi bạn đã hoàn thành việc
+                                                            đặt cược thì nhà cái sẽ bắt đầu trả kết quả. </p>
+                                                        <p>Xóc đĩa online có tất cả 6 cửa đặt cược:</p>
+                                                        <ul>
+                                                            <li>Chẵn: Khi có 2 mặt ngửa và 2 mặt xấp hoặc cả 4 mặt đều ngửa hoặc xấp.</li>
+                                                            <li>Lẻ: khi có một mặt khác màu với 3 mặt còn lại</li>
+                                                            <li>Chẵn 4 xấp: Khi có 4 mặt cùng xấp</li>
+                                                            <li>Chẵn 4 ngửa: Khi có 4 mặt cùng ngửa</li>
+                                                            <li>Lẻ 3 xấp: Khi có 3 mặt cùng xấp, 1 mặt ngửa</li>
+                                                            <li>Lẻ 3 ngửa: Khi có 3 mặt cùng ngửa, 1 mặt xấp</li>
+                                                        </ul>
+                                                        <p>Xóc đĩa online trả thưởng như thế nào?</p>
+                                                        <p>- Tùy vào bạn đặt tiền vào cửa nào, các cửa đều đã ghi rõ tỷ lệ ăn khi bạn thắng.</p>
+                                                        <p>- Đối với các cửa như Chẵn 4 xấp, Lẻ 4 xấp, Chẵn 3 ngửa, Lẻ 3 ngửa sẽ có tỷ lệ ăn cao hơn 2 cửa đơn thuần là Chẵn và Lẻ.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </section>
+                        </gupw-lobby-live>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="/core/js/game/xocdia/xocdia.js"></script>
+    <script src="/core/js/game/xocdia/websocket.js"></script>
+    <%- include('../../includes/footer') %>

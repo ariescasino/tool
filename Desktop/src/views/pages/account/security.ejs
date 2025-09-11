@@ -1,0 +1,205 @@
+<%- include('../../includes/header') %>
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _2Qr8R07mMXKa3GCsGT1Jx0">
+        <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+
+
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs">
+            <!-- uiView: -->
+            <ui-view class="ng-scope" style="">
+                <gupw-member-center-layout class="ng-scope ng-isolate-scope">
+                    <div ng-class="$ctrl.styles.wrapper" class="gSkJpAc7IrbXlj3biLk1e">
+                        <div ng-class="$ctrl.styles.main" class="_5kpYNqHFkQun8HWfr-YDg">
+
+
+                            <!-- SIDEBAR MENU -->
+                            <%- include('./sidebar') %>
+                                <!-- END SIDEBAR MENU -->
+
+                                <div ng-class="$ctrl.styles.detail" class="_1OOV-q3ssZv9VpaFEYYwdD">
+                                    <ui-view class="ng-scope">
+                                        <gupw-security-list class="ng-scope ng-isolate-scope" id="security-btn-select">
+                                            <ul ng-class="$ctrl.styles.wrapper" class="_1v_g9pbVFecDdUM3Df4Cdk">
+                                                <li>
+                                                    <button class="btn-link btn-changepwd" type="button"
+                                                        onclick="initFormChangePwd(true)">
+                                                        <i class="fas fa-key"></i>
+                                                        <span class="ng-scope">SỬA ĐỔI MẬT KHẨU ĐĂNG NHẬP</span>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn-link btn-changepwdsecurity" type="button"
+                                                        onclick="initFormChangePwdSecurity(true)">
+                                                        <i class="fas fa-lock"></i>
+                                                        <span class="ng-scope">SỬA ĐỔI MẬT KHẨU RÚT TIỀN</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </gupw-security-list>
+
+                                        <gupw-change-password class="ng-scope ng-isolate-scope" style="display: none;"
+                                            id="security-changepwd-body">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading"> <span translate="Account_ModifyPassword"
+                                                        class="ng-scope">Thay đổi mật khẩu đăng nhập</span> </div>
+                                                <div class="panel-body">
+                                                    <div class="alert alert-info"> <i class="fa fa-info-circle"></i>
+                                                        <span translate="Account_Note_ChangePassword"
+                                                            class="ng-scope">Xin lưu ý rằng để bảo mật cho tài khoản của
+                                                            bạn, vui lòng không sử dụng mật khẩu mới giống mật khẩu cũ,
+                                                            sau khi thay đổi mật khẩu, bạn sẽ cần đăng nhập lại với mật
+                                                            khẩu mới ngay lập tức</span>
+                                                    </div>
+                                                    <form class="form-horizontal ng-pristine ng-valid"
+                                                        id="form-changepwd">
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label ng-scope">Mật khẩu ban
+                                                                đầu</label>
+                                                            <div class="col-sm-8">
+                                                                <input id="oldpwd"
+                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                                    type="password" placeholder="Xin nhập mật khẩu cũ">
+                                                                <span class="help-block"
+                                                                    style="opacity: 0; margin-bottom: 0px;">
+                                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                                    <span class="ng-scope"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label ng-scope">Mật khẩu
+                                                                mới</label>
+                                                            <div class="col-sm-8">
+                                                                <input id="newpwd"
+                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                                    type="password"
+                                                                    placeholder="Hơn 6 ký tự phải bao gồm chữ cái và số">
+                                                                <span class="help-block"
+                                                                    style="opacity: 0; margin-bottom: 0px;">
+                                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                                    <span class="ng-scope"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label ng-scope">Xác nhận mật
+                                                                khẩu
+                                                                mới</label>
+                                                            <div class="col-sm-8">
+                                                                <input id="newpwdcf"
+                                                                    class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                    type="password"
+                                                                    placeholder="Xin nhập lại mật khẩu mới của bạn">
+                                                                <span class="help-block"
+                                                                    style="opacity: 0; margin-bottom: 0px;"> <i
+                                                                        class="fas fa-exclamation-triangle"></i>
+                                                                    <span class="ng-scope"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                <button type="submit"
+                                                                    class="btn btn-default ng-scope">thay đổi </button>
+                                                                <button type="button" class="btn btn-default ng-scope"
+                                                                    onclick="initFormChangePwd(false)">huỷ bỏ</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </gupw-change-password>
+
+
+                                        <gupw-change-password class="ng-scope ng-isolate-scope" style="display: none;"
+                                            id="account-security-changepwd-body">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading"> <span translate="Account_ModifyPassword"
+                                                        class="ng-scope">Thay đổi mật khẩu bảo mật</span> </div>
+                                                <div class="panel-body">
+                                                    <div class="alert alert-info"> <i class="fa fa-info-circle"></i>
+                                                        <span translate="Account_Note_ChangePassword"
+                                                            class="ng-scope">Xin lưu ý rằng để bảo mật cho tài khoản của
+                                                            bạn, vui lòng không sử dụng mật khẩu mới giống mật khẩu cũ,
+                                                            sau khi thay đổi mật khẩu, bạn sẽ cần đăng nhập lại với mật
+                                                            khẩu mới ngay lập tức</span>
+                                                    </div>
+                                                    <form class="form-horizontal ng-pristine ng-valid"
+                                                        id="form-changepwd-account">
+
+                                                        <div class="form-group" id="currentPasswdSec">
+                                                            <label class="col-sm-4 control-label ng-scope">Mật khẩu ban
+                                                                đầu</label>
+                                                            <div class="col-sm-8">
+                                                                <input id="oldpwd-account"
+                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                                    type="password" placeholder="Xin nhập mật khẩu cũ">
+                                                                <span class="help-block"
+                                                                    style="opacity: 0; margin-bottom: 0px;">
+                                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                                    <span class="ng-scope"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label ng-scope">Mật khẩu
+                                                                mới</label>
+                                                            <div class="col-sm-8">
+                                                                <input id="newpwd-account"
+                                                                    class="form-control ng-pristine ng-valid ng-empty ng-touched"
+                                                                    type="password"
+                                                                    placeholder="Hơn 6 ký tự phải bao gồm chữ cái và số">
+                                                                <span class="help-block"
+                                                                    style="opacity: 0; margin-bottom: 0px;">
+                                                                    <i class="fas fa-exclamation-triangle"></i>
+                                                                    <span class="ng-scope"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-sm-4 control-label ng-scope">Xác nhận mật
+                                                                khẩu
+                                                                mới</label>
+                                                            <div class="col-sm-8">
+                                                                <input id="newpwdcf-account"
+                                                                    class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                    type="password"
+                                                                    placeholder="Xin nhập lại mật khẩu mới của bạn">
+                                                                <span class="help-block"
+                                                                    style="opacity: 0; margin-bottom: 0px;"> <i
+                                                                        class="fas fa-exclamation-triangle"></i>
+                                                                    <span class="ng-scope"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                <button type="submit"
+                                                                    class="btn btn-default ng-scope">thay đổi </button>
+                                                                <button type="button" class="btn btn-default ng-scope"
+                                                                    onclick="initFormChangePwdSecurity(false)">huỷ bỏ</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </gupw-change-password>
+
+                                    </ui-view>
+                                </div>
+                        </div>
+                    </div>
+                </gupw-member-center-layout>
+            </ui-view>
+        </div>
+    </div>
+
+
+    <script src="/core/js/account/security.js"></script>
+    <%- include('../../includes/footer') %>

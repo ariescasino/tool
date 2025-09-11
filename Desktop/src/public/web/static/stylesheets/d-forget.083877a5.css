@@ -1,0 +1,138 @@
+.sms-forget-password {
+    padding: 30px
+}
+
+.sms-forget-password .top-tabs {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px
+}
+
+.sms-forget-password .top-tabs>.tab {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #3cc2ea;
+    border-radius: 8px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .25), inset 0 -5px 15px #fff;
+    box-sizing: border-box;
+    color: #3cc2ea;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    width: 48%
+}
+
+.sms-forget-password .top-tabs>.tab i {
+    font-size: 45px
+}
+
+.sms-forget-password .top-tabs>.tab .label {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center
+}
+
+.sms-forget-password .top-tabs>.tab.active {
+    background-color: #3cc2ea;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .25), inset 0 -5px 15px #19b6e5;
+    color: #fff
+}
+
+.sms-forget-password .top-tabs>.tab.active:hover {
+    background-color: #25bbe8
+}
+
+.sms-forget-password .top-tabs>.tab:hover {
+    background-color: #f7f7f7
+}
+
+.sms-forget-password .block.hidden {
+    display: none
+}
+
+.sms-forget-password .cs .content {
+    color: #222;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.71;
+    padding-left: 10px;
+    padding-top: 5px
+}
+
+.sms-forget-password .sms .content {
+    margin-top: 10px
+}
+
+.sms-forget-password .sms .content .formik-item input {
+    font-size: 13px
+}
+
+.sms-forget-password .sms .content .mg-bottom .formik-item {
+    margin-bottom: 10px
+}
+
+.sms-forget-password .sms .content .mg-top .formik-item {
+    margin-top: 10px
+}
+
+.sms-forget-password .sms .content .sms-code-field {
+    display: flex
+}
+
+.sms-forget-password .sms .content .sms-code-field .formik-item {
+    width: 80%
+}
+
+.sms-forget-password .sms .content .sms-code-field button {
+    border-radius: 5px;
+    font-size: 14px;
+    height: 36px;
+    margin-right: 3%;
+    margin-top: 23px;
+    white-space: nowrap
+}
+
+.sms-forget-password .sms .content .successful-msg-block {
+    align-items: center;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.71
+}
+
+.sms-forget-password .sms .content .successful-msg-block img {
+    height: 75px;
+    width: 75px
+}
+
+.sms-forget-password .sms .content .successful-msg-block .title {
+    font-size: 20px;
+    margin: 10px 0
+}
+
+.sms-forget-password .sms .content .successful-msg-block .msg {
+    font-size: 16px
+}
+
+.sms-forget-password .sms .content .error-msg {
+    color: #d22323;
+    font-size: 14px;
+    margin-bottom: 10px
+}
+
+.sms-forget-password .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px
+}
+
+.sms-forget-password .btns button {
+    width: 48%
+}

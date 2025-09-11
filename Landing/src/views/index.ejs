@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="description"
+        content="Nhà cái cá cược bóng đá, game bài, casino, tài xỉu. Chuyên nghiệp từ cách chơi, nạp tiền, rút tiền nhanh gọn. Quý khách sẽ hài lòng.">
+    <meta name="author" content="<%=dataPage.config.DOMAIN.toUpperCase();%>">
+    <link rel="canonical" href="//<%=dataPage.config.DOMAIN.toUpperCase();%>/">
+    <meta name="google" content="notranslate">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/XuLl5Bg.png" />
+    <title>
+        <%=dataPage.config.DOMAIN.toUpperCase();%> - Trang cá cược lớn nhất việt nam
+    </title>
+    <link href="/main.css" rel="stylesheet">
+    <link href="/launcherGame.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-title" content="<%=dataPage.config.DOMAIN.toUpperCase();%>" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff" />
+    <meta name="theme-color" content="#EFEFEF" />
+</head>
+
+<body>
+    <div id="root">
+        <div class="app-loading">
+            <div class="lds-spin">
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const CONFIG = {
+        DOMAIN_NAME: `<%=dataPage.config.DOMAIN;%>`,
+        DOMAIN_SSL: true,
+        DNS_MOBILE: `m`,
+        DNS_DESKTOP: `www`
+    }
+
+    const getParamUrl = (param) => {
+        return new URLSearchParams(window.location.search).get(param);
+    }
+
+    const detectmob = () => {
+        if (window.innerWidth <= 800 || window.innerHeight <= 600) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    // affilate router
+    if (getParamUrl("affilate_id")) {
+        if (detectmob()) {
+            // Mobile
+            setTimeout(() => {
+                window.location = `${(CONFIG.DOMAIN_SSL) ? 'https' : 'http'}://${CONFIG.DNS_MOBILE}.${CONFIG.DOMAIN_NAME}/auth/register?refcode=${getParamUrl("affilate_id")}`;
+            }, 1000);
+        } else {
+            // Desktop
+            setTimeout(() => {
+                window.location = `${(CONFIG.DOMAIN_SSL) ? 'https' : 'http'}://${CONFIG.DNS_DESKTOP}.${CONFIG.DOMAIN_NAME}/auth/register?refcode=${getParamUrl("affilate_id")}`;
+            }, 1000);
+        }
+    } else {
+        // default router
+        if (detectmob()) {
+            // Mobile
+            setTimeout(() => {
+                window.location = `${(CONFIG.DOMAIN_SSL) ? 'https' : 'http'}://${CONFIG.DNS_MOBILE}.${CONFIG.DOMAIN_NAME}`;
+            }, 1000);
+        } else {
+            // Desktop
+            setTimeout(() => {
+                window.location = `${(CONFIG.DOMAIN_SSL) ? 'https' : 'http'}://${CONFIG.DNS_DESKTOP}.${CONFIG.DOMAIN_NAME}`;
+            }, 1000);
+        }
+    }
+</script>

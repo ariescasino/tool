@@ -1,0 +1,149 @@
+<%- include('../../includes/header') %>
+
+
+    <div class="modal _1w0YHTicZt62YOFClnJ68o fade ng-scope ng-isolate-scope in" role="dialog" size="lg"
+        style="z-index: 1050; display: none;" id="modal-view-detail">
+        <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _34Inka-CWdW7olcCIUQyjY default"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <gupw-dialog-site-mail-detail class="ng-scope ng-isolate-scope">
+                    <form class="form-horizontal ng-pristine ng-valid">
+                        <div class="modal-header _38qhKwaKsk4Irh7o_doxEc">
+                            <button type="button" class="close pull-right" title="Đóng"
+                                onclick="initModalViewDetail(false)"><span>×</span>
+                            </button>
+                            <h4>
+                                <span class="ng-binding ng-scope" id="modal-title"></span>
+                            </h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <h5 class="ng-scope">
+                                <span class="ng-binding" id="modal-author"></span>
+                                <span translate="SiteMail_On" class="ng-scope">gửi lúc</span>
+                                <span class="ng-binding" id="modal-time"></span>
+                            </h5>
+                            <div class="ng-scope _2Oqo1yVTVKsYtzxsQFb0fW" id="modal-content" style="padding: 10px;">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-lg ng-scope"
+                                onclick="initModalViewDetail(false)">Đóng</button>
+                        </div>
+                    </form>
+                </gupw-dialog-site-mail-detail>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="BDw45cKhOY5X-HJyc5_2C _2Qr8R07mMXKa3GCsGT1Jx0">
+        <div class="_1h0fCbtWimc44r9dNSenvs">
+            <ui-view class="ng-scope">
+                <gupw-member-center-layout class="ng-scope ng-isolate-scope">
+                    <div class="gSkJpAc7IrbXlj3biLk1e">
+                        <div class="_5kpYNqHFkQun8HWfr-YDg">
+
+
+                            <!-- SIDEBAR MENU -->
+                            <%- include('./sidebar') %>
+                                <!-- END SIDEBAR MENU -->
+
+
+                                <div class="_1OOV-q3ssZv9VpaFEYYwdD">
+                                    <ui-view class="ng-scope">
+                                        <gupw-site-mail class="ng-scope ng-isolate-scope">
+                                            <div class="panel panel-default">
+
+                                                <div class="panel-heading dVhF2-SOshvlfEe50JMm2">
+                                                    <span class="ng-scope">Hộp thư nội bộ</span>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="ng-isolate-scope">
+                                                        <ul class="nav nav-tabs">
+
+                                                            <li class="uib-tab nav-item ng-scope ng-isolate-scope active"
+                                                                data-type="true">
+                                                                <a href="javascript:void(0)"
+                                                                    class="nav-link ng-binding">
+                                                                    <uib-tab-heading class="ng-scope">
+                                                                        <i
+                                                                            class="fas fa-star _1FbLrrA_l_MWoC6jxZ9uHU"></i>
+                                                                        <span class="ng-scope">Hộp khuyến mãi</span>
+                                                                    </uib-tab-heading>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="uib-tab nav-item ng-scope ng-isolate-scope"
+                                                                data-type="false">
+                                                                <a href="javascript:void(0)"
+                                                                    class="nav-link ng-binding">
+                                                                    <uib-tab-heading class="ng-scope">
+                                                                        <span class="ng-scope">Hộp thư đến</span>
+                                                                    </uib-tab-heading>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+
+
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane ng-scope active">
+                                                                <gupw-site-mail-promotion
+                                                                    class="ng-scope ng-isolate-scope">
+                                                                    <gupw-site-mail-list class="ng-isolate-scope">
+                                                                        <table
+                                                                            class="table table-hover _37bNXha2rDTZyRUYuNmPiU">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th class="ng-scope"></th>
+                                                                                    <th class="ng-scope">Chủ đề chính
+                                                                                    </th>
+                                                                                    <th class="ng-scope">Thời gian ban
+                                                                                        hành</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            <tbody id="inbox-content-table">
+                                                                                <tr class="ng-scope not-read">
+                                                                                    <td class="ng-scope">
+                                                                                        <i
+                                                                                            class="fas fa-star yellow ng-scope _13w26HgpJDSil32L7irVB-"></i><!-- end ngIf: mail.isSticky -->
+                                                                                    </td>
+                                                                                    <td class="_1rvFgHktHv2owoshNSioRv">
+                                                                                        <button
+                                                                                            class="btn btn-link ng-binding">Thông
+                                                                                            báo quan trọng</button>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <span
+                                                                                            class="ng-binding">2023/07/22
+                                                                                            (T7) 00:42:04</span> - <span
+                                                                                            class="text-muted ng-binding">13
+                                                                                            giờ tới</span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+
+                                                                    </gupw-site-mail-list>
+                                                                </gupw-site-mail-promotion>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </gupw-site-mail>
+                                    </ui-view>
+                                </div>
+                        </div>
+                    </div>
+                </gupw-member-center-layout>
+            </ui-view>
+        </div>
+    </div>
+
+
+    <script src="/core/js/account/inbox.js"></script>
+    <%- include('../../includes/footer') %>

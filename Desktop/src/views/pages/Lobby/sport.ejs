@@ -1,0 +1,235 @@
+<%- include('../../includes/header') %>
+    
+    <!-- BANNER-->
+    <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _3cEFVy_x45V8eKXgVyCZO4">
+                            <!-- uiView: -->
+                             <ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+                             <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _3Jf0qivwg6USf6U5FSOLmh">
+                                <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs _3G9zSgXixiSDjAeYx2uDIm">
+                                    <!-- uiView: -->
+                                     <ui-view class="ng-scope" style="">
+                                        <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                                            <!-- uiView: -->
+                                             <ui-view class="ng-scope" style="">
+                                                <gupw-lobby-sport class="ng-scope ng-isolate-scope">
+                                                    <section ng-class="$ctrl.styles.main">
+                                                        <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                        <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-class="{ 'active': entrance.active }" class="_34vVX1Y5LO0LjK44Cvxi7b" style="">
+                                                            <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]" class="P_jx2VIUEPZNerpa3N_bN">
+                                                                <div> <img
+                                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/2c3a1e13e37c879e55459451def8cecf.png"
+                                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/2c3a1e13e37c879e55459451def8cecf.png">
+                                                                </div>
+                                                                <div>
+                                                                    <div ng-class="$ctrl.styles.title" class="_29QzXdgPWE7gQ-aETN1N3T"> <img
+                                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/7effb1707d39f831078af8beeaaeafd2.png"
+                                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/7effb1707d39f831078af8beeaaeafd2.png">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="ng-binding">OK9 – Nền tảng thiết kế chuyên biệt cho cá cược thể
+                                                                            thao với giao diện trực quan, thu hút, được đông đảo người chơi lựa
+                                                                            chọn. Hệ thống cung cấp đa dạng thể lệ cược phổ biến, bao gồm: kèo châu
+                                                                            Á, tài xỉu, chẵn lẻ, 1x2, phạt góc, tỉ số chung cuộc, cược hỗn hợp, cược
+                                                                            đội vô địch và tổng hợp tất cả các kèo cược thể thao hấp dẫn.</p>
+                                                                    </div> <!-- ngIf: entrance.tag -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                        <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                            ng-class="{ 'active': entrance.active }" class="_34vVX1Y5LO0LjK44Cvxi7b active"
+                                                            style="">
+                                                            <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                                                class="P_jx2VIUEPZNerpa3N_bN SabaSport">
+                                                                <div> <img
+                                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/a01999289e47df72c2c357980e961a4f.png"
+                                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/a01999289e47df72c2c357980e961a4f.png">
+                                                                </div>
+                                                                <div>
+                                                                    <div ng-class="$ctrl.styles.title" class="_29QzXdgPWE7gQ-aETN1N3T"> <img
+                                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/c9db5d71b670c55f9ff41d7c77368f4d.png"
+                                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/c9db5d71b670c55f9ff41d7c77368f4d.png">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="ng-binding">SABA-Thể Thao là sảnh cá cược thể thao Quốc tế được
+                                                                            nhiều người chơi lựa chọn, giao diện thiết kế đơn giản dễ đặt cược, tỉ
+                                                                            lệ kèo cược ổn định thanh toán kết quả nhanh chóng &amp; độ chính xác
+                                                                            cao. Những thể lệ cược thịnh hành nhất bao gồm: Kèo châu á, tài xỉu,
+                                                                            chẵn lẻ, 1x2, phạt góc, tỉ số chung cuộc, cược hỗn hợp, cược đội vô địch
+                                                                            và cược đặc biệt....</p>
+                                                                    </div> <!-- ngIf: entrance.tag -->
+                                                                    <div ng-if="entrance.tag" class="ng-scope">
+                                                                        <h4>TRÒ CHƠI:</h4>
+                                                                        <h3 class="ng-binding">Bóng đá, Bóng rổ, Thể thao điện tử, Quần vợt, Bóng
+                                                                            chuyền, Bóng bàn, Thể thao ảo...</h3>
+                                                                    </div><!-- end ngIf: entrance.tag -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                        <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                            ng-class="{ 'active': entrance.active }" class="_34vVX1Y5LO0LjK44Cvxi7b" style="">
+                                                            <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                                                class="P_jx2VIUEPZNerpa3N_bN ImSport">
+                                                                <div> <img
+                                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/1cf023e1b8b0d93610a355caad1839b2.png"
+                                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/1cf023e1b8b0d93610a355caad1839b2.png">
+                                                                </div>
+                                                                <div>
+                                                                    <div ng-class="$ctrl.styles.title" class="_29QzXdgPWE7gQ-aETN1N3T"> <img
+                                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/e53101e4c83fd095b163e99e90337859.png"
+                                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/e53101e4c83fd095b163e99e90337859.png">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="ng-binding">Nội dung thông tin đang trong quá trình cập nhật...
+                                                                        </p>
+                                                                    </div> <!-- ngIf: entrance.tag -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                        <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                            ng-class="{ 'active': entrance.active }" class="_34vVX1Y5LO0LjK44Cvxi7b" style="">
+                                                            <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                                                class="P_jx2VIUEPZNerpa3N_bN CmdSport">
+                                                                <div> <img
+                                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/0ecf4204302d0a00e65a967efe39750d.png"
+                                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/0ecf4204302d0a00e65a967efe39750d.png">
+                                                                </div>
+                                                                <div>
+                                                                    <div ng-class="$ctrl.styles.title" class="_29QzXdgPWE7gQ-aETN1N3T"> <img
+                                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/9d004c49a7382e1819be00ddd176f6a3.png"
+                                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/9d004c49a7382e1819be00ddd176f6a3.png">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="ng-binding">CMD368 - Thể thao mang đến cho quý khách hàng sự lựa
+                                                                            chọn rộng rãi; với hơn 2000 trận banh tan mỗi tuần, những thể lệ cược
+                                                                            thịnh hành nhất bao gồm: Kèo châu á, tài xỉu, chẵn lẻ, 1x2, phạt góc, tỉ
+                                                                            số chung cuộc, cược hỗn hợp, cược đội vô địch và cược đặc biệt....</p>
+                                                                    </div> <!-- ngIf: entrance.tag -->
+                                                                    <div ng-if="entrance.tag" class="ng-scope">
+                                                                        <h4>TRÒ CHƠI:</h4>
+                                                                        <h3 class="ng-binding">Bóng đá, Bóng rổ, Thể thao điện tử, Quần vợt, Bóng
+                                                                            chuyền, Bóng bàn, Bóng chày, Boxing, Đánh gôn, Quyền thái, Đua xe đạp
+                                                                            ...</h3>
+                                                                    </div><!-- end ngIf: entrance.tag -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                        <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                            ng-class="{ 'active': entrance.active }" class="_34vVX1Y5LO0LjK44Cvxi7b" style="">
+                                                            <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                                                class="P_jx2VIUEPZNerpa3N_bN UgSport">
+                                                                <div> <img
+                                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/571b21a92d84d55b517462b3dcb797f1.png"
+                                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/571b21a92d84d55b517462b3dcb797f1.png">
+                                                                </div>
+                                                                <div>
+                                                                    <div ng-class="$ctrl.styles.title" class="_29QzXdgPWE7gQ-aETN1N3T"> <img
+                                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/b7e53cad47dcb2b63285dde9b433cb67.png"
+                                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/b7e53cad47dcb2b63285dde9b433cb67.png">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="ng-binding">United Gaming là một công ty hàng đầu, giải trí và cờ
+                                                                            bạc trực tuyến, cung cấp các nền tảng và nội dung trò chơi tiên tiến.
+                                                                            Được tích hợp giao diện thân thiện với người dùng kết hợp với tích hợp
+                                                                            API tốt nhất, không chỉ phù hợp với yêu cầu hiện đại mà còn tăng khả
+                                                                            năng bảo trì của hệ thống, đây là sự lựa chọn tốt nhất cho nền tảng cá
+                                                                            cược thể thao. Các tính năng của dịch vụ cá cược thể thao của bao gồm;
+                                                                            Lên tới 60.000 sự kiện độc đáo mỗi tháng, Lên tới 1000 loại cược cho hơn
+                                                                            60 loại thể thao, Lên tới 150 giải bóng đá...</p>
+                                                                    </div> <!-- ngIf: entrance.tag -->
+                                                                    <div ng-if="entrance.tag" class="ng-scope">
+                                                                        <h4>TRÒ CHƠI:</h4>
+                                                                        <h3 class="ng-binding">Bóng đá, Bóng rổ, Bóng chuyền, Bóng bàn, Bóng chày,
+                                                                            Khúc côn cầu, Bóng bầu dục, Phi tiêu ...</h3>
+                                                                    </div><!-- end ngIf: entrance.tag -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                        <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                            ng-class="{ 'active': entrance.active }" class="_34vVX1Y5LO0LjK44Cvxi7b" style="">
+                                                            <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                                                class="P_jx2VIUEPZNerpa3N_bN SboSport">
+                                                                <div> <img
+                                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/432fcc5da6b0e5ef75d9e5e34cdacc98.png"
+                                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/432fcc5da6b0e5ef75d9e5e34cdacc98.png">
+                                                                </div>
+                                                                <div>
+                                                                    <div ng-class="$ctrl.styles.title" class="_29QzXdgPWE7gQ-aETN1N3T"> <img
+                                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/b0fb72ca0a00dc2756e496cc83527aec.png"
+                                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/b0fb72ca0a00dc2756e496cc83527aec.png">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="ng-binding">SBOBET có văn phòng hợp pháp ở châu Á tại Philippines
+                                                                            và châu Âu tại Đảo Man (Isle of Man) để có thể vận hành như là một công
+                                                                            ty cá cược thể thao quốc tế. Cung cấp dịch vụ cá cược với tất cả các môn
+                                                                            thể thao phổ biến và được hỗ trợ dưới nhiều ngôn ngữ khác nhau.</p>
+                                                                    </div> <!-- ngIf: entrance.tag -->
+                                                                    <div ng-if="entrance.tag" class="ng-scope">
+                                                                        <h4>TRÒ CHƠI:</h4>
+                                                                        <h3 class="ng-binding">Bóng đá, Bóng rổ, Bóng chày, Quần Vợt, Bóng đá mỹ,
+                                                                            Điền kinh, Quyền anh, Võ tự do, Thế vận hội, Bi da, Đua xe đạp ...</h3>
+                                                                    </div><!-- end ngIf: entrance.tag -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                        <div ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index"
+                                                            ng-class="{ 'active': entrance.active }" class="_34vVX1Y5LO0LjK44Cvxi7b" style="">
+                                                            <div ng-class="[$ctrl.styles['entrance-content'], entrance.gameEntranceName]"
+                                                                class="P_jx2VIUEPZNerpa3N_bN CrSport">
+                                                                <div> <img
+                                                                        ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/adf8dd3083c446fdf4d19f66c478ab36.png"
+                                                                        src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/adf8dd3083c446fdf4d19f66c478ab36.png">
+                                                                </div>
+                                                                <div>
+                                                                    <div ng-class="$ctrl.styles.title" class="_29QzXdgPWE7gQ-aETN1N3T"> <img
+                                                                            ng-src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/47fd1b0c7cae10490d69f4249429d05f.png"
+                                                                            src="https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/47fd1b0c7cae10490d69f4249429d05f.png">
+                                                                    </div>
+                                                                    <div>
+                                                                        <p class="ng-binding">Nội dung thông tin đang trong quá trình cập nhật...
+                                                                        </p>
+                                                                    </div> <!-- ngIf: entrance.tag -->
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                    </section>
+                                                    <section ng-class="$ctrl.styles['btn-wrapper']" class="_1iZvo4gZuhw-5WA5lHZ6Mx">
+                                                        <ul class="list-unstyled sQpvrcvmGj828N9Fbik97" ng-class="$ctrl.styles['game-list']">
+                                                            <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->                                                           
+                                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SB', 'SB0001')"
+                                                                ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                                                ng-class="{ 'active': entrance.active }" ng-style="entrance.style"
+                                                                class="ng-scope active"
+                                                                style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/60bf7d76fc884c993ee9db86b4307eff.png&quot;);">
+                                                            </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SB', 'SB0001')"
+                                                                ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                                                ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                                                style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/1ece1468cb158a20d0e3021c1fbe5ec2.png&quot;);">
+                                                            </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('CMD', 'CMD001')"
+                                                                ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                                                ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                                                style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/21a601415014d1d59949523ff85b0f87.png&quot;);">
+                                                            </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SBO', 'SBO0001')"
+                                                                ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                                                ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                                                style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/0403cc73403aafe4b4e73b07e17b1da6.png&quot;);">
+                                                            </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                                            <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" ng-click="$ctrl.viewModel.currentItem.click() playBtn" onclick="launchGame('SBO', 'SBO0001')"
+                                                                ng-click="$ctrl.viewModel.clickEntrance(entrance)"
+                                                                ng-class="{ 'active': entrance.active }" ng-style="entrance.style" class="ng-scope"
+                                                                style="background-image: url(&quot;https://qk3x72.katawee.net/system-requirement/Web.PortalNew/UK254-01/a64730518b/images/f3dcddeac7ea22d51f6acd1707280950.png&quot;);">
+                                                            </li><!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->                                                           
+                                                        </ul>                                                         
+                                                    </section>
+                                                </gupw-lobby-sport>
+                                            </ui-view>
+                                        </gupw-sample-lobby-layout>
+                                    </ui-view> 
+                                </div>
+                            </div>
+
+
+    <script src="/core/js/lobby/sport.js"></script>
+    <%- include('../../includes/footer') %>

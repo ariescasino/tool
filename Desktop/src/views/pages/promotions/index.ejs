@@ -1,0 +1,41 @@
+<%- include('../../includes/header') %>
+<div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU EnHwIt5O6_r_kDL6tfNTo"> <!-- uiView: --><ui-view name="banner" class="ng-scope"></ui-view> </div>
+    <!-- Modal Open -->
+    <div class="modal _2Q5_8e9t7nS0te23FQXjLw fade ng-scope ng-isolate-scope in" role="dialog" size="lg" index="0"
+        style="z-index: 1050; display: none;">
+        
+        <div class="modal-dialog modal-lg" style="overflow-y: auto; max-height: 100vh">
+            <div class="modal-content">
+                <div class="modal-header _38qhKwaKsk4Irh7o_doxEc">
+                    <button type="button" style="opacity: 1 !important; color: white" class="close pull-right"><span style="padding: 14px;padding-inline: 18px;border-radius: 5px;background-color: red;opacity: 1 !important">×</span>
+		    </button>
+                    <h4>
+                        <span class="ng-binding ng-scope title"></span>
+                    </h4>
+                </div>
+                <gupw-promotion-content-dialog class="ng-scope ng-isolate-scope">
+                    <section style="padding: 12px;">
+                        <div class="ng-scope _16Ciocdh1AVw1gX0hfAbnC content"></div>
+                    </section>
+                </gupw-promotion-content-dialog>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container Promotion -->
+    <div class="BDw45cKhOY5X-HJyc5_2C _3APJCJr18cNksZ53-4jnrw">
+        <div class="_1h0fCbtWimc44r9dNSenvs">
+            <ui-view class="ng-scope">
+                <gupw-promotion class="ng-scope ng-isolate-scope">
+                    <div class="_2GOGB_5ucGgYbG38mOOrEE">
+                        <div class="ng-scope">
+                            <section class="_1UEhiSbeYEgYWSJeUHqKc7 promo-container"></section>
+                        </div>
+                    </div>
+                </gupw-promotion>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="/core/js/promotion/promotion.js"></script>
+    <%- include('../../includes/footer') %>

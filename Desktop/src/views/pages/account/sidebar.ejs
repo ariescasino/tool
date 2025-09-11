@@ -1,0 +1,86 @@
+<div class="NMMFlKUD4h5ITLiRUaVhE" id="sidebar-right">
+    <section>
+        <i class="fas fa-user-circle"></i>
+        <div class="g5UAxxGS5PCGmIpl_Gv_7">
+            <span class="ng-scope">Tài Khoản</span>
+            <span class="ng-binding sidebar-name">
+                <%=dataPage.session.user.username%>
+            </span>
+        </div>
+        <div class="VCWc1xD16JjHVQV5T2QFm">
+            <span class="ng-scope">Số dư</span>
+            <span>:</span>
+            <span class="ng-binding _2kiO79mWzuPtUlVD3NTg1L sidebar-balance">
+                <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+            </span> <span class="_1Xfqx_F_JJDoIzF5z2jYbw">VND</span>
+        </div>
+    </section>
+
+    <ul ng-class="$ctrl.styles.newMoneyFunction" class="_3XHO2UA0RB0rER4aWKSeqO">
+        <li class="<%=(dataPage.location=='deposit')?'active':'';%>">
+            <a ui-sref="deposit" href="/account/deposit">
+                <i class="fas fa-donate"></i>
+                <span class="ng-scope">Nạp tiền</span>
+            </a>
+        </li>
+        <li class="<%=(dataPage.location=='withdraw')?'active':'';%>">
+            <a ui-sref="withdraw" href="/account/withdraw">
+                <i class="fas fa-hand-holding-usd"></i>
+                <span translate="MemberCenter_Withdraw" class="ng-scope">Rút
+                    tiền</span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="_1zBBtO83fFSEPTlrAwj7Vm">
+        <!-- <li class="<%=(dataPage.location=='wallet-transfer')?'active':'';%>">
+            <a ui-sref="security-list" href="/account/wallet-transfer">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <span class="ng-scope">Chuyển quỹ trò chơi</span>
+            </a>
+        </li> -->
+        <li ui-sref-active="active" ng-if="$ctrl.enableVip" class="ng-scope" style=""> 
+            <a ui-sref="vip" href="/account/vip"> 
+                <i ng-class="$ctrl.styles.vip" class="_2xp1O4AWed-sWDEbLBlisV"></i> 
+                <span translate="MemberCenter_VIP" class="ng-scope">Khu vực VIP</span> 
+                <!-- ngIf: $ctrl.unclaimedBonus.count --> 
+                </a> 
+        </li>
+        <li ui-sref-active="active" class="active"> 
+            <a ui-sref="my-favorites" href="/"> 
+                <i class="fas fa-heart fa-fw"></i> 
+                <span translate="Shared_MyFavorites" class="ng-scope">Yêu thích nhất</span>
+            </a> 
+        </li>
+        <li class="<%=(dataPage.location=='security')?'active':'';%>">
+            <a ui-sref="security-list" href="/account/security">
+                <i class="fas fa-user-shield fa-fw"></i>
+                <span class="ng-scope">Cài Đặt Bảo Mật</span>
+            </a>
+        </li>
+        <li class="<%=(dataPage.location=='inbox')?'active':'';%>">
+            <a ui-sref="site-mail" href="/account/inbox">
+                <i class="fas fa-envelope"></i>
+                <span class="ng-scope">Thư nội bộ</span>
+            </a>
+        </li>
+        <li class="<%=(dataPage.location=='finan-history')?'active':'';%>">
+            <a ui-sref="transaction" href="/account/finan-history">
+                <i class="fas fa-clipboard-list fa-fw"></i>
+                <span class="ng-scope">Chi tiết giao dịch</span>
+            </a>
+        </li>
+        <li class="<%=(dataPage.location=='game-history')?'active':'';%>">
+            <a ui-sref="bet-record" href="/account/game-history">
+                <i class="fas fa-history fa-fw"></i>
+                <span class="ng-scope">Lịch sử đặt cược</span>
+            </a>
+        </li>
+        <li class="<%=(dataPage.location=='payment-refund')?'active':'';%>">
+            <a href="/account/payment-refund">
+                <i class="fas fa-money-bill"></i>
+                <span class="ng-scope">Hoàn Trả</span>
+            </a>
+        </li>
+    </ul>
+</div>

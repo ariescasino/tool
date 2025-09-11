@@ -1,0 +1,90 @@
+<%- include('../../includes/header') %>
+
+    <div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _20PZvw_i27QWgmADMKwMry">
+        <div ng-class="$ctrl.styles.banner" class="-XrqkevdgKslaYRvW4lgU _93MovtcO9aaTkLGm28_yy"> <!-- uiView: --><ui-view name="banner" class="ng-scope" style=""></ui-view> </div>
+        <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs _3gYc2Hcob-hIqkYX-hTuYV">
+            <!-- uiView: -->
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <!-- uiView: -->
+                    <ui-view class="ng-scope" style="">
+                        <gupw-lobby-board class="ng-scope ng-isolate-scope">            
+                            <section ng-class="$ctrl.styles['game-list']" class="_1Rdq2XNGF4qn3CW8hRwx3y">
+                                <div ng-class="$ctrl.styles.wrapper" class="_3gYc2Hcob-hIqkYX-hTuYV">
+                                    <ul class="list-unstyled list-slot-production">
+                                        <!-- ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="LCC"
+                                            ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal active" style="">
+                                            <figure>
+                                                <!-- ngIf: !entrance.imgUrl -->
+                                                <img ng-if="!entrance.imgUrl"
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/v8.png"
+                                                    class="ng-scope"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/v8.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">V8
+                                                        Game Bài 3d</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="JILI"
+                                            ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal" style="">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/jili.png"
+                                                    class="ng-scope"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/jili.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        JILI Game Bài 3d</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>                                                                              
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="RICH88"
+                                            ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/r88.png"
+                                                    class="ng-scope"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/r88.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">
+                                                        RICH88 Game Bài 3d</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                        <li ng-repeat="entrance in $ctrl.viewModel.entranceList track by $index" data-produce="KM"
+                                            ng-click="$ctrl.viewModel.onEntranceClick(entrance)"
+                                            ng-class="{ 'active': entrance.active }" class="normal">
+                                            <figure> <!-- ngIf: !entrance.imgUrl --><img ng-if="!entrance.imgUrl"
+                                                    ng-src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/km.png"
+                                                    class="ng-scope"
+                                                    src="https://qk3x72.katawee.net/system-requirement/Web.Portal/_Common/Supplier/60x40/km.png"><!-- end ngIf: !entrance.imgUrl -->
+                                                <figcaption>
+                                                    <h5 nav-link-display="" model="entrance" class="ng-isolate-scope">KM
+                                                        Game Bài 3d</h5>
+                                                </figcaption>
+                                            </figure>
+                                        </li>                                       
+                                        <!-- end ngRepeat: entrance in $ctrl.viewModel.entranceList track by $index -->
+                                    </ul>
+
+                                    <iframe class="iframeElement" src="/Lobby/Board/JL"></iframe>
+
+                                </div>
+                            </section>
+
+
+                        </gupw-lobby-board>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+
+    <script src="/core/js/lobby/board.js"></script>
+    <%- include('../../includes/footer') %>
