@@ -1,0 +1,23 @@
+<app-banner _ngcontent-serverapp-c163="" _nghost-serverapp-c161="">
+    <div _ngcontent-serverapp-c161="">
+        <swiper _ngcontent-serverapp-c161=""
+            class="swiper z-10 swiper-initialized swiper-horizontal swiper-android mySwiperBanner">
+            <div class="swiper-wrapper"
+                style="transform: translate3d(-3510px, 0px, 0px); transition-duration: 300ms;">
+
+                <% dataPage.session.siteConfig.site_banner.forEach((item)=> { %>
+                    <div data-swiper-slide-index="10" class="swiper-slide swiper-slide-duplicate"
+                        style="width: 390px;">
+                        <img onclick="javascript:window.location='<%= item.permalink %>';"
+                            _ngcontent-serverapp-c161="" class="block h-full w-full"
+                            src="<%= item.image_url %>">
+                    </div>
+                    <% }); %>
+
+            </div>
+
+        </swiper>
+    </div>
+</app-banner>
+
+<script type="text/javascript" src="/core/js/include/banner.js"></script>

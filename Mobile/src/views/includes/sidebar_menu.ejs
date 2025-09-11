@@ -1,0 +1,163 @@
+<app-menu _ngcontent-serverapp-c91="" _nghost-serverapp-c94="">
+    <section _ngcontent-serverapp-c94="">
+        <div _ngcontent-serverapp-c94=""
+            class="fixed top-0 right-0 z-20 block h-screen w-screen bg-black/50 transition-all hidden sidebar-backdrop">
+        </div>
+        <div _ngcontent-serverapp-c94=""
+            class="menu fixed top-0 z-30 h-screen w-[82%] overflow-auto transition-all right-[-82%] sidebar-body">
+
+            <div _ngcontent-serverapp-c94="" class="relative flex min-h-[5vh] items-center justify-center">
+                <div _ngcontent-serverapp-c94="" onclick="initRightSidebar(false)"
+                    class="text-customized-text-primary absolute top-[15px] left-[15px] flex h-6 w-6 items-center justify-center rounded-full text-sm">
+                    <i _ngcontent-serverapp-c94="" class="fas fa-times-circle text-2xl"></i>
+                </div>
+                <% if (dataPage.session.user) { %>
+                    <% }else { %>
+                        <div _ngcontent-serverapp-c94="" class="not-login pt-7 uppercase" style="margin-top: 20px;">
+                            <div _ngcontent-serverapp-c94="" class="slogan flex flex-col items-center">
+                                <h2 _ngcontent-serverapp-c94="" class="text-customized-text-secondary">100%
+                                    Thưởng
+                                    Chào Mừng</h2>
+                            </div>
+                            <button _ngcontent-serverapp-c94="" type="button" onclick="window.location='/auth'"
+                                class="btn-login" tabindex="0">Tham gia
+                                ngay
+                            </button>
+                        </div>
+                        <% } %>
+            </div>
+
+
+            <ul _ngcontent-serverapp-c94="" class="entrance">
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='home')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl far fa-home-alt"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">Trang Chủ</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='slot-gamelobby')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/lobby/slot/INDEX">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fas fa-gamepad"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">NỔ HŨ</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='live-gamelobby')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/lobby/live">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fas fa-spade"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">CASINO</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='fish-gamelobby')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/lobby/fish">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fas fa-fish"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">BẮN CÁ</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='sport-gamelobby')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/lobby/sport">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fas fa-futbol"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">Thể thao</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='lottery-gamelobby')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/lobby/lottery">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fas fa-ticket-alt"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">Xổ số</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='board-gamelobby')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/lobby/board/INDEX">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fas fa-chess-pawn"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">GAME BÀI</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='promotions')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/Promotion">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fal fa-gift"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">Khuyến mại</span>
+                    </a>
+                </li>
+                <li _ngcontent-serverapp-c94="" class="<%=(dataPage.location=='wallet-transfer')?'active':'';%>">
+                    <a _ngcontent-serverapp-c94="" href="/account/wallet-transfer">
+                        <i _ngcontent-serverapp-c94="" class="text-3xl fas fa-wallet"></i>
+                        <span _ngcontent-serverapp-c94="" class="uppercase" style="font-size: 14px;">Chuyển quỹ
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+
+
+            <app-menu-list _ngcontent-serverapp-c94="" _nghost-serverapp-c93="">
+                <ul _ngcontent-serverapp-c93="">
+                    <% if (dataPage.session.user) { %>
+                        <li _ngcontent-serverapp-c93="" class="h-10 text-sm">
+                            <a _ngcontent-serverapp-c93="" class="inline-flex h-full w-[80%] items-center align-top"
+                                href="/account/game-history">
+                                Lịch sử đặt cược </a>
+                            <i _ngcontent-serverapp-c93=""
+                                class="inline-flex h-full w-9 items-center justify-center text-center text-lg fas fa-history"
+                                style="color: #ef5a00;"></i>
+                        </li>
+                        <li _ngcontent-serverapp-c93="" class="h-10 text-sm">
+                            <a _ngcontent-serverapp-c93="" class="inline-flex h-full w-[80%] items-center align-top"
+                                href="/account/finan-history">
+                                Chi tiết giao dịch </a>
+                            <i _ngcontent-serverapp-c93=""
+                                class="inline-flex h-full w-9 items-center justify-center text-center text-lg fas fa-history"
+                                style="color: #ef5a00;"></i>
+                        </li>
+                        <li _ngcontent-serverapp-c93="" class="h-10 text-sm">
+                            <a _ngcontent-serverapp-c93="" class="inline-flex h-full w-[80%] items-center align-top"
+                                href="/account/inbox"> Thông báo & Hòm thư
+                            </a>
+                            <i _ngcontent-serverapp-c93=""
+                                class="inline-flex h-full w-9 items-center justify-center text-center text-lg fas fa-envelope"
+                                style="color: #ef5a00;"></i>
+                        </li>
+                        <li _ngcontent-serverapp-c93="" class="h-10 text-sm">
+                            <a _ngcontent-serverapp-c93="" class="inline-flex h-full w-[80%] items-center align-top"
+                                href="/account/security">
+                                Thay đổi mật khẩu
+                            </a>
+                            <i _ngcontent-serverapp-c93=""
+                                class="inline-flex h-full w-9 items-center justify-center text-center text-lg fas fa-key"
+                                style="color: #ef5a00;"></i>
+                        </li>
+                        <li _ngcontent-serverapp-c93="" class="h-10 text-sm">
+                            <a _ngcontent-serverapp-c93="" class="inline-flex h-full w-[80%] items-center align-top"
+                                href="/account/agency">
+                                Khu vực đại lý
+                            </a>
+                            <i _ngcontent-serverapp-c93=""
+                                class="inline-flex h-full w-9 items-center justify-center text-center text-lg fas fa-users"
+                                style="color: #ef5a00;"></i>
+                        </li>
+                        <% } %>
+                            <li _ngcontent-serverapp-c93="" class="h-10 text-sm">
+                                <a _ngcontent-serverapp-c93="" href="https://t.me/cskh8kvip"
+                                    class="inline-flex h-full w-[80%] items-center align-top" href="https://t.me/cskh8kvip">
+                                    Hỗ trợ trực tuyến </a>
+                                <i _ngcontent-serverapp-c93=""
+                                    class="inline-flex h-full w-9 items-center justify-center text-center text-lg fab fa-whatsapp-square"
+                                    style="color: #ef5a00;"></i>
+                            </li>
+
+                            <% if (dataPage.session.user) { %>
+                                <li _ngcontent-serverapp-c93="" class="h-10 text-sm">
+                                    <a _ngcontent-serverapp-c93=""
+                                        class="inline-flex h-full w-[80%] items-center align-top" href="/auth/logout">
+                                        Đăng xuất </a>
+                                    <i _ngcontent-serverapp-c93=""
+                                        class="inline-flex h-full w-9 items-center justify-center text-center text-lg fas fa-sign-out-alt"
+                                        style="color: #ef5a00;"></i>
+                                </li>
+                                <% } %>
+                </ul>
+            </app-menu-list>
+
+        </div>
+    </section>
+</app-menu>
+
+<script type="text/javascript" src="/core/js/include/sidebar_menu.js"></script>

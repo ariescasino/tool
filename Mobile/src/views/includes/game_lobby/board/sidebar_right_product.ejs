@@ -1,0 +1,270 @@
+<style>
+    /* width */
+    ::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .entrance-wrapper[_ngcontent-serverApp-c172] {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0
+    }
+
+    .entrance-wrapper[_ngcontent-serverApp-c172]:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 88%;
+        height: 100%
+    }
+
+    .entrance-wrapper.fix[_ngcontent-serverApp-c172] {
+        position: fixed;
+        top: 112px;
+        bottom: 62px;
+        right: auto;
+        width: 25%
+    }
+
+    .entrance-wrapper[_ngcontent-serverApp-c172] .btn[_ngcontent-serverApp-c172] {
+        width: 88%;
+        height: 20px;
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+        --tw-bg-opacity: 1;
+        background-color:  #ef5a00;
+        text-align: center;
+        z-index: 1
+    }
+
+    .entrance-wrapper[_ngcontent-serverApp-c172] li[_ngcontent-serverApp-c172] {
+        position: relative;
+        width: 88%;
+        margin: 3px 0;
+        padding: 3px 0;
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0 / var(--tw-text-opacity));
+        text-align: center;
+        border-radius: 0 10px 10px 0;
+        background: linear-gradient(to right, #43cfe7 0%, rgb(64, 196, 230) 100%);
+        --tw-bg-opacity: 1;
+        background-color: rgb(73 74 77 / var(--tw-bg-opacity))
+    }
+
+    .entrance-wrapper[_ngcontent-serverApp-c172] li.active[_ngcontent-serverApp-c172] {
+        --tw-bg-opacity: 1;
+        background-color:  #ef5a00
+    }
+
+    .entrance-wrapper[_ngcontent-serverApp-c172] li.active[_ngcontent-serverApp-c172]:before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 7px);
+        right: -8px;
+        width: 0;
+        height: 0;
+        border-width: 7px 0 7px 8px;
+        border-style: solid;
+        border-color: transparent;
+        --tw-border-opacity: 1;
+        border-left-color: rgb(255 77 0 / var(--tw-border-opacity))
+    }
+
+    .list-title[_ngcontent-serverApp-c172] {
+        position: relative;
+        width: 90%;
+        margin: 0 auto 5px;
+        text-align: left
+    }
+
+    .list-title[_ngcontent-serverApp-c172]:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 10px;
+        display: inline-block;
+        height: 1px;
+        background-color: #ff000f
+    }
+
+    .list-title[_ngcontent-serverApp-c172]>span[_ngcontent-serverApp-c172] {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 5px;
+        color: #fff;
+        font-size: 13px;
+        line-height: 30px;
+        background-color: #ff000f;
+        border-radius: 10px
+    }
+
+    .list-title.recommend[_ngcontent-serverApp-c172]:after {
+        background-color: #b9006d
+    }
+
+    .list-title.recommend[_ngcontent-serverApp-c172]>span[_ngcontent-serverApp-c172] {
+        background-color: #b9006d
+    }
+
+    .list-title.other[_ngcontent-serverApp-c172]:after {
+        background-color: #ff7c54
+    }
+
+    .list-title.other[_ngcontent-serverApp-c172]>span[_ngcontent-serverApp-c172] {
+        background-color: #ff7c54
+    }
+
+    .icon[_ngcontent-serverApp-c172] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%
+    }
+
+    .icon[_ngcontent-serverApp-c172] i[_ngcontent-serverApp-c172] {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background: no-repeat center top;
+        background-size: contain
+    }
+
+    .icon[_ngcontent-serverApp-c172] i.hot[_ngcontent-serverApp-c172] {
+        top: -5px;
+        left: 0;
+        background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/hot.0cd38f347d2485db.png)
+    }
+
+    .icon[_ngcontent-serverApp-c172] i.event[_ngcontent-serverApp-c172] {
+        top: -5px;
+        right: -5px;
+        background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/events.e23c01f7521fdab9.png)
+    }
+
+    .icon[_ngcontent-serverApp-c172] i.new[_ngcontent-serverApp-c172] {
+        bottom: 0;
+        right: -5px;
+        background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/prize.c3f3768bcac8ed7e.png)
+    }
+
+    .more-btn[_ngcontent-serverApp-c172] {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: #b9006d;
+        height: 26px;
+        text-decoration: none;
+        line-height: 26px
+    }
+
+    .more-btn[_ngcontent-serverApp-c172]:after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 5px;
+        border: 5px solid transparent;
+        border-left: 10px solid #b9006d
+    }
+
+    .more-btn[_ngcontent-serverApp-c172]>span[_ngcontent-serverApp-c172] {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 4.2rem;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden
+    }
+
+    .review-btn[_ngcontent-serverApp-c172] {
+        flex: 0 0 33%
+    }
+</style>
+
+<section _ngcontent-serverapp-c172="" class="entrance relative w-1/4" style="background-color: #000000;">
+
+    <section _ngcontent-serverapp-c172="" class="entrance-wrapper normal"
+        style="bottom: auto; height: 605px; opacity: 1;background-color: #000000;">
+
+        <div _ngcontent-serverapp-c172="" class="relative h-full overflow-y-scroll">
+            <ul _ngcontent-serverapp-c172="" class="absolute top-0 left-0 w-full list-production-select">
+                <li _ngcontent-serverapp-c172="" class="<%=(location=='INDEX')?'active':'';%>" data-product="INDEX">
+                    <img _ngcontent-serverapp-c172="" class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/RecommendGame.png">
+                    Giới thiệu
+                    <div _ngcontent-serverapp-c172="" class="icon">
+                    </div>
+                </li>
+                <!-- <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='V8')?'active':'';%>" data-product="V8">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/d6c4faf8953144f5a3794b456b0b8fdc.png">
+                    V8<div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li> -->
+                <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='JL')?'active':'';%>" data-product="JL">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/a1f0fd5b705b4184aa2de502e3d13423.png">
+                    JILI<div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li>
+                <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='KM')?'active':'';%>" data-product="KM">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/b73ed5b003874c78b19529c38184218a.png">
+                    KM<div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li>
+                <!-- <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='TP')?'active':'';%>" data-product="TP">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/TpBoard.png">
+                        TP <div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li> -->
+                <!-- <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='RICH88')?'active':'';%>" data-product="RICH88">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/e743cedecfee4100ba90f17ade27d260.png">
+                    RICH88<div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li> -->
+                <!-- <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='MG')?'active':'';%>" data-product="MG">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/626c9396864e400c8e25ed23205caa12.png">
+                    MG<div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li> -->
+                <!-- <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='FTG')?'active':'';%>" data-product="FTG">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/3fcb12553fb14c9581f9d6f53beb808e.png">
+                    FTG<div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li> -->
+                <!-- <li _ngcontent-serverapp-c172="" class="ng-star-inserted <%=(location=='BSP')?'active':'';%>" data-product="BSP">
+                    <img _ngcontent-serverapp-c172=""
+                        class="mx-auto block h-10 max-w-full"
+                        src="/cdn/system-requirement/Multimedia/Navigation/Mobile/Term/5bc048a670a8484d83c999c7403c1900.png">
+                    BSP<div _ngcontent-serverapp-c172="" class="icon"></div>
+                </li> -->
+            </ul>
+        </div>
+    </section>
+</section>

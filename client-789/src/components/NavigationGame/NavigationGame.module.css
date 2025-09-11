@@ -1,0 +1,113 @@
+.nav {
+  padding-bottom: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid #2f180c;
+  min-height: 345px;
+}
+
+.linkBG {
+  background: url(/images/NavigationGame/780ef1edb1dadea82b19f62dbbad5eaf.png) no-repeat center;
+  position: absolute;
+  width: 126px;
+  height: 26px;
+  bottom: -26px;
+  left: 50%;
+  margin-left: -48px;
+}
+
+.navList {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 984px;
+  height: 42px;
+  margin: 8px auto 0;
+  background: url(/images/NavigationGame/42e2d3cfce4ce2291118a27431d26434.png) no-repeat;
+}
+
+.navList ul {
+  width: 815px;
+  margin: 0 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.navList ul li {
+  position: relative;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  height: 42px;
+  padding: 0 14px;
+  color: #5b2b11;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.divider {
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: url(/images/NavigationGame/39bdad8ab8a6810e8d908009231fb51c.png) no-repeat center;
+}
+
+.active {
+  background: url(/images/NavigationGame/f0bceb98d236bbf8e0aaa063207218e9.png) no-repeat center bottom;
+}
+
+.active span {
+  color: #ed1515;
+}
+
+.listGame {
+  max-height: 207px;
+  text-align: center;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding-left: 16px;
+}
+
+.entraceList {
+  display: inline-block;
+  width: 928px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #78550a;
+  border-left: 1px solid #78550a;
+}
+
+.entraceList li {
+  position: relative;
+  float: left;
+  width: 103px;
+  height: 103px;
+  border-right: 1px solid #78550a;
+  background: #000;
+  border-bottom: 1px solid #78550a;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.bgItem {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 98px;
+  height: 98px;
+}

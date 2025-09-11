@@ -1,0 +1,17 @@
+.main {
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.head {
+    position: relative;
+    height: 48px;
+    margin: 0;
+    padding-left: 20px;
+    color: #fc8f00;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 48px;
+    background-image: url(/images/account/30606dfc8c7775a8530fac4d10ca70e0.png);
+}

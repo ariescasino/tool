@@ -1,0 +1,586 @@
+<%- include('../../includes/header') %>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Tinos&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Saira+Semi+Condensed:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"
+        type="text/javascript"></script>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.rawgit.com/turuslan/HackTimer/master/HackTimer.js" charset="utf-8"></script>
+    <link href="/core/plugins/toast/style.css" rel="stylesheet">
+    <script src="/core/plugins/toast/toast.js"></script>
+
+    <link rel="stylesheet" href="/core/plugins/toggle-switch/ToggleSwitch.css">
+    <script src="/core/plugins/toggle-switch/ToggleSwitch.js"></script>
+
+    <link href="/core/css/game/baccarat/style.css" rel="stylesheet">
+    <script src="/core/js/game/baccarat/card_config.js"></script>
+
+    <div id="overlay-request-rotate" class="overlay-request-rotate">
+        <div class="container-overlay">
+            <div class="overlay-content">
+                <img style="width: 36%; height: auto;"
+                    src="https://assets-v2.lottiefiles.com/a/685770f2-1168-11ee-8e72-c72882ce9865/gLAYGvglay.gif" />
+            </div>
+            <div class="overlay-text">
+                <h1 style="color: #fff;">Vui lòng sử dụng màn hình dọc</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="BDw45cKhOY5X-HJyc5_2C _8XOzSmOOEZguY1YmMefoR" id="rootPage" style="touch-action: none;">
+        <div class="_1h0fCbtWimc44r9dNSenvs _1BIEU2VALeTfh2iEbzGBn-">
+            <ui-view class="ng-scope">
+                <gupw-sample-lobby-layout class="ng-scope ng-isolate-scope">
+                    <ui-view class="ng-scope">
+                        <gupw-lobby-live class="ng-scope ng-isolate-scope">
+                            <section class="_32BGGm53XyuQqbr3GBlW0b">
+                                <div id="game-container">
+
+                                    <div class="row-container">
+
+                                        <div class="node-header-container" style="display: none;">
+                                            <div class="sound-audio-icon"></div>
+                                            <div class="dot-board-icon"></div>
+                                            <div class="history-icon"></div>
+                                            <div class="tutorial-icon"></div>
+                                            <div class="setting-icon"></div>
+                                        </div>
+
+                                        <div class="back-game-icon"></div>
+                                        <div class="menu-bar-icon"></div>
+
+                                        <div class="node-player-frame">
+                                            <div class="player-frame">
+                                                <iframe src="" class="iframe-row" id="game-iframe"></iframe>
+                                            </div>
+                                        </div>
+
+                                        <div class="node-dot-board-container" style="display: none;"
+                                            id="node-dot-board-container">
+                                            <div class="close-dot-board-icon"></div>
+                                            <div class="node-dot-line-1"></div>
+                                            <div class="node-dot-line-2"></div>
+                                        </div>
+
+                                        <div class="card-result-container" style="display: none;">
+                                            <div class="node-card-player">
+                                                <div class="node-card-player-card1" id="node-card-player-card1"></div>
+                                                <div class="node-card-player-card2" id="node-card-player-card2"></div>
+                                                <div class="node-card-player-card3" id="node-card-player-card3"
+                                                    style="display: none;"></div>
+                                                <div class="node-total-point" id="node-player-total-point"
+                                                    style="display: none;">
+                                                    <span class="node-total-point-text"
+                                                        id="node-player-total-point-text">0</span>
+                                                </div>
+                                            </div>
+                                            <div class="node-card-banker">
+                                                <div class="node-card-banker-card1" id="node-card-banker-card1"></div>
+                                                <div class="node-card-banker-card2" id="node-card-banker-card2"></div>
+                                                <div class="node-card-banker-card3" id="node-card-banker-card3"
+                                                    style="display: none;"></div>
+                                                <div class="node-total-point" id="node-banker-total-point"
+                                                    style="display: none;">
+                                                    <span class="node-total-point-text"
+                                                        id="node-banker-total-point-text">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="node-time-remain" style="display: none;">
+                                            <div class="node-bg-time-remain"></div>
+                                            <div class="node-spinner-time-remain"></div>
+                                            <div class="node-text-time-remain" id="node-text-time-remain"></div>
+                                        </div>
+
+                                        <div class="board-node-container">
+
+                                            <div class="node-infomation-container">
+                                                <div class="node-balance-btn">
+                                                    <span class="text-content"><span>Số Dư:&nbsp;</span> <span
+                                                            id="txt-current-balance">0</span></span>
+                                                </div>
+                                                <div class="node-round-id-btn">
+                                                    <span class="text-content">
+                                                        <span>Trò Chơi:&nbsp;</span>
+                                                        <span>#</span>
+                                                        <span id="txt-round-id"></span>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="board-node-bet-container-mobile">
+                                                <!-- Choise Door Button -->
+                                                <div class="board-node-select-bet" id="board-node-select-bet">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="animate-flicker node-win-player-double wrap-win-button"
+                                                                id="node-win-player-double-mobile"
+                                                                style="display: none;">
+                                                            </div>
+                                                            <div class="node-player-double button"
+                                                                data-value="node-player-double">
+                                                                <span class="current-amount"
+                                                                    id="node-player-double-current-amount"></span>
+                                                                <span class="rate">1:12</span>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="animate-flicker node-win-super wrap-win-button"
+                                                                id="node-win-super-mobile" style="display: none;"></div>
+                                                            <div class="node-super button" data-value="node-super">
+                                                                <span class="current-amount"
+                                                                    id="node-super-current-amount"></span>
+                                                                <span class="rate">1:13/1:21</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="animate-flicker node-win-banker-double wrap-win-button"
+                                                                id="node-win-banker-double-mobile"
+                                                                style="display: none;">
+                                                            </div>
+                                                            <div class="node-banker-double button"
+                                                                data-value="node-banker-double">
+                                                                <span class="current-amount"
+                                                                    id="node-banker-double-current-amount"></span>
+                                                                <span class="rate">1:12</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="animate-flicker node-win-player wrap-win-button"
+                                                                id="node-win-player-mobile" style="display: none;">
+                                                            </div>
+                                                            <div class="node-player button" data-value="node-player">
+                                                                <span class="current-amount"
+                                                                    id="node-player-current-amount"></span>
+                                                                <span class="rate">1:2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="animate-flicker node-win-draw wrap-win-button"
+                                                                id="node-win-draw-mobile" style="display: none;">
+                                                            </div>
+                                                            <div class="node-draw button" data-value="node-draw">
+                                                                <span class="current-amount"
+                                                                    id="node-draw-current-amount"></span>
+                                                                <span class="rate">1:9</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="animate-flicker node-win-banker wrap-win-button"
+                                                                id="node-win-banker-mobile" style="display: none;">
+                                                            </div>
+                                                            <div class="node-banker button" data-value="node-banker">
+                                                                <span class="current-amount"
+                                                                    id="node-banker-current-amount"></span>
+                                                                <span class="rate">1:9.5</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="board-node-select-chip-container">
+
+                                                <div class="board-main-chip-select-value">
+                                                    <!-- Swiper -->
+                                                    <div class="blingChip_Box">
+                                                        <div class="blingChip_slide">
+                                                            <div class="swiper swipper-list-chip">
+                                                                <div
+                                                                    class="swiper-wrapper chip-amount-select-container">
+                                                                </div>
+                                                            </div>
+                                                            <div data-v-ea6f34b4="" class="btn_blingChip_Set">
+                                                                <img data-v-ea6f34b4=""
+                                                                    src="https://ga88.vn2kuvideo.com/MVG/Areas/Mobile/Content/Images/blingChip/icon_blingChip_Set.png">
+                                                            </div>
+                                                            <div class="swiper-button-next"></div>
+                                                            <div class="swiper-button-prev"></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <!-- <div class="node-chip-1 active chip-contain" data-value="1000">
+                                                    </div>
+                                                    <div class="node-chip-10 chip-contain" data-value="10000"></div>
+                                                    <div class="node-chip-100 chip-contain" data-value="100000"></div>
+                                                    <div class="node-chip-1000 chip-contain" data-value="1000000"></div>
+                                                    <div class="node-chip-10000 chip-contain" data-value="10000000"></div> -->
+                                                </div>
+                                                <div class="node-chip-confirm-reset">
+                                                    <div class="node-chip-reset">
+                                                        <span class="text-content">⒳ HỦY HẾT</span>
+                                                    </div>
+                                                    <div class="node-chip-confirm">
+                                                        <span class="text-content">✓ XÁC NHẬN</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="clear-fix-space" style="height: 150px;">
+                                                <!-- <div class="node-dot-board-container mobile"
+                                                    style="display: none; position: relative;"
+                                                    id="node-dot-board-container-mobile">
+                                                    <div class="close-dot-board-icon"></div>
+                                                    <div class="node-dot-line-1"></div>
+                                                    <div class="node-dot-line-2"></div>
+                                                </div> -->
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Notify  -->
+                                        <div id="fast-notify-container"></div>
+
+                                        <!-- Setting Chip Modal -->
+                                        <div id="modal-setting-chip" class="modal" style="padding-top:40%;">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content" style="width: 60%;">
+                                                <div class="modal-header">
+                                                    <span id="btn-close-modal-setting-chip" class="close"
+                                                        style="margin-top: 0px;">&times;</span>
+                                                    <center>
+                                                        <h3 style="margin-top: 10px;">Cài Đặt Phỉnh
+                                                            Cược</h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body"
+                                                    style="padding: 40px;background-color: #27243ffc;">
+                                                    <div class="flex-grid-setting-chip"></div>
+                                                    <center>
+                                                        <button class="button-confirm-setting-chip">Xác nhận</button>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-footer" style="background-color: #27243ffc;">
+                                                    <center>
+                                                        <h5 style="margin-top: 0px;font-weight: 500; color: #c5c5c5;">
+                                                            Vui lòng chọn tối thiểu 5 phỉnh</h5>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Client Notify -->
+                                        <div class="fast-notify-client"></div>
+
+
+                                        <!-- Setting Modal -->
+                                        <div id="modal-setting-panel" class="modal" style="padding-top:40%;">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content" style="width: 60%;">
+                                                <div class="modal-header">
+                                                    <span id="btn-close-modal-setting-panel" class="close"
+                                                        style="margin-top: 0px;"
+                                                        onclick="clickShowSettingPanelModal(false)">&times;</span>
+                                                    <center>
+                                                        <h3 style="margin-top: 10px;font-weight: 500;">Cấu Hình Cài Đặt
+                                                            Chung
+                                                        </h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body"
+                                                    style="padding: 15px;background-color: #27243ffc;display: flex;justify-content: center;">
+                                                    <div class="flex-grid-setting-panel">
+                                                        <div class="col1 mb-10">
+                                                            <p class="txt-white">Âm Thanh LiveStream</p>
+                                                        </div>
+                                                        <div class="col2 mb-10">
+                                                            <input type="checkbox" id="value-setting-audio-livestream"
+                                                                onclick="switchSettingAction('audio_livestream', $(this))">
+                                                        </div>
+
+                                                        <div class="col1 mb-10">
+                                                            <p class="txt-white">Âm Thanh Trò Chơi</p>
+                                                        </div>
+                                                        <div class="col2 mb-10">
+                                                            <input type="checkbox" id="value-setting-audio-effect"
+                                                                onclick="switchSettingAction('audio_effect', $(this))">
+                                                        </div>
+
+                                                        <div class="col1 mb-10">
+                                                            <p class="txt-white">Cho Phép Cuộn Trang</p>
+                                                        </div>
+                                                        <div class="col2 mb-10">
+                                                            <input type="checkbox" id="value-setting-allow-scroll-page"
+                                                                onclick="switchSettingAction('allow_scroll', $(this))">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer" style="background-color: #27243ffc;"><br>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Allow Scoll Page Modal -->
+                                        <div id="modal-request-scroll-page" class="modal" style="padding-top:40%;">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content" style="width: 60%;">
+                                                <div class="modal-header">
+                                                    <span id="btn-close-modal-request-scroll-page" class="close"
+                                                        style="margin-top: 0px;"
+                                                        onclick="showModalRequestAllowScollPage(false)">&times;</span>
+                                                    <center>
+                                                        <h3 style="margin-top: 10px;font-weight: 600;">Yêu cầu cho phép
+                                                            cuộn trang</h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body"
+                                                    style="padding: 15px;background-color: #27243ffc;">
+                                                    <div class="txt-request-allow-scroll">
+                                                        <p style="color: #fff;">Chiều dài màn hình thiết bị của bạn
+                                                            không đủ, vui lòng cho
+                                                            phép cuộn trang để trò chơi phù hợp với thiết bị của
+                                                            bạn!<br>
+                                                            Bạn có thể thay đổi chức năng này trong cài đặt.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer" style="background-color: #27243ffc;">
+                                                    <center>
+                                                        <button class="button-confirm-allow-scroll"
+                                                            onclick="switchSettingAction('allow_scroll', $('#value-setting-allow-scroll-page'))">Cho
+                                                            phép
+                                                            cuộn</button>
+                                                    </center>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- History Modal -->
+                                        <div id="modal-history-bet" class="modal">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <span id="btn-close-modal-history-bet" class="close"
+                                                        style="margin-top: 0px;">&times;</span>
+                                                    <center>
+                                                        <h3 style="margin-top: 10px;font-weight: 600;">Lịch sử đặt cược
+                                                        </h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body table-responsive" style="padding: 0px;">
+                                                    <table class="table table-bordered table-responsive"
+                                                        style="margin-bottom: 0px;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center" style="font-size: 11px;">Phiên
+                                                                </th>
+                                                                <th class="text-center" style="font-size: 11px;">Con
+                                                                </th>
+                                                                <th class="text-center" style="font-size: 11px;">Con
+                                                                    Đôi</th>
+                                                                <th class="text-center" style="font-size: 11px;">Cái
+                                                                </th>
+                                                                <th class="text-center" style="font-size: 11px;">Cái
+                                                                    Đôi</th>
+                                                                <th class="text-center" style="font-size: 11px;">Hòa
+                                                                </th>
+                                                                <th class="text-center" style="font-size: 11px;">Super
+                                                                </th>
+                                                                <th class="text-center" style="font-size: 11px;">Tổng
+                                                                    Cược</th>
+                                                                <th class="text-center" style="font-size: 11px;">Kết Quả
+                                                                </th>
+                                                                <th class="text-center" style="font-size: 11px;">Tổng
+                                                                    Thắng</th>
+                                                                <th class="text-center" style="font-size: 11px;">Tổng
+                                                                    Thua</th>
+                                                                <th class="text-center" style="font-size: 11px;">Hoàn
+                                                                    Trả</th>
+                                                                <th class="text-center" style="font-size: 11px;">Thời
+                                                                    gian</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="history-bet-content">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer"
+                                                    style="height: 37px;display: flex; justify-content: center;">
+                                                    <nav class="text-center">
+                                                        <ul class="pagination text-center" id="history-bet-pagination"
+                                                            style="margin: 5px 0;"></ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Tutorial Modal -->
+                                        <div id="modal-tutorial" class="modal">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content" style="width: 60%;">
+                                                <div class="modal-header">
+                                                    <span id="btn-close-modal-tutorial" class="close"
+                                                        style="margin-top: 0px;">&times;</span>
+                                                    <center>
+                                                        <h3 style="margin-top: 10px;font-weight: 600;">Hướng Dẫn Trò
+                                                            Chơi Baccarat</h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body" style="padding: 15px;">
+                                                    <div class="tutorial-container"
+                                                        style="overflow-y: scroll; overflow-x: hidden; max-height: 80%;">
+                                                        <h2><strong>Baccarat là gì?</strong></h2>
+                                                        <p>Baccarat là gì? Trò chơi baccarat có nhiều đặc điểm giống với
+                                                            game bài cào 3 lá ở Việt Nam. Đây là trò chơi sử dụng bộ bài
+                                                            túi lơ khơ 52 lá quen thuộc. Khi tham gia baccarat, bạn chỉ
+                                                            cần đặt cược vào các cửa cược. Các công việc còn lại do nhà
+                                                            cái thực hiện để phân định thắng thua cho người chơi.&nbsp;
+                                                        </p>
+                                                        <h2><strong>Luật chơi game baccarat</strong></h2>
+                                                        <p>Như đã trình bày ở trên, người chơi tham gia baccarat chỉ cần
+                                                            đặt cược vào các ô cửa cửa. Nhiệm vụ còn lại sẽ được thực
+                                                            hiện bởi nhà cái để xác định thắng thua. Các ô cửa cược
+                                                            trong baccarat bao gồm:</p>
+                                                        <ul>
+                                                            <li>Player: cược cho người thắng cuộc</li>
+                                                            <li>Banker: cược cho nhà cái thắng</li>
+                                                            <li>Hòa: cược số điểm giữa banker và player là bằng nhau
+                                                            </li>
+                                                        </ul>
+                                                        <p>Sau khi người chơi đặt cược xong, nhà cái sẽ tiến hành chi 2
+                                                            lá bài vào 2 cửa banker, player và phân định thắng thua cho
+                                                            người cược. Ai đặt cược vào cửa có số điểm cao hơn và xấp xỉ
+                                                            bằng 9 là người chiến thắng.&nbsp;</p>
+                                                        <p>Để xác định người thắng cuộc, nhà cái sẽ tiến hành tính điểm
+                                                            của các lá bài. Mỗi lá bài có số điểm khác nhau. Quy tắc
+                                                            tính điểm của bài baccarat như sau:</p>
+                                                        <ul>
+                                                            <li>Cây bài A: 1 điểm</li>
+                                                            <li>Các lá bài từ 10 đến K: 10 điểm</li>
+                                                            <li>Các lá bài từ 2 đến 9 có số điểm tương ứng với giá trị
+                                                                được in trên mỗi cây</li>
+                                                            <li>Nếu tổng số điểm lớn hơn 10, số điểm chính là chữ số
+                                                                hàng đơn vị. Ví dụ: tổng số điểm là 13, điểm chính thức
+                                                                của bạn là 3 điểm.&nbsp;</li>
+                                                        </ul>
+                                                        <p>Số tiền người thắng cuộc nhận được tùy thuộc vào ô cửa mà
+                                                            người đó đặt cược. Mỗi cửa có tỷ lệ ăn tiền khác nhau. Cụ
+                                                            thể, tỷ lệ thắng của người chơi được tính như sau:</p>
+                                                        <ul>
+                                                            <li>Cửa player: đặt 1 ăn 1. Ví dụ: đặt 2 triệu đồng thắng 2
+                                                                triệu đồng</li>
+                                                            <li>Cửa Banker: đặt 1 ăn 0.95. Ví dụ: đặt cược 1 triệu đồng
+                                                                thắng 950 nghìn đồng</li>
+                                                            <li>Cửa Hòa: đặt cược 1 ăn 8. Ví dụ: đặt cược 1 triệu đồng
+                                                                thắng 8 triệu đồng</li>
+                                                        </ul>
+                                                        <p>Trong 3 cửa, cửa Hòa khó xảy ra nhất nên có tỉ lệ thắng cao
+                                                            nhất.&nbsp;</p>
+                                                        <h3><strong>Cách chơi baccarat trực tuyến</strong></h3>
+                                                        <p>Quy trình chơi baccarat trực tuyến được thực hiện thông qua 3
+                                                            bước sau:</p>
+                                                        <p><strong>Bước 1: </strong>Người chia bài chia cho player và
+                                                            banker mỗi người 2 cây.</p>
+                                                        <p><strong>Bước 2: </strong>Căn cứ vào số điểm của 2 cây bài đầu
+                                                            tiên, chúng ta biết được player hoặc banker có được quyền
+                                                            rút tiếp lá bài thứ 3 không.&nbsp;</p>
+                                                        <p><strong>Bước 3: </strong>Người chơi sẽ tính điểm và so sánh
+                                                            số điểm của 2 cây bài đầu tiên ở 2 bên. Dưới đây là các
+                                                            trường hợp có thể xảy ra khi tính điểm:</p>
+                                                        <p><strong>Player: </strong></p>
+                                                        <ul>
+                                                            <li>Nếu số điểm dao động từ 0 – 5 điểm, player được phép rút
+                                                                thêm lá bài thứ 3</li>
+                                                            <li>Nếu số điểm dao động từ 6 – 9 điểm, player không được
+                                                                rút cây bài thứ 3</li>
+                                                            <li>Banker</li>
+                                                        </ul>
+                                                        <p><strong>Banker: </strong></p>
+                                                        <ul>
+                                                            <li>Nếu số điểm dao động từ 0 – 2 điểm, banker được phép rút
+                                                                lá bài thứ 3</li>
+                                                            <li>Nếu số điểm dao động từ &gt;= 6&nbsp; điểm, banker không
+                                                                được phép rút lá bài thứ 3&nbsp;</li>
+                                                            <li>Nếu 2 lá bài đầu tiên có tổng điểm bằng 3, người chơi
+                                                                xét đến lá thứ 3 của player là gì</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>Không phải cây bài số 8, banker được quyền rút thêm lá
+                                                                bài thứ 3</li>
+                                                            <li>Là cây bài số 8, banker không được quyền rút thêm lá bài
+                                                                thứ 3</li>
+                                                            <li>Nếu 2 lá bài đầu tiên có tổng điểm bằng 4, người chơi
+                                                                phải xét đến lá bài thứ 3 của player là gì:</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>Nếu lá đó là một trong các cây 7, 6, 5, 4, 3, 2, banker
+                                                                được quyền rút thêm cây thứ 3</li>
+                                                            <li>Nếu không phải là một trong các cây bài trên, banker
+                                                                không được rút thêm cây thứ 3</li>
+                                                            <li>Nếu 2 lá bài đầu tiên có tổng điểm bằng 5, người chơi
+                                                                xét đến lá thứ 3 của player là gì</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>Nếu lá đó là một trong các cây 7, 6, 5, 4, banker được
+                                                                quyền rút thêm cây thứ 3</li>
+                                                            <li>Nếu không phải là một trong các cây bài trên, banker
+                                                                không được rút thêm cây thứ 3</li>
+                                                            <li>Nếu 2 lá bài đầu tiên có tổng điểm bằng 6, người chơi
+                                                                xét đến lá thứ 3 của player là gì</li>
+                                                        </ul>
+
+                                                        <ul>
+                                                            <li>Nếu lá đó là một trong các cây 7, 6,&nbsp; banker được
+                                                                quyền rút thêm cây thứ 3</li>
+                                                            <li>Nếu không phải là một trong các cây bài trên, banker
+                                                                không được rút thêm cây thứ 3</li>
+                                                            <li>Trường hợp 2 lá bài đầu tiên có tổng điểm bằng 7 – 9,
+                                                                banker không có quyền rút thêm lá bài thứ 3</li>
+                                                        </ul>
+                                                        <p><strong>Bước 4: </strong>xét điểm của các bên tham gia chơi.
+                                                            Bên nào có số điểm cao hơn, bên đó thắng.</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Tutorial Modal -->
+                                        <div id="modal-disconnect" class="modal">
+                                            <!-- Modal conent -->
+                                            <div class="modal-content" style="width: 60%;">
+                                                <div class="modal-header">
+                                                    <center>
+                                                        <h3 style="font-weight: 600;">Mất kết nối tới máy chủ</h3>
+                                                    </center>
+                                                </div>
+                                                <div class="modal-body" style="padding: 15px;">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </section>
+                        </gupw-lobby-live>
+                    </ui-view>
+                </gupw-sample-lobby-layout>
+            </ui-view>
+        </div>
+    </div>
+    <script src="/core/js/game/baccarat/baccarat.js"></script>
+    <script src="/core/js/game/baccarat/websocket.js"></script>
+
+
+    <%- include('../../includes/footer') %>

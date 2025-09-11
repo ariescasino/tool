@@ -1,0 +1,310 @@
+{
+    "PG0130": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0130.png",
+        "name": "Safari Wilds"
+    },
+    "PG0129": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0129.png",
+        "name": "Cruise Royale"
+    },
+    "PG0128": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0128.png",
+        "name": "Fruit Candy"
+    },
+    "PG0127": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0127.png",
+        "name": "Lucky Clover Lady"
+    },
+    "PG0126": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0126.png",
+        "name": "Super Golf Drive"
+    },
+    "PG0125": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0125.png",
+        "name": "Mystical Spirits"
+    },
+    "PG0124": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0124.png",
+        "name": "Songkran Splash"
+    },
+    "PG0123": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0123.png",
+        "name": "Bakery Bonanza"
+    },
+    "PG0122": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0122.png",
+        "name": "Hawaiian Tiki"
+    },
+    "PG0121": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0121.png",
+        "name": "Rave Party Fever"
+    },
+    "PG0120": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0120.png",
+        "name": "Fortune Rabbit"
+    },
+    "PG0119": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0119.png",
+        "name": "Midas Fortune"
+    },
+    "PG0118": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0118.png",
+        "name": "Asgardian Rising"
+    },
+    "PG0117": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0117.png",
+        "name": "Diner Delights"
+    },
+    "PG0116": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0116.png",
+        "name": "Alchemy Gold"
+    },
+    "PG0115": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0115.png",
+        "name": "Totem Wonders"
+    },
+    "PG0114": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0114.png",
+        "name": "Prosperity Fortune Tree"
+    },
+    "PG0113": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0113.png",
+        "name": "Wild Bounty Showdown"
+    },
+    "PG0112": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0112.png",
+        "name": "Wild Coaster"
+    },
+    "PG0111": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0111.png",
+        "name": "Legend of Perseus"
+    },
+    "PG0110": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0110.png",
+        "name": "Speed Winner"
+    },
+    "PG0109": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0109.png",
+        "name": "Lucky Piggy"
+    },
+    "PG0108": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0108.png",
+        "name": "Win Win Fish Prawn Crab"
+    },
+    "PG0107": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0107.png",
+        "name": "Battleground Royale"
+    },
+    "PG0106": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0106.png",
+        "name": "The Queen’s Banquet"
+    },
+    "PG0105": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0105.png",
+        "name": "Rooster Rumble"
+    },
+    "PG0104": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0104.png",
+        "name": "Butterfly Blossom"
+    },
+    "PG0103": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0103.png",
+        "name": "Destiny of Sun & Moon"
+    },
+    "PG0102": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0102.png",
+        "name": "Garuda Gems"
+    },
+    "PG0101": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0101.png",
+        "name": "Fortune Tiger"
+    },
+    "PG0100": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0100.png",
+        "name": "Oriental Prosperity"
+    },
+    "PG0099": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0099.png",
+        "name": "Mask Carnival"
+    },
+    "PG0098": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0098.png",
+        "name": "Cocktail Nights"
+    },
+    "PG0097": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0097.png",
+        "name": "Emoji Riches"
+    },
+    "PG0095": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0095.png",
+        "name": "Spirited Wonders"
+    },
+    "PG0094": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0094.png",
+        "name": "Legendary Monkey King"
+    },
+    "PG0093": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0093.png",
+        "name": "Buffalo Win"
+    },
+    "PG0092": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0092.png",
+        "name": "Supermarket Spree"
+    },
+    "PG0091": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0091.png",
+        "name": "Raider Jane's Crypt of Fortune"
+    },
+    "PG0089": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0089.png",
+        "name": "Mermaid Riches"
+    },
+    "PG0088": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0088.png",
+        "name": "Jurassic Kingdom"
+    },
+    "PG0086": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0086.png",
+        "name": "Rise of Apollo"
+    },
+    "PG0083": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0083.png",
+        "name": "Wild Bandito"
+    },
+    "PG0082": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0082.png",
+        "name": "Candy Bonanza"
+    },
+    "PG0081": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0081.png",
+        "name": "Majestic Treasures"
+    },
+    "PG0080": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0080.png",
+        "name": "Crypto Gold"
+    },
+    "PG0079": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0079.png",
+        "name": "Bali Vacation"
+    },
+    "PG0078": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0078.png",
+        "name": "Fortune Ox"
+    },
+    "PG0077": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0077.png",
+        "name": "Opera Dynasty"
+    },
+    "PG0076": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0076.png",
+        "name": "Guardians of Ice and Fire"
+    },
+    "PG0075": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0075.png",
+        "name": "Galactic Gems"
+    },
+    "PG0074": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0074.png",
+        "name": "Jack Frost's Winter"
+    },
+    "PG0073": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0073.png",
+        "name": "Lucky Neko"
+    },
+    "PG0072": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0072.png",
+        "name": "Jewels of Prosperity"
+    },
+    "PG0071": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0071.png",
+        "name": "Queen of Bounty "
+    },
+    "PG0068": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0068.png",
+        "name": "Thai River Wonders"
+    },
+    "PG0067": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0067.png",
+        "name": "Circus Delight"
+    },
+    "PG0066": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0066.png",
+        "name": "Treasures of Aztec"
+    },
+    "PG0065": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0065.png",
+        "name": "Genie's 3 Wishes"
+    },
+    "PG0063": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0063.png",
+        "name": "Wild Fireworks"
+    },
+    "PG0060": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0060.png",
+        "name": "Dreams of Macau"
+    },
+    "PG0059": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0059.png",
+        "name": "Phoenix Rises"
+    },
+    "PG0057": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0057.png",
+        "name": "Ganesha Fortune"
+    },
+    "PG0056": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0056.png",
+        "name": "Egypt's Book of Mystery"
+    },
+    "PG0055": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0055.png",
+        "name": "Mahjong Ways 2"
+    },
+    "PG0054": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0054.png",
+        "name": "Thiên Đường Bikini"
+    },
+    "PG0053": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0053.png",
+        "name": "Nổ Kẹo"
+    },
+    "PG0002": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0002.png",
+        "name": "Mỹ Nhân Kế Của Diao Chan"
+    },
+    "PG0003": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0003.png",
+        "name": "Thần May Mắn"
+    },
+    "PG0004": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0004.png",
+        "name": "Win Win Won"
+    },
+    "PG0005": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0005.png",
+        "name": "Medusa 2: Sứ mệnh Perseus"
+    },
+    "PG0007": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0007.png",
+        "name": "Cây Tài Lộc"
+    },
+    "PG0009": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0009.png",
+        "name": "Medusa 1: Lời nguyền của Athena"
+    },
+    "PG0012": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0012.png",
+        "name": "Plushie Frenzy"
+    },
+    "PG0019": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0019.png",
+        "name": "Truyền Thuyết Rồng"
+    },
+    "PG0046": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0046.png",
+        "name": "Mahjong Ways"
+    },
+    "PG0052": {
+        "icon": "https://images.b728484.com:42666/TCG_GAME_ICONS/PG/PG0052.png",
+        "name": "Caishen Wins"
+    }
+}

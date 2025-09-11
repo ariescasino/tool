@@ -1,0 +1,483 @@
+.gameHeadLine {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  margin: 0 0 10px;
+  width: 850px;
+}
+
+.gameHeadLine span {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 30px;
+  border-radius: 8px 8px 0 0;
+}
+
+.customeInputSearch {
+  width: 150px;
+  height: 32px;
+  font-size: 12px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  padding-left: 2px !important;
+  padding-right: 6px !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+  border-radius: 0px;
+}
+
+.customeInputSearch::placeholder {
+  color: #000;
+  letter-spacing: 0.0125px !important;
+  padding: 0px !important;
+}
+
+.customeInputSearch:focus::placeholder {
+  color: gray;
+}
+
+.pg {
+  background-color: none;
+}
+
+.pg:hover {
+  background-color: #ff1c4f;
+}
+
+.pgHover {
+  background-color: #ff1c4f;
+}
+
+.jili {
+  background-color: none;
+}
+
+.jili:hover {
+  background-color: #642801;
+}
+
+.jiliHover {
+  background-color: #642801;
+}
+
+.fc {
+  background-color: none;
+}
+
+.fc:hover {
+  background-color: #fa0;
+}
+
+.fcHover {
+  background-color: #fa0;
+}
+
+.tp {
+  background-color: none;
+}
+
+.tp:hover {
+  background-color: #003580;
+}
+
+.tpHover {
+  background-color: #003580;
+}
+
+.pp {
+  background-color: none;
+}
+
+.pp:hover {
+  background-color: #333;
+}
+
+.ppHover {
+  background-color: #333;
+}
+
+.cq9 {
+  background-color: none;
+}
+
+.cq9:hover {
+  background-color: #fddb00;
+  color: #000;
+}
+
+.cq9Hover {
+  color: #000;
+  background-color: #fddb00;
+}
+
+.mg {
+  background-color: none;
+}
+
+.mg:hover {
+  background-color: #21e519;
+  color: #000;
+}
+
+.mgHover {
+  background-color: #21e519;
+  color: #000;
+}
+
+.jdb {
+  background-color: none;
+}
+
+.jdb:hover {
+  background-color: #ffc600;
+  color: #000;
+}
+
+.jdbHover {
+  background-color: #ffc600;
+  color: #000;
+}
+
+.va {
+  background-color: none;
+}
+
+.va:hover {
+  background-color: #0062d5;
+}
+
+.vaHover {
+  background-color: #0062d5;
+}
+
+.spribe {
+  background-color: none;
+  color: #000;
+}
+
+.spribe:hover {
+  background-color: #2e2691;
+  color: white;
+}
+
+.spribeHover {
+  background-color: #2e2691;
+  color: white;
+}
+
+.afb {
+  background-color: none;
+}
+
+.afb:hover {
+  background-color: #1b2227;
+}
+
+.afbHover {
+  background-color: #1b2227;
+}
+
+.ka {
+  background-color: none;
+}
+
+.ka:hover {
+  background-color: #1b2227;
+}
+
+.kaHover {
+  background-color: #1b2227;
+}
+
+.bng {
+  background-color: none;
+  color: #000;
+}
+
+.bng:hover {
+  background-color: #ffd000;
+  color: white;
+}
+
+.bngHover {
+  background-color: #ffd000;
+  color: white;
+}
+
+.t1 {
+  background-color: none;
+  color: #000;
+}
+
+.t1:hover {
+  background-color: white;
+  color: #000;
+}
+
+.t1Hover {
+  background-color: white;
+  color: #000;
+}
+
+.r88 {
+  background-color: none;
+}
+
+.r88:hover {
+  background-color: #42e2f4;
+  color: #000;
+}
+
+.r88Hover {
+  background-color: #42e2f4;
+  color: #000;
+}
+
+.pt {
+  background-color: none;
+  color: #312f6e;
+}
+
+.pt:hover {
+  background-color: #312f6e;
+  color: #fff;
+}
+
+.ptHover {
+  background-color: #312f6e;
+  color: #fff;
+}
+
+.hb {
+  background-color: none;
+  color: #fff;
+}
+
+.hb:hover {
+  background-color: #000;
+  color: #ff0;
+}
+
+.hbHover {
+  background-color: #000;
+  color: #ff0;
+}
+
+.ftg {
+  background-color: none;
+}
+
+.ftg:hover {
+  background-color: #9828bc;
+}
+
+.ftgHover {
+  background-color: #9828bc;
+}
+
+.ns {
+  background-color: none;
+}
+
+.ns:hover {
+  background-color: #1b2227;
+}
+
+.nsHover {
+  background-color: #1b2227;
+}
+
+.mw {
+  background-color: none;
+}
+
+.mw:hover {
+  background-color: #fff;
+  color: #8d54f6;
+}
+
+.mwHover {
+  background-color: #fff;
+  color: #8d54f6;
+}
+
+.yb {
+  background-color: none;
+}
+
+.yb:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.ybHover {
+  background-color: #fff;
+  color: #000;
+}
+
+.askme {
+  background-color: none;
+  color: #000;
+}
+
+.askme:hover {
+  background-color: #14c751;
+  color: #fff;
+}
+
+.askmeHover {
+  background-color: #14c751;
+  color: #fff;
+}
+
+.gp {
+  background-color: none;
+  color: #fff;
+}
+
+.gp:hover {
+  background: linear-gradient(to bottom, #f6fbff 0%, #b2e1ff 100%);
+  color: #000;
+}
+
+.gpHover {
+  background: linear-gradient(to bottom, #f6fbff 0%, #b2e1ff 100%);
+  color: #000;
+}
+
+.ygr {
+  background-color: none;
+  color: #fff;
+}
+
+.ygr:hover {
+  background: linear-gradient(to top, #fff95c, #ffa);
+  color: #ed1d1d;
+}
+
+.ygrHover {
+  background: linear-gradient(to top, #fff95c, #ffa);
+  color: #ed1d1d;
+}
+
+.v8 {
+  background-color: none;
+  color: #fff;
+}
+
+.v8:hover {
+  background: #ffd050;
+  color: #000;
+}
+
+.v8Hover {
+  background: #ffd050;
+  color: #000;
+}
+
+.km {
+  background-color: none;
+  color: #fff;
+}
+
+.km:hover {
+  background: #ffe77a;
+}
+
+.kmHover {
+  background: #ffe77a;
+}
+
+.rtg {
+  background-color: none;
+  color: #fff;
+}
+
+.rtg:hover {
+  background: #fff;
+  color: #000;
+}
+
+.rtgHover {
+  background: #fff;
+  color: #000;
+}
+
+.ne {
+  background-color: none;
+  color: #fff;
+}
+
+.ne:hover {
+  color: #fff;
+  background: #000;
+}
+
+.neHover {
+  color: #fff;
+  background: #000;
+}
+
+.ps {
+  background-color: none;
+  color: #fff;
+}
+
+.ps:hover {
+  background: #fff;
+  color: #000;
+}
+
+.psHover {
+  background: #fff;
+  color: #000;
+}
+
+.rsg {
+  background-color: none;
+  color: white;
+}
+
+.rsg:hover {
+  background-color: #ffe659;
+  color: white;
+}
+
+.rsgHover {
+  background-color: #ffe659;
+  color: white;
+}
+
+.gem {
+  background-color: none;
+  color: white;
+}
+
+.gem:hover {
+  background-color: none;
+  color: white;
+}
+
+.gemHover {
+  background-color: none;
+  color: white;
+}
+
+.live22 {
+  background-color: none;
+  color: white;
+}
+
+.live22:hover {
+  background-color: #feec5c;
+  color: black;
+}
+
+.live22Hover {
+  background-color: #feec5c;
+  color: black;
+}
+
+

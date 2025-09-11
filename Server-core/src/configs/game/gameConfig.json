@@ -1,0 +1,198 @@
+{
+  "AG": {
+    "config": "API_1",
+    "type": 4,
+    "game": "XXXXXX",
+    "name": "AG Casino",
+    "mode": 1
+  },
+  "DG": {
+    "config": "API_1",
+    "type": 27,
+    "game": "XXXXXX",
+    "name": "DG Casino",
+    "mode": 1
+  },
+  "EG": {
+    "config": "API_1",
+    "type": 86,
+    "game": "XXXXXX",
+    "name": "EVO Casino",
+    "mode": 1
+  },
+  "SEX": {
+    "config": "API_1",
+    "type": 112,
+    "game": "XXXXXX",
+    "name": "SEX Casino",
+    "mode": 1
+  },
+  "SB": {
+    "config": "API_1",
+    "type": 174,
+    "game": "XXXXXX",
+    "name": "SaBa Thể Thao",
+    "mode": 1
+  },
+  "CMD": {
+    "config": "API_1",
+    "type": 104,
+    "game": "XXXXXX",
+    "name": "CMD Thể Thao",
+    "mode": 1
+  },
+  "GPI": {
+    "config": "API_1",
+    "type": 76,
+    "game": "XXXXXX",
+    "name": "GPI Casino",
+    "mode": 1
+  },
+  "BB": {
+    "config": "API_1",
+    "type": 79,
+    "game": "XXXXXX",
+    "name": "BB Nổ hũ, Bắn Cá",
+    "mode": 1
+  },
+  "CQ9": {
+    "config": "API_1",
+    "type": 16,
+    "game": "XXXXXX",
+    "name": "CQ9 Nổ hũ, Bắn Cá",
+    "mode": 1
+  },
+  "WS168": {
+    "config": "API_1",
+    "type": 202,
+    "game": "XXXXXX",
+    "name": "Đá gà WS168",
+    "mode": 1
+  },
+  "JL": {
+    "config": "API_1",
+    "type": 140,
+    "game": "XXXXXX",
+    "name": "JL Nổ hũ, Bắn Cá",
+    "mode": 1
+  },
+  "WM": {
+    "config": "API_1",
+    "type": 118,
+    "game": "XXXXXX",
+    "name": "WM CASINO",
+    "mode": 1
+  },
+  "R88": {
+    "config": "API_1",
+    "type": 162,
+    "game": "XXXXXX",
+    "name": "R88 Điện Tử",
+    "mode": 1
+  },
+  "SA": {
+    "config": "API_1",
+    "type": 93,
+    "game": "XXXXXX",
+    "name": "SA Gaming",
+    "mode": 1
+  },
+  "LCC": {
+    "config": "API_1",
+    "type": 102,
+    "game": "XXXXXX",
+    "name": "V8 Game 3D",
+    "mode": 1
+  },
+  "KA": {
+    "config": "API_1",
+    "type": 157,
+    "game": "XXXXXX",
+    "name": "KA Nổ hũ, Bắn Cá",
+    "mode": 1
+  },
+  "SPB": {
+    "config": "API_1",
+    "type": 193,
+    "game": "XXXXXX",
+    "name": "Spribe",
+    "mode": 1
+  },
+  "PP": {
+    "config": "API_1",
+    "type": 39,
+    "game": "XXXXXX",
+    "name": "Pragmatic Play",
+    "mode": 1
+  },
+  "MG": {
+    "config": "API_1",
+    "type": 43,
+    "game": "XXXXXX",
+    "name": "Micro Gaming",
+    "mode": 1
+  },
+  "JDB": {
+    "config": "API_1",
+    "type": 55,
+    "game": "XXXXXX",
+    "name": "JDB Điện Tử",
+    "mode": 1
+  },
+  "RSG": {
+    "config": "API_1",
+    "type": 138,
+    "game": "XXXXXX",
+    "name": "RSG Điện Tử",
+    "mode": 1
+  },
+  "FC": {
+    "config": "API_1",
+    "type": 141,
+    "game": "XXXXXX",
+    "name": "FACAI GAMING",
+    "mode": 1
+  },
+  "FTG": {
+    "config": "API_1",
+    "type": 147,
+    "game": "XXXXXX",
+    "name": "FunTa Gaming",
+    "mode": 1
+  },
+  "PS": {
+    "config": "API_1",
+    "type": 173,
+    "game": "XXXXXX",
+    "name": "PLAYSTAR",
+    "mode": 1
+  },
+  "BTG": {
+    "config": "API_1",
+    "type": 184,
+    "game": "XXXXXX",
+    "name": "Big Time Gaming",
+    "mode": 1
+  },
+  "PG": {
+    "config": "API_1",
+    "type": 98,
+    "game": "XXXXXX",
+    "name": "PG Điện Tử",
+    "mode": 1
+  },
+  "SBO": {
+    "config": "API_1",
+    "type": 54,
+    "game": "XXXXXX",
+    "name": "SBOBET",
+    "mode": 1
+  },
+  "TCG_VNLOTT": {
+    "config": "API_1",
+    "type": 420,
+    "game": "XXXXXX",
+    "name": "VNLOTT Xổ Số",
+    "mode": 1
+  }
+}

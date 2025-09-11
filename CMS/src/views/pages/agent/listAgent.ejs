@@ -1,0 +1,208 @@
+<%- include('../../includes/header') %>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>'">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/agent-master">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active">Danh Sách Đại Lý Tổng</li>
+                    </ol>
+                </nav>
+
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div class="btn-backsite flex-shrink-0">
+                            <a href="/agent-master"
+                                class="btn btn-sm waves-effect waves-light btn-light-secondary text-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <form action="" method="get" class="form-body row">
+                                <div class="col-lg-8 row">
+                                    <div class="col-md-4">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Name</span>
+                                            <input type="text" class="form-control" name="name" placeholder="Name..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Username</span>
+                                            <input type="text" class="form-control" name="username"
+                                                placeholder="Username..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Phone</span>
+                                            <input type="text" class="form-control" name="phone" placeholder="Phone..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-info align-items-center">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Tổng: <%=dataApi.total%>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>Tên Đại Lý</th>
+                                        <th>Tên Đăng Nhập</th>
+                                        <th>Mã Giới Thiệu</th>
+                                        <th>Số Điện Thoại</th>
+                                        <th>Telegram</th>
+                                        <th>Ngân Hàng</th>
+                                        <th>Số Tài Khoản</th>
+                                        <th>Chủ Tài Khoản</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(dataApi.dataExport.length> 0) { %>
+
+                                        <% dataApi.dataExport.forEach((data)=> { %>
+                                            <tr>
+                                                <td>
+                                                    <%=data.name%>
+                                                </td>
+                                                <td>
+                                                    <%=data.username%>
+                                                </td>
+                                                <td>
+                                                    <%=data.code%>
+                                                </td>
+                                                <td>
+                                                    <%=data.phone%>
+                                                </td>
+                                                <td>
+                                                    <%=data.telegram%>
+                                                </td>
+                                                <td>
+                                                    <%=data.bank%>
+                                                </td>
+                                                <td>
+                                                    <%=data.bankNumber%>
+                                                </td>
+                                                <td>
+                                                    <%=data.bankName%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a style="margin-left: 10px;"
+                                                        href="/agent-master/agent/agent-detail/<%=data._id%>"
+                                                        class="btn waves-effect waves-light btn-primary">
+                                                        <span class="btn-icon-left"> <b><i
+                                                                    class="fa fa-pencil color-dark"></i></b>
+                                                        </span><b>Chi tiết</b>
+                                                    </a>
+                                                    <button style="margin-left: 10px;"
+                                                        onclick="deleteDailyConfirm('<%=data._id%>')" type="button"
+                                                        class="btn waves-effect waves-light btn-danger"><span
+                                                            class="btn-icon-left">
+                                                            <b><i class="fa fa-trash color-dark"></i></b>
+                                                        </span><b>Xóa</b>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bootstrap-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center" id="phantrangUser"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+    <script>
+        const phantrang = Pagination('<%=dataApi.page%>', '<%=dataApi.total%>', '<%=dataApi.kmess%>');
+
+        let phantrangBody = '';
+        phantrang.forEach((page) => {
+            $("#phantrangUser").html(phantrangBody);
+            let active = ('<%=dataApi.page%>' == page) ? "active" : "";
+            const urlToPage = (page !== "...") ? `/agent-master/agent/agent-list?page=${page}&limit=<%=dataApi.kmess%>` : `javascript:void(0)`;
+            phantrangBody += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="${urlToPage}"><b>${page}</b></a>
+                </li>
+            `;
+            $("#phantrangUser").html(phantrangBody);
+        });
+
+        const deleteDailyConfirm = (id) => {
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có muốn xóa nó không?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/agent/remove/' + id,
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 700);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+        }
+    </script>
+    <%- include('../../includes/footer') %>

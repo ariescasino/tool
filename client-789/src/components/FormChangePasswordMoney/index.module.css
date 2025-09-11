@@ -1,0 +1,62 @@
+.customForm :global(label) {
+  text-wrap: wrap;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-weight: 700;
+  height: fit-content !important;
+}
+.customForm :global(label::after) {
+  display: none;
+}
+.customForm :global(label::before) {
+  display: none !important;
+}
+.customForm :global(.ant-form-item-control) {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.customForm :global(.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled)) {
+  border-color: #a94442;
+}
+.customForm :global(.ant-form-item-explain-error) {
+  color: #a94442;
+}
+@media only screen and (max-width: 768px) {
+  .customForm :global(label) {
+    height: 20px !important;
+  }
+  .customForm :global(.ant-form-item-label) {
+    padding-bottom: 4px;
+  }
+}
+@media (min-width: 768px) {
+  .customModalPassword {
+    width: 300px !important;
+    top: 0;
+    margin: 30px auto;
+  }
+}
+
+.customModalPassword :global(.ant-modal-content) {
+  padding: 0;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.customModalPassword :global(.ant-modal-header) {
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0;
+  padding: 15px;
+}
+.customModalPassword :global(.ant-modal-body) {
+  padding: 15px;
+}
+.customModalPassword :global(.ant-modal-footer) {
+  border-top: 1px solid #e5e5e5;
+  margin: 0;
+  padding: 15px;
+  padding-right: 0;
+}

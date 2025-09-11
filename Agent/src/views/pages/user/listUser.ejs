@@ -1,0 +1,382 @@
+<%- include('../../includes/header') %>
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <form action="" method="get" class="form-body row">
+                                <div class="col-lg-8 row">
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Name</span>
+                                            <input type="text" class="form-control" name="name" placeholder="Name..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Username</span>
+                                            <input type="text" class="form-control" name="username"
+                                                placeholder="Username..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Phone</span>
+                                            <input type="text" class="form-control" name="phone" placeholder="Phone..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Email</span>
+                                            <input type="text" class="form-control" name="email" placeholder="Email..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-info align-items-center">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Tổng: <%=dataApi.total%>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>#UID</th>
+                                        <th>Tên Người Chơi</th>
+                                        <th>Tên Đăng Nhập</th>
+                                        <th>Ngân Hàng</th>
+                                        <th>Số Dư</th>
+                                        <th>Trạng Thái</th>
+                                        <th>Verify Tài Khoản</th>
+                                        <th>Ngày Đăng Ký</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(dataApi.dataExport.length> 0) { %>
+
+                                        <% dataApi.dataExport.forEach((data)=> { %>
+                                            <tr>
+                                                <td>
+                                                    #<%=data.userInfo.id%>
+                                                </td>
+                                                <td>
+                                                    <%=data.userInfo.name%>
+                                                </td>
+                                                <td>
+                                                    <%=data.userInfo.username%>
+                                                </td>
+                                                <td style="font-family: monospace;">
+                                                    <% if(data.userBank.length > 0) { %>
+                                                        <%data.userBank.forEach((bank)=> { %> ***************<br> <% }) %>
+                                                    <% }else { %>
+                                                        Chưa thêm ngân hàng
+                                                    <% } %>
+                                                </td>  
+                                                <td>
+                                                    <%=dataPage.helpers.numberWithCommas(data.userInfo.coin)%>
+                                                </td>
+                                                <td>
+                                                    <%=(data.userInfo.status=="active" ) ? 'Hoạt động' : 'Bị khóa' %>
+                                                </td>
+                                                <td>
+                                                    <%=data.userBank.length > 0 ? 'Đã xác minh' : 'Chưa xác minh' %>
+                                                </td>
+                                                <td>
+                                                    <%=dataPage.helpers.moment(data.userInfo.createdAt).format("H:mm - DD/MM/YYYY")%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button style="margin-left: 10px;"
+                                                        onclick="showFormUpdateUser('<%=data.userInfo.id%>')"
+                                                        class="btn waves-effect waves-light btn-primary">
+                                                        <span class="btn-icon-left"> <b><i
+                                                                    class="fa fa-pencil color-dark"></i></b>
+                                                        </span><b>Chi tiết</b>
+                                                    </button>
+                                                    <button style="margin-left: 10px;"
+                                                        onclick="deleteDailyConfirm('<%=data.id%>')" type="button"
+                                                        class="btn waves-effect waves-light btn-danger"><span
+                                                            class="btn-icon-left">
+                                                            <b><i class="fa fa-trash color-dark"></i></b>
+                                                        </span><b>Xóa</b>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bootstrap-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center" id="phantrangUser"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+    <script>
+        const phantrang = Pagination('<%=dataApi.page%>', '<%=dataApi.total%>', '<%=dataApi.kmess%>');
+
+        let phantrangBody = '';
+        phantrang.forEach((page) => {
+            $("#phantrangUser").html(phantrangBody);
+            let active = ('<%=dataApi.page%>' == page) ? "active" : "";
+            const urlToPage = (page !== "...") ? `/user?page=${page}&limit=<%=dataApi.kmess%>` : `javascript:void(0)`;
+            phantrangBody += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="${urlToPage}"><b>${page}</b></a>
+                </li>
+            `;
+            $("#phantrangUser").html(phantrangBody);
+        });
+
+        const deleteDailyConfirm = (id) => {
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có muốn xóa nó không?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/user/delete/' + id,
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 700);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+        }
+
+        const showFormUpdateUser = (id) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/user/user-info/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#elementModal').html(`
+                    <div class="modal fade" id="userInfo-update-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center">
+                                    <h4 class="modal-title" id="exampleModalLabel1">
+                                        Cập nhật người chơi - ${response.data.username}
+                                    </h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Họ và tên:</label>
+                                            <input type="text" class="form-control" id="update-name" readonly/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Tên đăng nhập:</label>
+                                            <input type="text" class="form-control" id="update-username" readonly/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Địa chỉ Email:</label>
+                                            <input type="email" class="form-control" id="update-email" readonly/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số điện thoại:</label>
+                                            <input type="text" class="form-control" id="update-phone" readonly/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số dư:</label>
+                                            <input type="number" class="form-control" id="update-coin" readonly/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Trạng thái tài khoản:</label>
+                                            <select class="form-control form-select" id="update-status" readonly></select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Xác minh tài khoản:</label>
+                                            <select class="form-control form-select" id="update-verify" readonly></select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Loại tài khoản:</label>
+                                            <select class="form-control form-select" id="update-role" readonly></select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-info" href="/game/bet-history/${id}">
+                                        Lịch sử cược
+                                    </a>
+                                    <button type="button" class="btn btn-success" onclick="updateUser('${id}')">
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal -->
+                    `);
+
+                    $('#update-name').val(response.data.name);
+                    $('#update-username').val(response.data.username);
+                    $('#update-email').val(`xxxxxxxxxxxxxx`);
+                    $('#update-phone').val(`xxxxxxxxxxxxxx`);
+                    $('#update-coin').val(response.data.coin);
+                    //$('#update-status').val();
+                    //$('#update-varify').val();
+
+                    if (response.data.status == "active") {
+                        $('#update-status').append(`<option value="active">Hoạt động</option>`);
+                        $('#update-status').append(`<option value="blocked">Bị khóa</option>`);
+                    } else {
+                        $('#update-status').append(`<option value="blocked">Bị khóa</option>`);
+                        $('#update-status').append(`<option value="active">Hoạt động</option>`);
+                    }
+
+                    if (response.data.verify) {
+                        $('#update-verify').append(`<option value="true">Đã xác minh</option>`);
+                        $('#update-verify').append(`<option value="false">Chưa xác minh</option>`);
+                    } else {
+                        $('#update-verify').append(`<option value="false">Chưa xác minh</option>`);
+                        $('#update-verify').append(`<option value="true">Đã xác minh</option>`);
+                    }
+
+                    $('#update-role').append(`<option value="user">Người chơi</option>`);
+                    $('#update-role').append(`<option value="agency">Đại lý</option>`);
+
+                    $('#userInfo-update-modal').modal('toggle');
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const updateUser = (id) => {
+            const name = $('#update-name').val();
+            const username = $('#update-username').val();
+            const email = $('#update-email').val();
+            const phone = $('#update-phone').val();
+            const coin = $('#update-coin').val();
+            const status = $('#update-status').val();
+            const verify = $('#update-verify').val();
+            const role = $('#update-role').val();
+
+            if (!name || !username || !email || !phone || !coin || !role) {
+                toastr.error(
+                    "Vui lòng điền đầy đủ thông tin!",
+                    "Error!"
+                );
+                return;
+            }
+
+            if (Number(coin) < 0) {
+                toastr.error(
+                    "Số dư không hợp lệ!",
+                    "Error!"
+                );
+                return;
+            }
+
+            $.ajax({
+                "url": "<%=dataPage.config.API_SERVER%>/user/update/" + id,
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+                "data": JSON.stringify({
+                    name,
+                    username,
+                    email,
+                    phone,
+                    coin: Number(coin),
+                    status,
+                    verify: JSON.parse(verify),
+                    role
+                }),
+            }).done(function (response) {
+                if (response.status) {
+                    toastr.success(
+                        response.msg,
+                        "Success!"
+                    );
+                    setTimeout(() => {
+                        window.location = "";
+                    }, 700);
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            });
+        }
+    </script>
+    <%- include('../../includes/footer') %>

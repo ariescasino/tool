@@ -1,0 +1,263 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenter.d6d5563f.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-AppContainer.96e0b4f3.css">
+
+    <div id="root">
+        <div id="cricket-page-wrapper" class="sport-page-wrapper page-hide"></div>
+        <div class="app gamelobby egame logined">
+            <div style="display: none;"></div>
+            <div class="float-center-ads-modal"></div>
+            <div class="app-body nav-bar">
+                <div class="app-home egame template-col1-gpk">
+                    <header class="home-header">
+                        <div class="logo" onclick="window.location='/'"><img src="/mobile/static/img/sk88/logo.png"
+                                alt="">
+                        </div>
+                        <% if (dataPage.session.user) { %>
+                            <div class="tools">
+                                <div class="header-account-wrap">
+                                    <div class="tools-item player-id">
+                                        <a class="tools-item player-id" href="/account/profile">
+                                            <%=dataPage.session.user.username%>
+                                        </a>
+                                    </div>
+                                    <div class="tools-item header-account"><span>
+                                            <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                                        </span></div>
+                                </div><a class="tools-item" href="/account/inbox"><img
+                                        src="https://csi.20icipp.com/img/static/yabo/mobile/icon_msg_center.png"
+                                        alt="icon_msg_center" style="width: 21px;"></a>
+                            </div>
+                            <% }else{ %>
+                                <div class="tools">
+                                    <a class="tools-item" sha="/signup" href="/auth/register"><i
+                                            class="d20_small_account"></i><span>Đăng ký</span></a>
+                                    <a class="tools-item" id="login-btn" sha="/login" href="/auth/login"><i
+                                            class="d20_small_login"></i><span>Đăng
+                                            nhập</span></a>
+                                </div>
+                                <% } %>
+                    </header>
+
+                    <div class="home-gamelobby egame game-list-open">
+                        <div class="game-wrap">
+                            <div class="game-block game-list">
+
+                                <div class="sub-menu-box">
+                                    <div class="swiper swiper-initialized swiper-horizontal swiper-android sub-menu">
+                                        <div
+                                            style="color: #61c0ea; font-family: ui-serif; font-size: 20px;margin-top: 3px;">
+                                            <%=dataPage.title%>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="gpk-main">
+
+                                    <div class="gpk-provider">
+                                        <ul class="game-providers EGAME JILI">
+                                            <li class="AG <%=(location == 'AG') ? 'active': ''%>"
+                                                onclick="window.location='/gamelobby/fish/AG'">
+                                                <div class="game-provider-icon AG_GAMING"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/v-dark/ag.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">AG</div>
+                                            </li>
+                                            <li class="JILI  <%=(location == 'JL') ? 'active': ''%>"
+                                                onclick="window.location='/gamelobby/fish/JL'">
+                                                <div class="game-provider-icon JILI"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/jili.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">JILI</div>
+                                            </li>
+                                            <li class="CQ9 <%=(location == 'CQ9') ? 'active': ''%>"
+                                                onclick="window.location='/gamelobby/fish/CQ9'">
+                                                <div class="game-provider-icon CQ9"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/cq9.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">CQ9</div>
+                                            </li>
+                                            <li class="AE">
+                                                <div class=" game-provider-icon AE_GAMING"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/ae_gaming.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">AE</div>
+                                            </li>
+                                            <li class="KM">
+                                                <div class="game-provider-icon KM"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/v-dark/kingmaker.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>åå
+                                                <div class="game-provider-title">KM</div>
+                                            </li>
+                                            <li class="KA">
+                                                <div class="game-provider-icon KA"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/ka.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">KA</div>
+                                            </li>
+                                            <li class="PG">
+                                                <div class="game-provider-icon PG"
+                                                    style="background: url(&quot;https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/pg.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">PG</div>
+                                            </li>
+                                            <li class="PT">
+                                                <div class="game-provider-icon PT"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/pt.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">PT</div>
+                                            </li>
+                                            <li class="PP">
+                                                <div class="game-provider-icon PP"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/pp.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">PP</div>
+                                            </li>
+                                            <li class="MG">
+                                                <div class="game-provider-icon MG"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/mg.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">MG</div>
+                                            </li>
+                                            <li class="JDB">
+                                                <div class="game-provider-icon JDB"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/jdb.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">JDB</div>
+                                            </li>
+                                            <li class="FC">
+                                                <div class="game-provider-icon FC"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/fc.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">FC</div>
+                                            </li>
+                                            <li class="RICH88">
+                                                <div class="game-provider-icon RICH88"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/rich88.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">RICH88</div>
+                                            </li>
+                                            <li class="RT">
+                                                <div class="game-provider-icon RT"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/rt.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">RT</div>
+                                            </li>
+                                            <li class="PS">
+                                                <div class="game-provider-icon PS"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/ps.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">PS</div>
+                                            </li>
+                                            <li class="AMEBA">
+                                                <div class="game-provider-icon AMEBA"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/ameba.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">AMEBA</div>
+                                            </li>
+                                            <li class="BBIN2">
+                                                <div class="game-provider-icon BBIN2"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/bbin2.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">BBIN</div>
+                                            </li>
+                                            <li class="EVOPLAY">
+                                                <div class="game-provider-icon EVOPLAY"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/evoplay.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">EVOPLAY</div>
+                                            </li>
+                                            <li class="PNG">
+                                                <div class="game-provider-icon PNG"
+                                                    style="background: url(&quot;https://csi.20icipp.com/img/static/gplogo/icon-primary/png.png&quot;) 3px center / auto 90% no-repeat;">
+                                                </div>
+                                                <div class="game-provider-title">PNG</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+
+                                    <div class="game-wrap live-dealer egame" style="height: 100%;position: relative;">
+                                        <div style="overflow: visible; height: 0px; width: 0px;">
+                                            <div class="game-list style-2" style="height: 680px;width: 292px;">
+                                                <div class="egame-list" style="height: 100%;overflow: hidden scroll;">
+                                                    <div>
+                                                        <div class="game-group">
+                                                            <% if(dataApi.data.games.length> 0) { %>
+                                                                <% dataApi.data.games.forEach((data)=> { %>
+                                                                    <div class="egame-item" data-pop="pop"
+                                                                        onclick="launchgame(`<%=data.productCode%>`, `<%=data.tcgGameCode%>`)">
+                                                                        <span>
+                                                                            <img src="<%=data.icon%>">
+                                                                        </span>
+                                                                        <div class="name-block">
+                                                                            <h3>
+                                                                                <%=data.gameName%>
+                                                                            </h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    <% }); %>
+                                                                        <% } %>
+                                                        </div>
+
+                                                        <div style="width: 100%; height: 1968px;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="resize-triggers">
+                                            <div class="expand-trigger">
+                                                <div style="width: 293px;height: 620px;"></div>
+                                            </div>
+                                            <div class="contract-trigger"></div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bottom-nav">
+                <div class="img-top" style="left: 0%;"></div>
+                <ul>
+                    <li class="current" onclick="window.location='/'"><i class="mps-bnav-home"></i>
+                        <h3>Trang chủ</h3>
+                    </li>
+                    <li class="" onclick="window.location='/account/inbox'"><i class="mps-gift"></i>
+                        <h3>Khuyến mãi</h3>
+                    </li>
+                    <li class="" onclick="launchgame(`SABA`, `SABA01`)"><i class="mps-sports"></i>
+                        <h3>Thể Thao</h3>
+                    </li>
+                    <li class="" onclick="window.location='https://tai.sk88.bet'"><i class="mps-app"></i>
+                        <h3>Tải App</h3>
+                    </li>
+                    <li class="" onclick="window.location='/account'"><i class="mps-bnav-user"></i>
+                        <h3>Tài khoản</h3>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script>
+        let isLogin = false;
+    </script>
+
+    <% if (dataPage.session.user) { %>
+        <script>
+            isLogin = true;
+        </script>
+        <% } %>
+
+            <%- include('../../includes/footer') %>

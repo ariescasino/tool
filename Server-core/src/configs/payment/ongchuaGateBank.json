@@ -1,0 +1,9 @@
+{
+    "apiUrl": "",
+    "partnerId": "",
+    "partnerKey": "",
+    "callbackUrl": {
+        "deposit": "https://google.com/deposit",
+        "withdraw": "https://google.com/withdraw"
+    }
+}

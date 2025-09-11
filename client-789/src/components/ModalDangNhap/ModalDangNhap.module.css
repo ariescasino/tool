@@ -1,0 +1,119 @@
+.boxInput {
+  position: relative;
+}
+
+.inputForm {
+  width: 100%;
+  min-height: 46px;
+  height: 100%;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 17.5px;
+  font-weight: 400;
+  background-color: #4f4f4f !important;
+  border: none;
+  border-radius: 65px;
+  box-shadow: 0px 5.05263px 5.05263px 0px rgba(0, 0, 0, 0.25);
+}
+
+.inputForm input {
+  padding-left: 2px !important;
+}
+
+.inputForm:hover:active:target-within {
+  background-color: #4f4f4f !important;
+}
+
+.inputForm > input {
+  border-radius: 65px !important;
+}
+
+.inputForm > input::placeholder {
+  color: white !important;
+}
+
+.inputForm::placeholder {
+  color: black !important;
+}
+
+.note {
+  color: #fc8f00;
+  margin-bottom: 30px;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.inputSubmit {
+  width: 100%;
+  height: 51px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50px;
+  border: 0;
+  background: #fc8f00;
+  text-transform: uppercase;
+}
+
+.inputSubmit:hover {
+  color: #fff !important;
+  background: #fc8f00 !important;
+}
+
+.btnRegister {
+  width: 100%;
+  height: 51px;
+  line-height: 51px;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50px;
+  border: 0;
+  background: #404040;
+  text-transform: uppercase;
+}
+
+.registerBox {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxBottom {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 227px;
+  height: 62px;
+  padding-left: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  border-radius: 20px;
+  background-color: #404040;
+}
+
+.p1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: hd1 2s steps(1, start) infinite;
+}
+
+.p2 {
+  animation: hd1 2s steps(1, start) infinite;
+  animation-delay: 1s;
+}
+
+@keyframes hd1 {
+  50% {
+    visibility: hidden;
+  }
+}

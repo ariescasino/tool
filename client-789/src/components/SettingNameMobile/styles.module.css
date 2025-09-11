@@ -1,0 +1,64 @@
+.customForm :global(.ant-form-item-label label) {
+  text-wrap: wrap;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 7px;
+  height: auto;
+  font-weight: 700;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.customForm :global(.ant-form-item-label label::after) {
+  display: none;
+}
+
+.customFormInput input::placeholder {
+  color: #797979;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 6px;
+  mask-image: url(/images/caidatten.svg);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: #fff;
+}
+
+.box_member_center_mobile {
+  display: block;
+  margin: 0;
+  padding: 10px 0 0;
+  list-style: none;
+}
+.mobile_item_member_center {
+  height: 40px;
+  margin-bottom: 10px;
+  --tw-text-opacity: 1;
+  color: rgb(255 182 39 / var(--tw-text-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgb(255 182 39 / var(--tw-border-opacity));
+  border-width: 1px;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile_btn_submit,
+.mobile_btn_submit:hover,
+.mobile_btn_submit:focus {
+  background-color: #ffb627 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.mobile_btn_submit_disabled {
+  background-color: #ffb627 !important;
+  color: white !important;
+  border: none !important;
+  opacity: 0.7;
+}

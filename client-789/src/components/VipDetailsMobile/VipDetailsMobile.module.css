@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  height: 100%;
+  position: relative;
+}
+
+.sliderContainer .slick-active img {
+  height: 80% !important;
+}
+
+.private {
+  margin-top: -160px;
+  height: 36px;
+  background: linear-gradient(88deg,#fdffd1 0%,#fefff0 84%,#fff 100%);
+}
+
+.private p {
+  position: relative;
+  top: 3px;
+  height: 30px;
+  font-size: 14px;
+  line-height: 28px;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  color: #000;
+  border-top: 1px solid #f1da6f;
+  border-bottom: 1px solid #f1da6f;
+}
+
+.bonusLevel {
+  position: relative;
+  width: 30%;
+  height: 110px;
+  padding: 0 5px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #000;
+  box-shadow: 0 0 3px #0003;
+  background-image: linear-gradient(66deg,#fdffd1 17%,#fefff0 84%,#fff 96%);
+}

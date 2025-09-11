@@ -1,0 +1,1813 @@
+.mc-deposit-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between
+}
+
+.mc-deposit-header .nrc-button {
+    border-radius: 5px;
+    font-size: 14px;
+    height: 32px;
+    margin: 0
+}
+
+.mc-deposit-header .nrc-button.actived {
+    border-color: #3cc2ea;
+    color: #3cc2ea
+}
+
+.mc-deposit {
+    background-color: #ededed;
+    min-height: 100vh
+}
+
+.mc-deposit form {
+    padding: 5px 15px 10px
+}
+
+.mc-deposit .m-member-center-drawer.in>.draw-content {
+    height: 75vh
+}
+
+.mc-deposit .m-member-center-drawer.in:before {
+    z-index: 10
+}
+
+.mc-deposit.summary {
+    background-color: #ededed
+}
+
+.mc-deposit.summary .mc-deposit-summary,
+.mc-deposit.summary .mc-thirdparty-payment {
+    color: #929292;
+    padding: 10px
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-title,
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-title {
+    font-size: 12px;
+    padding: 10px;
+    text-align: center
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-summary-description,
+.mc-deposit.summary .mc-thirdparty-payment .mc-summary-description {
+    color: #6b6b6b;
+    line-height: 18px
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-content,
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-content {
+    background-color: #fff
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-content .data-box,
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-content .data-box {
+    color: #454545;
+    padding: 15px 0 15px 15px
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-content .data-box:not(:last-child),
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-content .data-box:not(:last-child) {
+    border-bottom: 1px solid #e9e9e9
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-content .data-box.image .value,
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-content .data-box.image .value {
+    text-align: center
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-content .data-box .label,
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-content .data-box .label {
+    color: #454545;
+    font-size: 10px;
+    margin-bottom: 5px;
+    opacity: .6
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-content .data-box .value,
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-content .data-box .value {
+    font-size: 14px;
+    line-height: 1.29;
+    min-height: 18px;
+    word-break: break-word
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-deposit-summary-content .data-box .value.highlight,
+.mc-deposit.summary .mc-thirdparty-payment .mc-deposit-summary-content .data-box .value.highlight {
+    color: #3cc2ea
+}
+
+.mc-deposit.summary .mc-deposit-summary .mc-success,
+.mc-deposit.summary .mc-thirdparty-payment .mc-success {
+    align-items: center;
+    color: #9ac143;
+    display: flex;
+    font-size: 24px;
+    justify-content: center;
+    margin-bottom: 5px
+}
+
+.mc-deposit .mc-thirdparty-payment>.deposit-countdown,
+.mc-deposit .mc-thirdparty-payment>p {
+    margin: 0 0 10px
+}
+
+.mc-deposit .mc-deposit-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px 0 10px -5px;
+    padding: 10px 10px 0
+}
+
+.mc-deposit .mc-deposit-section .nrc-button {
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+    color: #454545;
+    flex: 0 calc(50% - 5px);
+    font-size: 14px;
+    margin: 5px 0 0 5px;
+    min-height: 32px
+}
+
+.mc-deposit .mc-deposit-section .nrc-button.actived {
+    border-color: #3cc2ea;
+    color: #3cc2ea
+}
+
+.mc-deposit .mc-deposit-section .nrc-button.full-width {
+    flex: 0 calc(100% - 10px)
+}
+
+.mc-deposit .mc-detail-block {
+    margin-bottom: 24px
+}
+
+.mc-deposit .mc-detail-block:last-of-type {
+    margin: 0
+}
+
+.mc-deposit .mc-detail-block .mc-detail-block-label {
+    color: #454545;
+    font-size: 14px;
+    line-height: 20px
+}
+
+.mc-deposit .mc-detail-block .mc-detail-block-content {
+    color: #454545;
+    margin-top: 10px
+}
+
+.mc-deposit .mc-btn-wrapper {
+    display: flex;
+    margin-top: 24px
+}
+
+.mc-deposit .mc-btn-wrapper .nrc-button {
+    border-radius: 5px;
+    flex: 1 1 100%;
+    height: 42px;
+    margin-left: 12px
+}
+
+.mc-deposit .mc-btn-wrapper .nrc-button:first-of-type {
+    margin: 0
+}
+
+.mc-deposit .mc-reminder {
+    color: #e94951;
+    font-size: 12px;
+    margin-top: 5px;
+    word-break: break-all
+}
+
+.mc-deposit .nrc-formik-native-select .nrc-formik-form-item-content {
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px
+}
+
+.mc-deposit .nrc-formik-native-select .nrc-formik-form-item-content .formik-native-select select {
+    color: #454545;
+    font-size: 14px
+}
+
+.mc-deposit .nrc-formik-native-select .nrc-formik-form-item-content .formik-native-select option {
+    background-color: #fff
+}
+
+.mc-deposit .nrc-formik-native-select .nrc-formik-form-item-content .formik-native-select:before {
+    border-top: 5px solid #3cc2ea;
+    right: 20px
+}
+
+.mc-deposit .nrc-formik-date-input .nrc-formik-form-item-content,
+.mc-deposit .nrc-formik-time-input .nrc-formik-form-item-content {
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px
+}
+
+.mc-deposit .nrc-formik-date-input .nrc-formik-form-item-content input,
+.mc-deposit .nrc-formik-time-input .nrc-formik-form-item-content input {
+    border-radius: 5px
+}
+
+.thirdparty-icon {
+    height: 36px;
+    position: relative;
+    width: 36px
+}
+
+.thirdparty-icon:before {
+    font-family: iconmps !important;
+    font-size: 35px;
+    height: 100%;
+    left: 0;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%
+}
+
+.thirdparty-icon.WEIXIN:before {
+    color: #00b049;
+    content: ""
+}
+
+.thirdparty-icon.ALIPAY:before {
+    color: #00a8f1;
+    content: ""
+}
+
+.thirdparty-icon.DEBIT_CARD:before {
+    color: #2867aa;
+    content: ""
+}
+
+.thirdparty-icon.COMPANY_DEPOSIT:before {
+    color: #ec7d00;
+    content: ""
+}
+
+.thirdparty-icon.QQ:before {
+    background: url(https://csi.20icipp.com/img/static/payment/qq.svg) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.JDPAY:before {
+    color: #222;
+    content: ""
+}
+
+.thirdparty-icon.UNIONPAY_SCAN:before {
+    background: url(https://csi.20icipp.com/img/static/payment/unionpay.svg) 50%/contain no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.EXPRESSPAY:before {
+    color: #eb5e1d;
+    content: ""
+}
+
+.thirdparty-icon.YIYOU:before {
+    color: #f60;
+    content: ""
+}
+
+.thirdparty-icon.CRYPTO:before {
+    color: #f90;
+    content: ""
+}
+
+.thirdparty-icon.MOMOPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/momo.svg) 50% no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.ZALOPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/zalopay.svg) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.VIETTELPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/viettelpay.svg) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.QUICKPASS:before {
+    background: url(https://csi.20icipp.com/img/static/payment/qpass.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.QR_BANK:before {
+    background: url(https://csi.20icipp.com/img/static/payment/icon-wbscan.svg) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.ONLINE_BANKING:before {
+    color: #21d1a2;
+    content: ""
+}
+
+.thirdparty-icon.PROMPTPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/prompt.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.SKRILL:before {
+    background: url(https://csi.20icipp.com/img/static/payment/skrill.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.NETELLER:before {
+    background: url(https://csi.20icipp.com/img/static/payment/neteller.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.PAYTM:before {
+    background: url(https://csi.20icipp.com/img/static/payment/paytm.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.UPI:before {
+    background: url(https://csi.20icipp.com/img/static/payment/upi.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.BHIM:before {
+    background: url(https://csi.20icipp.com/img/static/payment/bhim.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.GPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/gpay.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.PHONEPE:before {
+    background: url(https://csi.20icipp.com/img/static/payment/phonepe.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.MPURSE:before {
+    background: url(https://csi.20icipp.com/img/static/payment/mpurse.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.SCRATCHCARD:before {
+    background: url(https://csi.20icipp.com/img/static/payment/scratch.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.GCASH:before {
+    background: url(https://csi.20icipp.com/img/static/payment/gcash.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.TRUEMONEY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/truemoney.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.USDT:before {
+    background: url(https://csi.20icipp.com/img/static/payment/usdt.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.GRABPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/grabpay.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.PAYMAYA:before {
+    background: url(https://csi.20icipp.com/img/static/payment/paymaya.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.thirdparty-icon.REMIT:before {
+    background: url(https://csi.20icipp.com/img/static/payment/remit.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.deposit-payments {
+    background-color: #ededed;
+    color: #454545
+}
+
+.deposit-payments .info-block {
+    background-color: #fff;
+    border-bottom-left-radius: 110px 45px;
+    border-bottom-right-radius: 110px 45px;
+    width: 100%
+}
+
+.deposit-payments .info-block .content {
+    background: linear-gradient(135deg, #edebeb, #cb0d0d 45%, #2e2818 0, #cb0d0d);
+    border-radius: 10px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 25%), inset 0 -5px 15px #e56919;
+    margin: 0 15px;
+    padding: 10px 15px 10px 0;
+    position: relative;
+    z-index: 1
+}
+
+.deposit-payments .info-block .content .row {
+    color: #fff;
+    display: flex;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.deposit-payments .info-block .content .row:first-child {
+    justify-content: space-between
+}
+
+.deposit-payments .info-block .content .row:nth-child(2) {
+    justify-content: flex-end
+}
+
+.deposit-payments .info-block .content .row .account {
+    align-items: center;
+    background-color: #b62100;
+    border-radius: 0 100px 100px 0;
+    display: flex;
+    height: 30px;
+    padding: 3px 15px
+}
+
+.deposit-payments .info-block .content .row .account,
+.deposit-payments .info-block .content .row .balance-label {
+    align-items: center;
+    display: flex;
+    font-size: 14px
+}
+
+.deposit-payments .info-block .content .row .account i,
+.deposit-payments .info-block .content .row .balance-label i {
+    font-size: 22px;
+    margin-right: 3px
+}
+
+.deposit-payments .info-block .content .row .balance-value {
+    font-size: 24px;
+    font-weight: 600
+}
+
+.deposit-payments .deposit-list {
+    min-height: calc(85vh);
+    padding: 5px 0 10px
+}
+
+.deposit-payments .deposit-list .deposit-list-item {
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    margin: 10px 15px 0;
+    min-height: 50px;
+    padding: 5px 10px 5px 70px;
+    position: relative;
+    word-break: break-word
+}
+
+.deposit-payments .deposit-list .deposit-list-item h3 {
+    color: #454545;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 5px
+}
+
+.deposit-payments .deposit-list .deposit-list-item small {
+    color: #6b6b6b;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 14px;
+    text-transform: uppercase
+}
+
+.deposit-payments .deposit-list .deposit-list-item:before {
+    font-family: iconmps !important;
+    font-size: 35px;
+    height: 36px;
+    left: 14px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    right: 9px;
+}
+
+.deposit-payments .deposit-list .deposit-list-item.WEIXIN:before {
+    color: #00b049;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.ALIPAY:before {
+    color: #00a8f1;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.DEBIT_CARD:before {
+    color: #2867aa;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.COMPANY_DEPOSIT:before {
+    color: #ec7d00;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.QQ:before {
+    background: url(https://csi.20icipp.com/img/static/payment/qq.svg) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.JDPAY:before {
+    color: #222;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.UNIONPAY_SCAN:before {
+    background: url(https://csi.20icipp.com/img/static/payment/unionpay.svg) 50%/contain no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.EXPRESSPAY:before {
+    color: #eb5e1d;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.YIYOU:before {
+    color: #f60;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.CRYPTO:before {
+    color: #f90;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.MOMOPAY:before {
+    background: url(https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png) 50% no-repeat;
+    background-size: contain;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.ZALOPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/zalopay.svg) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.VIETTELPAY:before {
+    background: url(https://mangviettel.com.vn/wp-content/uploads/2021/06/viettelpay.jpg) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.QUICKPASS:before {
+    background: url(https://csi.20icipp.com/img/static/payment/qpass.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.QR_BANK:before {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTmGxzEe3HaPa0F5I-zKxkHAykm4bXAlMaljpFl6X7oS3m_8KS-XarneW0OudmN6K_P8Q&usqp=CAU) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.ONLINE_BANKING:before {
+    color: #21d1a2;
+    content: ""
+}
+
+.deposit-payments .deposit-list .deposit-list-item.PROMPTPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/prompt.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.SKRILL:before {
+    background: url(https://csi.20icipp.com/img/static/payment/skrill.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.NETELLER:before {
+    background: url(https://csi.20icipp.com/img/static/payment/neteller.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.PAYTM:before {
+    background: url(https://csi.20icipp.com/img/static/payment/paytm.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.UPI:before {
+    background: url(https://csi.20icipp.com/img/static/payment/upi.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.BHIM:before {
+    background: url(https://csi.20icipp.com/img/static/payment/bhim.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.GPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/gpay.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.PHONEPE:before {
+    background: url(https://csi.20icipp.com/img/static/payment/phonepe.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.MPURSE:before {
+    background: url(https://csi.20icipp.com/img/static/payment/mpurse.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.SCRATCHCARD:before {
+    background: url(https://www.nicepng.com/png/full/271-2711535_mobile-phone-recharge-mobile-recharge-icon-png.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.GCASH:before {
+    background: url(https://csi.20icipp.com/img/static/payment/gcash.png) 50%/auto 36px no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.TRUEMONEY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/truemoney.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.USDT:before {
+    background: url(https://i.imgur.com/i1GJKSf.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.GRABPAY:before {
+    background: url(https://csi.20icipp.com/img/static/payment/grabpay.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.PAYMAYA:before {
+    background: url(https://csi.20icipp.com/img/static/payment/paymaya.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.deposit-payments .deposit-list .deposit-list-item.REMIT:before {
+    background: url(https://csi.20icipp.com/img/static/payment/remit.png) 50%/contain no-repeat;
+    content: " "
+}
+
+.mc-form-item {
+    margin-top: 10px
+}
+
+.mc-input-field .mc-input-field-block {
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+    display: block;
+    min-height: 54px;
+    position: relative;
+    transition: .8s
+}
+
+.mc-input-field .mc-input-field-block .mc-input-field-label {
+    color: #6b6b6b;
+    font-size: 14px;
+    padding-left: 15px;
+    position: absolute;
+    top: 18px;
+    transition: .2s
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base {
+    background-color: transparent;
+    color: #454545;
+    display: flex;
+    font-size: 16px;
+    height: 52px;
+    padding: 0 15px;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base.react-date-picker,
+.mc-input-field .mc-input-field-block .mc-input-base.react-time-picker {
+    position: relative
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value {
+    background: transparent;
+    border: none;
+    color: #454545;
+    flex: 1 100%;
+    font-size: 14px;
+    height: 100%;
+    padding: 0
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value:-webkit-autofill {
+    -webkit-text-fill-color: #454545
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value:-webkit-autofill,
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value:-webkit-autofill:active,
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value:-webkit-autofill:focus,
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value:-webkit-autofill:hover {
+    -webkit-box-shadow: inset 0 0 0 50px #fff !important
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value::-moz-placeholder {
+    color: #c5c5c5;
+    font-weight: 300
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value::-ms-input-placeholder {
+    color: #c5c5c5;
+    font-weight: 300
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base>input.mc-input-field-value::placeholder {
+    color: #c5c5c5;
+    font-weight: 300
+}
+
+.mc-input-field .mc-input-field-block .mc-input-base>.mc-input-field-suffix {
+    align-items: center;
+    color: #6b6b6b;
+    display: flex;
+    flex: 1 100px;
+    justify-content: flex-end
+}
+
+.mc-input-field .mc-input-field-block.concern-without-label>.mc-input-base,
+.mc-input-field .mc-input-field-block.mc-not-empty-without-label>.mc-input-base {
+    box-shadow: none;
+    font-size: 16px
+}
+
+.mc-input-field .mc-input-field-block.concern>.mc-input-field-label,
+.mc-input-field .mc-input-field-block.mc-not-empty>.mc-input-field-label {
+    font-size: 10px;
+    top: 8px
+}
+
+.mc-input-field .mc-input-field-block.concern>.mc-input-base,
+.mc-input-field .mc-input-field-block.mc-not-empty>.mc-input-base {
+    box-shadow: none;
+    font-size: 14px;
+    height: 28px;
+    top: 24px
+}
+
+.mc-input-field .mc-input-field-block.concern>.mc-input-base>.mc-input-field-suffix,
+.mc-input-field .mc-input-field-block.mc-not-empty>.mc-input-base>.mc-input-field-suffix {
+    font-size: 14px
+}
+
+.mc-input-field .mc-input-field-block.required .mc-input-field-label {
+    padding-left: 27px
+}
+
+.mc-input-field .mc-input-field-block.required .mc-input-field-label:before {
+    bottom: 0;
+    color: #e94951;
+    content: "*";
+    font-size: 10px;
+    left: 15px;
+    margin: auto;
+    position: absolute;
+    top: 4px
+}
+
+.mc-input-field .mc-input-field-block.mc-error {
+    border: 1px solid #e94951
+}
+
+.mc-input-field .mc-input-field-block.concern,
+.mc-input-field .mc-input-field-block.concern-without-label {
+    border: 1px solid #3cc2ea;
+    box-shadow: 0 0 10px 0 #3cc2ea
+}
+
+.mc-input-field .mc-input-field-block.concern-without-label>label,
+.mc-input-field .mc-input-field-block.concern>label {
+    font-size: 12px;
+    top: 8px
+}
+
+.mc-input-field .mc-input-info {
+    color: #6b6b6b;
+    display: block;
+    font-size: 11px;
+    margin: 5px 0
+}
+
+.mc-input-field .mc-input-info i {
+    color: #3cc2ea;
+    margin-right: 5px;
+    vertical-align: middle
+}
+
+.mc-input-field .mc-input-error {
+    color: #e94951;
+    display: flex;
+    font-size: 12px;
+    line-height: 1;
+    margin: 5px 0 10px
+}
+
+.mc-input-field .mc-input-error i {
+    font-size: 8px;
+    margin-right: 4px
+}
+
+.mc-quick-button .mc-quick-button-label {
+    color: #929292;
+    font-size: 12px
+}
+
+.mc-quick-button .mc-quick-button-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px 0 10px -5px;
+    padding-top: 5px
+}
+
+.mc-quick-button .mc-quick-button-block .mc-quick-input-button {
+    background-color: transparent;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #6b6b6b;
+    display: block;
+    flex: 0 1 calc(33% - 5px);
+    font-weight: 500;
+    height: 32px;
+    margin: 5px 0 0 5px
+}
+
+.mc-quick-button .mc-quick-button-block .mc-quick-input-button.actived {
+    border-color: #3cc2ea;
+    color: #3cc2ea
+}
+
+.mc-quick-button .mc-quick-button-block.mc-quick-button-block-amount .mc-quick-input-button {
+    flex: 0 1 calc(25% - 5px)
+}
+
+.mc-quick-button .mc-quick-button-block.mc-quick-button-block-amount .mc-quick-input-button:disabled {
+    border: 1px solid #c7c7c7;
+    color: #bababa;
+    cursor: not-allowed;
+    font-weight: 200
+}
+
+.mc-quick-button .mc-input-convert-amount {
+    color: #3cc2ea;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px
+}
+
+.mc-quick-button .mc-input-actual-amount,
+.mc-quick-button .mc-input-convert-rule {
+    color: #929292;
+    font-size: 12px;
+    margin-bottom: 10px
+}
+
+.mc-quick-button .mc-quick-button-error {
+    color: #e94951;
+    font-size: 12px
+}
+
+.mc-input-amount-field {
+    border-top: 1px solid #e9e9e9;
+    margin-top: 54px;
+    padding: 5px 15px 0
+}
+
+.mc-input-amount-field .mc-input-convert-amount {
+    color: #3cc2ea;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px
+}
+
+.mc-input-amount-field .mc-input-actual-amount,
+.mc-input-amount-field .mc-input-convert-rule {
+    color: #929292;
+    font-size: 12px;
+    margin-bottom: 10px
+}
+
+.nrc-formik-form-item {
+    margin: 8px 0
+}
+
+.nrc-formik-form-item * {
+    box-sizing: border-box
+}
+
+.nrc-formik-form-item .nrc-formik-form-item-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px
+}
+
+.nrc-formik-form-item.error .nrc-formik-form-item-content {
+    background-color: #fff3f3;
+    border: 2px solid #e94951;
+    color: #e94951
+}
+
+.nrc-formik-form-item .nrc-formik-form-item-label {
+    color: #aaa;
+    display: block;
+    font-size: 16px;
+    padding: 18px 15px;
+    position: relative;
+    transition: .2s
+}
+
+.nrc-formik-form-item .nrc-formik-form-item-label.toggle:after {
+    border-color: transparent #535353 #535353 transparent;
+    border-style: solid;
+    border-width: 4px;
+    bottom: 0;
+    content: "";
+    height: 0;
+    margin: auto;
+    position: absolute;
+    right: 18px;
+    top: 3px;
+    transform: rotate(45deg);
+    width: 0
+}
+
+.nrc-formik-form-item .nrc-formik-form-item-label.toggle.open:after {
+    top: -3px;
+    transform: rotate(-135deg)
+}
+
+.nrc-formik-form-item small {
+    color: #535353;
+    display: block;
+    font-size: 11px;
+    margin: 3px 0
+}
+
+.nrc-formik-form-item small .mps-info {
+    margin-right: 5px
+}
+
+.nrc-formik-form-item small.error {
+    color: red
+}
+
+.nrc-formik-native-select {
+    line-height: 1.8;
+    position: relative
+}
+
+.nrc-formik-native-select label {
+    color: #4d4d4d;
+    font-size: 15px;
+    left: 15px;
+    pointer-events: none;
+    position: absolute;
+    top: 18px;
+    transition: .2s
+}
+
+.nrc-formik-native-select .select-box.concerned {
+    color: #333
+}
+
+.nrc-formik-native-select .select-box.concerned~label {
+    color: #6b6b6b;
+    font-size: 11px;
+    top: 8px
+}
+
+.nrc-formik-native-select .formik-native-select {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    padding: 0;
+    width: 100%
+}
+
+.nrc-formik-native-select .formik-native-select select {
+    border: none;
+    color: #333;
+    font-size: 16px;
+    height: 50px;
+    padding: 23px 15px 7px;
+    position: relative;
+    width: 100%
+}
+
+.nrc-formik-native-select .formik-native-select select:focus {
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 #3cc2ea;
+    outline: 1px solid #3cc2ea
+}
+
+.nrc-formik-native-select .info-msg {
+    display: none
+}
+
+.nrc-formik-native-select .input-tools-select {
+    border-top: 1px solid #e7e7e7;
+    padding: 10px 15px
+}
+
+.mc-upload-image-field {
+    position: relative
+}
+
+.mc-upload-image-field * {
+    cursor: pointer
+}
+
+.mc-upload-image-field .mc-input-field input[type=file] {
+    display: none
+}
+
+.mc-upload-image-field .mc-input-field .mc-input-field-label {
+    align-items: center;
+    display: flex;
+    left: 0;
+    padding: 0 15px;
+    top: 19px
+}
+
+.mc-upload-image-field .mc-upload-field-icon {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2
+}
+
+.mc-upload-image-field .mc-upload-field-icon i {
+    color: #3cc2ea;
+    font-size: 20px
+}
+
+.date-time-input-section {
+    display: flex
+}
+
+.date-time-input-section .nrc-formik-date-input,
+.date-time-input-section .nrc-formik-time-input {
+    line-height: 1.8;
+    position: relative;
+    width: 50%
+}
+
+.date-time-input-section .nrc-formik-date-input .nrc-formik-form-item-content,
+.date-time-input-section .nrc-formik-time-input .nrc-formik-form-item-content {
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px
+}
+
+.date-time-input-section .nrc-formik-date-input.error .nrc-formik-form-item-content,
+.date-time-input-section .nrc-formik-time-input.error .nrc-formik-form-item-content {
+    background-color: #fff3f3;
+    border: 1px solid #e94951;
+    color: #e94951
+}
+
+.date-time-input-section .nrc-formik-date-input input,
+.date-time-input-section .nrc-formik-time-input input {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 16px;
+    height: 50px;
+    padding: 23px 3px 7px 15px
+}
+
+.date-time-input-section .nrc-formik-date-input input[type=date],
+.date-time-input-section .nrc-formik-date-input input[type=time],
+.date-time-input-section .nrc-formik-time-input input[type=date],
+.date-time-input-section .nrc-formik-time-input input[type=time] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    color: #454545;
+    width: 100%
+}
+
+.date-time-input-section .nrc-formik-date-input input[type=date]::-webkit-calendar-picker-indicator,
+.date-time-input-section .nrc-formik-date-input input[type=time]::-webkit-calendar-picker-indicator,
+.date-time-input-section .nrc-formik-time-input input[type=date]::-webkit-calendar-picker-indicator,
+.date-time-input-section .nrc-formik-time-input input[type=time]::-webkit-calendar-picker-indicator {
+    opacity: 0
+}
+
+.date-time-input-section .nrc-formik-date-input input[type=date]:after,
+.date-time-input-section .nrc-formik-date-input input[type=time]:after,
+.date-time-input-section .nrc-formik-time-input input[type=date]:after,
+.date-time-input-section .nrc-formik-time-input input[type=time]:after {
+    color: #3cc2ea;
+    content: "";
+    font-family: iconmps;
+    font-size: 18px;
+    position: absolute;
+    right: 16px;
+    top: 35%
+}
+
+.date-time-input-section .nrc-formik-date-input label,
+.date-time-input-section .nrc-formik-time-input label {
+    color: #4d4d4d;
+    color: #6b6b6b;
+    font-size: 15px;
+    font-size: 11px;
+    left: 15px;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 8px
+}
+
+.m-member-center-drawer.in>.draw-content {
+    height: 45vh
+}
+
+.m-member-center-drawer.in:before {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(237, 237, 237, .15);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100
+}
+
+.m-member-center-drawer>.draw-content {
+    background-image: linear-gradient(0deg, #ededed 100%, #f5f5f5 0);
+    border-radius: 10px 10px 0 0;
+    bottom: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+    height: 0;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    transition: height .4s ease-in;
+    width: 100%;
+    z-index: 500
+}
+
+.m-drawer-collection-list .title {
+    color: #454545;
+    margin: 20px 0;
+    text-align: center;
+    width: 100%
+}
+
+.m-drawer-collection-list .mc-collection-field {
+    padding: 0 20px 10px
+}
+
+.m-drawer-collection-list .mc-collection-field li {
+    background-color: #fff;
+    border-radius: 5px;
+    color: #454545;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 0;
+    padding: 15px;
+    width: 100%
+}
+
+.m-drawer-collection-list .mc-collection-field li.actived,
+.m-drawer-collection-list .mc-collection-field li:hover {
+    box-shadow: 0 0 10px 0 #3cc2ea
+}
+
+.m-drawer-collection-list .mc-collection-field .mc-collection-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 4px
+}
+
+.m-drawer-collection-list .mc-collection-field .mc-collection-info {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 4px;
+    word-break: break-all
+}
+
+.m-drawer-collection-list .mc-collection-field .mc-collection-limit-amount {
+    color: #6b6b6b;
+    font-size: 12px
+}
+
+.m-drawer-collection-list .mc-collection-field .mc-collection-qrcode {
+    flex: 90px 0 0;
+    height: 90px;
+    width: 90px
+}
+
+.m-drawer-collection-list .mc-collection-field .mc-collection-qrcode>img {
+    height: 100%;
+    width: 100%
+}
+
+.mc-drawer-field .mc-input-base input,
+.mc-select-field .mc-input-base input {
+    cursor: pointer
+}
+
+.mc-drawer-field .mc-input-field-block:not(.toggle-drawer):after,
+.mc-select-field .mc-input-field-block:not(.toggle-drawer):after {
+    color: #3cc2ea;
+    content: "";
+    font-family: iconmps;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 50%
+}
+
+.mc-drawer-field .mc-input-field-block.concern,
+.mc-select-field .mc-input-field-block.concern {
+    z-index: 15
+}
+
+.mc-drawer-field .mc-input-field-block.concern:after,
+.mc-select-field .mc-input-field-block.concern:after {
+    transform: rotateX(145deg)
+}
+
+.mc-drawer-field .mc-input-field-block.toggle-drawer:after,
+.mc-select-field .mc-input-field-block.toggle-drawer:after {
+    color: #3cc2ea;
+    content: "";
+    font-family: iconmps;
+    font-size: 18px;
+    position: absolute;
+    right: 16px;
+    top: 35%
+}
+
+.mc-drawer-field .mc-input-field-block.toggle-drawer.concern:after,
+.mc-select-field .mc-input-field-block.toggle-drawer.concern:after {
+    content: "-"
+}
+
+.drawer-overlay {
+    background-color: rgba(204, 204, 204, .9);
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .8s ease;
+    z-index: 10
+}
+
+.drawer,
+.drawer-blur-block {
+    height: 100%;
+    width: 50%
+}
+
+.drawer {
+    background: #ededed;
+    border-radius: 10px;
+    position: absolute;
+    transition: .3s ease;
+    z-index: 2
+}
+
+.drawer .drawer-close {
+    background-image: linear-gradient(160deg, #3cc2ea, #18aedb);
+    border-radius: 5px 0 0 5px;
+    height: 54px;
+    left: -25px;
+    padding: 14px 5px 14px 9px;
+    position: absolute;
+    top: 18px;
+    transform: perspective(1em) rotateY(-10deg);
+    width: 22px
+}
+
+.drawer .drawer-close:after {
+    color: #fff;
+    content: "";
+    font-family: iconmps !important;
+    font-size: 40px;
+    font-weight: 400;
+    left: -30%;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px 3px #138aad;
+    text-transform: none;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.drawer .drawer-scroll-wrapper {
+    height: 100%;
+    overflow: auto;
+    padding: 24px
+}
+
+.drawer .drawer-scroll-wrapper.is-tabs {
+    padding: 0
+}
+
+.drawer .drawer-scroll-wrapper::-webkit-scrollbar {
+    width: 6px
+}
+
+.drawer .drawer-scroll-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 6px
+}
+
+.mc-bank-group-list.desktop .nrc-tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tab-pane {
+    height: 100%
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tab-pane .history-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tab-pane .history-cards-wrapper .infinite-loader-wrapper {
+    flex-grow: 1
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-nav {
+    background-color: #e1e1e1;
+    border-bottom: inherit;
+    justify-content: space-around
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-nav>span {
+    border-radius: 12px 12px 0 0
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-nav>span:first-child {
+    border-radius: 0 12px 0 0
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-nav>span:last-child {
+    border-radius: 12px 0 0 0
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-tab {
+    border-radius: 12px 12px 0 0;
+    flex-grow: 1;
+    height: 52px;
+    padding: 8px 16px
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-tab:hover:after {
+    width: inherit
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-tab.active {
+    background-image: linear-gradient(0deg, #ededed 100%, #ededed 0);
+    color: inherit
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-tab.active:after {
+    background-color: inherit;
+    bottom: inherit;
+    content: inherit;
+    height: inherit;
+    left: inherit;
+    position: inherit;
+    width: inherit
+}
+
+.mc-bank-group-list.desktop .nrc-tabs .nrc-tabs-nav .nrc-tabs-tab {
+    min-width: auto;
+    padding: 0
+}
+
+.mc-bank-group-list.desktop .mc-banks .mc-bank-item {
+    flex: 0 1 calc(33% - 10px)
+}
+
+.mc-bank-group-list.mobile .nrc-tabs-nav {
+    flex-wrap: wrap
+}
+
+.mc-bank-group-list.mobile .nrc-tabs-nav .nrc-tabs-tab {
+    height: auto;
+    padding: 8px;
+    width: 25%
+}
+
+.mc-bank-group-list.mobile .nrc-tabs-nav .nrc-tabs-tab.active {
+    background-image: inherit;
+    border-bottom: inherit;
+    color: inherit;
+    font-weight: 700
+}
+
+.mc-bank-group-list.mobile .mc-banks .mc-bank-item {
+    flex: 0 1 calc(50% - 10px)
+}
+
+.mc-bank-field {
+    padding: 24px 24px 0
+}
+
+.mc-bank-field .mc-bank-letter {
+    color: #454545;
+    font-size: 16px;
+    line-height: 22px
+}
+
+.mc-bank-field .mc-banks {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px 0 0 -10px;
+    padding-top: 6px
+}
+
+.mc-bank-field .mc-banks .mc-bank-item {
+    cursor: pointer;
+    margin: 10px 0 0 10px
+}
+
+.mc-bank-field .mc-banks .mc-bank-item .mc-bank-image {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    min-height: 42px;
+    padding: 7px 10px
+}
+
+.mc-bank-field .mc-banks .mc-bank-item .mc-bank-image.name-only {
+    align-items: center;
+    display: flex;
+    justify-content: center
+}
+
+.mc-bank-field .mc-banks .mc-bank-item .mc-bank-image img {
+    height: 100%;
+    width: 100%
+}
+
+.mc-bank-field .mc-banks .mc-bank-item .mc-bank-name {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center
+}
+
+.mc-bank-field .mc-banks .mc-bank-item.actived .mc-bank-image,
+.mc-bank-field .mc-banks .mc-bank-item:hover .mc-bank-image {
+    border: 1px solid #3cc2ea;
+    box-shadow: 0 0 10px 0 #3cc2ea
+}
+
+.mc-horizontal-item {
+    margin-bottom: 5px
+}
+
+.mc-horizontal-item:last-of-type {
+    margin: 0
+}
+
+.mc-horizontal-item .mc-horizontal-item-main {
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    padding: 8px 10px 8px 15px
+}
+
+.mc-horizontal-item .mc-horizontal-item-main .mc-horizontal-item-content {
+    flex: 1
+}
+
+.mc-horizontal-item .mc-horizontal-item-main .mc-horizontal-item-content label {
+    color: #6b6b6b;
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 8px
+}
+
+.mc-horizontal-item .mc-horizontal-item-main .mc-horizontal-item-content .mc-horizontal-item-value {
+    color: #454545;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 5px;
+    word-break: break-all
+}
+
+.mc-horizontal-item .mc-horizontal-item-main .copy-text {
+    align-items: center;
+    display: flex;
+    margin-right: 5px
+}
+
+.mc-horizontal-item .mc-horizontal-item-main .copy-text i {
+    color: #3cc2ea;
+    font-size: 22px;
+    vertical-align: middle
+}
+
+.mc-horizontal-item .mc-horizontal-item-tip {
+    color: #6b6b6b;
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 5px
+}
+
+.mc-horizontal-item .mc-horizontal-item-tip i {
+    color: #3cc2ea;
+    margin-right: 5px;
+    vertical-align: middle
+}
+
+.mc-detail {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: auto
+}
+
+.mc-detail .mc-detail-appbar {
+    background-color: #e1e1e1;
+    color: #454545;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    text-align: center
+}
+
+.mc-detail .mc-detail-appbar a {
+    display: block;
+    text-decoration: none
+}
+
+.mc-detail .mc-detail-appbar i.mps-onlinebank {
+    color: #3cc2ea;
+    margin: 0 5px
+}
+
+.mc-detail .mc-detail-appbar .mc-qrcode {
+    cursor: pointer;
+    position: absolute;
+    right: 22px;
+    top: 10px
+}
+
+.mc-detail .mc-detail-appbar .mc-qrcode i {
+    color: #3cc2ea
+}
+
+.mc-detail .mc-detail-content {
+    padding: 10px
+}
+
+.mc-detail .mc-detail-content .mc-qrcode {
+    text-align: center
+}
+
+.mc-detail .mc-detail-content .mc-qrcode img {
+    max-width: 300px
+}
+
+.deposit-countdown {
+    align-items: center;
+    background-color: #fff;
+    color: #6b6b6b;
+    display: flex
+}
+
+.deposit-countdown * {
+    line-height: 1
+}
+
+.deposit-countdown .d20_account_alarm {
+    color: #454545;
+    font-size: 30px
+}
+
+.deposit-countdown .deposit-countdown-timer {
+    border-right: 1px solid #e9e9e9;
+    display: flex;
+    height: 100%;
+    padding-right: 10px;
+    width: 106px
+}
+
+.deposit-countdown .deposit-countdown-timer>p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 3px;
+    text-align: center
+}
+
+.deposit-countdown .deposit-countdown-timer>p.number {
+    flex: 1 0 38px
+}
+
+.deposit-countdown .deposit-countdown-timer>p>span:first-of-type {
+    color: #e94951
+}
+
+.deposit-countdown .deposit-countdown-timer>p>span:nth-of-type(2) {
+    font-size: 12px;
+    margin: 3px 0 0
+}
+
+.deposit-countdown .deposit-countdown-description {
+    color: #6b6b6b;
+    padding: 14px 10px
+}
+
+.deposit-countdown.mobile {
+    font-size: 12px;
+    height: 55px
+}
+
+.deposit-countdown.mobile .deposit-countdown-timer>p {
+    font-size: 24px
+}
+
+.deposit-countdown.mobile .deposit-countdown-timer>p.number {
+    flex: 1 0 30px
+}
+
+.deposit-countdown.desktop {
+    border-radius: 5px;
+    font-size: 14px;
+    height: 67px
+}
+
+.deposit-countdown.desktop .deposit-countdown-timer {
+    height: 100%
+}
+
+.deposit-countdown.desktop .deposit-countdown-timer>p {
+    font-size: 32px
+}
+
+.deposit-note-navbar .navbar .right i {
+    font-size: 36px
+}
+
+.member-center-carousel-ads {
+    padding: 5px 15px 10px
+}
+
+.member-center-carousel-ads .ads-block {
+    height: 100%;
+    max-height: 1000px;
+    overflow: scroll;
+    padding-top: 15px
+}
+
+.member-center-carousel-ads .promo-ads-banner {
+    height: 100%
+}
+
+.member-center-carousel-ads .promo-ads-banner .nrc-carousel {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center
+}
+
+.member-center-carousel-ads .promo-ads-banner .nrc-carousel .carousel-indicators li {
+    background-color: #6b6b6b
+}
+
+.mc-collection-accordion-field .mc-collection-accordion-label {
+    font-size: 14px;
+    line-height: 20px
+}
+
+.mc-collection-accordion-field .mc-collection-accordion-label label {
+    color: #454545
+}
+
+.mc-collection-accordion-field .mc-collection-opt-warpper {
+    max-height: 600px;
+    overflow: auto
+}
+
+.mc-collection-accordion-field .mc-collection-option {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 10px 0 0;
+    padding: 10px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information {
+    cursor: pointer;
+    display: flex
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information figure {
+    height: 36px;
+    margin: 0;
+    width: 36px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information figure svg g {
+    fill: #454545
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information img {
+    max-height: 100%;
+    width: 100%
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-content {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    margin: 0 5px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-content .mps-icon {
+    color: #3cc2ea;
+    font-size: 22px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-content .mps-icon.opened {
+    transform: rotate(180deg)
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-basic {
+    flex-grow: 1
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-fee {
+    text-align: right
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-fee div.mc-collection-description {
+    margin-bottom: 5px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-name {
+    color: #454545;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 5px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-information .mc-collection-description {
+    color: #6b6b6b;
+    font-size: 10px;
+    line-height: 14px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-accordion {
+    display: none;
+    margin-top: 20px
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-accordion.actived {
+    display: block
+}
+
+.mc-collection-accordion-field .mc-collection-option .mc-collection-accordion .nrc-button {
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%
+}

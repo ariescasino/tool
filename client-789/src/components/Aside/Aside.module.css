@@ -1,0 +1,47 @@
+.mainAside {
+    position: relative;
+    height: 121px;
+    width: 121px;
+    z-index: 9;
+    /* background-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/aside/247.png"); */
+}
+
+.mainAside::before {
+    content: '';
+    position: absolute;
+    top: -70%;
+    right: 0px;
+    width: 121px;
+    height: 121px;
+}
+
+.cskh {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 88px;
+    height: 88px;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.mainAside:hover div:nth-child(2) {
+    transform: translate3d(0, -210%, 0);
+}
+.mainAside:hover div:nth-child(3) {
+    transform: translate3d(-95%, -177%, 0);
+}
+.mainAside:hover div:nth-child(4) {
+    transform: translate3d(-160%, -101%, 0);
+}
+.mainAside:hover div:nth-child(5) {
+    transform: translate3d(-160%, 1%, 0);
+}
+.mainAside:hover div:nth-child(6) {
+    transform: translate3d(-95%, 77%, 0);
+}
+.mainAside:hover div:nth-child(7) {
+    transform: translate3d(0, 110%, 0);
+}

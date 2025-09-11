@@ -1,0 +1,1090 @@
+<%- include('../../includes/header') %>
+
+    <style>
+        [_nghost-serverApp-c148] {
+            display: block;
+            min-height: 100%;
+            padding-bottom: 100px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper {
+            margin-top: -20px;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border-radius: 5px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li {
+            position: relative;
+            width: 33.33%;
+            flex-shrink: 0
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-height: 65px;
+            padding: 10px 0;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            justify-content: space-evenly;
+            align-items: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a.active,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div.active {
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a i,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div i {
+            margin-bottom: 3px;
+            font-size: 18px;
+            line-height: 22px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a span,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div span {
+            padding: 0 3px;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 30px;
+            width: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            transform: translateY(-50%)
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:nth-child(3n+3):before {
+            content: none
+        }
+
+        [_nghost-serverApp-c148] .bottom-sheet-title {
+            display: none
+        }
+
+        .m-0[_ngcontent-serverApp-c148] {
+            margin: 0;
+			color: white;
+        }
+
+        .header[_ngcontent-serverApp-c148] {
+            position: static;
+            display: block;
+            padding-top: 50px
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148] {
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 49px;
+            padding: 0 15px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(61 61 61 / var(--tw-bg-opacity));
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148]:before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            opacity: .7
+        }
+
+        .bottom[_ngcontent-serverApp-c148] {
+            height: 90px;
+            padding: 0 15px 0 33px;
+            --tw-text-opacity: 1;
+            color: rgb(255 97 0 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #3c3c3d;
+        }
+
+        .bottom-sheet-content .wrapper {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            border: none
+        }
+
+        .bottom-sheet-content .wrapper .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .bottom-sheet-content .wrapper .btn-secondary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(29 30 31 / var(--tw-border-opacity))
+        }
+
+        app-time-limited-event>.wrapper {
+            background-color: transparent
+        }
+
+        app-time-limited-event .page-title {
+            display: none
+        }
+
+        [_nghost-serverApp-c160] {
+            display: block;
+            height: 100%
+        }
+    </style>
+    <style>
+        .wrapper[_ngcontent-serverApp-c149] {
+            padding: 0 19px 80px
+        }
+
+        .item-list[_ngcontent-serverApp-c149] {
+            text-transform: uppercase
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] {
+            margin-top: 20px;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border-radius: 5px;
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border: none
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper label {
+            --tw-text-opacity: 1;
+            color: rgb(22 19 19 / var(--tw-text-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper input,
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper select {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper .btn-secondary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(29 30 31 / var(--tw-border-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper .tab.active {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+    </style>
+    <style>
+        .danger[_ngcontent-serverApp-c62] {
+            color: #a94442;
+            background: #f2dede;
+            border: 1px solid #ebccd1
+        }
+
+        .warning[_ngcontent-serverApp-c62] {
+            color: #8a6d3b;
+            background: #fcf8e3;
+            border: 1px solid #faebcc
+        }
+
+        .info[_ngcontent-serverApp-c62] {
+            color: #31708f;
+            background: #d9edf7;
+            border: 1px solid #bce8f1
+        }
+    </style>
+    <style>
+        fieldset[_ngcontent-serverApp-c124]>div[_ngcontent-serverApp-c124] {
+            position: relative;
+            margin-bottom: .75rem
+        }
+
+        fieldset[_ngcontent-serverApp-c124]>div[_ngcontent-serverApp-c124] label[_ngcontent-serverApp-c124] {
+            display: block;
+            margin-bottom: .25rem;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700
+        }
+
+        fieldset[_ngcontent-serverApp-c124]>div[_ngcontent-serverApp-c124] input[_ngcontent-serverApp-c124] {
+            display: block;
+            width: 100%;
+            height: 2rem;
+            padding: 0 .5rem;
+            color: #444;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            outline-style: none
+        }
+
+        fieldset[_ngcontent-serverApp-c124] .has-warning[_ngcontent-serverApp-c124] label[_ngcontent-serverApp-c124] {
+            color: #a94442
+        }
+
+        fieldset[_ngcontent-serverApp-c124] .has-warning[_ngcontent-serverApp-c124] input[_ngcontent-serverApp-c124] {
+            border-color: #a94442
+        }
+
+        fieldset[_ngcontent-serverApp-c124] .errorTip[_ngcontent-serverApp-c124] {
+            display: block;
+            margin: 5px 0 10px;
+            color: #a94442
+        }
+
+        .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity));
+            padding: 6px 12px;
+            margin: 0 5px;
+            text-align: center;
+            color: #333;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn-secondary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            --tw-bg-opacity: 1;
+            --tw-border-opacity: 1;
+            padding: 6px 12px;
+            margin: 0 5px;
+            text-align: center;
+            color: #fff;
+            background: rgb(29 30 31 / var(--tw-bg-opacity));
+            border: 1px solid #ffffff17;
+            border-radius: 4px;
+        }
+    </style>
+    <style>
+        .wrapper[_ngcontent-serverApp-c182] {
+            padding: 0 19px 80px
+        }
+
+        .tab-wrapper[_ngcontent-serverApp-c182] i[_ngcontent-serverApp-c182] {
+            font-size: 28px;
+            line-height: 36px;
+            margin-bottom: 3px
+        }
+
+        .tab-wrapper[_ngcontent-serverApp-c182] i[_ngcontent-serverApp-c182] img[_ngcontent-serverApp-c182] {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+            transform: scale(.9)
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c182] {
+            margin-top: 20px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        app-deposit-methods>div.wrapper,
+        app-withdraw-layout>div.wrapper {
+            margin: 0;
+            padding: 11px;
+        }
+
+        .svg[_ngcontent-serverApp-c182] {
+            width: 100%;
+            height: 34px;
+            margin-bottom: 6px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity))
+        }
+
+        .svg.svg1[_ngcontent-serverApp-c182] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/01.16a325e47115cc96.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/01.16a325e47115cc96.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .svg.svg2[_ngcontent-serverApp-c182] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/02.ca9d11e444d9d91b.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/02.ca9d11e444d9d91b.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .svg.svg3[_ngcontent-serverApp-c182] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/03.6e951d388735a252.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/03.6e951d388735a252.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .active[_ngcontent-serverApp-c182] .svg[_ngcontent-serverApp-c182] {
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .go[_ngcontent-serverApp-c182] {
+            display: block;
+            width: 10rem;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 2;
+            border-radius: 4px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+    </style>
+    <style>
+        .method[_ngcontent-serverApp-c178] {
+            position: relative;
+            width: calc(33.3333333333% - 6px);
+            min-height: 76px;
+            padding: 0 .25rem;
+            margin: 0 0 6px 5px;
+            border: 3px solid transparent;
+            border-radius: 5px;
+            box-sizing: border-box
+        }
+
+        .method[_ngcontent-serverApp-c178]:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px
+        }
+
+        .method[_ngcontent-serverApp-c178] [_ngcontent-serverApp-c178]:nth-child(3n) {
+            margin-right: 0
+        }
+
+        .method.select[_ngcontent-serverApp-c178]:before {
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .method[_ngcontent-serverApp-c178] {
+            display: flex;
+            width: calc(33.3333333333% - -53px);
+            min-height: 46px
+        }
+
+        .method[_ngcontent-serverApp-c178] i[_ngcontent-serverApp-c178] {
+            flex: 0 0 auto
+        }
+
+        .method[_ngcontent-serverApp-c178] p[_ngcontent-serverApp-c178] {
+            margin: 0 0 0 5px
+        }
+
+        .global[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-color: #55eb75;
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/globalization.72c0bd7a26213232.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/globalization.72c0bd7a26213232.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain
+        }
+
+        .qrcode[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-color: #f9bb1f;
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/qr_code.68ab5f67ced9fb5c.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/qr_code.68ab5f67ced9fb5c.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain
+        }
+
+        .momo[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/momo.e8f46bb755fe4792.png);
+            background-size: contain
+        }
+
+        .g-cash[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/gcash.66aeeff8753b523f.png);
+            background-size: contain
+        }
+
+        .grab-pay[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/grabpay.1c55332c579f1cc6.png);
+            background-size: contain
+        }
+
+        .zalo-pay[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/zalopay.a25321f522ede0a9.png);
+            background-size: contain
+        }
+
+        .vt-pay[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/vtpay.8edf12e96dded4f8.png);
+            background-size: contain
+        }
+
+        .scratch[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/scratch.3221421a6c352f2a.png);
+            background-size: contain
+        }
+
+        .true-money-wallet[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/truemoneywallet.e8defc91abdac3a6.png);
+            background-size: contain
+        }
+
+        .payMaya[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/paymaya.ccd44d75111236c4.png);
+            background-size: contain
+        }
+
+        .usdt[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/usdt.a718e76b05478de7.png);
+            background-size: contain
+        }
+
+        .prompt-pay[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/promptppay.874d5d93e44fb8a6.png);
+            background-size: contain
+        }
+
+        .unionpay[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-color: #00dcff;
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/unionpay.47482ca22bb0a1b4.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/unionpay.47482ca22bb0a1b4.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain
+        }
+
+        .sevenEleven[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/sevenEleven.d3676a83f54ded68.png);
+            background-size: contain
+        }
+
+        .upi[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/upi.0dc480ba93cbc4b7.png);
+            background-size: contain
+        }
+
+        .pix[_ngcontent-serverApp-c178] {
+            width: 20px;
+            height: 20px;
+            margin: 8px 0;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/pix.c517d70ecbcae6d2.png);
+            background-size: contain
+        }
+    </style>
+    <style>
+        .payment[_ngcontent-serverApp-c177] .submit[_ngcontent-serverApp-c177] {
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 4px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .payment[_ngcontent-serverApp-c177] button:disabled {
+            --tw-bg-opacity: 1 !important;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+            --tw-text-opacity: 1 !important;
+            color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+            opacity: .3;
+            cursor: not-allowed
+        }
+
+        .payment-way[_ngcontent-serverApp-c177] p[_ngcontent-serverApp-c177] {
+            margin-bottom: 0
+        }
+
+        .payment-way[_ngcontent-serverApp-c177] p.title[_ngcontent-serverApp-c177] {
+            margin-bottom: 10px
+        }
+
+        .recommend[_ngcontent-serverApp-c177] {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        .recommend.normal[_ngcontent-serverApp-c177] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity))
+        }
+
+        .recommend.active[_ngcontent-serverApp-c177] {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .bank-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px 0;
+            background-color: #f9a21f;
+            -webkit-mask: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/9f9c8df554bf188532e64d8387de062b.svg) no-repeat center;
+            mask: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/9f9c8df554bf188532e64d8387de062b.svg) no-repeat center;
+        }
+
+        .deposit-service {
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -ms-flex-align: center;
+            align-items: center;
+            height: 72px;
+            font-size: 14px;
+            font-weight: 500;
+            background: #262626;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .wallet-transfer-in {
+            width: 40px;
+            height: 40px;
+            background: url(https://i.imgur.com/QCqGGoq.png) no-repeat center;
+            background-size: contain;
+        }
+
+        .wallet-transfer-out {
+            width: 40px;
+            height: 40px;
+            background: url(https://i.imgur.com/kZfiOZq.png) no-repeat center;
+            background-size: contain;
+        }
+
+        ._3lsn-9-R1KxDnv9_koaEkC {
+            margin: 0 auto;
+        }
+
+        ._3CMDGIALq8HDo4XBIBIB0c {
+            background: #262626;
+            border-radius: 10px;
+        }
+
+        .panel {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        ._3CMDGIALq8HDo4XBIBIB0c .panel-body {
+            padding: 15px 30px;
+        }
+
+        ._3CMDGIALq8HDo4XBIBIB0c {
+            background: #262626;
+            border-radius: 10px;
+        }
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        fieldset {
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .list-inline {
+            padding-left: 0;
+            list-style: none;
+            margin-left: -5px;
+        }
+
+        ._7xUDK8Nc4sibXVDvqFf9H li {
+            width: 100px;
+            height: 40px;
+            margin: 0 10px 10px 0;
+            padding: 0 5px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 38px;
+            text-align: center;
+            background: #444;
+            border-radius: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        ._7xUDK8Nc4sibXVDvqFf9H li.selected {
+            font-weight: 600;
+            color: #fff;
+            background: #00e2ff7d;
+        }
+
+        .flex-list {
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        .flex-list li {
+            width: 30%;
+        }
+
+        fieldset[_ngcontent-serverApp-c124]>div[_ngcontent-serverApp-c124] input[_ngcontent-serverApp-c124] {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity));
+
+            display: block;
+            width: 100%;
+            height: 2rem;
+            padding: 0 0.5rem;
+            color: #444;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            outline-style: none;
+            color: #fff;
+        }
+
+        .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity));
+        }
+    </style>
+
+
+
+    <body class="mat-typography vi-VN">
+        <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+            <app-sample-layout _nghost-serverapp-c91="">
+                <app-member-layout _nghost-serverapp-c148="">
+
+
+                    <header _ngcontent-serverapp-c148="" class="header">
+                        <div _ngcontent-serverapp-c148="" class="header-wrap">
+                            <div _ngcontent-serverapp-c148="" class="flex" onclick="window.location='/account'">
+                                <div _ngcontent-serverapp-c148="" class="mr-4">
+                                    <i _ngcontent-serverapp-c148="" class="fas fa-arrow-left text-2xl"></i>
+                                </div>
+                                <h2 _ngcontent-serverapp-c148="" class="text-customized-text-secondary m-0 uppercase">
+                                    CHUYỂN QUỸ TRÒ CHƠI
+                                </h2>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="bar btn-open-right-sidebar">
+                                <i _ngcontent-serverapp-c148="" class="fas fa-bars text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <section _ngcontent-serverapp-c148="" class="bottom fl">
+                            <div _ngcontent-serverapp-c148="" class="inline-block text-sm">
+                                <p _ngcontent-serverapp-c148="" class="m-0 pt-3">
+                                    <span _ngcontent-serverapp-c148="" translate="Home_Hello" class="uppercase">Xin
+                                        chào</span>,
+                                    <span _ngcontent-serverapp-c148="">
+                                        <%=dataPage.session.user.username%>
+                                    </span>
+                                </p>
+                                <div _ngcontent-serverapp-c148="" class="mt-1">
+                                    <span _ngcontent-serverapp-c148="" class="mx-0.5 text-2xl" id="header-balance">
+                                        <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                                    </span>
+                                    <span _ngcontent-serverapp-c148=""
+                                        class="currency text-customized-text-tertiary mt-1 inline-block align-top">VND</span>
+                                </div>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="float-right pt-6"><a _ngcontent-serverapp-c148=""
+                                    href="/account/security"><i _ngcontent-serverapp-c148=""
+                                        class="fas fa-user-circle text-customized-text-primary text-4xl"></i></a></div>
+                        </section>
+
+                    </header>
+
+
+                    <app-financial-layout _nghost-serverapp-c182="" class="ng-star-inserted">
+
+                        <div _ngcontent-serverapp-c182="" class="ng-star-inserted">
+                            <section _ngcontent-serverapp-c182="" class="content-wrapper">
+                                <div _ngcontent-serverapp-c182="" class="ng-star-inserted">
+                                    <app-deposit-methods _ngcontent-serverapp-c182="" _nghost-serverapp-c178="">
+
+                                        <!-- Method select -->
+                                        <div _ngcontent-serverapp-c178=""
+                                            class="wrapper my-4 mx-5 block overflow-x-auto ng-star-inserted">
+                                            <ul _ngcontent-serverapp-c178="" class="deposit flex flex-wrap list-method">
+                                                <li _ngcontent-serverapp-c178=""
+                                                    class="method ng-star-inserted deposit-service"
+                                                    data-method="cashin">
+                                                    <div _ngcontent-serverapp-c178=""
+                                                        class="flex w-full items-center justify-center text-xs">
+                                                        <i _ngcontent-serverapp-c178=""
+                                                            class="wallet-transfer-in ng-star-inserted"></i>
+                                                        <p _ngcontent-serverapp-c178="" class="break-all"><span
+                                                                _ngcontent-serverapp-c178="">NẠP VÀO TRÒ CHƠI</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li _ngcontent-serverapp-c178=""
+                                                    class="method ng-star-inserted deposit-service"
+                                                    data-method="cashout">
+                                                    <div _ngcontent-serverapp-c178=""
+                                                        class="flex w-full items-center justify-center text-xs">
+                                                        <i _ngcontent-serverapp-c178=""
+                                                            class="wallet-transfer-out ng-star-inserted"></i>
+                                                        <p _ngcontent-serverapp-c178="" class="break-all">
+                                                            <span _ngcontent-serverapp-c178="">RÚT RA QUỸ CHÍNH</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- No method select -->
+                                        <div _ngcontent-serverapp-c178="" class="p-4 no-method-select">
+                                            <div _ngcontent-serverapp-c178=""
+                                                class="border-customized-bg-septenary rounded-md border p-4 text-center">
+                                                <i _ngcontent-serverapp-c178="" class="fas fa-info-circle mr-1"></i>
+                                                <span _ngcontent-serverapp-c178=""
+                                                    translate="Financial_NoFinancialList">
+                                                    Vui lòng chọn một phương thức chuyển quỹ.
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Production Show -->
+                                        <div class="_3lsn-9-R1KxDnv9_koaEkC wallet-transfer-product-element"
+                                            style="padding: 14px;margin-top: -11px;display: none;">
+                                            <div class="ng-scope">
+                                                <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <fieldset class="ng-scope">
+                                                                <p>
+                                                                    <span class="ng-scope"
+                                                                        style="font-weight: 600;color: #fff;">Chọn
+                                                                        nhà
+                                                                        cung cấp trò chơi：
+                                                                    </span>
+                                                                </p>
+                                                                <ul class="list-unstyled list-inline _7xUDK8Nc4sibXVDvqFf9H wallet-transfer-product-body flex-list"
+                                                                    style="margin: 0 auto;">
+                                                                </ul>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cash In Relation Amount Show -->
+                                        <div class="_3lsn-9-R1KxDnv9_koaEkC wallet-transfer-cashin-body"
+                                            style="padding: 14px;margin-top: -30px;display: none;">
+                                            <div class="ng-scope">
+                                                <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <fieldset class="ng-scope">
+                                                                <p>
+                                                                    <span class="ng-scope"
+                                                                        style="font-weight: 600;color: #fff;">Số
+                                                                        tiền
+                                                                        được đề xuất để thanh toán (VND)：
+                                                                    </span>
+                                                                </p>
+                                                                <ul class="list-unstyled list-inline _7xUDK8Nc4sibXVDvqFf9H wallet-transfer-cashin-select-amount flex-list"
+                                                                    style="margin: 0 auto;">
+                                                                </ul>
+                                                            </fieldset>
+
+                                                            <form style="margin-top: 10px;" _ngcontent-serverapp-c124=""
+                                                                novalidate=""
+                                                                class="w-full ng-pristine ng-invalid ng-touched"
+                                                                onsubmit="event.preventDefault();">
+                                                                <fieldset _ngcontent-serverapp-c124="">
+                                                                    <div _ngcontent-serverapp-c124="">
+                                                                        <label _ngcontent-serverapp-c124="">
+                                                                            Nhập số tiền thủ công：
+                                                                        </label>
+                                                                        <input _ngcontent-serverapp-c124="" type="text"
+                                                                            id="oldpassword"
+                                                                            formcontrolname="oldPassword"
+                                                                            placeholder="Vui lòng nhập số tiền"
+                                                                            class="ng-pristine ng-invalid ng-touched input-amount-cashin">
+                                                                    </div>
+                                                                    <div _ngcontent-serverapp-c124="">
+                                                                        <label _ngcontent-serverapp-c124="">
+                                                                            Điểm thực nhận (1000 VND = 1 Điểm)
+                                                                        </label>
+                                                                        <input readonly _ngcontent-serverapp-c124=""
+                                                                            type="text" id="newpassword"
+                                                                            class="ng-pristine ng-invalid ng-touched input-amount-exchange-cashin">
+                                                                    </div>
+                                                                </fieldset>
+
+                                                                <fieldset _ngcontent-serverapp-c124="">
+                                                                    <div _ngcontent-serverapp-c124=""
+                                                                        class="mt-4 text-center">
+                                                                        <button _ngcontent-serverapp-c124=""
+                                                                            type="submit"
+                                                                            class="btn btn-primary btn-submit-cashin">
+                                                                            <span _ngcontent-serverapp-c124=""
+                                                                                class="ng-star-inserted">
+                                                                                Thanh toán ngay bây giờ
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cash Out Relation Amount Show -->
+                                        <div class="_3lsn-9-R1KxDnv9_koaEkC wallet-transfer-cashout-body"
+                                            style="padding: 14px;margin-top: -30px;display: none;">
+                                            <div class="ng-scope">
+                                                <div class="panel _3CMDGIALq8HDo4XBIBIB0c">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <fieldset class="ng-scope">
+                                                                <p>
+                                                                    <span class="ng-scope"
+                                                                        style="font-weight: 600;color: #fff;">Số
+                                                                        tiền
+                                                                        được đề xuất để thanh toán (VND)：
+                                                                    </span>
+                                                                </p>
+                                                                <ul class="list-unstyled list-inline _7xUDK8Nc4sibXVDvqFf9H wallet-transfer-cashout-select-amount flex-list"
+                                                                    style="margin: 0 auto;">
+                                                                </ul>
+                                                            </fieldset>
+
+                                                            <form style="margin-top: 10px;" _ngcontent-serverapp-c124=""
+                                                                novalidate=""
+                                                                class="w-full ng-pristine ng-invalid ng-touched"
+                                                                onsubmit="event.preventDefault();">
+                                                                <fieldset _ngcontent-serverapp-c124="">
+                                                                    <div _ngcontent-serverapp-c124="">
+                                                                        <label _ngcontent-serverapp-c124="">
+                                                                            Nhập số điểm thủ công：
+                                                                        </label>
+                                                                        <input _ngcontent-serverapp-c124="" type="text"
+                                                                            id="oldpassword"
+                                                                            formcontrolname="oldPassword"
+                                                                            placeholder="Vui lòng nhập số tiền"
+                                                                            class="ng-pristine ng-invalid ng-touched input-amount-cashout">
+                                                                    </div>
+                                                                    <div _ngcontent-serverapp-c124="">
+                                                                        <label _ngcontent-serverapp-c124="">
+                                                                            Tiền thực nhận (1 Điểm = 1000 VND)
+                                                                        </label>
+                                                                        <input readonly _ngcontent-serverapp-c124=""
+                                                                            type="text" id="newpassword"
+                                                                            class="ng-pristine ng-invalid ng-touched input-amount-exchange-cashout">
+                                                                    </div>
+                                                                </fieldset>
+
+                                                                <fieldset _ngcontent-serverapp-c124="">
+                                                                    <div _ngcontent-serverapp-c124=""
+                                                                        class="mt-4 text-center">
+                                                                        <button _ngcontent-serverapp-c124=""
+                                                                            type="submit"
+                                                                            class="btn btn-primary btn-submit-cashout">
+                                                                            <span _ngcontent-serverapp-c124=""
+                                                                                class="ng-star-inserted">
+                                                                                Thanh toán ngay bây giờ
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </app-deposit-methods>
+
+
+
+                                </div>
+                            </section>
+                        </div>
+                        </div>
+                    </app-financial-layout>
+
+
+                    <!-- Menu Bar -->
+                    <%- include('../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+                </app-member-layout>
+
+
+                <!-- SideBar Menu -->
+                <%- include('../../includes/sidebar_menu') %>
+                    <!-- END SideBar Menu -->
+
+            </app-sample-layout>
+        </app-root>
+
+        <!-- Notify Modal -->
+        <%- include('../../includes/notify_modal') %>
+            <!-- END Notify Modal -->
+    </body>
+
+    <script type="text/javascript" src="/core/js/account/wallet-transfer.js"></script>
+    <data-script id="scriptMethod"></data-script>
+
+    <%- include('../../includes/footer') %>

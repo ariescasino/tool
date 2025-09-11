@@ -1,0 +1,409 @@
+<%- include('../../includes/header') %>
+
+    <style>
+        [_nghost-serverApp-c148] {
+            display: block;
+            min-height: 100%;
+            padding-bottom: 100px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity))
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper {
+            margin-top: -20px;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border-radius: 5px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li {
+            position: relative;
+            width: 33.33%;
+            flex-shrink: 0
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-height: 65px;
+            padding: 10px 0;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            justify-content: space-evenly;
+            align-items: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a.active,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div.active {
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a i,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div i {
+            margin-bottom: 3px;
+            font-size: 18px;
+            line-height: 22px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a span,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div span {
+            padding: 0 3px;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 30px;
+            width: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            transform: translateY(-50%)
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:nth-child(3n+3):before {
+            content: none
+        }
+
+        [_nghost-serverApp-c148] .bottom-sheet-title {
+            display: none
+        }
+
+        .m-0[_ngcontent-serverApp-c148] {
+            margin: 0;
+			color: white;
+        }
+
+        .header[_ngcontent-serverApp-c148] {
+            position: static;
+            display: block;
+            padding-top: 50px
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148] {
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 49px;
+            padding: 0 15px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(61 61 61 / var(--tw-bg-opacity));
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148]:before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            opacity: .7
+        }
+
+        .bottom[_ngcontent-serverApp-c148] {
+            height: 90px;
+            padding: 0 15px 0 33px;
+            --tw-text-opacity: 1;
+            color: rgb(255 97 0 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #3c3c3d;
+        }
+
+        .bottom-sheet-content .wrapper {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            border: none
+        }
+
+        .bottom-sheet-content .wrapper .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .bottom-sheet-content .wrapper .btn-secondary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(29 30 31 / var(--tw-border-opacity))
+        }
+
+        app-time-limited-event>.wrapper {
+            background-color: transparent
+        }
+
+        app-time-limited-event .page-title {
+            display: none
+        }
+
+        [_nghost-serverApp-c160] {
+            display: block;
+            height: 100%
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c131] {
+            text-transform: uppercase
+        }
+
+        .form-group[_ngcontent-serverApp-c131] {
+            display: block;
+            width: 100%;
+            margin: .5rem 0;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .form-group[_ngcontent-serverApp-c131] .control[_ngcontent-serverApp-c131],
+        .form-group[_ngcontent-serverApp-c131]>select[_ngcontent-serverApp-c131] {
+            width: 100%;
+            padding: .25rem .5rem;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity));
+            border-radius: 4px
+        }
+
+        label[_ngcontent-serverApp-c131] {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        .table[_ngcontent-serverApp-c131] {
+            width: 100%;
+            margin-bottom: 2rem;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity))
+        }
+
+        .table[_ngcontent-serverApp-c131] th[_ngcontent-serverApp-c131],
+        .table[_ngcontent-serverApp-c131] td[_ngcontent-serverApp-c131] {
+            padding: .5rem;
+            --tw-text-opacity: 1;
+            color: #fff;
+            text-align: left;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity))
+        }
+
+        .table[_ngcontent-serverApp-c131] th[_ngcontent-serverApp-c131] {
+            font-weight: 700
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c138] {
+            text-transform: uppercase
+        }
+
+        .time-btn-group[_ngcontent-serverApp-c138] li[_ngcontent-serverApp-c138]:first-child {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px
+        }
+
+        .time-btn-group[_ngcontent-serverApp-c138] li[_ngcontent-serverApp-c138]:last-child {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px
+        }
+
+        .table[_ngcontent-serverApp-c138] {
+            width: 100%;
+            margin-bottom: 2rem;
+            border: 1px solid #ddd
+        }
+
+        .table[_ngcontent-serverApp-c138] th[_ngcontent-serverApp-c138],
+        .table[_ngcontent-serverApp-c138] td[_ngcontent-serverApp-c138] {
+            padding: .5rem;
+            color: fff;
+            text-align: left;
+            border: 1px solid #ddd
+        }
+
+        .table[_ngcontent-serverApp-c138] th[_ngcontent-serverApp-c138] {
+            font-weight: 700
+        }
+    </style>
+
+    <body class="mat-typography vi-VN">
+        <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+            <app-sample-layout _nghost-serverapp-c91="">
+                <app-member-layout _nghost-serverapp-c148="">
+
+
+                    <header _ngcontent-serverapp-c148="" class="header">
+                        <div _ngcontent-serverapp-c148="" class="header-wrap">
+                            <div _ngcontent-serverapp-c148="" class="flex" onclick="window.location='/account'">
+                                <div _ngcontent-serverapp-c148="" class="mr-4">
+                                    <i _ngcontent-serverapp-c148="" class="fas fa-arrow-left text-2xl"></i>
+                                </div>
+                                <h2 _ngcontent-serverapp-c148="" class="text-customized-text-secondary m-0 uppercase">
+                                    LỊCH SỬ GIAO DỊCH
+                                </h2>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="bar btn-open-right-sidebar">
+                                <i _ngcontent-serverapp-c148="" class="fas fa-bars text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <section _ngcontent-serverapp-c148="" class="bottom fl">
+                            <div _ngcontent-serverapp-c148="" class="inline-block text-sm">
+                                <p _ngcontent-serverapp-c148="" class="m-0 pt-3">
+                                    <span _ngcontent-serverapp-c148="" translate="Home_Hello" class="uppercase">Xin
+                                        chào</span>,
+                                    <span _ngcontent-serverapp-c148="">
+                                        <%=dataPage.session.user.username%>
+                                    </span>
+                                </p>
+                                <div _ngcontent-serverapp-c148="" class="mt-1">
+                                    <span _ngcontent-serverapp-c148="" class="mx-0.5 text-2xl">
+                                        <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                                    </span>
+                                    <span _ngcontent-serverapp-c148=""
+                                        class="currency text-customized-text-tertiary mt-1 inline-block align-top">VND</span>
+                                </div>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="float-right pt-6"><a _ngcontent-serverapp-c148=""
+                                    href="/account/security"><i _ngcontent-serverapp-c148=""
+                                        class="fas fa-user-circle text-customized-text-primary text-4xl"></i></a></div>
+                        </section>
+
+                    </header>
+
+
+                    <app-bet-record _nghost-serverapp-c131="" class="ng-star-inserted">
+
+                        <section _ngcontent-serverapp-c131="" class="bottom-sheet-content">
+                            <div _ngcontent-serverapp-c131=""
+                                class="wrapper h-[96%] overflow-y-auto rounded border border-[#ccc] bg-white p-4 text-black">
+
+                                <div _ngcontent-serverapp-c131="" class="ng-star-inserted">
+                                    <form _ngcontent-serverapp-c131="" novalidate=""
+                                        class="ng-untouched ng-pristine ng-valid" onsubmit="event.preventDefault()">
+
+                                        <ul _ngcontent-serverapp-c138=""
+                                            class="time-btn-group mb-3 inline-flex align-middle date-fillter">
+                                            <li data-date="today" _ngcontent-serverapp-c138=""
+                                                class="flex items-center justify-center border border-[#ccc] bg-white py-1 px-3 text-xs text-black ng-star-inserted">
+                                                Hôm nay
+                                            </li>
+                                            <li data-date="yesterday" _ngcontent-serverapp-c138=""
+                                                class="flex items-center justify-center border border-[#ccc] bg-white py-1 px-3 text-xs text-black ng-star-inserted">
+                                                Hôm qua
+                                            </li>
+                                            <li data-date="7dayago" _ngcontent-serverapp-c138=""
+                                                class="flex items-center justify-center border border-[#ccc] bg-white py-1 px-3 text-xs text-black ng-star-inserted">
+                                                7 ngày qua
+                                            </li>
+                                            <li data-date="30dayago" _ngcontent-serverapp-c138=""
+                                                class="flex items-center justify-center border border-[#ccc] bg-white py-1 px-3 text-xs text-black ng-star-inserted">
+                                                30 ngày qua
+                                            </li>
+                                        </ul>
+
+                                        <fieldset _ngcontent-serverapp-c131="">
+                                            <div _ngcontent-serverapp-c131="" class="form-group">
+                                                <label _ngcontent-serverapp-c131="" class="mb-1 block font-bold">
+                                                    Phân loại giao dịch:
+                                                </label>
+                                                <select _ngcontent-serverapp-c131="" formcontrolname="gameCategory"
+                                                    class="block ng-untouched ng-pristine ng-valid filter-type">
+                                                    <option _ngcontent-serverapp-c131="" value=""
+                                                        class="ng-star-inserted">TẤT CẢ</option>
+                                                    <option _ngcontent-serverapp-c131="" value="recharge"
+                                                        class="ng-star-inserted">
+                                                        NẠP TIỀN
+                                                    </option>
+                                                    <option _ngcontent-serverapp-c131="" value="cashout"
+                                                        class="ng-star-inserted">
+                                                        RÚT TIỀN
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                                <div id="transaction-content"></div>
+
+                                <center>
+                                    <ul _ngcontent-serverapp-c138="" id="phantrangElement"
+                                        class="time-btn-group mb-3 inline-flex align-middle">
+                                    </ul>
+                                </center>
+
+
+                                <div _ngcontent-serverapp-c131="" class="text-center">
+                                    <span _ngcontent-serverapp-c131="" class="ng-star-inserted">
+                                        <span _ngcontent-serverapp-c131="" class="ng-star-inserted" id="record-counter">
+                                            Đang tải...
+                                        </span>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </section>
+                    </app-bet-record>
+
+
+                    <!-- Menu Bar -->
+                    <%- include('../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+                </app-member-layout>
+
+
+                <!-- SideBar Menu -->
+                <%- include('../../includes/sidebar_menu') %>
+                    <!-- END SideBar Menu -->
+
+            </app-sample-layout>
+        </app-root>
+
+        <!-- Notify Modal -->
+        <%- include('../../includes/notify_modal') %>
+            <!-- END Notify Modal -->
+
+    </body>
+
+    <script type="text/javascript" src="/core/js/account/finan-history.js"></script>
+    <%- include('../../includes/footer') %>

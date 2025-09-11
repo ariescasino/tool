@@ -1,0 +1,91 @@
+.layoutBank {
+  box-shadow:
+    0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12),
+    0 8px 10px -7px rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family: "Times New Roman", Times, serif !important;
+  margin-top: 20px;
+  background: #ffffff;
+}
+
+.layoutBank1 {
+  box-shadow: 0 0 20px #00000014;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Helvetica,
+    Segoe UI,
+    Arial,
+    Roboto,
+    "PingFang SC",
+    "miui",
+    "Hiragino Sans GB",
+    "Microsoft Yahei",
+    sans-serif !important;
+  background: #ffffff;
+}
+
+.boxInfo {
+  margin-bottom: 5px;
+  border-bottom: 1px dashed #d9cccc;
+  padding-bottom: 4px;
+  min-height: 30px;
+}
+
+.boxInfo1 {
+  margin-bottom: 5px;
+  padding-bottom: 4px;
+  min-height: 30px;
+}
+
+.itemInfo {
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 12px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemInfo {
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 12px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  padding: 24px 50px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  background: #f0f2f5;
+}
+
+.codeInfo {
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 1.6;
+  text-align: center;
+  color: #636b6f;
+}
+
+.headerBank1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 5px 0;
+  background: #fff;
+  border-bottom: 1px solid #f4f4f4;
+  justify-content: center;
+  align-items: center;
+}
+
+.message > div {
+  background-color: #000000b3 !important; /* Custom background color */
+  color: #fff !important; /* Custom text color */
+}

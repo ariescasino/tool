@@ -1,0 +1,75 @@
+.iconCard {
+  width: 30px;
+  height: 30px;
+  background-color: #ff9800;
+  -webkit-mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/icons/credit-card.svg");
+  mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/icons/credit-card.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  margin-right: 0.25rem;
+}
+
+.optionsBankPlaceholder {
+  color: black !important;
+}
+
+.styledInput input::placeholder {
+  color: black !important;
+}
+
+.iconUSDT {
+  /* color: #fff; */
+  font-size: 15px;
+  background: white;
+  width: 30px;
+  height: 30px;
+  mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/icons/usdt.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  margin-right: 0.25rem;
+}
+
+.iconBankdk {
+  color: white;
+  font-size: 15px;
+  background: white;
+  width: 30px;
+  height: 30px;
+  mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/icons/bank.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  margin-right: 0.25rem;
+}
+.search {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.search i {
+  position: absolute;
+  right: 20px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.search :global(.ant-input-affix-wrapper) {
+  width: 95%;
+  height: 30px;
+  padding: 0px 1rem;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+}

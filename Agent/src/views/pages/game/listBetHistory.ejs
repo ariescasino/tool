@@ -1,0 +1,327 @@
+<%- include('../../includes/header') %>
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <form action="" method="get" class="form-body row">
+                                <div class="col-lg-10 row">
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Mã Giao Dịch</span>
+                                            <input type="text" class="form-control" name="transid"
+                                                placeholder="SEX002BAC-40448738141..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Mã Phiên Chơi</span>
+                                            <input type="text" class="form-control" name="round"
+                                                placeholder="Mexico-03-GA509080022..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Người chơi</span>
+                                            <input type="text" class="form-control" name="username"
+                                                placeholder="conmeo9999..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Mã Trò chơi</span>
+                                            <input type="text" class="form-control" name="game"
+                                                placeholder="SEX002, DG001..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-info align-items-center">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Tổng: <%=dataApi.total%>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>Tên Đăng Nhập</th>
+                                        <th class="text-center">Thời gian đặt cược</th>
+                                        <th class="text-center">Thời gian cược</th>
+                                        <th class="text-center">Mã giao dịch</th>
+                                        <th class="text-center">ID phiên chơi</th>
+                                        <th class="text-center">Mã trò chơi</th>
+                                        <th class="text-center">Trò chơi</th>
+                                        <th class="text-center">Tổng cược</th>
+                                        <th class="text-center">Cược hợp lệ</th>
+                                        <th class="text-center">Thắng/Thua</th>
+                                        <th class="text-center">Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(dataApi.dataExport.length> 0) { %>
+
+                                        <% dataApi.dataExport.forEach((data)=> { %>
+                                            <tr>
+                                                <td>
+                                                    <%=data.userInfo.username%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%= dataPage.helpers.moment(data.betTime).format("H:mm:s DD/MM/YYYY") %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%= dataPage.helpers.moment(data.transactionTime).format("H:mm:s DD/MM/YYYY") %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.betOrderNo%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.sessionId%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.gameCode%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.gameName%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.betAmount%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.validBetAmount%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <% if (data.winAmount> 0) { %>
+                                                        <div class="win" style="color: #0e5bed">
+                                                            <%=dataPage.helpers.numberWithCommas(data.netPnl)%>
+                                                        </div>
+                                                        <% }else { %>
+                                                            <div class="loss" style="color: #ff1354">
+                                                                <%=dataPage.helpers.numberWithCommas(data.netPnl)%>
+                                                            </div>
+                                                            <% } %>
+                                                </td>
+                                                <td class="text-center">
+                                                    Đã xử lý
+                                            </tr>
+                                            <% }); %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bootstrap-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center" id="phantrangUser"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+    <script>
+        const phantrang = Pagination('<%=dataApi.page%>', '<%=dataApi.total%>', '<%=dataApi.kmess%>');
+
+        let phantrangBody = '';
+        phantrang.forEach((page) => {
+            $("#phantrangUser").html(phantrangBody);
+            let active = ('<%=dataApi.page%>' == page) ? "active" : "";
+            const urlToPage = (page !== "...") ? `/game/bet-history?page=${page}&limit=<%=dataApi.kmess%>` : `javascript:void(0)`;
+            phantrangBody += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="${urlToPage}"><b>${page}</b></a>
+                </li>
+            `;
+            $("#phantrangUser").html(phantrangBody);
+        });
+
+        const deleteDailyConfirm = (id) => {
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có muốn xóa nó không?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/user/delete/' + id,
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 700);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+        }
+
+        const showFormUpdateRecord = (id) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/deposit/deposit-info/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#elementModal').html(`
+                    <div class="modal fade" id="depositInfo-update-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center">
+                                    <h4 class="modal-title" id="exampleModalLabel1">
+                                        Cập nhật yêu cầu nạp tiền
+                                    </h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Tên người chơi:</label>
+                                            <input type="text" class="form-control" id="update-username" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số dư hiện tại:</label>
+                                            <input type="number" class="form-control" id="update-coin" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số tiền nạp:</label>
+                                            <input type="number" class="form-control" id="update-amount" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Trạng thái yêu cầu:</label>
+                                            <select class="form-control form-select" id="update-status"></select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="
+                        btn btn-light-danger
+                        text-danger
+                        font-weight-medium
+                        " data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn btn-success" onclick="updateDeposit('${id}')">
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+
+                    $('#update-username').val(response.data.userInfo.username);
+                    $('#update-coin').val(numberWithCommas(response.data.userInfo.coin));
+                    $('#update-amount').val(response.data.amount);
+
+                    if (response.data.status == "success") {
+                        $('#update-status').append(`<option value="success">Thành công</option>`);
+                        $('#update-status').append(`<option value="pending">Chờ duyệt</option>`);
+                        $('#update-status').append(`<option value="error">Thất bại</option>`);
+                    } else if (response.data.status == "pending") {
+                        $('#update-status').append(`<option value="pending">Chờ duyệt</option>`);
+                        $('#update-status').append(`<option value="success">Thành công</option>`);
+                        $('#update-status').append(`<option value="error">Thất bại</option>`);
+                    } else if (response.data.status == "error") {
+                        $('#update-status').append(`<option value="error">Thất bại</option>`);
+                        $('#update-status').append(`<option value="pending">Chờ duyệt</option>`);
+                        $('#update-status').append(`<option value="success">Thành công</option>`);
+                    }
+                    $('#depositInfo-update-modal').modal('toggle');
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const updateDeposit = (id) => {
+            const status = $('#update-status').val();
+
+            $.ajax({
+                "url": "<%=dataPage.config.API_SERVER%>/deposit/update/" + id,
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+                "data": JSON.stringify({
+                    status
+                }),
+            }).done(function (response) {
+                if (response.status) {
+                    toastr.success(
+                        response.msg,
+                        "Success!"
+                    );
+                    setTimeout(() => {
+                        window.location = "";
+                    }, 700);
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            });
+        }
+    </script>
+    <%- include('../../includes/footer') %>

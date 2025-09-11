@@ -1,0 +1,151 @@
+<%- include('../../includes/header') %>
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <form action="" method="get" class="form-body row">
+                                <div class="col-lg-10 row">
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Mã Giao Dịch</span>
+                                            <input type="text" class="form-control" name="transid"
+                                                placeholder="SEX002BAC-40448738141..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Mã Phiên Chơi</span>
+                                            <input type="text" class="form-control" name="round"
+                                                placeholder="Mexico-03-GA509080022..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Mã Trò chơi</span>
+                                            <input type="text" class="form-control" name="game"
+                                                placeholder="SEX002, DG001..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-info align-items-center">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Tổng: <%=dataApi.total%>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th class="text-center">Thời gian đặt cược</th>
+                                        <th class="text-center">Thời gian cược</th>
+                                        <th class="text-center">Mã giao dịch</th>
+                                        <th class="text-center">ID phiên chơi</th>
+                                        <th class="text-center">Mã trò chơi</th>
+                                        <th class="text-center">Trò chơi</th>
+                                        <th class="text-center">Tổng cược</th>
+                                        <th class="text-center">Cược hợp lệ</th>
+                                        <th class="text-center">Thắng/Thua</th>
+                                        <th class="text-center">Trạng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(dataApi.dataExport.length> 0) { %>
+
+                                        <% dataApi.dataExport.forEach((data)=> { %>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <%= dataPage.helpers.moment(data.betTime).format("H:mm:s DD/MM/YYYY") %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%= dataPage.helpers.moment(data.transactionTime).format("H:mm:s DD/MM/YYYY") %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.betOrderNo%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.sessionId%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.gameCode%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.gameName%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.betAmount%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=data.validBetAmount%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <% if (data.winAmount> 0) { %>
+                                                        <div class="win" style="color: #0e5bed">
+                                                            <%=dataPage.helpers.numberWithCommas(data.netPnl)%>
+                                                        </div>
+                                                        <% }else { %>
+                                                            <div class="loss" style="color: #ff1354">
+                                                                <%=dataPage.helpers.numberWithCommas(data.netPnl)%>
+                                                            </div>
+                                                            <% } %>
+                                                </td>
+                                                <td class="text-center">
+                                                    Đã xử lý
+                                            </tr>
+                                            <% }); %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bootstrap-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center" id="phantrangUser"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+    <script>
+        const phantrang = Pagination('<%=dataApi.page%>', '<%=dataApi.total%>', '<%=dataApi.kmess%>');
+
+        let phantrangBody = '';
+        phantrang.forEach((page) => {
+            $("#phantrangUser").html(phantrangBody);
+            let active = ('<%=dataApi.page%>' == page) ? "active" : "";
+            const urlToPage = (page !== "...") ? `/game/bet-history/<%=dataPage.request.params.id%>?page=${page}&limit=<%=dataApi.kmess%>` : `javascript:void(0)`;
+            phantrangBody += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="${urlToPage}"><b>${page}</b></a>
+                </li>
+            `;
+            $("#phantrangUser").html(phantrangBody);
+        });
+    </script>
+    <%- include('../../includes/footer') %>

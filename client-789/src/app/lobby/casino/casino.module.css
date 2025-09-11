@@ -1,0 +1,43 @@
+.itemGame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  width: 174px;
+  height: 86px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/casino/btn.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.itemGame:hover,
+.active {
+  background-position: center bottom !important;
+}
+
+.image {
+  width: 120px;
+  height: 62px;
+  opacity: 0.6;
+}
+
+.itemGame:hover>.image,
+.active>.image {
+  opacity: 1;
+}
+
+.btn {
+  width: 180px;
+  height: 36px;
+  line-height: 36px;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background: #f1c300;
+}

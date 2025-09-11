@@ -1,0 +1,242 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" href="/mobile/nato888/css/login.css?v=1242333463">
+
+    <div class="loadding">
+        <div class="loadding-icon">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <img class=" lazyloaded" data-src="<%=dataPage.session.siteConfig.site_logo;%>" alt=""
+            src="<%=dataPage.session.siteConfig.site_logo;%>">
+        <div class="container">
+            <div class="container-inner">
+                <div class="top-login" style="border-bottom:unset">
+                    <h2 style="padding:15px 0">Thông tin đăng ký</h2>
+                    <span>
+                        <a href="/"></a>
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+                <div class="content">
+                    <form id="registerform" class="registerform" method="POST" action="/auth/register">
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="">Tên đăng nhập</label>
+                            </div>
+                            <div class="form-input">
+                                <input id="registerform_UserName" name="username" type="text"
+                                    pattern="[a-zA-Z0-9]{5,12}"
+                                    oninvalid="this.setCustomValidity('Không đúng định dạng! Vui lòng nhập lại')"
+                                    onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')"
+                                    value="" required="" placeholder="Tên đăng nhập">
+                            </div>
+                            <span style="font-size: 12px;color: #fff;font-weight: bold;">Vui lòng nhập id người chơi
+                                đăng ký, 5 - 12 ký tự</span>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="">Mật khẩu</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="password" name="password" id="registerform_Password" required=""
+                                    placeholder="Mật khẩu đăng nhập">
+
+                            </div>
+                            <span style="font-size: 12px;color: #fff;font-weight: bold;">Mật khẩu phải từ 8~20 ký tự,
+                                bao gồm chữ và số (không có ký tự đặc biệt)</span>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="">Xác nhận lại mật khẩu</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="password" name="CPassword" id="registerform_CPassword" required=""
+                                    placeholder="Nhập lại mật khẩu">
+                            </div>
+                            <span style="font-size: 12px;color: #fff;font-weight: bold;">Xác nhận mật khẩu phải khớp với
+                                mật khẩu bạn vừa nhập</span>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="">Họ Và Tên</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="registerform_FullName" name="fullname" value="" required=""
+                                    placeholder="Họ và tên ghi trên thẻ ngân hàng">
+
+                            </div>
+                            <span style="font-size: 12px;color: #fff;font-weight: bold;">Họ và tên phải được viết hoa và
+                                cách nhau bằng dấu cách</span>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="">Số điện thoại</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="registerform_Mobile" name="uphone" value=""
+                                    pattern="^[0-9]{8,16}$" oninvalid="this.setCustomValidity('VD: 0936552552')"
+                                    onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity('')"
+                                    required="" placeholder="VD: 0936552552">
+
+                            </div>
+                        </div>
+                        <div class="form-item" id="groupEmail">
+                            <div class="form-label">
+                                <label for="">Địa chỉ Email</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" name="uemail" id="registerform_Email" value=""
+                                    pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"
+                                    oninvalid="this.setCustomValidity('VD: jameroy@gmail.com')"
+                                    onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity('')"
+                                    required="" placeholder="VD: jameroy@gmail.com">
+
+                            </div>
+                        </div>
+                        <div class="form-item" id="groupAffiliate">
+                            <div class="form-label">
+                                <label for="">Mã đại lý (nếu có)</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" id="refcode" name="affiliate_id" value="">
+                            </div>
+                        </div>
+                        <div class="form-login" style="margin-bottom:20px">
+                            <button type="submit" id="registerform_btnSubmit">Đăng ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                    tmp = item.split("=");
+                    if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+
+        $(document).ready(() => {
+            const checkRef = findGetParameter('refcode');
+            if (checkRef) {
+                $('#refcode').val(checkRef);
+                $('#refcode').attr("readonly", true);
+                $('#refcode').attr("style", "background-color: #e6e5e5");
+            }
+
+            $("#registerform_FullName").keypress(() => {
+                $("#registerform_FullName").val($("#registerform_FullName").val().toUpperCase());
+            });
+
+            //$('#groupAffiliate').hide();
+            //$('#groupEmail').hide();
+            $('#registerform_Email').val(`guest000${RandomUserName(8).toLowerCase()}@gmail.com`);
+        });
+
+        $('form[id="registerform"]').on('submit', (e) => {
+            e.preventDefault();
+
+            if (!$('#registerform_UserName').val() ||
+                !$('#registerform_Password').val() ||
+                !$('#registerform_CPassword').val() ||
+                !$('#registerform_FullName').val() ||
+                !$('#registerform_Email').val() ||
+                !$('#registerform_Mobile').val()) {
+                alert('Vui lòng nhập đầy đủ thông tin!');
+                return;
+            }
+
+            const testUsername = new RegExp('^[a-zA-Z0-9]+$');
+            const testName = new RegExp("^[a-zA-Z \s\.\!\?\"\-]+$");
+            const testEmail = new RegExp("[a-z0-9]+@[a-z]+\.[a-z]{2,3}");
+
+            // validate input type  
+            if (!testUsername.test($('#registerform_UserName').val())) {
+                alert('Tên tài khoản không hợp lệ!');
+                return;
+            }
+            if (!testName.test($('#registerform_FullName').val())) {
+                alert('Họ và tên không hợp lệ!');
+                return;
+            }
+            if (!testEmail.test($('#registerform_Email').val())) {
+                alert('Email không hợp lệ');
+                return;
+            }
+
+            // validate string length
+            if ($('#registerform_UserName').val().length < 5 || $('#registerform_UserName').val().length > 20) {
+                alert('Tên tài khoản không được nhỏ hơn 5 và lớn hơn 20 ký tự');
+                return;
+            }
+            if ($('#registerform_FullName').val().length < 5 || $('#registerform_FullName').val().length > 50) {
+                alert('Họ và tên không được nhỏ hơn 5 và lớn hơn 50 ký tự');
+                return;
+            }
+            if ($('#registerform_Email').val().length < 5 || $('#registerform_Email').val().length > 50) {
+                alert('Email không hợp lệ');
+                return;
+            }
+            if ($('#registerform_Mobile').val().length < 9 || $('#registerform_Mobile').val().length > 15) {
+                alert('Số điện thoại không hợp lệ');
+                return;
+            }
+            if ($('#registerform_Password').val().length < 5 || $('#registerform_Password').val().length > 30) {
+                alert('Mật khẩu không được nhỏ hơn 8 và lớn hơn 20 ký tự');
+                return;
+            }
+            if ($('#registerform_Password').val() !== $('#registerform_CPassword').val()) {
+                alert('2 mật khẩu không khớp!   ');
+                return;
+            }
+
+            $(".loadding").show();
+
+            try {
+                $.ajax({
+                    "url": "/auth/register",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "data": JSON.stringify({
+                        "name": $('#registerform_FullName').val(),
+                        "username": $('#registerform_UserName').val(),
+                        "refcode": (!$('#refcode').val()) ? null : $('#refcode').val(),
+                        "email": $('#registerform_Email').val(),
+                        "phone": $('#registerform_Mobile').val(),
+                        "password": $('#registerform_Password').val()
+                    }),
+                }).done(function (response) {
+                    if (response.status) {
+                        console.log(response);
+                        alert("Đăng ký thành công!");
+                        setTimeout(() => {
+                            window.location = "/";
+                        }, 500);
+                    } else {
+                        $(".loadding").hide();
+                        alert(response.msg);
+                    }
+                });
+            } catch (e) {
+                console.log('Có lỗi xảy ra, vui lòng thử lại!');
+            }
+        });
+
+    </script>
+
+    <%- include('../../includes/footer') %>

@@ -1,0 +1,69 @@
+<div class="member-center-menu">
+    <div class="info-block">
+        <div class="playerid">
+            <%=dataPage.session.user.username%>
+        </div>
+        <div class="currency">VND(k)</div>
+        <div class="balance">
+            <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+        </div>
+    </div>
+    <div class="nav-block">
+        <div id="sidebar_profile" onClick="loadContent('profile')"
+            class="item <%=(dataPage.location=='profile')?'active':'';%>"><i class="d20_account_account"></i>
+            <div class="label">Tài khoản</div>
+        </div>
+        <div id="sidebar_deposit" onClick="loadContent('deposit')"
+            class="item  <%=(dataPage.location=='deposit')?'active':'';%>"><i class="d20_account_deposit2"></i>
+            <div class="label">Nạp tiền</div>
+        </div>
+        <div id="sidebar_withdraw" onClick="loadContent('withdraw')"
+            class="item  <%=(dataPage.location=='withdraw')?'active':'';%>"><i class="d20_account_withdrawal1"></i>
+            <div class="label">Rút tiền</div>
+        </div>
+        <div id="sidebar_wallet-transfer" onClick="loadContent('wallet-transfer')"
+            class="item  <%=(dataPage.location=='wallet-transfer')?'active':'';%>"><i class="d20_account_money"></i>
+            <div class="label">Chuyển quỹ trò chơi</div>
+        </div>
+        <div id="sidebar_game-history" onClick="loadContent('game-history')"
+            class="item  <%=(dataPage.location=='game-history')?'active':'';%>"><i class="d20_system_search-data"></i>
+            <div class="label">Lịch sử trò chơi</div>
+        </div>
+        <div id="sidebar_finan-history" onClick="loadContent('finan-history')"
+            class="item  <%=(dataPage.location=='finan-history')?'active':'';%>"><i
+                class="d20_account_game-history"></i>
+            <div class="label">Giao dịch nạp rút</div>
+        </div>
+        <div id="sidebar_inbox" onClick="loadContent('inbox')"
+            class="item  <%=(dataPage.location=='inbox')?'active':'';%>"><i class="d20_account_mail"></i>
+            <div class="label">Thông báo</div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const loadContent = (target) => {
+        let arrSidebarMenuId = [
+            'profile',
+            'deposit',
+            'withdraw',
+            'wallet-transfer',
+            'game-history',
+            'finan-history',
+            'inbox'
+        ];
+        arrSidebarMenuId.forEach((id) => {
+            let elementProperti = $('#sidebar_' + id);
+            if (target == id) {
+                elementProperti.addClass("active");
+            } else {
+                elementProperti.removeClass("active");
+            }
+        });
+
+        setTimeout(() => {
+            window.location = "/account/" + target;
+        })
+    }
+</script>

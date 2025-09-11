@@ -1,0 +1,408 @@
+.app-bg {
+  position: relative;
+  background: #3c3c3c;
+}
+
+.app-bg > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.app {
+  position: relative;
+  min-height: 46vw;
+  padding-top: 12vw;
+}
+
+.app .app-content {
+  min-height: 34vw;
+  padding-left: 0.5rem;
+}
+
+.app .app-title {
+  width: 126px;
+}
+
+.game-name {
+  position: absolute;
+  width: 7rem;
+  bottom: -3px;
+  right: 5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 8px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.info {
+  position: relative;
+  padding: 0 0.75rem 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.info .filmBg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%);
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.info section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info section > div {
+  width: 46%;
+}
+
+.info section > div:first-child {
+  width: 43%;
+  white-space: nowrap;
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17.57px;
+}
+
+.info p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.sign {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 32px !important;
+}
+
+.sign figure {
+  height: 65px;
+  text-align: right;
+}
+
+.sign figure img {
+  display: inline-block;
+  max-height: 100%;
+}
+
+.sign a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sign-title {
+  margin-bottom: 0 !important;
+}
+
+.sponsor {
+  position: relative;
+}
+
+.sponsor figure {
+  max-height: 100px;
+  padding-left: 21px;
+}
+
+.sponsor figure img {
+  max-height: 100%;
+}
+
+.sponsor figure:first-child {
+  width: 105px;
+  padding-left: 0;
+  padding-right: 21px;
+  border-right: 1px solid #8b8b8b;
+}
+
+.sponsor a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment {
+  margin-top: 20px;
+}
+
+.payment p {
+  margin-bottom: 10px;
+}
+
+.payment img {
+  max-height: 58px;
+}
+
+.site p {
+  margin-bottom: 10px;
+}
+
+.site a,
+.site img {
+  display: inline-block;
+  max-height: 22px;
+}
+
+.site a + a,
+.site a + img,
+.site img + a,
+.site img + img {
+  margin-left: 13px;
+}
+
+.link {
+  --tw-text-opacity: 1;
+  color: rgb(255 182 39 / var(--tw-text-opacity));
+}
+
+.link li {
+  width: 33%;
+  height: 30px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.link li a {
+  height: 100%;
+  text-decoration: none;
+}
+.info {
+  position: relative;
+  padding: 0 0.75rem 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.info .filmBg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%);
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.info section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info section > div {
+  width: 46%;
+}
+
+.info section > div:first-child {
+  width: 43%;
+  white-space: nowrap;
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17.57px;
+}
+
+.info p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.sign {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 0 !important;
+}
+
+.sign figure {
+  height: 65px;
+  text-align: right;
+}
+
+.sign figure img {
+  display: inline-block;
+  max-height: 100%;
+}
+
+.sign a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.about ul li {
+  height: 32px;
+  margin-left: 12px;
+  --tw-text-opacity: 1;
+  color: rgb(170 170 170 / var(--tw-text-opacity));
+  list-style: none;
+  line-height: 32px;
+  border-bottom: 1px dashed #9e9e9e;
+  font-size: 14px;
+}
+
+.about ul li:before {
+  content: "\bb  ";
+  margin-left: -12px;
+}
+
+.payment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.payment i {
+  width: 32px;
+  height: 33px;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  --tw-bg-opacity: 1;
+  background-color: rgb(170 170 170 / var(--tw-bg-opacity));
+}
+
+.payment i:nth-child(1) {
+  background: url(/images/footer/icon01.823b84385c0b6d1c.png) no-repeat
+    center/contain;
+}
+
+.payment i:nth-child(2) {
+  -webkit-mask-image: url(/images/footer/icon02.a6bee03fd2892258.svg);
+  mask-image: url(/images/footer/icon02.a6bee03fd2892258.svg);
+}
+
+.payment i:nth-child(3) {
+  -webkit-mask-image: url(/images/footer/icon03.f30223cd12add5d8.svg);
+  mask-image: url(/images/footer/icon03.f30223cd12add5d8.svg);
+}
+
+.payment i:nth-child(4) {
+  width: 47px;
+  -webkit-mask-image: url(/images/footer/icon04.1699213392016396.svg);
+  mask-image: url(/images/footer/icon04.1699213392016396.svg);
+}
+
+.payment i:nth-child(5) {
+  width: 67px;
+  -webkit-mask-image: url(/images/footer/icon05.2e51c8da06049a3f.svg);
+  mask-image: url(/images/footer/icon05.2e51c8da06049a3f.svg);
+}
+
+.payment i:nth-child(6) {
+  -webkit-mask-image: url(/images/footer/icon06.43cfec818cf28056.svg);
+  mask-image: url(/images/footer/icon06.43cfec818cf28056.svg);
+}
+
+
+
+
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social i {
+  width: 32px;
+  height: 33px;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  --tw-bg-opacity: 1;
+  background-color: rgb(170 170 170 / var(--tw-bg-opacity));
+}
+
+.social i:nth-child(1) {
+  background: url(/images/footer/icon07.c9f5301399b86d74.svg) no-repeat
+    center/contain;
+}
+
+.social i:nth-child(2) {
+  -webkit-mask-image: url(/images/footer/i18Mobile.svg);
+  mask-image: url(/images/footer/i18Mobile.svg);
+}
+
+
+.social i:nth-child(5) {
+  width: 47px;
+  -webkit-mask-image: url(/images/footer/i11.svg);
+  mask-image: url(/images/footer/i11.svg);
+}
+
+
+.social i:nth-child(6) {
+  width: 47px;
+  -webkit-mask-image: url(/images/ytb_m.png);
+  mask-image: url(/images/ytb_m.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+.site {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+@media (max-height: 660px) {
+  .game-list li {
+    min-height: 68px;
+  }
+}

@@ -1,0 +1,527 @@
+<%- include('../../includes/header') %>
+
+    <style>
+        [_nghost-serverApp-c148] {
+            display: block;
+            min-height: 100%;
+            padding-bottom: 100px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper {
+            margin-top: -20px;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border-radius: 5px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li {
+            position: relative;
+            width: 33.33%;
+            flex-shrink: 0
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-height: 65px;
+            padding: 10px 0;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            justify-content: space-evenly;
+            align-items: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a.active,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div.active {
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a i,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div i {
+            margin-bottom: 3px;
+            font-size: 18px;
+            line-height: 22px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a span,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div span {
+            padding: 0 3px;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 30px;
+            width: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            transform: translateY(-50%)
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:nth-child(3n+3):before {
+            content: none
+        }
+
+        [_nghost-serverApp-c148] .bottom-sheet-title {
+            display: none
+        }
+
+        .m-0[_ngcontent-serverApp-c148] {
+            margin: 0;
+			color: white;
+        }
+
+        .header[_ngcontent-serverApp-c148] {
+            position: static;
+            display: block;
+            padding-top: 50px
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148] {
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 49px;
+            padding: 0 15px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(61 61 61 / var(--tw-bg-opacity));
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148]:before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            opacity: .7
+        }
+
+        .bottom[_ngcontent-serverApp-c148] {
+            height: 90px;
+            padding: 0 15px 0 33px;
+            --tw-text-opacity: 1;
+            color: rgb(255 97 0 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #3c3c3d;
+        }
+
+        .bottom-sheet-content .wrapper {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            border: none
+        }
+
+        .bottom-sheet-content .wrapper .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .bottom-sheet-content .wrapper .btn-secondary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(29 30 31 / var(--tw-border-opacity))
+        }
+
+        app-time-limited-event>.wrapper {
+            background-color: transparent
+        }
+
+        app-time-limited-event .page-title {
+            display: none
+        }
+
+        [_nghost-serverApp-c160] {
+            display: block;
+            height: 100%
+        }
+    </style>
+    <style>
+        .wrapper[_ngcontent-serverApp-c149] {
+            padding: 0 19px 80px
+        }
+
+        .item-list[_ngcontent-serverApp-c149] {
+            text-transform: uppercase
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] {
+            margin-top: 20px;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border-radius: 5px;
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border: none
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper label {
+            --tw-text-opacity: 1;
+            color: rgb(22 19 19 / var(--tw-text-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper input,
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper select {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper .btn-secondary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(29 30 31 / var(--tw-border-opacity))
+        }
+
+        .content-wrapper[_ngcontent-serverApp-c149] .bottom-sheet-content .wrapper .tab.active {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+    </style>
+    <style>
+        .nav[_ngcontent-serverApp-c137] li[_ngcontent-serverApp-c137] {
+            display: inline-block;
+            padding: .5rem .6rem
+        }
+
+        .nav[_ngcontent-serverApp-c137] li.active[_ngcontent-serverApp-c137] {
+            color: #555;
+            border: 1px solid #ddd;
+            border-bottom-color: transparent;
+            border-radius: 4px 4px 0 0
+        }
+
+        .table[_ngcontent-serverApp-c137] {
+            width: 100%;
+            margin-bottom: 20px
+        }
+
+        .table[_ngcontent-serverApp-c137] td[_ngcontent-serverApp-c137] {
+            padding: .5rem
+        }
+
+        fieldset[_ngcontent-serverApp-c137]>div[_ngcontent-serverApp-c137] {
+            position: relative;
+            margin-bottom: .75rem
+        }
+
+        fieldset[_ngcontent-serverApp-c137]>div[_ngcontent-serverApp-c137] label[_ngcontent-serverApp-c137] {
+            display: block;
+            margin-bottom: .25rem;
+            color: #000;
+            font-size: 13px
+        }
+
+        fieldset[_ngcontent-serverApp-c137]>div[_ngcontent-serverApp-c137] input[_ngcontent-serverApp-c137],
+        fieldset[_ngcontent-serverApp-c137]>div[_ngcontent-serverApp-c137] textarea[_ngcontent-serverApp-c137] {
+            display: block;
+            width: 100%;
+            min-height: 2rem;
+            padding: 0 .5rem;
+            color: #555;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            outline-style: none
+        }
+
+        fieldset[_ngcontent-serverApp-c137]>div[_ngcontent-serverApp-c137] .mail-body[_ngcontent-serverApp-c137] {
+            height: 100%
+        }
+
+        .overtext[_ngcontent-serverApp-c137] {
+            max-width: 15em;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden
+        }
+
+        .btn-primary[_ngcontent-serverApp-c137] {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity));
+            max-width: 8rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden
+        }
+
+        tr.active[_ngcontent-serverApp-c137] {
+            background-color: #f5f5f5
+        }
+
+        tr.unRead[_ngcontent-serverApp-c137] {
+            font-weight: 700;
+            opacity: 1
+        }
+    </style>
+
+
+    <body class="mat-typography vi-VN">
+        <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+            <app-sample-layout _nghost-serverapp-c91="">
+                <app-member-layout _nghost-serverapp-c148="">
+
+
+                    <header _ngcontent-serverapp-c148="" class="header">
+                        <div _ngcontent-serverapp-c148="" class="header-wrap">
+                            <div _ngcontent-serverapp-c148="" class="flex" onclick="window.location='/account'">
+                                <div _ngcontent-serverapp-c148="" class="mr-4">
+                                    <i _ngcontent-serverapp-c148="" class="fas fa-arrow-left text-2xl"></i>
+                                </div>
+                                <h2 _ngcontent-serverapp-c148="" class="text-customized-text-secondary m-0 uppercase">
+                                    THÔNG BÁO & HÒM THƯ
+                                </h2>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="bar btn-open-right-sidebar">
+                                <i _ngcontent-serverapp-c148="" class="fas fa-bars text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <section _ngcontent-serverapp-c148="" class="bottom fl">
+                            <div _ngcontent-serverapp-c148="" class="inline-block text-sm">
+                                <p _ngcontent-serverapp-c148="" class="m-0 pt-3">
+                                    <span _ngcontent-serverapp-c148="" translate="Home_Hello" class="uppercase">Xin
+                                        chào</span>,
+                                    <span _ngcontent-serverapp-c148="">
+                                        <%=dataPage.session.user.username%>
+                                    </span>
+                                </p>
+                                <div _ngcontent-serverapp-c148="" class="mt-1">
+                                    <span _ngcontent-serverapp-c148="" class="mx-0.5 text-2xl">
+                                        <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                                    </span>
+                                    <span _ngcontent-serverapp-c148=""
+                                        class="currency text-customized-text-tertiary mt-1 inline-block align-top">VND</span>
+                                </div>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="float-right pt-6"><a _ngcontent-serverapp-c148=""
+                                    href="/account/security"><i _ngcontent-serverapp-c148=""
+                                        class="fas fa-user-circle text-customized-text-primary text-4xl"></i></a></div>
+                        </section>
+
+                    </header>
+
+
+                    <app-site-mail _nghost-serverapp-c137="" class="ng-star-inserted">
+                        <section _ngcontent-serverapp-c137="" class="bottom-sheet-content">
+                            <div _ngcontent-serverapp-c137=""
+                                class="h-[96%] rounded border border-[#ccc] bg-white pb-4">
+                                <div _ngcontent-serverapp-c137=""
+                                    class="relative h-full overflow-hidden p-4 ng-star-inserted">
+
+                                    <ul _ngcontent-serverapp-c137=""
+                                        class="text-customized-bg-tertiary nav flex flex-wrap justify-between border-b border-[#ddd] align-middle nav-tabs">
+                                        <div _ngcontent-serverapp-c137="">
+                                            <li _ngcontent-serverapp-c137="" class="ng-star-inserted active"
+                                                data-type="true">
+                                                <span _ngcontent-serverapp-c137="" class="ng-star-inserted">Hộp khuyến
+                                                    mãi</span>
+                                            </li>
+                                            <li _ngcontent-serverapp-c137="" class="ng-star-inserted">
+                                                <span _ngcontent-serverapp-c137="" class="ng-star-inserted"
+                                                    data-type="false">Hộp thư đến</span>
+                                            </li>
+                                        </div>
+                                    </ul>
+
+                                    <div _ngcontent-serverapp-c137="" class="scroll-body h-full overflow-y-auto">
+                                        <table _ngcontent-serverapp-c137="" class="table ng-star-inserted">
+                                            <tbody _ngcontent-serverapp-c137="" id="inbox-content-table">
+
+                                                <tr _ngcontent-serverapp-c137="" class="unRead ng-star-inserted">
+                                                    <td _ngcontent-serverapp-c137="" class="ng-star-inserted">
+                                                        <i _ngcontent-serverapp-c137=""
+                                                            class="fas fa-star text-[#ffca00] ng-star-inserted"></i>
+                                                    </td>
+                                                    <td _ngcontent-serverapp-c137="" class="w-9/12">
+                                                        <div _ngcontent-serverapp-c137=""
+                                                            class="text-customized-bg-tertiary overtext">Thông
+                                                            báo quan trọng</div>
+                                                        <div _ngcontent-serverapp-c137="" class="overtext text-[#777]">
+                                                            ⭐️⭐️⭐️⭐️⭐️WEB dễ
+                                                            nhớ：🏆NOHU🏆 💎Vàng ở khắp mọi nơi💎 Tin tưởng
+                                                            NOHU⭐️⭐️⭐️⭐️⭐️Tin tưởng sức mạnh
+                                                            thương hiệu ❤️Lưu Giữ Link Nhanh Nhất🔗www.NOHU.cash Theo
+                                                            dõi kênh Telegram
+                                                            chính thức của NOHU: https://t.me/wwwNOHU666com để vào trang
+                                                            web nhanh chóng.
+                                                            Thông báo quan trọng 1. Sau khi đăng nhập lần thứ nhất, liên
+                                                            kết tên thật và tên
+                                                            chủ tài khoản ngân hàng cần đồng nhất mới có thể rút tiền
+                                                            nhanh chóng. 2.Nạp từ
+                                                            10k, rút tối thiểu 50k, khoản lớn khỏi lo, 3 phút là có
+                                                            tiền. Chúc bạn chơi game
+                                                            vui vẻ. 3.Tên đăng ký và tên chủ tài khoản ngân hàng rút
+                                                            tiền phải trùng khớp.
+                                                            4.Lưu trữ địa chỉ website của NOHU: từ nohu00.com tới
+                                                            nohu90.com 5.Để mang lại
+                                                            trải nghiệm tốt nhất khi chơi game, bạn vui lòng tới góc
+                                                            trên bên phải của trang
+                                                            chủ để tải app về. 6.Nạp tiền, rút tiền （10 phút） chưa nhận
+                                                            được vui lòng liên
+                                                            hệ CSKH 24/7 để được hỗ trợ. 7.&nbsp;công ty sẽ không xử lý
+                                                            các khoản nạp tiền
+                                                            thông qua tài khoản cá nhân, hãy cảnh giác người lạ. Nếu cần
+                                                            nạp tiền vui lòng
+                                                            trực tiếp vào trang chủ. Cảm ơn quý khách.</div>
+                                                    </td>
+                                                    <td _ngcontent-serverapp-c137=""
+                                                        class="w-3/12 text-right align-top">
+                                                        <span _ngcontent-serverapp-c137="">2023/07/29</span>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                            <tfoot _ngcontent-serverapp-c137="">
+                                                <tr _ngcontent-serverapp-c137="" class="text-[#777]">
+                                                    <td _ngcontent-serverapp-c137="" class="bg-[#f5f5f5] text-center"
+                                                        colspan="3">
+                                                        <span _ngcontent-serverapp-c137="" translate="SiteMail_Loaded"
+                                                            class="ng-star-inserted" id="record-counter">Đang
+                                                            tải...</span>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </app-site-mail>
+
+
+                    <!-- Menu Bar -->
+                    <%- include('../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+                </app-member-layout>
+
+
+                <!-- SideBar Menu -->
+                <%- include('../../includes/sidebar_menu') %>
+                    <!-- END SideBar Menu -->
+
+            </app-sample-layout>
+        </app-root>
+
+        <!-- Notify Modal -->
+        <%- include('../../includes/notify_modal') %>
+            <!-- END Notify Modal -->
+
+            <div class="cdk-overlay-container" id="modal-view-detail" style="display: none;">
+                <div
+                    class="cdk-overlay-backdrop cdk-overlay-backdrop-noop-animation cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+                </div>
+                <div class="cdk-global-overlay-wrapper" dir="ltr"
+                    style="justify-content: center; align-items: flex-start;">
+                    <div id="cdk-overlay-1" class="cdk-overlay-pane"
+                        style="min-width: 96%; max-width: 80vw; position: static; margin-top: 5vh;">
+                        <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>
+                        <mat-dialog-container tabindex="-1"
+                            class="mat-dialog-container cdk-dialog-container ng-tns-c20-1 ng-trigger ng-trigger-dialogContainer ng-star-inserted"
+                            id="mat-dialog-1" role="dialog" aria-modal="true" style="transform: none;">
+                            <form _ngcontent-serverapp-c137="" novalidate=""
+                                class="ng-star-inserted ng-untouched ng-pristine ng-invalid">
+                                <fieldset _ngcontent-serverapp-c137="" class="relative">
+                                    <button _ngcontent-serverapp-c137="" type="button" onclick="initModalViewDetail(false)"
+                                        class="absolute right-0 text-xl text-black opacity-20">×</button>
+                                    <h4 _ngcontent-serverapp-c137="" class="mt-7 text-lg">
+                                        <span _ngcontent-serverapp-c137="" class="detalSubject ng-star-inserted" id="modal-inbox-title"></span>
+                                    </h4>
+                                </fieldset>
+                                <fieldset _ngcontent-serverapp-c137="" class="ng-star-inserted">
+                                    <div _ngcontent-serverapp-c137="">
+                                        <span _ngcontent-serverapp-c137="" class="mr-1 ng-star-inserted" id="modal-inbox-author"></span>
+                                        <span _ngcontent-serverapp-c137="" class="text-[#777]" id="modal-inbox-time"></span>
+                                    </div>
+                                    <div _ngcontent-serverapp-c137="" ckcontent=""
+                                        class="min-h-5 max-h-[54vh] overflow-y-auto rounded border border-[#e3e3e3] bg-[#f5f5f5] p-5 ck-content ng-star-inserted" id="modal-inbox-content"></div>
+                                </fieldset>
+
+                                <div _ngcontent-serverapp-c137="" class="text-right">
+                                    <button _ngcontent-serverapp-c137="" type="button" onclick="initModalViewDetail(false)"
+                                        class="rounded-[4px] border border-[#ccc] bg-white px-3 py-1 text-center text-sm text-[#333]">
+                                        ĐÓNG
+                                    </button>
+                                </div>
+
+                            </form>
+                        </mat-dialog-container>
+                        <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+
+
+    </body>
+
+    <script type="text/javascript" src="/core/js/account/inbox.js"></script>
+    <%- include('../../includes/footer') %>

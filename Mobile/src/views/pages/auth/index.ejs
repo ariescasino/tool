@@ -1,0 +1,2192 @@
+<html lang="en" style="--vh: 8.85px;">
+<link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+<link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+<style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+<style lang="en" type="text/css" id="dark-mode-native-style"></style>
+<style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+<script type="text/javascript" id="custom-useragent-string-page-script"></script>
+
+<head>
+    <meta name="apple-mobile-web-app-title" content="<%=dataPage.session.siteConfig.site_name;%>">
+    <meta name="description" content="<%=dataPage.session.siteConfig.site_description;%>">
+    <meta name="keywords" content="<%=dataPage.session.siteConfig.site_keyword;%>">
+    <title>
+        <%=dataPage.session.siteConfig.site_name;%>
+    </title>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="viewport"
+        content="width=device-width,height=device-height, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/core/js/custom/helpers.js"></script>
+    <link rel="stylesheet" href="/cdn/system-requirement/libs/@fortawesome/fontawesome-pro/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/styles.1b280ea8267b0272.css"
+        media="all" onload="this.media='all'">
+    <link rel="stylesheet" href="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/styles.1b280ea8267b0272.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');
+            unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+    <style>
+        [_ngcontent-serverApp-c157]:root {
+            --vh: 1vh
+        }
+    </style>
+    <style>
+        html[_ngcontent-serverApp-c91],
+        body[_ngcontent-serverApp-c91] {
+            overflow: hidden
+        }
+
+        .company-deposit[_nghost-serverApp-c91] .promotion-game[_ngcontent-serverApp-c91] .promotion-game-list {
+            bottom: 0
+        }
+    </style>
+    <style>
+        .menu[_ngcontent-serverApp-c94] {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #121212d9
+        }
+
+        .btn-login[_ngcontent-serverApp-c94] {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100px;
+            height: 37px;
+            padding: 0 4px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            margin: .7rem auto .3rem;
+            text-transform: uppercase;
+            line-height: 37px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: .16rem
+        }
+
+        .entrance[_ngcontent-serverApp-c94] {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 20px 0
+        }
+
+        .entrance[_ngcontent-serverApp-c94] li[_ngcontent-serverApp-c94] {
+            position: relative;
+            flex-shrink: 0;
+            width: 32.5%;
+            min-width: 80px;
+            min-height: 80px;
+            max-width: 90px;
+            margin: 5px;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            opacity: .7;
+            border-radius: 5px
+        }
+
+        .entrance[_ngcontent-serverApp-c94] li[_ngcontent-serverApp-c94] a[_ngcontent-serverApp-c94] {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100%
+        }
+
+        .entrance[_ngcontent-serverApp-c94] li[_ngcontent-serverApp-c94] i[_ngcontent-serverApp-c94] {
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        .entrance[_ngcontent-serverApp-c94] li.active[_ngcontent-serverApp-c94] {
+            --tw-text-opacity: 1;
+            color:  #ef5a00;
+            opacity: 1
+        }
+
+        .entrance[_ngcontent-serverApp-c94] li.active[_ngcontent-serverApp-c94]:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 4px;
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+    </style>
+    <style>
+        ul[_ngcontent-serverApp-c93] li[_ngcontent-serverApp-c93] {
+            position: relative
+        }
+
+        ul[_ngcontent-serverApp-c93] li[_ngcontent-serverApp-c93]>a[_ngcontent-serverApp-c93],
+        ul[_ngcontent-serverApp-c93] li[_ngcontent-serverApp-c93]>div[_ngcontent-serverApp-c93] {
+            justify-content: flex-end
+        }
+
+        ul[_ngcontent-serverApp-c93] li[_ngcontent-serverApp-c93]:last-child {
+            margin-bottom: 7rem;
+            border-bottom: none
+        }
+
+        ul[_ngcontent-serverApp-c93] li[_ngcontent-serverApp-c93]:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            opacity: .15
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c151] {
+            --display: block;
+            min-height: 100%;
+            padding-bottom: 100px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .m-0[_ngcontent-serverApp-c151] {
+            margin: 0
+        }
+
+        .header[_ngcontent-serverApp-c151] {
+            position: static;
+            display: block;
+            padding-top: 52px
+        }
+
+        .header[_ngcontent-serverApp-c151] .header-wrap[_ngcontent-serverApp-c151] {
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            -left: 0;
+            right: 0;
+            height: 52px;
+            padding: 0 8px;
+            color: #fff;
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .logo[_ngcontent-serverApp-c151] {
+            display: inline-block;
+            vertical-align: middle
+        }
+
+        .logo[_ngcontent-serverApp-c151] img[_ngcontent-serverApp-c151] {
+            max-width: 100px;
+            max-height: 50px
+        }
+
+        section[_ngcontent-serverApp-c151] {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        section[_ngcontent-serverApp-c151] button[_ngcontent-serverApp-c151] {
+            width: 85px;
+            height: 24px;
+            margin-right: 8px;
+            padding: 0;
+            --tw-text-opacity: 1;
+            color: rgb(29 30 31 / var(--tw-text-opacity));
+            font-size: 14px;
+            line-height: 22px;
+            border-radius: 5px;
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            border: none;
+            text-transform: uppercase
+        }
+
+        section[_ngcontent-serverApp-c151] button[_ngcontent-serverApp-c151]:first-child {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            background-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 255 255 / var(--tw-border-opacity))
+        }
+
+        .balance[_ngcontent-serverApp-c151] {
+            font-family: Nunito-Bold;
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        .balance[_ngcontent-serverApp-c151] span[_ngcontent-serverApp-c151] {
+            vertical-align: text-bottom
+        }
+
+        .balance[_ngcontent-serverApp-c151] span.currency[_ngcontent-serverApp-c151] {
+            position: relative;
+            display: inline-block;
+            top: -2px;
+            font-weight: 600;
+            transform: scale(.85)
+        }
+
+        .balance[_ngcontent-serverApp-c151] .update[_ngcontent-serverApp-c151] {
+            display: inline-block;
+            vertical-align: middle;
+            width: 22px;
+            height: 32px;
+            margin-left: 4px;
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/rotate-right-solid.4817c207ae7b887b.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/rotate-right-solid.4817c207ae7b887b.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .financial[_ngcontent-serverApp-c151] {
+            margin: 0 11px 0 18px;
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        .financial[_ngcontent-serverApp-c151] img[_ngcontent-serverApp-c151] {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto
+        }
+
+        app-agent-apply .page-title {
+            display: none
+        }
+
+        app-announcement>div.wrapper {
+            padding-top: 20px;
+            background: transparent
+        }
+
+        app-announcement .page-title {
+            display: none
+        }
+
+        .bottom-sheet-title {
+            font-size: 0
+        }
+
+        .bottom-sheet-content .top-link {
+            text-transform: uppercase
+        }
+
+        @media (max-width: 345px) {
+            section[_ngcontent-serverApp-c151] button[_ngcontent-serverApp-c151] {
+                width: 80px;
+                margin-right: 4px;
+                font-size: 13px
+            }
+        }
+    </style>
+    <style>
+        footer[_ngcontent-serverApp-c78] {
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 62px;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb
+        }
+
+        .chat[_ngcontent-serverApp-c78] i[_ngcontent-serverApp-c78],
+        .chat[_ngcontent-serverApp-c78] span[_ngcontent-serverApp-c78] {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .line-chat[_ngcontent-serverApp-c78] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .point[_ngcontent-serverApp-c78]:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 6px;
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            border-radius: 50%
+        }
+
+        @media (max-width: 360px) {
+            span[_ngcontent-serverApp-c78] {
+                display: block;
+                font-size: 12px;
+                transform: scale(.85)
+            }
+        }
+    </style>
+    <style>
+        .news[_ngcontent-serverApp-c163] {
+            position: relative;
+            display: flex;
+            height: 24px;
+            font-size: 12px;
+            align-content: center;
+            justify-content: space-between;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            background: linear-gradient(-240deg, #1d1e1f 76%, #ff4d00 0) top right;
+            margin-left: -5px
+        }
+
+        .news-wrapper[_ngcontent-serverApp-c163] {
+            width: 100%
+        }
+
+        .domain[_ngcontent-serverApp-c163] {
+            width: 22%;
+            text-align: center;
+            overflow: hidden
+        }
+    </style>
+    <style>
+        .swiper[_ngcontent-serverApp-c161] {
+            width: 100%;
+            height: 150px;
+            --margin: .5rem auto
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c150] {
+            display: block;
+            --tw-bg-opacity: 1;
+            background-color: rgb(73 74 77 / var(--tw-bg-opacity))
+        }
+
+        .left[_ngcontent-serverApp-c150] p[_ngcontent-serverApp-c150] {
+            margin: 0 0 0 10px
+        }
+
+        .menu[_ngcontent-serverApp-c150] li[_ngcontent-serverApp-c150] i[_ngcontent-serverApp-c150] {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 4px
+        }
+
+        .menu[_ngcontent-serverApp-c150] li[_ngcontent-serverApp-c150] i[_ngcontent-serverApp-c150] img[_ngcontent-serverApp-c150] {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .menu[_ngcontent-serverApp-c150] li[_ngcontent-serverApp-c150] span[_ngcontent-serverApp-c150] {
+            display: block;
+            transform: scale(.85)
+        }
+    </style>
+    <style>
+        .wrapper[_ngcontent-serverApp-c162] i.icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: contain
+        }
+
+        .wrapper[_ngcontent-serverApp-c162] i.hot {
+            top: -15px;
+            left: -5px;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/hot.0cd38f347d2485db.png)
+        }
+
+        .wrapper[_ngcontent-serverApp-c162] i.event {
+            top: -15px;
+            right: -5px;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/events.e23c01f7521fdab9.png)
+        }
+
+        .wrapper[_ngcontent-serverApp-c162] i.new {
+            bottom: -5px;
+            left: -5px;
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/prize.c3f3768bcac8ed7e.png)
+        }
+
+        .wrapper[_ngcontent-serverApp-c162] {
+            display: flex
+        }
+
+        .svg[_ngcontent-serverApp-c162] {
+            display: block;
+            width: 20px;
+            height: 28px;
+            margin-bottom: 9px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .svg.svg-cock[_ngcontent-serverApp-c162] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .category-item[_ngcontent-serverApp-c162] {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 60px;
+            min-height: 54px;
+            margin: 0 0 5px;
+            padding: 8px 0 5px;
+            text-align: center;
+            font-size: 13px;
+            word-break: break-all;
+            line-height: 1;
+            border-radius: 6px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(58 186 215 / var(--tw-bg-opacity))
+        }
+
+        .category-item.active[_ngcontent-serverApp-c162] {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .btn[_ngcontent-serverApp-c162] {
+            position: absolute;
+            bottom: 7px;
+            right: 7.5%;
+            width: 25%;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            border-radius: 5px
+        }
+
+        .jackpot[_ngcontent-serverApp-c162] {
+            position: relative;
+            min-height: 418px;
+            margin: 20px 0;
+            padding-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #42d4db, #42d4db)
+        }
+
+        .jackpot[_ngcontent-serverApp-c162] .bg[_ngcontent-serverApp-c162] {
+            min-width: 265px;
+            width: 100%;
+            height: 150px;
+            margin: -74px auto 0
+        }
+
+        .jackpot[_ngcontent-serverApp-c162] .bg[_ngcontent-serverApp-c162] img[_ngcontent-serverApp-c162] {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto
+        }
+
+        .jackpot[_ngcontent-serverApp-c162]>h2[_ngcontent-serverApp-c162] {
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 25px;
+            color: #fff;
+            font-family: HelveticaNeue, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Arial
+        }
+
+        .jackpot[_ngcontent-serverApp-c162]>p[_ngcontent-serverApp-c162] {
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 40px;
+            font-family: HelveticaNeue, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Arial
+        }
+
+        .jackpot[_ngcontent-serverApp-c162]>button[_ngcontent-serverApp-c162] {
+            min-width: 182px;
+            width: 45%;
+            height: 44px;
+            margin: 0 auto 20px;
+            color: #000;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 44px;
+            background: #ffffff;
+            border-radius: 5px
+        }
+
+        .gold[_ngcontent-serverApp-c162] {
+            font-family: HelveticaNeue, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Arial;
+            font-weight: 600;
+            margin-right: 4px;
+            background: -webkit-linear-gradient(90deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 0, 0, 0)
+        }
+
+        .recommendGames[_ngcontent-serverApp-c162] {
+            padding: 0 15px
+        }
+
+        .recommendGames[_ngcontent-serverApp-c162] .swiper-slide {
+            width: 130px
+        }
+
+        .recommend-item[_ngcontent-serverApp-c162] {
+            width: 130px
+        }
+
+        .recommend-item[_ngcontent-serverApp-c162] .img-wrapper[_ngcontent-serverApp-c162] {
+            height: 130px
+        }
+
+        .recommend-item[_ngcontent-serverApp-c162] .img-wrapper[_ngcontent-serverApp-c162] img[_ngcontent-serverApp-c162] {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .recommend-item[_ngcontent-serverApp-c162] p[_ngcontent-serverApp-c162] {
+            height: 35px;
+            margin: 0;
+            text-align: center;
+            line-height: 35px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .lobby[_ngcontent-serverApp-c162] {
+            min-height: 215px;
+            padding: 0 15px
+        }
+
+        .lobby[_ngcontent-serverApp-c162]>h2[_ngcontent-serverApp-c162] {
+            --tw-text-opacity: 1;
+            color:  #ef5a00;
+            font-size: 14px
+        }
+
+        .lobby[_ngcontent-serverApp-c162] .swiper-slide {
+            width: 220px;
+            height: 110px
+        }
+
+        .lobby-item[_ngcontent-serverApp-c162] {
+            position: relative;
+            width: 220px;
+            height: 110px
+        }
+
+        .lobby-item[_ngcontent-serverApp-c162]:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-color: #ff4d00 transparent transparent transparent;
+            border-style: solid solid solid solid;
+            border-width: 2px
+        }
+
+        .lobby-item[_ngcontent-serverApp-c162]:after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            left: 30px;
+            width: 40px;
+            border-color: transparent transparent #ff4d00 transparent;
+            border-style: solid solid solid solid;
+            border-width: 2px
+        }
+
+        .lobby-item[_ngcontent-serverApp-c162] .bg[_ngcontent-serverApp-c162] {
+            height: 100%;
+            background: no-repeat center;
+            background-size: contain
+        }
+
+        .lobby-item[_ngcontent-serverApp-c162] .des[_ngcontent-serverApp-c162] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            color: #fff;
+            padding-top: 8px
+        }
+
+        .lobby-item[_ngcontent-serverApp-c162] .des[_ngcontent-serverApp-c162] h2[_ngcontent-serverApp-c162] {
+            margin-bottom: 8px;
+            font-size: 12px;
+            line-height: 16px
+        }
+
+        .lobby-item[_ngcontent-serverApp-c162] .des[_ngcontent-serverApp-c162] p[_ngcontent-serverApp-c162] {
+            font-size: 12px;
+            line-height: 16px
+        }
+
+        .lobby-item.live[_ngcontent-serverApp-c162] .bg[_ngcontent-serverApp-c162] {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/live.af3c23ebdda5008c.png)
+        }
+
+        .lobby-item.live[_ngcontent-serverApp-c162] h2[_ngcontent-serverApp-c162] {
+            color: #ff4d00
+        }
+
+        .lobby-item.live[_ngcontent-serverApp-c162]:before {
+            border-color: #ff4d00 transparent transparent transparent
+        }
+
+        .lobby-item.live[_ngcontent-serverApp-c162]:after {
+            border-color: transparent transparent #ff4d00 transparent
+        }
+
+        .lobby-item.slot[_ngcontent-serverApp-c162] .bg[_ngcontent-serverApp-c162] {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/slot.7c6c2982420b28de.png)
+        }
+
+        .lobby-item.slot[_ngcontent-serverApp-c162] h2[_ngcontent-serverApp-c162] {
+            color: #ec1c23
+        }
+
+        .lobby-item.slot[_ngcontent-serverApp-c162]:before {
+            border-color: #ec1c23 transparent transparent transparent
+        }
+
+        .lobby-item.slot[_ngcontent-serverApp-c162]:after {
+            border-color: transparent transparent #ec1c23 transparent
+        }
+
+        .lobby-item.fish[_ngcontent-serverApp-c162] .bg[_ngcontent-serverApp-c162] {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/fish.597d2bb9a5ca30bb.png)
+        }
+
+        .lobby-item.fish[_ngcontent-serverApp-c162] h2[_ngcontent-serverApp-c162] {
+            color: #02c7bd
+        }
+
+        .lobby-item.fish[_ngcontent-serverApp-c162]:before {
+            border-color: #02c7bd transparent transparent transparent
+        }
+
+        .lobby-item.fish[_ngcontent-serverApp-c162]:after {
+            border-color: transparent transparent #02c7bd transparent
+        }
+
+        @media (min-width: 500px) {
+            .jackpot[_ngcontent-serverApp-c162] .bg[_ngcontent-serverApp-c162] {
+                height: 250px;
+                margin: -125px auto 0
+            }
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c147] {
+            display: block;
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+        }
+
+        .app[_ngcontent-serverApp-c147] {
+            position: relative;
+            height: 100px;
+            padding-left: 20px;
+            padding-top: 10px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(73 74 77 / var(--tw-bg-opacity))
+        }
+
+        .app[_ngcontent-serverApp-c147] h2[_ngcontent-serverApp-c147] {
+            margin-bottom: 10px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            font-size: 14px
+        }
+
+        .app[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] {
+            display: flex
+        }
+
+        .app[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147] {
+            height: 35px;
+            margin-right: 5px
+        }
+
+        .app[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147] a[_ngcontent-serverApp-c147] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .app[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147] i[_ngcontent-serverApp-c147] {
+            display: block;
+            width: 35px;
+            height: 100%;
+            margin-right: 2px;
+            background-color: #50535b
+        }
+
+        .app[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147] i[_ngcontent-serverApp-c147]>img[_ngcontent-serverApp-c147] {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .app[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147]:first-child i[_ngcontent-serverApp-c147] {
+            background-color: #39c654
+        }
+
+        .app[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147] span[_ngcontent-serverApp-c147] {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 35px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            font-size: 12px;
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .app[_ngcontent-serverApp-c147] .img-wrapper[_ngcontent-serverApp-c147] {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40%
+        }
+
+        .app[_ngcontent-serverApp-c147] .img-wrapper[_ngcontent-serverApp-c147]>img[_ngcontent-serverApp-c147] {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .chat24[_ngcontent-serverApp-c147] {
+            padding: 10px;
+            margin-top: 15px;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb
+        }
+
+        .chat24[_ngcontent-serverApp-c147]>img[_ngcontent-serverApp-c147] {
+            max-width: 70%;
+            max-height: 100%;
+            margin: 0 auto
+        }
+
+        .icon[_ngcontent-serverApp-c147] {
+            padding: 16px 20px 0;
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity))
+        }
+
+        .icon[_ngcontent-serverApp-c147] h2[_ngcontent-serverApp-c147] {
+            font-size: 12px;
+            margin-bottom: 1px
+        }
+
+        .icon[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147] {
+            display: inline-block;
+            vertical-align: top;
+            height: 16px;
+            margin-right: 4px
+        }
+
+        .icon[_ngcontent-serverApp-c147] ul[_ngcontent-serverApp-c147] li[_ngcontent-serverApp-c147] img[_ngcontent-serverApp-c147] {
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .copyright[_ngcontent-serverApp-c147] {
+            margin-top: 30px;
+            font-size: 12px
+        }
+    </style>
+    <style>
+        swiper {
+            display: block
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c73] {
+            font-size: 0
+        }
+
+        section[_ngcontent-serverApp-c73] {
+            position: fixed;
+            z-index: 10;
+            bottom: 100px;
+            right: 0;
+            width: 130px;
+            height: 100px
+        }
+
+        section[_ngcontent-serverApp-c73] a[_ngcontent-serverApp-c73] {
+            display: block;
+            height: 100px;
+            text-align: center
+        }
+
+        section[_ngcontent-serverApp-c73] img[_ngcontent-serverApp-c73] {
+            max-width: 105px;
+            max-height: 81px;
+            margin: 0 auto
+        }
+
+        section[_ngcontent-serverApp-c73] p[_ngcontent-serverApp-c73] {
+            position: relative;
+            bottom: 30px;
+            width: 200px;
+            color: #fff;
+            font-size: 18px;
+            transform: scale(.5) translate(calc(-50% + 30px));
+            white-space: nowrap
+        }
+
+        section[_ngcontent-serverApp-c73] .swiper-slide {
+            visibility: hidden
+        }
+
+        section[_ngcontent-serverApp-c73] .swiper-slide-visible {
+            visibility: visible
+        }
+
+        section[_ngcontent-serverApp-c73] .swiper-horizontal>.swiper-pagination-bullets,
+        section[_ngcontent-serverApp-c73] .swiper-pagination-bullets.swiper-pagination-horizontal,
+        section[_ngcontent-serverApp-c73] .swiper-pagination-custom,
+        section[_ngcontent-serverApp-c73] .swiper-pagination-fraction {
+            top: 0;
+            bottom: auto;
+            text-align: right
+        }
+
+        section[_ngcontent-serverApp-c73] .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            overflow: hidden;
+            border: 1px solid #000;
+            border-radius: 50%;
+            opacity: 1
+        }
+
+        section[_ngcontent-serverApp-c73] .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+        section[_ngcontent-serverApp-c73] .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 0 0 3px
+        }
+
+        section[_ngcontent-serverApp-c73] .swiper-pagination-bullet-active {
+            background: #f92a30
+        }
+
+        .close[_ngcontent-serverApp-c73] {
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 24px;
+            height: 24px;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 50%;
+            background-color: #000c
+        }
+    </style>
+    <style>
+        .ngx-marquee[_ngcontent-serverApp-c88] {
+            overflow: hidden;
+            text-align: left
+        }
+
+        .ngx-marquee.ngx-marquee-pause-on-hover[_ngcontent-serverApp-c88]:hover>span[_ngcontent-serverApp-c88] {
+            animation-play-state: paused
+        }
+
+        .ngx-marquee[_ngcontent-serverApp-c88]>span[_ngcontent-serverApp-c88] {
+            content: attr(data-marquee);
+            display: inline-block;
+            position: relative;
+            white-space: nowrap;
+            animation: linear infinite
+        }
+
+        .ngx-marquee[_ngcontent-serverApp-c88]>span[_ngcontent-serverApp-c88] {
+            animation-duration: 89s
+        }
+
+        .ngx-marquee[_ngcontent-serverApp-c88]>span[_ngcontent-serverApp-c88] {
+            animation-direction: normal
+        }
+
+        .ngx-marquee[_ngcontent-serverApp-c88] span.ticker-control[_ngcontent-serverApp-c88] {
+            display: inline-block;
+            width: 20px;
+            text-align: center;
+            color: transparent;
+            background-color: transparent
+        }
+
+        .ngx-marquee.ngx-marquee-direction-left[_ngcontent-serverApp-c88]>span[_ngcontent-serverApp-c88],
+        .ngx-marquee.ngx-marquee-direction-normal[_ngcontent-serverApp-c88]>span[_ngcontent-serverApp-c88] {
+            animation-direction: normal
+        }
+
+        @keyframes movement-smooth {
+            0% {
+                transform: translate(0);
+                left: 100%
+            }
+
+            to {
+                transform: translate(-100%);
+                left: 0%
+            }
+        }
+
+        @keyframes slide-in-up {
+            0% {
+                transform: translateY(100%);
+                left: 0%
+            }
+
+            10% {
+                transform: translateY(0);
+                left: 0%
+            }
+
+            16% {
+                transform: translate(0)
+            }
+
+            to {
+                transform: translate(-100%);
+                left: 0%
+            }
+        }
+
+        @keyframes slide-in-down {
+            0% {
+                transform: translateY(-100%);
+                left: 0%
+            }
+
+            10% {
+                transform: translateY(0);
+                left: 0%
+            }
+
+            16% {
+                transform: translate(0)
+            }
+
+            to {
+                transform: translate(-100%);
+                left: 0%
+            }
+        }
+
+        @keyframes slide-in-up-right {
+            0% {
+                transform: translate(-100%, 100%);
+                right: -100%
+            }
+
+            10% {
+                transform: translate(-100%);
+                right: -100%
+            }
+
+            16% {
+                transform: translate(-100%)
+            }
+
+            to {
+                transform: translate(0);
+                right: -100%
+            }
+        }
+
+        @keyframes slide-in-down-right {
+            0% {
+                transform: translate(-100%, -100%);
+                right: -100%
+            }
+
+            10% {
+                transform: translate(-100%);
+                right: -100%
+            }
+
+            16% {
+                transform: translate(-100%)
+            }
+
+            to {
+                transform: translate(0);
+                right: -100%
+            }
+        }
+    </style>
+    <style>
+        .bottom-sheet-close[_ngcontent-serverApp-c193] {
+            top: 13px;
+            position: absolute;
+            right: .5rem;
+            z-index: 10;
+            font-size: 1.5rem;
+            line-height: 52px
+        }
+
+        .bottom-sheet-title[_ngcontent-serverApp-c193] {
+            position: relative;
+            height: 52px;
+            margin: 0 auto 10px;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 52px;
+            font-weight: 700;
+            border-radius: .375rem .375rem 0 0;
+            --tw-text-opacity: 1;
+            color: rgb(55 178 225 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+        }
+
+        .logo[_ngcontent-serverApp-c193] img[_ngcontent-serverApp-c193] {
+            margin: 0 auto
+        }
+
+        .top[_ngcontent-serverApp-c193] li[_ngcontent-serverApp-c193] {
+            height: 42px;
+            --tw-text-opacity: 1;
+            color: rgb(255 0 0 / var(--tw-text-opacity));
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 42px;
+            text-decoration: none
+        }
+
+        .top[_ngcontent-serverApp-c193] li[_ngcontent-serverApp-c193] a[_ngcontent-serverApp-c193] {
+            opacity: .4
+        }
+
+        .top[_ngcontent-serverApp-c193] li[_ngcontent-serverApp-c193] i[_ngcontent-serverApp-c193] {
+            display: none;
+            position: absolute;
+            bottom: -6px;
+            left: 48%
+        }
+
+        .top[_ngcontent-serverApp-c193] li[_ngcontent-serverApp-c193] a.current[_ngcontent-serverApp-c193] {
+            opacity: 1
+        }
+
+        .top[_ngcontent-serverApp-c193] li[_ngcontent-serverApp-c193] a.current[_ngcontent-serverApp-c193] i[_ngcontent-serverApp-c193] {
+            display: block
+        }
+
+        .bottom[_ngcontent-serverApp-c193] {
+            min-height: 30vh;
+            margin: 0 17px;
+            border-top-width: 2px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-top-color: rgb(38 187 211 / var(--tw-border-opacity))
+        }
+
+        .component[_ngcontent-serverApp-c193] {
+            display: block
+        }
+
+        .copyright[_ngcontent-serverApp-c193] {
+            margin-top: 28px
+        }
+
+        .link[_ngcontent-serverApp-c193] {
+            width: 85%;
+            margin: 0 auto 20%
+        }
+
+        .link[_ngcontent-serverApp-c193] a[_ngcontent-serverApp-c193] {
+            display: flex;
+            width: 45%;
+            height: 38px;
+            padding: 0 .5rem;
+            text-align: center;
+            font-size: 13px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            align-items: center;
+            justify-content: center
+        }
+
+        .current[_ngcontent-serverApp-c193] span[_ngcontent-serverApp-c193] {
+            --tw-text-opacity: 1;
+            color: rgb(255 49 0 / var(--tw-text-opacity))
+        }
+
+        .switch-area[_ngcontent-serverApp-c193] {
+            height: calc(var(--vh) * 100)
+        }
+
+        app-login .wrapper {
+            padding-bottom: 0
+        }
+    </style>
+    <style>
+        .icon[_ngcontent-serverApp-c130] {
+            display: none !important;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .icon[_ngcontent-serverApp-c130]:before {
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            font-style: initial;
+            font-size: 16px;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .icon.parentAccount[_ngcontent-serverApp-c130] {
+            background: transparent
+        }
+
+        .icon.parentAccount[_ngcontent-serverApp-c130]:before {
+            content: "\f007"
+        }
+
+        .icon.account[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.password[_ngcontent-serverApp-c130] {
+            background: transparent
+        }
+
+        .icon.password[_ngcontent-serverApp-c130]:before {
+            content: "\f3ed"
+        }
+
+        .icon.confirmPassword[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.moneyPassword[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.name[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.mobile[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.email[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.sex[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.birthday[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.idNumber[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.qqAccount[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.groupBank[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.bankProvince[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.bankCity[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.bankAccount[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        .icon.checkCode[_ngcontent-serverApp-c130] {
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/cock.2b73dc4810770360.svg)
+        }
+
+        fieldset[_ngcontent-serverApp-c130] {
+            text-transform: uppercase
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] {
+            position: relative;
+            margin-bottom: .75rem
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] label[_ngcontent-serverApp-c130] {
+            display: flex;
+            align-items: center;
+            margin-left: .5rem;
+            margin-bottom: .25rem;
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity));
+            font-size: 13px
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] label[_ngcontent-serverApp-c130] i[_ngcontent-serverApp-c130] {
+            margin-right: .25rem;
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] input[_ngcontent-serverApp-c130],
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] select[_ngcontent-serverApp-c130] {
+            display: block;
+            width: 100%;
+            height: 2rem;
+            padding: 0 .5rem;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            font-size: .875rem;
+            line-height: 2rem;
+            --tw-bg-opacity: 1;
+            background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+            border-radius: 10px;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity));
+            outline-style: none;
+            text-transform: none
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] input[_ngcontent-serverApp-c130]::placeholder,
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] select[_ngcontent-serverApp-c130]::placeholder {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            text-transform: uppercase
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] input[type=radio][_ngcontent-serverApp-c130],
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] input[type=checkbox][_ngcontent-serverApp-c130] {
+            display: initial;
+            width: initial;
+            height: initial
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] input[type=radio][_ngcontent-serverApp-c130]~span[_ngcontent-serverApp-c130] {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        fieldset[_ngcontent-serverApp-c130]>div[_ngcontent-serverApp-c130] p[_ngcontent-serverApp-c130] {
+            margin: 0;
+            padding: 0 .5rem;
+            font-size: .75rem;
+            line-height: 1rem;
+            opacity: .6
+        }
+
+        .register-agree[_ngcontent-serverApp-c130] {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .submit-btn[_ngcontent-serverApp-c130] {
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            margin: .75rem 0 1.25rem;
+            padding: .25rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.75rem;
+            --tw-text-opacity: 1;
+            color: #fff;
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            border-radius: .375rem;
+            text-transform: uppercase
+        }
+
+        @media (max-width: 350px) {
+            .submit-btn[_ngcontent-serverApp-c130] {
+                font-size: 1rem
+            }
+        }
+    </style>
+    <style>
+        fieldset[_ngcontent-serverApp-c126] {
+            text-transform: uppercase
+        }
+
+        fieldset[_ngcontent-serverApp-c126] div[_ngcontent-serverApp-c126] {
+            position: relative;
+            margin-bottom: .75rem;
+            overflow: hidden
+        }
+
+        fieldset[_ngcontent-serverApp-c126] div[_ngcontent-serverApp-c126] i[_ngcontent-serverApp-c126] {
+            position: absolute;
+            z-index: 10;
+            top: .5rem;
+            left: 1rem;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            font-size: 1rem;
+            line-height: 1.5rem
+        }
+
+        fieldset[_ngcontent-serverApp-c126] div[_ngcontent-serverApp-c126] i.refresh[_ngcontent-serverApp-c126] {
+            left: auto;
+            right: .75rem
+        }
+
+        fieldset[_ngcontent-serverApp-c126] div[_ngcontent-serverApp-c126] input[_ngcontent-serverApp-c126] {
+            display: block;
+            width: 100%;
+            padding-left: 38px;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            font-size: .875rem;
+            line-height: 2.5rem;
+            --tw-bg-opacity: 1;
+            background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+            border-radius: 10px;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity));
+            outline-style: none;
+            text-transform: none
+        }
+
+        fieldset[_ngcontent-serverApp-c126] div[_ngcontent-serverApp-c126] input[_ngcontent-serverApp-c126]::placeholder {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            text-transform: uppercase
+        }
+
+        .submit-btn[_ngcontent-serverApp-c126] {
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            margin: .75rem 0 1.25rem;
+            padding: .25rem;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.75rem;
+            --tw-text-opacity: 1;
+            color: #fff;
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            border-radius: .375rem;
+            text-transform: uppercase
+        }
+    </style>
+    <style>
+        .wrapper[_ngcontent-serverApp-c194] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(229 229 229 / var(--tw-bg-opacity))
+        }
+
+        .wrapper[_ngcontent-serverApp-c194]>div[_ngcontent-serverApp-c194] {
+            min-height: calc(var(--vh) * 80)
+        }
+
+        .title[_ngcontent-serverApp-c194] {
+            position: relative;
+            height: 52px;
+            margin: 0 auto 10px;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 52px;
+            font-weight: 700;
+            border-radius: .375rem .375rem 0 0;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .title[_ngcontent-serverApp-c194]>button[_ngcontent-serverApp-c194] {
+            position: absolute;
+            right: .5rem;
+            z-index: 10;
+            font-size: 1.5rem;
+            line-height: 52px
+        }
+
+        .main[_ngcontent-serverApp-c194] {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .main[_ngcontent-serverApp-c194]>img[_ngcontent-serverApp-c194] {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        .btn-primary[_ngcontent-serverApp-c194],
+        .btn-outline[_ngcontent-serverApp-c194],
+        .input-outline[_ngcontent-serverApp-c194] {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .loading[_ngcontent-serverApp-c194] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        a[_ngcontent-serverApp-c194] {
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        [_ngcontent-serverApp-c194]::placeholder {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        form[_ngcontent-serverApp-c194] {
+            text-transform: uppercase
+        }
+
+        form[_ngcontent-serverApp-c194] div[_ngcontent-serverApp-c194] {
+            position: relative;
+            margin-bottom: .75rem;
+            overflow: hidden
+        }
+
+        form[_ngcontent-serverApp-c194] div[_ngcontent-serverApp-c194] i[_ngcontent-serverApp-c194] {
+            position: absolute;
+            z-index: 10;
+            top: .5rem;
+            left: 1rem;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            font-size: 1rem;
+            line-height: 1.5rem
+        }
+
+        form[_ngcontent-serverApp-c194] div[_ngcontent-serverApp-c194] i.refresh[_ngcontent-serverApp-c194] {
+            left: auto;
+            right: .75rem
+        }
+
+        form[_ngcontent-serverApp-c194] div[_ngcontent-serverApp-c194] input[_ngcontent-serverApp-c194] {
+            display: block;
+            width: 100%;
+            padding-left: 38px;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            font-size: .875rem;
+            line-height: 2.5rem;
+            --tw-bg-opacity: 1;
+            background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+            border-radius: 10px;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity));
+            outline-style: none;
+            text-transform: none
+        }
+
+        form[_ngcontent-serverApp-c194] div[_ngcontent-serverApp-c194] input[_ngcontent-serverApp-c194]::placeholder {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            text-transform: uppercase
+        }
+
+        .submit-btn[_ngcontent-serverApp-c194] {
+            display: block;
+            width: 100%;
+            height: 2.5rem;
+            margin: .75rem 0 1.25rem;
+            padding: .25rem;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            --tw-text-opacity: 1;
+            color: rgb(29 30 31 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            border-radius: .375rem;
+            text-transform: uppercase
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            text-align: center;
+            justify-content: center
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] {
+            width: 88px;
+            height: 78px;
+            margin: 6px
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div[_ngcontent-serverApp-c194] {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div[_ngcontent-serverApp-c194]:before {
+            content: "";
+            display: block;
+            width: 46px;
+            height: 36px;
+            margin: 0 auto;
+            background: no-repeat center;
+            background-size: contain
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div.fish[_ngcontent-serverApp-c194]:before {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/i_fish.aaf9bfaf86b551da.png)
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div.slot[_ngcontent-serverApp-c194]:before {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/i_game.5412e2a53755d15d.png)
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div.card[_ngcontent-serverApp-c194]:before {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/i_board.617aae9e2bfc9b18.png)
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div.live[_ngcontent-serverApp-c194]:before {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/i_live.51a168e6a2d50303.png)
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div.sport[_ngcontent-serverApp-c194]:before {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/i_sport.9e212d215743c6bd.png)
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] li[_ngcontent-serverApp-c194] div.lottery[_ngcontent-serverApp-c194]:before {
+            background-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/i_lottery.8a12578961db841b.png)
+        }
+
+        .lobby-list[_ngcontent-serverApp-c194] p[_ngcontent-serverApp-c194] {
+            margin: 4px 0 0;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            white-space: nowrap
+        }
+    </style>
+</head>
+
+<body class="mat-typography vi-VN">
+    <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+        <app-switch _nghost-serverapp-c193="">
+            <div _ngcontent-serverapp-c193="" class="bg-customized-bg-quinary block h-full overflow-y-auto uppercase">
+                <div _ngcontent-serverapp-c193="" class="bottom-sheet-title">
+                    <button onclick="window.location='/'" _ngcontent-serverapp-c193="" type="button" routerlink="/"
+                        class="bottom-sheet-close" tabindex="0">
+                        <i _ngcontent-serverapp-c193="" class="fas fa-times-circle"></i>
+                    </button>
+                </div>
+
+                <section _ngcontent-serverapp-c193="" class="top relative">
+                    <a _ngcontent-serverapp-c193="" class="logo" href="/">
+                        <img style="width: 77%; height: auto;" _ngcontent-serverapp-c193="" src="<%=dataPage.session.siteConfig.site_logo;%>">
+                    </a>
+
+                    <ul _ngcontent-serverapp-c193="" class="flex justify-around text-xl text-white/50 auth-method">
+                        <li _ngcontent-serverapp-c193="" class="relative">
+                            <a _ngcontent-serverapp-c193="" routerlinkactive="current" href="javascript:void(0)"
+                                class="current" data-method-type="login">
+                                <i _ngcontent-serverapp-c193="" class="fas fa-caret-up triangle"></i>
+                                <span _ngcontent-serverapp-c193="" translate="Login_LoginTitle">Đăng nhập</span>
+                            </a>
+                        </li>
+                        <li _ngcontent-serverapp-c193="" class="relative">
+                            <a _ngcontent-serverapp-c193="" routerlinkactive="current" href="javascript:void(0)"
+                                data-method-type="register">
+                                <i _ngcontent-serverapp-c193="" class="fas fa-caret-up triangle"></i>
+                                <span _ngcontent-serverapp-c193="" translate="Register_Register">Đăng ký</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+
+                <section _ngcontent-serverapp-c193="" class="bottom">
+
+
+                    <div _ngcontent-serverapp-c193="">
+
+                        <app-login _ngcontent-serverapp-c193="" class="component" _nghost-serverapp-c126="">
+                            <form _ngcontent-serverapp-c126="" novalidate="" onsubmit="event.preventDefault();"
+                                id="loginForm" class="wrapper w-full px-5 py-6 ng-invalid ng-dirty ng-touched">
+                                <fieldset _ngcontent-serverapp-c126="">
+                                    <div _ngcontent-serverapp-c126="">
+                                        <i _ngcontent-serverapp-c126="" class="far fa-user"></i>
+                                        <input _ngcontent-serverapp-c126="" type="text" formcontrolname="account"
+                                            placeholder="Tài khoản" class="ng-dirty ng-valid ng-touched" id="username">
+                                    </div>
+                                    <div _ngcontent-serverapp-c126="">
+                                        <i _ngcontent-serverapp-c126="" class="far fa-lock-alt"></i>
+                                        <input _ngcontent-serverapp-c126="" type="password" formcontrolname="password"
+                                            placeholder="Mật khẩu" class="ng-dirty ng-valid ng-touched" id="password">
+                                        <span _ngcontent-serverapp-c126="" forgetpassword="" onclick="window.location='<%=dataPage.session.siteConfig.contact.telegram;%>'"
+                                            class="text-customized-text-tertiary absolute top-3 right-3 text-xs underline">Quên?</span>
+                                    </div>
+                                    <button _ngcontent-serverapp-c126="" type="submit"
+                                        class="text-customized-bg.duodenary bg-customized-bg-undenary submit-btn mt-2 h-10 w-full rounded-[5px] text-xl disabled:opacity-75 btn-submit-login"><span
+                                            _ngcontent-serverapp-c126="">Đăng
+                                            Nhập</span>
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </app-login>
+
+
+                        <app-register _ngcontent-serverapp-c172="" class="component" _nghost-serverapp-c130="">
+                            <form _ngcontent-serverapp-c130="" novalidate=""
+                                class="w-full py-6 px-10 ng-invalid ng-dirty ng-touched"
+                                onsubmit="event.preventDefault();" id="registerForm">
+                                <fieldset _ngcontent-serverapp-c130="">
+                                    <div _ngcontent-serverapp-c130="">
+                                        <label _ngcontent-serverapp-c130="">
+                                            <i _ngcontent-serverapp-c130="" class="fas fa-star"></i>
+                                            <i _ngcontent-serverapp-c130="" class="icon account"></i>
+                                            <span _ngcontent-serverapp-c130="" translate="Register_Member_Account">Tên
+                                                tài
+                                                khoản</span>
+                                        </label>
+                                        <input _ngcontent-serverapp-c130="" type="text" maxlength="50"
+                                            formcontrolname="account" class="ng-dirty ng-touched ng-invalid"
+                                            id="username">
+                                        <p _ngcontent-serverapp-c130="" translate="Register_Account_Rules">Từ 2-15 kí
+                                            tự, phải bắt đầu bằng chữ cái, có thể gồm cả chữ cái, số và gạch dưới.</p>
+                                    </div>
+                                    <div _ngcontent-serverapp-c130="">
+                                        <label _ngcontent-serverapp-c130="">
+                                            <i _ngcontent-serverapp-c130="" class="fas fa-star"></i>
+                                            <i _ngcontent-serverapp-c130="" class="icon password"></i>
+                                            <span _ngcontent-serverapp-c130="" translate="Register_Member_Password">Mật
+                                                khẩu đăng nhập</span>
+                                        </label>
+                                        <input _ngcontent-serverapp-c130="" type="password" formcontrolname="password"
+                                            class="ng-dirty ng-touched ng-invalid" id="password">
+                                        <p _ngcontent-serverapp-c130="" translate="Register_Enter_Password">
+                                            Hơn&nbsp;6&nbsp;ký tự phải bao gồm chữ cái và số</p>
+                                    </div>
+                                    <div _ngcontent-serverapp-c130="">
+                                        <label _ngcontent-serverapp-c130="">
+                                            <i _ngcontent-serverapp-c130="" class="fas fa-star"></i>
+                                            <i _ngcontent-serverapp-c130="" class="icon confirmPassword"></i>
+                                            <span _ngcontent-serverapp-c130="" translate="Register_Confirm_Password">Xác
+                                                nhận mật khẩu đăng nhập</span>
+                                        </label>
+                                        <input _ngcontent-serverapp-c130="" type="password"
+                                            formcontrolname="confirmPassword"
+                                            class="ng-untouched ng-pristine ng-invalid" id="password_cf">
+                                        <p _ngcontent-serverapp-c130="" translate="Register_Enter_Confirm_Password">Vui
+                                            lòng xác nhận lại mật khẩu của bạn</p>
+                                    </div>
+                                </fieldset>
+
+
+                                <fieldset _ngcontent-serverapp-c130="">
+                                    <div _ngcontent-serverapp-c130="" class="name">
+                                        <label _ngcontent-serverapp-c130="">
+                                            <i _ngcontent-serverapp-c130="" class="fas fa-star"></i>
+                                            <i _ngcontent-serverapp-c130="" class="icon name"></i>
+                                            <span _ngcontent-serverapp-c130="" translate="Register_Real_Name">Họ và Tên
+                                                thật</span>
+                                        </label>
+                                        <input _ngcontent-serverapp-c130="" type="text" formcontrolname="name"
+                                            class="ng-untouched ng-pristine ng-valid" id="name">
+                                        <p _ngcontent-serverapp-c130="" translate="Register_Name_Rules">Viết họ tên đầy
+                                            đủ, chữ in hoa không dấu</p>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset _ngcontent-serverapp-c130="">
+                                    <div _ngcontent-serverapp-c130="" class="name">
+                                        <label _ngcontent-serverapp-c130="">
+                                            <i _ngcontent-serverapp-c130="" class="fas fa-star"></i>
+                                            <i _ngcontent-serverapp-c130="" class="icon name"></i>
+                                            <span _ngcontent-serverapp-c130="" translate="Register_Real_Name">Số điện thoại</span>
+                                        </label>
+                                        <input _ngcontent-serverapp-c130="" type="text" formcontrolname="phone"
+                                            class="ng-untouched ng-pristine ng-valid" id="phone" value="+84">
+                                        <p _ngcontent-serverapp-c130="" translate="Register_Name_Rules">Sử dụng số điện thoại thật để lấy lại mật khẩu</p>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset _ngcontent-serverapp-c130="">
+                                    <div _ngcontent-serverapp-c130="" class="name">
+                                        <label _ngcontent-serverapp-c130="">
+                                            <i _ngcontent-serverapp-c130="" class="fas fa-star"></i>
+                                            <i _ngcontent-serverapp-c130="" class="icon name"></i>
+                                            <span _ngcontent-serverapp-c130="" translate="Register_Real_Name">Mã đại lý</span>
+                                        </label>
+                                        <input _ngcontent-serverapp-c130="" type="text" formcontrolname="name"
+                                            class="ng-untouched ng-pristine ng-valid" id="refcode">
+                                        <p _ngcontent-serverapp-c130="" translate="Register_Name_Rules">Vui Lòng Nhập Mã Đại Lý Của Bạn (Nếu có)</p>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset _ngcontent-serverapp-c130="" style="display: none;">
+                                    <input type="text" id="email" value="">
+                                </fieldset>
+
+                                <fieldset _ngcontent-serverapp-c130="">
+                                    <div _ngcontent-serverapp-c130="">
+                                        <div _ngcontent-serverapp-c130="" class="register-agree">
+                                            <input _ngcontent-serverapp-c130="" type="checkbox" formcontrolname="agree"
+                                                class="mr-1 inline-block align-middle ng-untouched ng-pristine ng-valid"
+                                                checked>
+                                            <span _ngcontent-serverapp-c130=""
+                                                class="text-customized-text-quaternary decoration-solid" style="text-transform: none;">
+                                                Tôi đồng ý với thỏa thuận người dùng mới
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <button _ngcontent-serverapp-c130="" type="submit"
+                                        class="submit-btn btn-submit-register">
+                                        <span _ngcontent-serverapp-c130="">Đăng ký người
+                                            dùng mới</span>
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </app-register>
+
+                    </div>
+
+                    <div _ngcontent-serverapp-c193="" class="link">
+                        <div _ngcontent-serverapp-c193="" class="flex items-center justify-around">
+                            <a _ngcontent-serverapp-c193="">
+                                <i _ngcontent-serverapp-c193="" class="fas fa-headset mx-1"></i><span
+                                    _ngcontent-serverapp-c193="">KHÁCH HÀNG</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+                <app-footer-icon _ngcontent-serverapp-c193="" _nghost-serverapp-c147="">
+                    <!-- <section _ngcontent-serverapp-c147="" class="app" hidden="">
+                        <h2 _ngcontent-serverapp-c147="">ỨNG DỤNG</h2>
+                        <ul _ngcontent-serverapp-c147="">
+                            <li _ngcontent-serverapp-c147=""><a _ngcontent-serverapp-c147="" target="_blank"
+                                    href="https://landing-page.cdn-dysxb.com/NOHU.com/"><i
+                                        _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                            src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/android-icon.svg"></i><span
+                                        _ngcontent-serverapp-c147="">TẢI XUỐNG</span></a></li>
+                            <li _ngcontent-serverapp-c147=""><a _ngcontent-serverapp-c147="" target="_blank"
+                                    href="https://landing-page.cdn-dysxb.com/NOHU.com/"><i
+                                        _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                            src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/ios-icon.svg"></i><span
+                                        _ngcontent-serverapp-c147="">TẢI XUỐNG</span></a></li>
+                        </ul>
+                        <div _ngcontent-serverapp-c147="" class="img-wrapper"><img _ngcontent-serverapp-c147="" alt=""
+                                src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/mobile.png">
+                        </div>
+                    </section>
+                    <section _ngcontent-serverapp-c147="" class="chat24"><img _ngcontent-serverapp-c147="" alt=""
+                            src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/footer_img.png">
+                    </section> -->
+
+                    <section _ngcontent-serverapp-c147="" class="icon">
+                        <div _ngcontent-serverapp-c147="">
+                            <h2 _ngcontent-serverapp-c147="">GIẤY PHÉP GAME</h2>
+                            <ul _ngcontent-serverapp-c147="">
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/t1.svg">
+                                </li>
+                            </ul>
+                        </div>
+                        <div _ngcontent-serverapp-c147="">
+                            <h2 _ngcontent-serverapp-c147="">Chứng chỉ</h2>
+                            <ul _ngcontent-serverapp-c147="">
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/m1.png">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/m2.png">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/m3.png">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/m4.png">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/m5.png">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/m6.png">
+                                </li>
+                            </ul>
+                        </div>
+                        <div _ngcontent-serverapp-c147="">
+                            <h2 _ngcontent-serverapp-c147="">Phương thức thanh toán</h2>
+                            <ul _ngcontent-serverapp-c147="">
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b1.svg">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b2.svg">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b3.svg">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b4.svg">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b5.svg">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b6.svg">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b7.svg">
+                                </li>
+                                <li _ngcontent-serverapp-c147=""><img _ngcontent-serverapp-c147="" alt=""
+                                        src="/cdn/system-requirement/Web.MobileNew/UA531-01/90e8311384/assets/images/footer/b8.svg">
+                                </li>
+                            </ul>
+
+                        </div>                       
+                    </section>
+                </app-footer-icon>
+            </div>
+        </app-switch>
+    </app-root>
+
+    <!-- Notify Modal -->
+    <%- include('../../includes/notify_modal') %>
+        <!-- END Notify Modal -->
+
+</body>
+
+<script type="text/javascript" src="/core/js/auth/index.js"></script>
+
+</html>

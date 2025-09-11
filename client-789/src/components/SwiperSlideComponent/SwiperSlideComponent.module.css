@@ -1,0 +1,82 @@
+.MobileTaiKhoanVipIcon {
+    /*background-color: #1a1a1a;*/
+    mask: url('/images/icons/mobile-tai-khoan-vip.svg') no-repeat center;
+    mask-size: 100%;
+}
+
+.buttonCollapse {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background: #ff9000;
+    height: 25px;
+    right: 35px;
+    padding: 0 5px;
+}
+
+.buttonCollapse ::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 25px 10px;
+    border-color: transparent transparent #ff9000 transparent;
+}
+
+.buttonCollapse ::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 0 0 10px;
+    border-color: transparent transparent transparent #ff9000;
+}
+
+.boxCollapse {
+    width: 100vw;
+    max-height: 0;
+    background: #ff9000;
+    opacity: 1;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    /* padding-bottom: 16px; */
+}
+
+.boxCollapseOpen {
+    opacity: 1;
+    max-height: 240px;
+}
+
+.animated-text {
+    animation: colorChange 1s infinite;
+    -webkit-animation: colorChange 1s infinite;
+}
+
+.animated-text svg path {
+    animation: colorChange 1s infinite;
+    -webkit-animation: colorChange 1s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        fill: black;
+        color: black;
+    }
+
+    50% {
+        fill: white;
+        color: white;
+    }
+
+    100% {
+        fill: black;
+        color: black;
+    }
+}

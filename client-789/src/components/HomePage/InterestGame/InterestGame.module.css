@@ -1,0 +1,57 @@
+.optionGame {
+  width: 154.144px;
+  height: 33px;
+  color: #fff;
+  font-size: 16px;
+ font-weight: 500
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #064054;
+  border: 2px solid #337c9d;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.optionGame:hover {
+  color: #337c90;
+  background-color: #fff;
+}
+
+.optionGameActive {
+  color: #337c90;
+  background-color: #fff;
+  width: 154.144px;
+  height: 33px;
+  font-size: 16px;
+ font-weight: 500
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 2px solid #337c9d;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.buttonGame {
+  width: 210px;
+  height: 33px;
+  padding: 0;
+  color: #fff;
+  font-size: 20px;
+  background: linear-gradient(to bottom, #a5e3f9, #1981a6);
+  border-radius: 16px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.buttonGame:hover {
+  background: #ff955e;
+}

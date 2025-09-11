@@ -1,0 +1,391 @@
+<%- include('../../includes/header') %>
+
+    <style>
+        [_nghost-serverApp-c148] {
+            display: block;
+            min-height: 100%;
+            padding-bottom: 100px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper {
+            margin-top: -20px;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            border-radius: 5px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li {
+            position: relative;
+            width: 33.33%;
+            flex-shrink: 0
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-height: 65px;
+            padding: 10px 0;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            justify-content: space-evenly;
+            align-items: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a.active,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div.active {
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a i,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div i {
+            margin-bottom: 3px;
+            font-size: 18px;
+            line-height: 22px
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li>a span,
+        [_nghost-serverApp-c148] .tab-wrapper ul li>div span {
+            padding: 0 3px;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 30px;
+            width: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            transform: translateY(-50%)
+        }
+
+        [_nghost-serverApp-c148] .tab-wrapper ul li:nth-child(3n+3):before {
+            content: none
+        }
+
+        [_nghost-serverApp-c148] .bottom-sheet-title {
+            display: none
+        }
+
+        .m-0[_ngcontent-serverApp-c148] {
+            margin: 0;
+			color: white;
+        }
+
+        .header[_ngcontent-serverApp-c148] {
+            position: static;
+            display: block;
+            padding-top: 50px
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148] {
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 49px;
+            padding: 0 15px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(61 61 61 / var(--tw-bg-opacity));
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .header[_ngcontent-serverApp-c148] .header-wrap[_ngcontent-serverApp-c148]:before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            opacity: .7
+        }
+
+        .bottom[_ngcontent-serverApp-c148] {
+            height: 90px;
+            padding: 0 15px 0 33px;
+            --tw-text-opacity: 1;
+            color: rgb(255 97 0 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #3c3c3d;
+        }
+
+        .bottom-sheet-content .wrapper {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            border: none
+        }
+
+        .bottom-sheet-content .wrapper .btn-primary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 97 0 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #3c3c3d;
+            --tw-border-opacity: 1;
+            border-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .bottom-sheet-content .wrapper .btn-secondary {
+            min-width: 100px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+            --tw-border-opacity: 1;
+            border-color: rgb(29 30 31 / var(--tw-border-opacity))
+        }
+
+        app-time-limited-event>.wrapper {
+            background-color: transparent
+        }
+
+        app-time-limited-event .page-title {
+            display: none
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c160] {
+            display: block;
+            height: 100%
+        }
+    </style>
+    <style>
+        li[_ngcontent-serverApp-c159] {
+            display: inline-block;
+            vertical-align: top;
+            width: 32%;
+            margin-bottom: 44px;
+            padding: 0 .25rem;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            font-size: .875rem;
+            line-height: 1.25rem;
+            text-align: center;
+            outline: none;
+            text-transform: uppercase
+        }
+
+        li[_ngcontent-serverApp-c159] i[_ngcontent-serverApp-c159] {
+            display: block;
+            min-height: 40px;
+            margin-bottom: 1.5rem;
+            font-size: 2.25rem;
+            line-height: 2.5rem
+        }
+
+        .svg[_ngcontent-serverApp-c159] {
+            width: 100%;
+            height: 40px
+        }
+
+        .svg.svg1[_ngcontent-serverApp-c159] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/01.16a325e47115cc96.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/01.16a325e47115cc96.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .svg.svg2[_ngcontent-serverApp-c159] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/02.ca9d11e444d9d91b.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/02.ca9d11e444d9d91b.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .svg.svg3[_ngcontent-serverApp-c159] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            -webkit-mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/03.6e951d388735a252.svg);
+            mask-image: url(/cdn/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/03.6e951d388735a252.svg);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+    </style>
+
+    <body class="mat-typography vi-VN">
+        <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+            <app-sample-layout _nghost-serverapp-c91="">
+                <app-member-layout _nghost-serverapp-c148="">
+
+
+                    <header _ngcontent-serverapp-c148="" class="header">
+                        <div _ngcontent-serverapp-c148="" class="header-wrap">
+                            <div _ngcontent-serverapp-c148="" class="flex" onclick="window.location='/'">
+                                <div _ngcontent-serverapp-c148="" class="mr-4">
+                                    <i _ngcontent-serverapp-c148="" class="fas fa-arrow-left text-2xl"></i>
+                                </div>
+                                <h2 _ngcontent-serverapp-c148="" class="text-customized-text-secondary m-0 uppercase">
+                                    TRUNG TÂM HỘI VIÊN
+                                </h2>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="bar btn-open-right-sidebar">
+                                <i _ngcontent-serverapp-c148="" class="fas fa-bars text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <section _ngcontent-serverapp-c148="" class="bottom fl">
+                            <div _ngcontent-serverapp-c148="" class="inline-block text-sm">
+                                <p _ngcontent-serverapp-c148="" class="m-0 pt-3">
+                                    <span _ngcontent-serverapp-c148="" translate="Home_Hello" class="uppercase">Xin
+                                        chào</span>,
+                                    <span _ngcontent-serverapp-c148="">
+                                        <%=dataPage.session.user.username%>
+                                    </span>
+                                </p>
+                                <div _ngcontent-serverapp-c148="" class="mt-1">
+                                    <span _ngcontent-serverapp-c148="" class="mx-0.5 text-2xl">
+                                        <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                                    </span>
+                                    <span _ngcontent-serverapp-c148=""
+                                        class="currency text-customized-text-tertiary mt-1 inline-block align-top">VND</span>
+                                </div>
+                            </div>
+                            <div _ngcontent-serverapp-c148="" class="float-right pt-6"><a _ngcontent-serverapp-c148=""
+                                    href="/account/security"><i _ngcontent-serverapp-c148=""
+                                        class="fas fa-user-circle text-customized-text-primary text-4xl"></i></a></div>
+                        </section>
+
+                    </header>
+
+
+                    <app-member-center _nghost-serverapp-c160="">
+                        <app-member-center-list _ngcontent-serverapp-c160="" _nghost-serverapp-c159="">
+                            <ul _ngcontent-serverapp-c159="" class="mt-8 block px-4 py-4">
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/deposit">
+                                        <i _ngcontent-serverapp-c159="" class="svg svg1"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_OnlineDeposit">NẠP
+                                            TIỀN</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/withdraw">
+                                        <i _ngcontent-serverapp-c159="" class="svg svg2"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_OnlineWithdraw">RÚT
+                                            TIỀN</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" class="relative" href="/account/inbox">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-envelope"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_SiteMail">HÒM
+                                            THƯ</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/game-history">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-history"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_BetRecord">LỊCH SỬ
+                                            ĐẶT CƯỢC</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/finan-history">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-clipboard-list"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_Transaction">LỊCH SỬ
+                                            GIAO DỊCH</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/wallet-transfer">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-wallet"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_ActivityArea">CHUYỂN
+                                            QUỸ TRÒ CHƠI</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/Promotion">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-sack-dollar"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_ActivityArea">KHUYẾN
+                                            MẠI</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/security">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-key"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_Security">ĐỔI MẬT KHẨU</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/security-password">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-user-shield"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="MemberCenter_Security">MẬT KHẨU BẢO MẬT</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/discount">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-usd-circle"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="AnyTimeDiscount_Discount">HOÀN
+                                            TRẢ</span>
+                                    </a>
+                                </li>
+                                <li _ngcontent-serverapp-c159="">
+                                    <a _ngcontent-serverapp-c159="" href="/account/agency">
+                                        <i _ngcontent-serverapp-c159="" class="fas fa-users"></i>
+                                        <span _ngcontent-serverapp-c159="" translate="AnyTimeDiscount_Discount">ĐẠI
+                                            LÝ</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </app-member-center-list>
+                    </app-member-center>
+
+
+
+                    <!-- Menu Bar -->
+                    <%- include('../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+                </app-member-layout>
+
+
+                <!-- SideBar Menu -->
+                <%- include('../../includes/sidebar_menu') %>
+                    <!-- END SideBar Menu -->
+
+
+            </app-sample-layout>
+        </app-root>
+    </body>
+
+    <script type="text/javascript" src="/core/js/account/index.js"></script>
+    <%- include('../../includes/footer') %>

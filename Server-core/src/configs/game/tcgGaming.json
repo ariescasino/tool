@@ -1,0 +1,10 @@
+{
+  "API_1": {
+    "url": "http://www.connect6play.com/doBusiness.do",
+    "merchantCode": "ewiinvndk",
+    "desKey": "u2nkrkQV",
+    "signKey": "ld1AN3saSuowR7wb",
+    "currency": "VNDK",
+    "language": "VI"
+  }
+}

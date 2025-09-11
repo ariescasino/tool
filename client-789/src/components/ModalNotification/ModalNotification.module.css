@@ -1,0 +1,65 @@
+.modalContainer :global(.ant-modal-close) {
+  top: -28px;
+  right: -5px;
+}
+
+.itemLi {
+  padding: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.itemLi :global(i.fa-comment-dots) {
+  padding-right: 7px;
+  vertical-align: middle;
+  --tw-text-opacity: 1;
+  color: rgb(252 143 0 / var(--tw-text-opacity));
+}
+
+.itemLi span {
+  display: inline-block;
+  width: 87%;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 20px;
+  --tw-text-opacity: 1;
+  color: rgb(252 143 0 / var(--tw-text-opacity));
+}
+
+.itemLi :global(i.fa-chevron-right) {
+  float: right;
+  margin-top: 4px;
+}
+
+.customModalNoti {
+  top: 0;
+  margin: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  background-color: rgb(17 17 17);
+  height: 100vh;
+  padding: 0;
+}
+
+.customModalNoti :global(.ant-modal-content) {
+  padding: 0
+}
+
+.titleModal {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 143 0 / var(--tw-bg-opacity));
+}
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity));
+
+}

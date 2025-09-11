@@ -1,0 +1,96 @@
+.form_checkLink .ant-input {
+  text-align: center !important;
+}
+
+.form_checkLink .ant-input-clear-icon {
+  font-size: 30px !important;
+  color: linear-gradient(135deg, #f6f6f6 0%, #b8b4b3 100%) !important;
+}
+
+.box_link {
+  box-shadow: 2px 2px 2px 1px #1e9ce287 inset;
+  border-radius: 18px;
+  border: 1px solid #0798c6;
+}
+
+.btn-login {
+  position: relative;
+  flex-grow: 1;
+  width: 40%;
+  height: 41px;
+  color: #fff !important;
+  line-height: 42px;
+  font-weight: 500;
+  border-radius: 40px;
+
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/login/btnlogin.png") center / cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+.btn-login:hover {
+  color: #fff !important;
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/login/btnlogin.png") center / cover !important;
+
+}
+
+.btn-register {
+  position: relative;
+  flex-grow: 1;
+  width: 32%;
+  height: 44px;
+  color: #fff !important;
+  line-height: 42px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 40px;
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/login/btnlogin.png") center / cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-register:hover {
+  color: #fff !important;
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/login/btnlogin.png") center / cover !important;
+
+}
+
+.form-register {
+  /* margin: 0 -0.75rem; */
+  width: 100%;
+  padding: 0 12px 4px;
+  border-top: 1px solid #454343;
+  border-radius: 15px 15px 0 0;
+}
+
+.ant-drawer {
+  z-index: 11000 !important;
+}
+
+
+
+.customModalLoginMobile {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70vw !important;
+  max-width: 80vw !important;
+}
+
+.customFormLoginMobile .ant-form-item-explain {
+  display: none;
+}
+
+.customModalLoginMobile .ant-modal-content {
+  padding-bottom: 0;
+  border-radius: 4px;
+}
+
+.customModalLoginMobile .ant-modal-footer {
+  margin: 0;
+}

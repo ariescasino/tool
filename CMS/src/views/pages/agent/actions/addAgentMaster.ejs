@@ -1,0 +1,238 @@
+<%- include('../../../includes/header') %>
+
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb"  style="--bs-breadcrumb-divider: '>'">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/agent-master">Trang Chủ</a></li>
+                        <li class="breadcrumb-item active">Thêm Đại Lý Tổng</li>
+                    </ol>
+                </nav>
+
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div class="btn-backsite flex-shrink-0">
+                            <a href="<%=dataPage.session.lastUrl%>"
+                                class="btn btn-sm waves-effect waves-light btn-light-secondary text-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Thêm Đại Lý Tổng
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form name="add-agent-master">
+                            <div class="row">
+
+                                <div class="row justify-content-center mb-3">
+                                    <div class="col-md-5">
+                                        <div class="form-floating mb-3">
+                                            <input type="url" class="form-control" name="dailyUrlManager"
+                                                placeholder="Enter Tên Link Quản Lý here">
+                                            <label for="dailyName">Link Quản Lý (tùy chọn có link riêng hoặc dùng chung
+                                                link hiện tại)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="dailyName"
+                                            placeholder="Enter Tên Đại Lý here" value="">
+                                        <label for="dailyName">Tên Đại Lý</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="dailyUsername"
+                                            placeholder="Enter here" value="">
+                                        <label for="dailyUsername">Tên đăng nhập</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="dailyRefCode"
+                                            placeholder="Enter here" value="">
+                                        <label for="dailyRefCode">Mã giới thiệu</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="number" class="form-control" name="dailyPhone"
+                                            placeholder="Enter here" value="">
+                                        <label for="dailyPhone">Số Điện Thoại</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="dailyTelegram"
+                                            placeholder="Enter Name here" value="">
+                                        <label for="dailyTelegram">Telegram</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="dailyBank"
+                                            placeholder="Enter here" value="">
+                                        <label for="dailyBank">Ngân hàng</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="dailyBankName"
+                                            placeholder="Enter Name here" value="">
+                                        <label for="dailyBankName">Chủ tài khoản</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="number" class="form-control" name="dailyBankNumber"
+                                            placeholder="Enter here" value="">
+                                        <label for="dailyBankNumber">Số tài khoản</label>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mb-3">
+                                    <div class="col-md-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" name="dailyPassword"
+                                                placeholder="Enter Tên Đại Lý here">
+                                            <label for="dailyName">Mật khẩu mới</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" name="dailyPasswordConfirm"
+                                                placeholder="Enter Tên Đại Lý here">
+                                            <label for="dailyName">Nhập lại mật khẩu mới</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" style="margin-top:5px"
+                                        class="btn-lg btn btn-info font-weight-medium px-4 ">
+                                        <div class="align-items-center">
+                                            <i class="fa fa-plus"></i> Thêm
+                                        </div>
+                                    </button>
+                                </div>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+
+    <script>
+        $('form[name=add-agent-master]').on('submit', (e) => {
+            e.preventDefault(); // Now nothing will happen
+
+            const dailyUrlManager = $("input[name=dailyUrlManager]").val();
+            const dailyName = $("input[name=dailyName]").val();
+            const dailyUsername = $("input[name=dailyUsername]").val();
+            const dailyPassword = $("input[name=dailyPassword]").val();
+            const dailyRefCode = $("input[name=dailyRefCode]").val();
+            const dailyPhone = $("input[name=dailyPhone]").val();
+            const dailyTelegram = $("input[name=dailyTelegram]").val();
+            const dailyBank = $("input[name=dailyBank]").val();
+            const dailyBankName = $("input[name=dailyBankName]").val();
+            const dailyBankNumber = $("input[name=dailyBankNumber]").val();
+            const dailyPasswordConfirm = $("input[name=dailyPasswordConfirm]").val();
+
+            if (!dailyName ||
+                !dailyUsername ||
+                !dailyRefCode ||
+                !dailyPhone ||
+                !dailyTelegram ||
+                !dailyBank ||
+                !dailyBankName ||
+                !dailyBankNumber ||
+                !dailyPassword ||
+                !dailyPasswordConfirm) {
+                toastr.error(
+                    "Vui lòng điền đầy đủ thông tin.",
+                    "Error!"
+                );
+                return;
+            }
+
+            if (dailyPassword !== dailyPasswordConfirm) {
+                toastr.error(
+                    "2 mật khẩu không khớp.",
+                    "Error!"
+                );
+                return;
+            }
+
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có chắc chắn các thông tin vừa nhập?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": `<%=dataPage.config.API_SERVER%>/agent/add`,
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        "data": {
+                            link: dailyUrlManager,
+                            name: dailyName,
+                            username: dailyUsername,
+                            password: dailyPassword,
+                            refcode: dailyRefCode,
+                            phone: dailyPhone,
+                            telegram: dailyTelegram,
+                            bank: dailyBank,
+                            bankName: dailyBankName,
+                            bankNumber: dailyBankNumber
+                        }
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 1000);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+                }
+            });
+        });
+    </script>
+    <%- include('../../../includes/footer') %>

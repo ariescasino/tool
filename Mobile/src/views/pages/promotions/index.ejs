@@ -1,0 +1,272 @@
+<!-- Header Page Layout -->
+<%- include('../../includes/header') %>
+    <!-- END Header Page Layout -->
+    <style>
+        .promotion .mat-bottom-sheet-container:before,
+        .promotion .bottom-sheet-content {
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity))
+        }
+
+        .top-link[_ngcontent-serverApp-c135] {
+            display: flex;
+            margin: 20px 0 10px;
+            justify-content: space-evenly;
+            flex-wrap: wrap
+        }
+
+        .top-link[_ngcontent-serverApp-c135] li[_ngcontent-serverApp-c135] {
+            width: 110px;
+            height: 40px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb
+        }
+
+        .top-link[_ngcontent-serverApp-c135] li[_ngcontent-serverApp-c135] a[_ngcontent-serverApp-c135] {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 100%
+        }
+
+        .top-link[_ngcontent-serverApp-c135] li[_ngcontent-serverApp-c135] a[_ngcontent-serverApp-c135] i[_ngcontent-serverApp-c135] {
+            font-size: 20px
+        }
+
+        .top-link[_ngcontent-serverApp-c135] li[_ngcontent-serverApp-c135] a[_ngcontent-serverApp-c135] span[_ngcontent-serverApp-c135] {
+            width: 70px;
+            text-transform: uppercase
+        }
+
+        .nav[_ngcontent-serverApp-c135] {
+            text-align: center
+        }
+
+        .nav[_ngcontent-serverApp-c135] li[_ngcontent-serverApp-c135] {
+            display: inline-block;
+            width: 32%;
+            margin: 0 .6%;
+            min-height: 28px;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+            line-height: 26px;
+            border-width: 1px;
+            border-style: solid;
+            --tw-border-opacity: 1;
+            border-color: rgb(137 145 160 / var(--tw-border-opacity));
+            border-radius: 10px 10px 0 0
+        }
+
+        .nav[_ngcontent-serverApp-c135] li.active[_ngcontent-serverApp-c135] {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .content-text {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        .content-text img {
+            max-width: 100%;
+            height: auto
+        }
+
+        .content-text dd {
+            margin-left: 0
+        }
+
+        .content-text ol {
+            padding-left: 20px;
+            list-style-type: decimal
+        }
+
+        .content-text table tr,
+        .content-text table th,
+        .content-text table td {
+            line-height: 2em;
+            text-align: center
+        }
+
+        .content-text table td {
+            min-width: 180px;
+            white-space: normal !important
+        }
+
+        .content-text .no-content {
+            width: 80%;
+            margin: 20% auto;
+            line-height: 50px;
+            text-align: center;
+            background-color: #58585880
+        }
+
+        .mat-bottom-sheet-container {
+            max-height: calc(var(--vh) * 95) !important;
+            padding: 0 !important;
+            background: linear-gradient(to bottom, transparent 0%, transparent 26px, #000 26px, #000 100%) !important;
+            overflow: hidden !important;
+            box-shadow: none !important
+        }
+
+        .mat-bottom-sheet-container:before {
+            content: "";
+            position: absolute;
+            top: 26px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+            z-index: -1
+        }
+
+        .mat-bottom-sheet-container .bottom-sheet-close {
+            position: absolute;
+            right: .5rem;
+            z-index: 10;
+            font-size: 1.5rem;
+            line-height: 52px
+        }
+
+        .mat-bottom-sheet-container .bottom-sheet-title {
+            position: relative;
+            width: calc(100vw - 40px);
+            height: 52px;
+            margin: 0 auto 10px;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 52px;
+            font-weight: 700;
+            border-radius: .375rem;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .mat-bottom-sheet-container .bottom-sheet-content {
+            height: calc(var(--vh) * 95 - 52px);
+            padding: 15px 20px;
+            overflow-y: auto
+        }
+    </style>
+    <style>
+        .mat-bottom-sheet-container {
+            padding: 8px 16px;
+            min-width: 100vw;
+            box-sizing: border-box;
+            display: block;
+            outline: 0;
+            max-height: 80vh;
+            overflow: auto
+        }
+
+        .cdk-high-contrast-active .mat-bottom-sheet-container {
+            outline: 1px solid
+        }
+
+        .mat-bottom-sheet-container-xlarge,
+        .mat-bottom-sheet-container-large,
+        .mat-bottom-sheet-container-medium {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px
+        }
+
+        .mat-bottom-sheet-container-medium {
+            min-width: 384px;
+            max-width: calc(100vw - 128px)
+        }
+
+        .mat-bottom-sheet-container-large {
+            min-width: 512px;
+            max-width: calc(100vw - 256px)
+        }
+
+        .mat-bottom-sheet-container-xlarge {
+            min-width: 576px;
+            max-width: calc(100vw - 384px)
+        }
+    </style>
+
+    <body class="mat-typography vi-VN">
+        <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+            <app-sample-layout _nghost-serverapp-c91="">
+                <app-normal-layout _nghost-serverapp-c151="">
+
+
+                    <!-- Header Layout -->
+                    <%- include('../../includes/header_layout') %>
+                        <!-- END Header Layout -->
+
+
+                        <!-- Menu User Layout -->
+                        <%- include('../../includes/menu_user') %>
+                            <!-- END Menu User Layout -->
+
+                            <div style="margin-top: 20px;"></div>
+
+                            <app-promotion _nghost-serverapp-c135=""></app-promotion>
+
+                            <!-- Menu Bar -->
+                            <%- include('../../includes/menu_bar') %>
+                                <!-- END Menu Bar -->
+
+                </app-normal-layout>
+
+
+                <!-- SideBar Menu -->
+                <%- include('../../includes/sidebar_menu') %>
+                    <!-- END SideBar Menu -->
+
+            </app-sample-layout>
+        </app-root>
+
+
+
+        <div class="cdk-overlay-container" style="display: none;">
+            <div
+                class="cdk-overlay-backdrop cdk-overlay-backdrop-noop-animation cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+            </div>
+            <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: flex-end;">
+                <div id="cdk-overlay-3" class="cdk-overlay-pane"
+                    style="max-width: 100%; position: static; margin-bottom: 0px;">
+                    <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>
+                    <mat-bottom-sheet-container tabindex="-1"
+                        class="mat-bottom-sheet-container cdk-dialog-container ng-tns-c17-0 ng-trigger ng-trigger-state ng-star-inserted"
+                        id="cdk-dialog-0" role="dialog" aria-modal="true" style="transform: translateY(0%);">
+
+                        <div _ngcontent-serverapp-c135="" class="bottom-sheet-title ng-star-inserted">
+                            <span _ngcontent-serverapp-c135="" translate="Shared_Promotion">Khu vực ưu đãi</span>
+                            <button onclick="initModalPromotion(false)" _ngcontent-serverapp-c135="" type="button" class="bottom-sheet-close"
+                                style="margin-top: 13px;">
+                                <i _ngcontent-serverapp-c135="" class="fas fa-times-circle"></i>
+                            </button>
+                        </div>
+
+                        <section _ngcontent-serverapp-c135="" class="bottom-sheet-content ng-star-inserted">
+                            <div _ngcontent-serverapp-c135="" ckcontent="" class="content-text ck-content">
+                                <p><img class="promotion-thumbnail" src="" width="100%"></p>
+                                <div class="promotion-content"></div>
+                            </div>
+                            <div _ngcontent-serverapp-c135="" class="content-text" hidden=""></div>
+                        </section>
+                    </mat-bottom-sheet-container>
+                    <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script type="text/javascript" src="/core/js/promotion/index.js"></script>
+
+    <!-- Footer -->
+    <%- include('../../includes/footer') %>
+        <!-- END Footer -->

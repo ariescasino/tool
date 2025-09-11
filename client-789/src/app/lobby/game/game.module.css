@@ -1,0 +1,77 @@
+.bgGame {
+  background-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/games/bg.jpg");
+  background-size: cover;
+}
+
+.itemGame {
+  width: 100%;
+  height: 60px !important;
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.itemGame::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 37px;
+  height: 36px;
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/games/hot.png");
+}
+
+.img {
+  width: 70px;
+  height: 40px;
+}
+
+.fig {
+  display: flex;
+  height: 100%;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: left;
+  justify-content: left;
+  padding: 0 20px;
+  opacity: 0.5;
+  background-repeat: no-repeat;
+}
+
+.active {
+  opacity: 1 !important;
+  background-color: #ff9000;
+}
+
+.prevArrow {
+  display: flex;
+  background-color: #323232 !important;
+}
+
+.prevArrow::before {
+  content: "" !important;
+}
+
+.prevArrow:hover {
+  background-color: #ff9000 !important;
+}
+
+.nextArrow {
+  display: flex;
+  background-color: #323232 !important;
+}
+
+.nextArrow::before {
+  content: "" !important;
+}
+
+.nextArrow:hover {
+  background-color: #ff9000 !important;
+}
+
+.iframe {
+  width: calc(100% - 200px);
+  height: 1110px;
+  margin-top: 30px;
+}

@@ -1,0 +1,249 @@
+<%- include('../../includes/header') %>
+    <style>
+        .app.login .hover-container:not(.mission-calendar):before,
+        .app.signup .hover-container:not(.mission-calendar):before {
+            background: url(<%=dataPage.session.siteConfig.site_logo;%>) 50%/contain no-repeat;
+            content: "";
+            display: block;
+            margin-bottom: 40px;
+            padding-bottom: 32%;
+            width: 70%;
+        }
+    </style>
+    <div id="root">
+        <div class="app signup">
+            <div style="display: none;"></div>
+            <div class="app-body">
+                <section id="sign-up-section-id" class="hover-container signup">
+                    <div class="container">
+                        <div class="container-inner">
+                            <div class="header-actions" onclick="window.location='/'"><img class="close" alt="close"
+                                    src="https://csi.20icipp.com/img/static/ic-cancel.svg"></div>
+                            <form class="nrc-form nrc-form-block signup-form">
+                                <div class="steps-wrapper">
+                                    <h2>Thông Tin Đăng ký</h2>
+                                </div>
+                                <div class="nrc-form-item input-group prefix">
+                                    <div class="nrc-form-label "><label for="playerid" class="form-require">Tên đăng
+                                            nhập</label></div>
+                                    <div class="nrc-form-input nrc-u-1-1 "><input type="text" autocapitalize="none"
+                                            placeholder="" id="username" class="" maxlength="13" value=""><small
+                                            class="info-msg">Vui lòng nhập id người chơi đăng ký</small></div>
+                                </div>
+                                <div class="nrc-form-item input-group">
+                                    <div class="nrc-form-label "><label for="password" class="form-require">Mật
+                                            khẩu</label></div>
+                                    <div class="nrc-form-input nrc-u-1-1 nrc-form-password">
+                                        <div><input placeholder="" autocomplete="new-password" type="password"
+                                                id="password" class="" maxlength="20" value=""><i class="mps-readable"
+                                                onclick="showhidePassword()"></i></div><small class="info-msg">Từ 8~20
+                                            ký tự,
+                                            gồm chữ và số</small>
+                                    </div>
+                                </div>
+                                <div class="nrc-form-item input-group">
+                                    <div class="nrc-form-label "><label for="confirmpassword" class="form-require">Xác
+                                            nhận lại mật khẩu</label></div>
+                                    <div class="nrc-form-input nrc-u-1-1 nrc-form-password">
+                                        <div><input type="password" id="confirmpassword" class="" maxlength="20"
+                                                value=""><i class="mps-readable" onclick="showhidePassword2()"></i>
+                                        </div><small class="info-msg">Vui
+                                            lòng nhập lại mật khẩu.</small>
+                                    </div>
+                                </div>
+                                <div class="nrc-form-item input-group">
+                                    <div class="nrc-form-label "><label for="firstname" class="form-require">Họ Và
+                                            Tên</label></div>
+                                    <div class="nrc-form-input nrc-u-1-1 "><input type="text" id="firstname" class=""
+                                            value=""><small class="info-msg">Phải trùng tên ngân hàng rút tiền</small>
+                                    </div>
+                                </div>
+                                <div class="nrc-form-item input-group">
+                                    <div class="nrc-form-label "><label for="email" class="">Địa chỉ E-mail</label>
+                                    </div>
+                                    <div class="nrc-form-input nrc-u-1-1 "><input type="email" id="email" class=""
+                                            value=""><small class="info-msg">Điền đúng để nhận khuyến mãi</small></div>
+                                </div>
+                                <div class="nrc-form-item input-group">
+                                    <div class="nrc-form-label "><label for="mobile" class="form-require">Số điện
+                                            thoại</label></div>
+                                    <div class="nrc-form-input nrc-u-1-1">
+                                        <div class="react-tel-input" data-test-id="src_reacttelephoneinput_test_id_4">
+                                            <div class="flag-dropdown" data-test-id="src_reacttelephoneinput_test_id_6">
+                                                <button class="selected-flag" title="Vietnam (Việt Nam): + 84"
+                                                    data-test-id="src_reacttelephoneinput_test_id_7" type="button">
+                                                    <div class="flag vn"
+                                                        data-test-id="src_reacttelephoneinput_test_id_8"
+                                                        style="background-image: url(&quot;/static/media/flags.5bc53ca7..png&quot;);">
+                                                        <div class="arrow"
+                                                            data-test-id="src_reacttelephoneinput_test_id_9"></div>
+                                                    </div>
+                                                </button>
+                                            </div><input type="tel" class="form-control" autocomplete="tel"
+                                                placeholder="+86 12-34567"
+                                                data-test-id="src_reacttelephoneinput_test_id_5" value="+84" id="phone">
+                                        </div><small class="info-msg">Bỏ số 0, điền chính xác để khôi phục mật
+                                            khẩu</small>
+                                    </div>
+                                </div>
+                                <div class="nrc-form-item input-group prefix">
+                                    <div class="nrc-form-label "><label for="playerid" class="form-require">Mã đại
+                                            lý (Referer Code)</label></div>
+                                    <div class="nrc-form-input nrc-u-1-1 "><input type="text" autocapitalize="none"
+                                            placeholder="" id="refcode" class="" maxlength="13" value=""><small
+                                            class="info-msg">Vui lòng nhập mã đại
+                                            lý được cung cấp</small></div>
+                                </div>
+                            </form>
+                            <div class="top25"><button id="submitRegisterForm" title="" class="nrc-button"
+                                    type="button">Đăng ký ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                    tmp = item.split("=");
+                    if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+
+        $(document).ready(() => {
+            const checkRef = findGetParameter('refcode');
+            if (checkRef) {
+                $('#refcode').val(checkRef);
+                $('#refcode').attr("readonly", true);
+                $('#refcode').attr("style", "background-color: #409089");
+            }
+        });
+
+        $('button[id="submitRegisterForm"]').on('click', () => {
+            if (!$('#username').val() ||
+                !$('#password').val() ||
+                !$('#confirmpassword').val() ||
+                !$('#firstname').val() ||
+                !$('#email').val() ||
+                !$('#phone').val()) {
+                alert('Vui lòng nhập đầy đủ thông tin!');
+                return;
+            }
+
+            const testUsername = new RegExp('^[a-zA-Z0-9]+$');
+            const testName = new RegExp("^[a-zA-Z \s\.\!\?\"\-]+$");
+            const testEmail = new RegExp("[a-z0-9]+@[a-z]+\.[a-z]{2,3}");
+
+            // validate input type  
+            if (!testUsername.test($('#username').val())) {
+                alert('Tên tài khoản không hợp lệ!');
+                return;
+            }
+            if (!testName.test($('#firstname').val())) {
+                alert('Họ và tên không hợp lệ!');
+                return;
+            }
+            if (!testEmail.test($('#email').val())) {
+                alert('Email không hợp lệ');
+                return;
+            }
+
+            // validate string length
+            if ($('#username').val().length < 5 || $('#username').val().length > 20) {
+                alert('Tên tài khoản không được nhỏ hơn 5 và lớn hơn 20 ký tự');
+                return;
+            }
+            if ($('#firstname').val().length < 8 || $('#firstname').val().length > 20) {
+                alert('Họ và tên không được nhỏ hơn 8 và lớn hơn 20 ký tự');
+                return;
+            }
+            if ($('#email').val().length < 5 || $('#email').val().length > 50) {
+                alert('Email không hợp lệ');
+                return;
+            }
+            if ($('#phone').val().length < 9 || $('#phone').val().length > 15) {
+                alert('Số điện thoại không hợp lệ');
+                return;
+            }
+            if ($('#password').val().length < 5 || $('#password').val().length > 30) {
+                alert('Mật khẩu không được nhỏ hơn 8 và lớn hơn 20 ký tự');
+                return;
+            }
+            if ($('#password').val() !== $('#confirmpassword').val()) {
+                alert('2 mật khẩu không khớp!   ');
+                return;
+            }
+
+            $('button[id="submitRegisterForm"]').prop("disabled", true);
+            $('button[id="submitRegisterForm"]').css({ "color": "#000" });
+            $('button[id="submitRegisterForm"]').html(`Vui lòng chờ...`);
+
+            try {
+                $.ajax({
+                    "url": "/auth/register",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "data": JSON.stringify({
+                        "name": $('#firstname').val(),
+                        "username": $('#username').val(),
+                        "refcode": (!$('#refcode').val()) ? null : $('#refcode').val(),
+                        "email": $('#email').val(),
+                        "phone": $('#phone').val(),
+                        "password": $('#password').val()
+                    }),
+                }).done(function (response) {
+                    $('button[id="submitRegisterForm"]').prop("disabled", false);
+                    $('button[id="submitRegisterForm"]').css({ "color": "#fff" });
+                    $('button[id="submitRegisterForm"]').html(`Đăng ký ngay`);
+
+                    if (response.status) {
+                        console.log(response);
+                        alert("Đăng ký thành công!");
+                        setTimeout(() => {
+                            window.location = "/";
+                        }, 500);
+                    } else {
+                        alert(response.msg);
+                    }
+                });
+            } catch (e) {
+                console.log('Có lỗi xảy ra, vui lòng thử lại!');
+            }
+        });
+
+
+        const showhidePassword = () => {
+            const passwordInput = $('input[id=password]');
+            const currentType = passwordInput.attr("type");
+            if (currentType == "password") {
+                passwordInput.attr("type", "text");
+            } else if (currentType == "text") {
+                passwordInput.attr("type", "password");
+            }
+        }
+
+        const showhidePassword2 = () => {
+            const passwordInput = $('input[id=confirmpassword]');
+            const currentType = passwordInput.attr("type");
+            if (currentType == "password") {
+                passwordInput.attr("type", "text");
+            } else if (currentType == "text") {
+                passwordInput.attr("type", "password");
+            }
+        }
+    </script>
+
+    <%- include('../../includes/footer') %>

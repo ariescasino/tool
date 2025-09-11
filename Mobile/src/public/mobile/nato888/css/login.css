@@ -1,0 +1,335 @@
+body {
+    font-family: Microsoft YaHei, Microsoft JhengHei, PingFangTC, PingFangSC, PingFangHK, Helvetica;
+    margin: 0;
+}
+.app-container {
+    align-items: center;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 100vh;
+    background-color: #222939;
+    padding-top: 70px;
+}
+.app-container img:first-child {
+    max-width: 185px;
+    margin-bottom: 20px;
+}
+.app-container img:last-child {
+    max-width: 235px;
+    margin-top: 25px;
+}
+.app-container .container {
+    backdrop-filter: blur(10px);
+
+    /* background-color: rgba(255, 255, 255, 0.4); */
+    /* background-color: rgb(60 57 57 / 90%); */
+    border-radius: 20px;
+    line-height: 40px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.app-container .container .container-inner .top-login {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.app-container .container .container-inner .top-login h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-stretch: normal;
+    font-style: normal;
+    display: none;
+}
+.app-container .container .container-inner .top-login span {
+    position: fixed;
+    right: 5px;
+    top: -145px;
+    z-index: 5;
+    /* box-shadow: 0 1px 5px rgb(0 0 0 / 60%); */
+}
+.app-container .container .container-inner .top-login span i {
+    box-shadow: 0 1px 5px rgb(0 0 0 / 60%);
+    color: #fff;
+    padding: 5px 8px;
+    line-height: 1;
+    background-color: #62707c;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.app-container .container .container-inner .content form {
+    padding: 0px ;
+}
+.app-container .container .container-inner .content .form-item .form-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.app-container .container .container-inner .content .form-item .form-label::before {
+    color: #dd9c4b;
+    content: "*";
+    margin: 0 3px;
+}
+.app-container .container .container-inner .content .form-item .form-input {
+    position: relative;
+}
+.app-container .container .container-inner .content .form-item .form-input input {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #4e5461;
+    border-radius: 100px;
+    box-shadow: inset 0 0 0 0 #ccc;
+    color: #fff;
+    text-indent: 10px;
+    display: block;
+    outline: none;
+    line-height: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 42px;
+    width: 100%;
+}
+.app-container .container .container-inner .content .form-item .form-input input::placeholder {
+    color: rgba(255, 255, 255, 0.384);
+}
+.app-container .container .container-inner .content .form-item .form-input small {
+    display: block;
+    color: #e94951;
+    font-size: 12px;
+    line-height: 1.4;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 300;
+    margin-top: 5px;
+}
+.app-container .container .container-inner .content .form-item .form-input i {
+    /* color: #777; */
+    color: #e5e5e5;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    font-weight: 100;
+}
+.app-container .container .container-inner .content .form-login {
+    margin-top: 40px;
+}
+.app-container .container .container-inner .content .form-action {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.app-container .container .container-inner .content .form-action a {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 11px;
+    text-decoration: none;
+    /* color: #000; */
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+.app-container .container .container-inner .content .form-action a:first-child {
+    width: 100%;
+}
+.app-container .container .container-inner .content .form-action a:nth-child(2),
+.app-container .container .container-inner .content .form-action a:nth-child(3) {
+    width: 50%;
+    line-height: 2.5;
+}
+.app-container .container .container-inner .content .form-login button {
+    border-radius: 100px;
+    position: relative;
+    /* background-color: rgb(0, 170, 230);   */
+    /* background-color: rgb(205 46 0); */
+    background-image: linear-gradient(90deg, #cb0d0d, #510603);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 300;
+    height: 41px;
+    width: 100%;
+}
+.app-container .container .container-inner .content .register {
+    margin: 0;
+    text-align: center;
+}
+.app-container .container .container-inner .content .register a {
+    text-decoration: none;
+    color: #222;
+    font-size: 12px;
+}
+.app-container .container .container-inner .content .forget-option {
+    display: flex;
+    justify-content: center;
+}
+.app-container .container .container-inner .content .forget-option a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #222;
+    padding: 0 10px;
+    margin-top: 5px;
+    line-height: 1;
+}
+.app-container .container .container-inner .content h5 {
+    text-align: center;
+    margin: 0;
+    margin-top: 70px;
+    color: #bbb;
+}
+input:-internal-autofill-selected {
+    background-image: none !important;
+    background-color: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+    color: fieldtext !important;
+}
+.remove-small {
+    display: none;
+}
+.top-login span a {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    top: 5px;
+}
+body .popup-forgetPass {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+body .popup-forgetPass.active {
+    display: none;
+}
+
+body .popup-forgetPass .forgetPass-container {
+    width: 340px;
+    padding-bottom: 5px;
+    background-color: #fff;
+    height: 400px !important;
+    max-height: none;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(15, 2, 20, 0.7);
+    overflow: hidden;
+}
+
+body .popup-forgetPass .forgetPass-container .head {
+    display: flex;
+    background-color: #403e0b;
+
+    align-items: center;
+    color: #fff;
+    justify-content: space-between;
+    padding: 0px 15px;
+    height: 50px;
+}
+
+body .popup-forgetPass .forgetPass-container .head h2 {
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+}
+
+body .popup-forgetPass .forgetPass-container .head i {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+body .popup-forgetPass .forgetPass-container .body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 86%;
+}
+
+body .popup-forgetPass .forgetPass-container .body .top-link {
+    border: 1px solid #403e0b;
+    border-radius: 8px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25), inset 0 -5px 15px #fff;
+}
+
+body .popup-forgetPass .forgetPass-container .body .top-link a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-decoration: none;
+}
+
+body .popup-forgetPass .forgetPass-container .body .top-link a:hover {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    transition: background-color 0.3s linear;
+}
+
+body .popup-forgetPass .forgetPass-container .body .top-link a img {
+    max-width: 50px;
+}
+
+body .popup-forgetPass .forgetPass-container .body .top-link a h2 {
+    margin: 0;
+    color: #403e0b;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+body .popup-forgetPass .forgetPass-container .body .bot-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+body .popup-forgetPass .forgetPass-container .body .bot-content i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #403e0b;
+    -webkit-animation: zoomArrow 1s infinite;
+    animation: zoomArrow 1s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+body .popup-forgetPass .forgetPass-container .body .bot-content h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@-webkit-keyframes zoomArrow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.25);
+    }
+}
+

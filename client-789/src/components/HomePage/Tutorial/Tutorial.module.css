@@ -1,0 +1,14 @@
+.boxTutorial span {
+  text-align: center;
+  height: 30px;
+  color: #fff;
+  font-size: 14.559px;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.boxTutorial > div {
+  background: linear-gradient(to top, #357e9f, #6bb0c8);
+}

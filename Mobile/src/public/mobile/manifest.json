@@ -1,0 +1,53 @@
+{
+  "icons": [
+    {
+      "src": "/icon_512x512.d949217aa9d1d60512b5b6be966db651.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_384x384.9dfe93315e0c15dced7e9fcbb623110e.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_192x192.ed49e2d6e1e629d8815a8e32d0690c9d.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_152x152.d41fddd2ecacaae858bb35974fc08fc2.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_144x144.7a6dc2da241ef2bd0ff918d4362d10c0.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_128x128.fee38eb70cbf0d73fb1f811f52f3d872.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_72x72.e2ca680130b8ca075909e9ca47d87ae2.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_96x96.79cfc7a45c3b856062bad738665479cd.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "SHBET.COM",
+  "short_name": "SHBET.COM",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "SHBET.COM",
+  "id": "shbet",
+  "theme_color": "#EFEFEF",
+  "background_color": "#ffffff"
+}

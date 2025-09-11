@@ -1,0 +1,47 @@
+.HistoryListContainer {
+  position: fixed;
+  bottom: -77px;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 77px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  transition: bottom 0.4s;
+}
+
+.open {
+  bottom: 0;
+}
+
+.HistoryBg {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  padding-left: 90px;
+  background: url(/images/b2e4243090ffcb2acd67f99e62a201ce.png) no-repeat 20px 15px;
+  height: 77px;
+}
+
+.buttonShowList {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  width: 150px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: url(/images/history.png) no-repeat;
+  font-size: 14px;
+}
+.buttonShowList::after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  width: 7px;
+  height: 8px;
+}
+.open .buttonShowList::after {
+  background: url(/images/home-feature/c6b20f9a5b832c4b9863d8f06c522186.png) no-repeat;
+}

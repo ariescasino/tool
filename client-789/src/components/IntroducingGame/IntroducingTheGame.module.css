@@ -1,0 +1,62 @@
+.prevButton {
+  left: -60px;
+  padding-left: 14px;
+  text-align: left;
+  top: 93px;
+  width: 45px;
+  height: 45px;
+  background-color: #ededed;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.hoverEffectPrev:hover .prevButton,
+.hoverEffectPrev:hover .iconPrev {
+  color: white; /* Nếu bạn muốn thay đổi màu của biểu tượng */
+}
+
+.iconPrev {
+  position: absolute;
+  top: 102px;
+  left: -46px;
+  color: white;
+  height: 27px;
+  width: auto;
+}
+
+.nextButton {
+  right: -60px;
+  padding-left: 14px;
+  text-align: left;
+  top: 93px;
+  width: 45px;
+  height: 45px;
+  background-color: #ededed;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.hoverEffectNext:hover .nextButton,
+.hoverEffectNext:hover .iconNext {
+  color: white; /* Nếu bạn muốn thay đổi màu của biểu tượng */
+}
+
+.iconNext {
+  position: absolute;
+  top: 102px;
+  right: -46px;
+  color: white;
+  height: 27px;
+  width: auto;
+}
+
+
+.jiliBtn {
+  background: linear-gradient(to bottom, #fff468 0, #f3b720 33%, #eaa000 66%);
+}
+
+.slickCa .slick-list .slick-track {
+  width: 850px;
+}

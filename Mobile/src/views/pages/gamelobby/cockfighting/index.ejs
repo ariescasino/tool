@@ -1,0 +1,496 @@
+<%- include('../../../includes/header') %>
+
+    <style>
+        [_nghost-serverApp-c171] {
+            display: block;
+            height: 100%;
+            --tw-bg-opacity: 1;
+            background-color: rgb(47 44 44 / var(--tw-bg-opacity));
+        }
+
+        ul[_ngcontent-serverapp-c171] {
+            padding: 10px;
+        }
+
+        .p-2\.5 {
+            padding: 0.1rem;
+        }
+
+        .w-1\/3 {
+            width: 32%;
+        }
+
+        .icon[_ngcontent-serverApp-c171] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] .swiper {
+            position: relative;
+            width: 96%;
+            height: 70px;
+            margin: 0 auto
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] .swiper .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] .swiper.no-arrow {
+            width: 100%;
+            margin: 0
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] .swiper span {
+            text-transform: uppercase
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] i.icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: contain
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] i.hot {
+            top: -5px;
+            left: -5px;
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/hot.0cd38f347d2485db.png)
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] i.event {
+            top: -5px;
+            right: -5px;
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/events.e23c01f7521fdab9.png)
+        }
+
+        .wrapper[_ngcontent-serverApp-c184] i.new {
+            bottom: -5px;
+            left: -5px;
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/prize.c3f3768bcac8ed7e.png)
+        }
+
+        .faClass[_ngcontent-serverApp-c184] {
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 9px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: 30px
+        }
+
+        .board[_ngcontent-serverApp-c184] {
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_chess.1c740b4d1f1f9632.png)
+        }
+
+        .slot[_ngcontent-serverApp-c184] {
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_slot.3dcf7601c375e1df.png)
+        }
+
+        .fish[_ngcontent-serverApp-c184] {
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_fish.e699b628e27ee482.png)
+        }
+
+        .live[_ngcontent-serverApp-c184] {
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_live.34d85420ff27ebc9.png)
+        }
+
+        .sport[_ngcontent-serverApp-c184] {
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_sports.9f2bec5d07255cf2.png)
+        }
+
+        .lottery[_ngcontent-serverApp-c184] {
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_lottery.23737d3d873962b4.png)
+        }
+
+        .cock[_ngcontent-serverApp-c184] {
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_cockfighting.ed727fd833f1e937.png)
+        }
+
+        .active[_ngcontent-serverApp-c184] {
+            background-position: center bottom
+        }
+
+        .active.fa-fire[_ngcontent-serverApp-c184] {
+            --tw-text-opacity: 1;
+            color: rgb(255 144 0 / var(--tw-text-opacity))
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c184],
+        .swiper-button-prev[_ngcontent-serverApp-c184] {
+            position: absolute;
+            z-index: 2;
+            top: 22px;
+            width: 15px;
+            height: 70px;
+            opacity: 1;
+            background: none
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c184]:before,
+        .swiper-button-prev[_ngcontent-serverApp-c184]:before {
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 12px
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c184]:after,
+        .swiper-button-prev[_ngcontent-serverApp-c184]:after {
+            display: none
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c184] {
+            right: 0
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c184]:before {
+            right: .25rem;
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_arrow_r.89e997ae4c86b004.svg)
+        }
+
+        .swiper-button-prev[_ngcontent-serverApp-c184] {
+            left: 0
+        }
+
+        .swiper-button-prev[_ngcontent-serverApp-c184]:before {
+            left: .25rem;
+            background-image: url(https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/de2b00e623/menu_arrow_l.b5b3bb19bf070905.svg)
+        }
+
+        .entrance[_ngcontent-serverApp-c184] {
+            position: relative;
+            background: #111f24
+        }
+
+        .btn-toggle-bg[_ngcontent-serverApp-c184] {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            width: 98px;
+            height: 14px;
+            background: rgba(114, 114, 114, .5);
+            transform: translate(-50%);
+            border-radius: 0 0 5px 5px
+        }
+
+        .btn-toggle-bg[_ngcontent-serverApp-c184]>img[_ngcontent-serverApp-c184] {
+            max-height: 50%;
+            margin: 0 auto
+        }
+
+        .bgImg[_ngcontent-serverApp-c184] {
+            display: block;
+            margin-bottom: -3%
+        }
+
+        .bgImg[_ngcontent-serverApp-c184]>img[_ngcontent-serverApp-c184] {
+            width: 100%;
+            max-height: 100%;
+            margin: 0 auto
+        }
+
+        .game-list[_ngcontent-serverApp-c184] {
+            padding: .3rem
+        }
+
+        .game-list[_ngcontent-serverApp-c184] li[_ngcontent-serverApp-c184],
+        .game-list[_ngcontent-serverApp-c184]>div[_ngcontent-serverApp-c184] {
+            margin: 2px 0;
+            padding-right: .2rem;
+            width: 50%
+        }
+
+        .game-list[_ngcontent-serverApp-c184] li[_ngcontent-serverApp-c184]:nth-child(2n),
+        .game-list[_ngcontent-serverApp-c184]>div[_ngcontent-serverApp-c184]:nth-child(2n) {
+            padding-left: .2rem;
+            padding-right: 0
+        }
+
+        .app-bg[_ngcontent-serverApp-c184] {
+            position: relative;
+            background: #3c3c3c
+        }
+
+        .app-bg[_ngcontent-serverApp-c184]>img[_ngcontent-serverApp-c184] {
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        .app[_ngcontent-serverApp-c184] {
+            position: relative;
+            min-height: 39vw;
+            padding-top: 12vw
+        }
+
+        .app[_ngcontent-serverApp-c184] .app-content[_ngcontent-serverApp-c184] {
+            padding-left: .5rem
+        }
+
+        .app[_ngcontent-serverApp-c184] .app-title[_ngcontent-serverApp-c184] {
+            width: 126px
+        }
+
+        .game-name[_ngcontent-serverApp-c184] {
+            position: absolute;
+            width: 7rem;
+            bottom: -3px;
+            right: 5%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 13px;
+            text-align: right;
+            text-transform: uppercase;
+            color: #ffffff
+        }
+
+        .info[_ngcontent-serverApp-c184] {
+            position: relative;
+            padding: 0 .75rem 1rem;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        .info[_ngcontent-serverApp-c184] .filmBg[_ngcontent-serverApp-c184] {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%);
+            pointer-events: none;
+            object-fit: cover
+        }
+
+        .info[_ngcontent-serverApp-c184] section[_ngcontent-serverApp-c184] {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px
+        }
+
+        .info[_ngcontent-serverApp-c184] section[_ngcontent-serverApp-c184]>div[_ngcontent-serverApp-c184] {
+            width: 46%
+        }
+
+        .info[_ngcontent-serverApp-c184] section[_ngcontent-serverApp-c184]>div[_ngcontent-serverApp-c184]:first-child {
+            width: 43%;
+            white-space: nowrap
+        }
+
+        .info[_ngcontent-serverApp-c184] h2[_ngcontent-serverApp-c184] {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 17.57px
+        }
+
+        .info[_ngcontent-serverApp-c184] p[_ngcontent-serverApp-c184] {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 400
+        }
+
+        .sign[_ngcontent-serverApp-c184] {
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 32px !important
+        }
+
+        .sign[_ngcontent-serverApp-c184] figure[_ngcontent-serverApp-c184] {
+            height: 65px;
+            text-align: right
+        }
+
+        .sign[_ngcontent-serverApp-c184] figure[_ngcontent-serverApp-c184] img[_ngcontent-serverApp-c184] {
+            display: inline-block;
+            max-height: 100%
+        }
+
+        .sign[_ngcontent-serverApp-c184] a[_ngcontent-serverApp-c184] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .sign-title[_ngcontent-serverApp-c184] {
+            margin-bottom: 0 !important
+        }
+
+        .sponsor[_ngcontent-serverApp-c184] {
+            position: relative
+        }
+
+        .sponsor[_ngcontent-serverApp-c184] figure[_ngcontent-serverApp-c184] {
+            max-height: 100px;
+            padding-left: 21px
+        }
+
+        .sponsor[_ngcontent-serverApp-c184] figure[_ngcontent-serverApp-c184] img[_ngcontent-serverApp-c184] {
+            max-height: 100%
+        }
+
+        .sponsor[_ngcontent-serverApp-c184] figure[_ngcontent-serverApp-c184]:first-child {
+            width: 105px;
+            padding-left: 0;
+            padding-right: 21px;
+            border-right: 1px solid #8b8b8b
+        }
+
+        .sponsor[_ngcontent-serverApp-c184] a[_ngcontent-serverApp-c184] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .payment[_ngcontent-serverApp-c184] {
+            margin-top: 20px
+        }
+
+        .payment[_ngcontent-serverApp-c184] p[_ngcontent-serverApp-c184] {
+            margin-bottom: 10px
+        }
+
+        .payment[_ngcontent-serverApp-c184] img[_ngcontent-serverApp-c184] {
+            max-height: 58px
+        }
+
+        .site[_ngcontent-serverApp-c184] p[_ngcontent-serverApp-c184] {
+            margin-bottom: 10px
+        }
+
+        .site[_ngcontent-serverApp-c184] a[_ngcontent-serverApp-c184],
+        .site[_ngcontent-serverApp-c184] img[_ngcontent-serverApp-c184] {
+            display: inline-block;
+            max-height: 22px
+        }
+
+        .site[_ngcontent-serverApp-c184] a[_ngcontent-serverApp-c184]+a[_ngcontent-serverApp-c184],
+        .site[_ngcontent-serverApp-c184] a[_ngcontent-serverApp-c184]+img[_ngcontent-serverApp-c184],
+        .site[_ngcontent-serverApp-c184] img[_ngcontent-serverApp-c184]+a[_ngcontent-serverApp-c184],
+        .site[_ngcontent-serverApp-c184] img[_ngcontent-serverApp-c184]+img[_ngcontent-serverApp-c184] {
+            margin-left: 13px
+        }
+
+        .link[_ngcontent-serverApp-c184] {
+            --tw-text-opacity: 1;
+            color: rgb(255 182 39 / var(--tw-text-opacity))
+        }
+
+        .link[_ngcontent-serverApp-c184] li[_ngcontent-serverApp-c184] {
+            width: 33%;
+            height: 30px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            line-height: 12px
+        }
+
+        .link[_ngcontent-serverApp-c184] li[_ngcontent-serverApp-c184] a[_ngcontent-serverApp-c184] {
+            height: 100%;
+            text-decoration: none
+        }
+
+        @media (max-height: 660px) {
+            .game-list[_ngcontent-serverApp-c184] li[_ngcontent-serverApp-c184] {
+                min-height: 68px
+            }
+        }
+    </style>
+
+    <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+        <app-sample-layout _nghost-serverapp-c91="">
+            <app-normal-layout _nghost-serverapp-c151="">
+
+                <!-- Header Layout -->
+                <%- include('../../../includes/header_layout') %>
+                    <!-- END Header Layout -->
+
+                    <!-- App Game Lobby-->
+
+                    <app-game-lobby _nghost-serverapp-c168="">
+                        <div _ngcontent-serverapp-c168="" class="wrapper">
+
+
+                            <a _ngcontent-serverapp-c184="" target="_blank" class="bgImg ng-star-inserted" href="https://9.789b40.com/">
+                                <img _ngcontent-serverapp-c184="" alt="" src="https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/4880b3cd5e/assets/images/home/bg_img.png"> </a>
+
+                                <!-- Swipper Category -->
+                                <%- include('../../../includes/game_lobby/game_lobby_cateygory') %>
+                                <!-- End Swipper Category-->                    
+
+
+                                <!-- Search Form -->
+                                <%- include('../../../includes/game_lobby/game_lobby_search') %>
+                                    <!-- End Search Form -->
+
+
+                        <app-game-lobby-list-nav _ngcontent-serverapp-c168="" _nghost-serverapp-c171="">
+                            <div _ngcontent-serverapp-c184=""
+                                class="game-list relative inline-flex w-full flex-wrap text-left ng-star-inserted">
+                                <div _ngcontent-serverapp-c184=""
+                                    class="relative flex w-[50%] flex-col text-center ng-star-inserted">
+                                    <div _ngcontent-serverapp-c184="" data-product="WS168" data-code="WS1681"
+                                            onclick="launchLiveGame($(this))" class="relative flex items-center justify-center">
+                                        <!----><!----><!----><img _ngcontent-serverapp-c184=""
+                                            src="https://qk3x72.katawee.net/system-requirement/Multimedia/Navigation/Mobile/Term/764df1c7cae041d98259a7f327a67794.png"><span
+                                            _ngcontent-serverapp-c184="" class="game-name ng-star-inserted">CQ9 Đá
+                                            Gà</span><!----><!---->
+                                    </div>
+                                </div>
+                                <div _ngcontent-serverapp-c184=""
+                                    class="relative flex w-[50%] flex-col text-center ng-star-inserted">
+                                    <div _ngcontent-serverapp-c184="" data-product="WS168" data-code="WS1681"
+                                            onclick="launchLiveGame($(this))" class="relative flex items-center justify-center">
+                                        <!----><!----><!----><img _ngcontent-serverapp-c184=""
+                                            src="https://qk3x72.katawee.net/system-requirement/Multimedia/Navigation/Mobile/Term/1729ea3b119344b2bc85ba647181dfd3.png"><span
+                                            _ngcontent-serverapp-c184="" class="game-name ng-star-inserted">Ws168 Đá
+                                            Gà</span><!----><!---->
+                                    </div>
+                                </div><!---->
+                            </div>
+                        </app-game-lobby-list-nav>
+
+                        </div>
+                    </app-game-lobby>
+
+                    <!-- End App Game Lobby -->
+
+                    <!-- Menu Bar -->
+                    <%- include('../../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+            </app-normal-layout>
+
+
+            <!-- SideBar Menu -->
+            <%- include('../../../includes/sidebar_menu') %>
+                <!-- END SideBar Menu -->
+
+        </app-sample-layout>
+    </app-root>
+
+    <!-- Notify Modal -->
+    <%- include('../../../includes/notify_modal') %>
+        <!-- END Notify Modal -->
+
+        <script type="text/javascript" src="/core/js/game_lobby/cockfighting.js"></script>
+        <%- include('../../../includes/footer') %>

@@ -1,0 +1,106 @@
+.boxLogo {
+    width: 100%;
+    height: 44px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 4px rgba(73, 100, 243, 0.1);
+}
+
+.boxContent {
+    min-height: 267px;
+    height: initial;
+    width: 100%;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 4px rgba(73, 100, 243, 0.1);
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.borderBot {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(73, 100, 243, 1);
+}
+
+.qrCode {
+    width: 113px;
+    height: 113px;
+    border: 1px solid #FFFFFF;
+}
+
+.qrInfoText {
+    text-align: center;
+    padding-top: 5px;
+    font-family: DINAlternate-Bold;
+    font-size: 18px;
+    color: rgba(255, 83, 83, 1);
+    letter-spacing: 0;
+    text-align: center;
+    font-weight: 700;
+    font-weight: bold;
+}
+
+.seno {
+    width: 60%;
+    height: auto;
+    line-height: 34px;
+    background: #F3F4FD;
+    border-radius: 12px;
+    padding: 0 10px;
+    font-family: DINAlternate-Bold;
+    font-size: 16px;
+    color: #1B1C21;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+}
+
+.btnCoppy {
+    cursor: pointer;
+    background: #E2E4F6;
+    border: 1px solid rgba(27, 28, 33, 1);
+    box-shadow: none;
+    color: rgb(27, 28, 33);
+    width: 118px;
+    display: flex;
+    height: 34px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: DINAlternate-Bold;
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: DINAlternate-Bold;
+    font-size: 14px;
+    color: #ACACB5;
+    letter-spacing: 0;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.attention {
+    width: 100%;
+    min-height: 200px;
+    height: initial;
+    background-size: 100%;
+    margin: 0 auto;
+    padding: 7px 12px;
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.attentionInfo {
+    /* width: 6.7rem; */
+    height: initial;
+    background: #F3F4FD;
+    border-radius: 12px;
+    font-family: DINAlternate-Bold;
+    font-size: 16px;
+    color: #1B1C21;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    padding: 10px;
+}

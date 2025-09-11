@@ -1,0 +1,74 @@
+.title-game {
+  position: relative;
+  margin: 0 auto;
+  padding: 4px 18px 3px 0;
+  width: 140px;
+  color: black;
+  font-size: 16px;
+  text-align: left;
+  min-height: 3em;
+  word-break: break-all;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.game-logo {
+  position: relative;
+  height: 100%;
+  padding: 9px 0 4px;
+  text-align: center;
+}
+.title-game i {
+  color: #d00;
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  line-height: 20px;
+}
+.game-logo .supplierDisplayName {
+  border: 0;
+  color: #bfbfbf;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.game-wrapper {
+  z-index: 1000;
+}
+
+.game-wrapper .entrance {
+  display: none;
+}
+
+.game-wrapper:hover .game-logo:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 9px;
+  width: 100%;
+  height: 158px;
+  left: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+}
+.game-wrapper:hover .entrance {
+  color: #fff;
+  background-color: #322825;
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  padding: 10px 20px;
+  z-index: 1;
+  font-size: 14px;
+}
+.game-wrapper:hover {
+  color: #232324;
+  background: #737579;
+}

@@ -1,0 +1,84 @@
+.MobileTaiKhoanVipIcon {
+  /*background-color: #1a1a1a;*/
+  mask: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/icons/mobile-tai-khoan-vip.svg") no-repeat center;
+  mask-size: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 50vw;
+  margin-top: -50px;
+  padding-top: 60px;
+  border-radius: 0 0 100% 100%;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 182 39 / var(--tw-bg-opacity));
+}
+
+.balance {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  border-width: 1px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(204 204 204 / var(--tw-border-opacity));
+}
+
+.currency {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.balance > div > span {
+  --tw-text-opacity: 1;
+  color: rgb(255 182 39 / var(--tw-text-opacity));
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.financial li {
+  width: 133px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 18px;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #ffb627;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgb(255 182 39 / 0));
+  --tw-gradient-to: #ad1403;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.financial li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.4rem;
+  --tw-text-opacity: 1;
+  color: rgb(153 153 153 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  border-width: 1px;
+  border-radius: 14px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(204 204 204 / var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+  outline: none;
+  text-transform: capitalize;
+}

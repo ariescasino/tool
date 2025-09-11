@@ -1,0 +1,462 @@
+<%- include('../../../includes/header') %>
+
+    <style>
+        html {
+            scroll-behavior: smooth
+        }
+
+        .iframe-player {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .iframe-player-container {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid;
+            border-radius: 0;
+        }
+
+        .mr-5 {
+            margin-left: 5px;
+        }
+
+        .ml-5 {
+            margin-right: 5px;
+        }
+    </style>
+
+
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="col">
+                    <div class="card">
+                        <div class="d-flex border-bottom title-part-padding align-items-center">
+                            <div>
+                                <h4 class="card-title mb-0">
+                                    Livestream đang phát
+                                </h4>
+                            </div>
+                            <div class="ms-auto flex-shrink-0">
+                                <button
+                                    class="btn btn-light-primary text-primary rounded-pill text-decoration-none btn-sm">
+                                    <b>-</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-12 iframe-player-container">
+                                <iframe src="/game/baccarat-stream/?v=1701811689252" class="iframe-player"
+                                    id="game-iframe"></iframe>
+                            </div>
+                            <h6 class="card-subtitle mt-3 text-center">
+                                <code>Livestream có thể chậm do tốc độ mạng, vui lòng tải lại trang nếu vấn đề này xảy ra!</code>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="col">
+                    <div class="card">
+                        <div class="d-flex border-bottom title-part-padding align-items-center">
+                            <div>
+                                <h4 class="card-title mb-0">
+                                    Thông tin phiên hiện tại
+                                </h4>
+                            </div>
+                            <div class="ms-auto flex-shrink-0">
+                                <button
+                                    class="btn btn-light-primary text-primary rounded-pill text-decoration-none btn-sm">
+                                    <b>-</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-3 text-center">
+                                <code>Mã phiên, trạng thái trò chơi, thời gian còn lại, v.v..!</code>
+                            </h6>
+                            <div class="col-12">
+                                <ul
+                                    class="list-group list-group-horizontal-lg align-items-center justify-content-center">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fa-solid fa-fingerprint fa-fw"></i>
+                                        <span class="mr-5">Phiên: <b id="txt-round-id">#####</b></span>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fa-solid fa-temperature-three-quarters fa-fw"></i>
+                                        <span class="mr-5"><b id="txt-status">.....</b></span>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fa-solid fa-square-poll-vertical fa-fw"></i>
+                                        <span class="mr-5"><b id="txt-result">.....</b></span>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fa-solid fa-clock fa-fw"></i>
+                                        <span class="mr-5"><b id="txt-time-remain">...</b></span>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fa-solid fa-user fa-fw"></i>
+                                        <span class="mr-5">Cược: <b id="txt-total-user-bet">...</b></span>
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fa-solid fa-users fa-fw"></i>
+                                        <span class="mr-5">Online: <b id="txt-total-user-online">...</b></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="d-flex border-bottom title-part-padding align-items-center">
+                            <div>
+                                <h4 class="card-title mb-0">
+                                    Cấu hình kết quả trò chơi
+                                </h4>
+                            </div>
+                            <div class="ms-auto flex-shrink-0">
+                                <button
+                                    class="btn btn-light-primary text-primary rounded-pill text-decoration-none btn-sm">
+                                    <b>-</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-3 text-center">
+                                <code>Việc can thiệp kết quả sẽ dẫn đến việc livestream và kết quả khác nhau, vui lòng lưu ý!</code>
+                            </h6>
+                            <div class="align-items-center justify-content-center" align="center">
+                                <label class="btn btn-light-info text-info font-weight-medium">
+                                    <div class="mr-sm-2">
+                                        <input onclick="onPostSetResultValue($(this).attr('data-value'))"
+                                            data-value="player" name="config-result-player" type="checkbox"
+                                            class="material-inputs" id="checkbox0">
+                                        <label class="form-check-label" for="checkbox0"><span
+                                                class="d-block d-md-none">1</span><span
+                                                class="d-none d-md-block">CON</span></label>
+                                    </div>
+                                </label>
+                                <label class="btn btn-light-info text-info font-weight-medium">
+                                    <div class="mr-sm-2">
+                                        <input onclick="onPostSetResultValue($(this).attr('data-value'))"
+                                            data-value="player_double" name="config-result-player_double"
+                                            type="checkbox" class="material-inputs" id="checkbox1">
+                                        <label class="form-check-label" for="checkbox1"><span
+                                                class="d-block d-md-none">2</span><span class="d-none d-md-block">CON
+                                                ĐÔI</span></label>
+                                    </div>
+                                </label>
+                                <label class="btn btn-light-info text-info font-weight-medium">
+                                    <div class="mr-sm-2">
+                                        <input onclick="onPostSetResultValue($(this).attr('data-value'))"
+                                            data-value="draw" name="config-result-draw" type="checkbox"
+                                            class="material-inputs" id="checkbox2">
+                                        <label class="form-check-label" for="checkbox2"><span
+                                                class="d-block d-md-none">3</span><span
+                                                class="d-none d-md-block">HÒA</span></label>
+                                    </div>
+                                </label>
+                                <label class="btn btn-light-info text-info font-weight-medium">
+                                    <div class="mr-sm-2">
+                                        <input onclick="onPostSetResultValue($(this).attr('data-value'))"
+                                            data-value="super" name="config-result-super" type="checkbox"
+                                            class="material-inputs" id="checkbox3">
+                                        <label class="form-check-label" for="checkbox3"><span
+                                                class="d-block d-md-none">3</span><span
+                                                class="d-none d-md-block">SUPER</span></label>
+                                    </div>
+                                </label>
+                                <label class="btn btn-light-info text-info font-weight-medium">
+                                    <div class="mr-sm-2">
+                                        <input onclick="onPostSetResultValue($(this).attr('data-value'))"
+                                            data-value="banker" name="config-result-banker" type="checkbox"
+                                            class="material-inputs" id="checkbox4">
+                                        <label class="form-check-label" for="checkbox4"><span
+                                                class="d-block d-md-none">3</span><span
+                                                class="d-none d-md-block">CÁI</span></label>
+                                    </div>
+                                </label>
+                                <label class="btn btn-light-info text-info font-weight-medium">
+                                    <div class="mr-sm-2">
+                                        <input onclick="onPostSetResultValue($(this).attr('data-value'))"
+                                            data-value="banker_double" name="config-result-banker_double"
+                                            type="checkbox" class="material-inputs" id="checkbox5">
+                                        <label class="form-check-label" for="checkbox5"><span
+                                                class="d-block d-md-none">3</span><span class="d-none d-md-block">CÁI
+                                                ĐÔI</span></label>
+                                    </div>
+                                </label>
+                                <button onclick="onPostSetResultValue($(this).attr('data-value'))" data-value="reset"
+                                    type="button" class="btn waves-effect waves-light btn-secondary">
+                                    RESET
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="d-flex border-bottom title-part-padding align-items-center">
+                            <div>
+                                <h4 class="card-title mb-0">
+                                    Lịch sử kết quả các phiên gần nhất
+                                </h4>
+                            </div>
+                            <div class="ms-auto flex-shrink-0">
+                                <i style="color: #fbc72a;text-decoration: none;" class="fa-solid fa-circle fa-xl fa-fw"
+                                    data-bs-toggle="tooltip" title="CON"></i>
+                                <i style="color: #fbc72a;text-decoration: underline;"
+                                    class="fa-solid fa-circle fa-xl fa-fw" data-bs-toggle="tooltip" title="CON ĐÔI"></i>
+                                <i style="color: #f75a3f;text-decoration: none;" class="fa-solid fa-circle fa-xl fa-fw"
+                                    data-bs-toggle="tooltip" title="CÁI"></i>
+                                <i style="color: #f75a3f;text-decoration: underline;"
+                                    class="fa-solid fa-circle fa-xl fa-fw" data-bs-toggle="tooltip" title="CÁI ĐÔI"></i>
+                                <i style="color: #54beffcc;text-decoration: none;"
+                                    class="fa-solid fa-circle fa-xl fa-fw" data-bs-toggle="tooltip" title="HÒA"></i>
+                                <i style="color: #a53ee3cc;text-decoration: none;"
+                                    class="fa-solid fa-circle fa-xl fa-fw" data-bs-toggle="tooltip" title="SUPER"></i>
+                                <button
+                                    class="btn btn-light-primary text-primary rounded-pill text-decoration-none btn-sm">
+                                    <b>-</b>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-12 align-items-center justify-content-center text-center">
+                                <div class="btn-group" id="dotline-last-result"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Đặt cược trực tiếp đang diễn ra
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+
+                        <div class="col">
+                            <div class="card" id="node-result-player">
+                                <div
+                                    class="d-flex border-bottom title-part-padding align-items-center justify-content-center">
+                                    <h4 class="card-title mb-0">
+                                        <b>CON 1:2</b>
+                                    </h4>
+                                </div>
+                                <div class="card-body" style="padding: 0;">
+                                    <ul class="list-group" id="node-betdoor-player"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card" id="node-result-player_double">
+                                <div
+                                    class="d-flex border-bottom title-part-padding align-items-center justify-content-center">
+                                    <h4 class="card-title mb-0">
+                                        <b>CON ĐÔI 1:12</b>
+                                    </h4>
+                                </div>
+                                <div class="card-body" style="padding: 0;">
+                                    <ul class="list-group" id="node-betdoor-player_double"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card" id="node-result-draw">
+                                <div
+                                    class="d-flex border-bottom title-part-padding align-items-center justify-content-center">
+                                    <h4 class="card-title mb-0">
+                                        <b>HÒA 1:9</b>
+                                    </h4>
+                                </div>
+                                <div class="card-body" style="padding: 0;">
+                                    <ul class="list-group" id="node-betdoor-draw"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card" id="node-result-super">
+                                <div
+                                    class="d-flex border-bottom title-part-padding align-items-center justify-content-center">
+                                    <h4 class="card-title mb-0">
+                                        <b>SUPER 1:13-1.21</b>
+                                    </h4>
+                                </div>
+                                <div class="card-body" style="padding: 0;">
+                                    <ul class="list-group" id="node-betdoor-super"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card" id="node-result-banker">
+                                <div
+                                    class="d-flex border-bottom title-part-padding align-items-center justify-content-center">
+                                    <h4 class="card-title mb-0">
+                                        <b>CÁI 1:1.95</b>
+                                    </h4>
+                                </div>
+                                <div class="card-body" style="padding: 0;">
+                                    <ul class="list-group" id="node-betdoor-banker"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card" id="node-result-banker_double">
+                                <div
+                                    class="d-flex border-bottom title-part-padding align-items-center justify-content-center">
+                                    <h4 class="card-title mb-0">
+                                        <b>CÁI ĐÔI 1:12</b>
+                                    </h4>
+                                </div>
+                                <div class="card-body" style="padding: 0;">
+                                    <ul class="list-group" id="node-betdoor-banker_double"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Lịch Sử Trò Chơi
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Nhập ID phiên để tìm kiếm, bỏ trống để xem tất cả!</code>
+                        </h6>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <input type="number" id="txt-session-view" class="form-control"
+                                    placeholder="Nhập ID phiên để xem..." aria-label="Recipient's username"
+                                    aria-describedby="basic-addon2">
+                                <button class="btn btn-light-secondary text-secondary font-weight-medium" type="button"
+                                    onclick="onGetHistorySession()">
+                                    Tìm kiếm
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <div class="table-responsive">
+                                <table class="table customize-table table-bordered mb-0 v-middle">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-bottom border-top text-center">ID Phiên</th>
+                                            <th class="border-bottom border-top text-center">Kết Quả</th>
+                                            <th class="border-bottom border-top text-center">(P) Điểm</th>
+                                            <th class="border-bottom border-top text-center">(B) Điểm</th>
+                                            <th class="border-bottom border-top text-center">Tổng Cược</th>
+                                            <th class="border-bottom border-top text-center">Tổng Thắng</th>
+                                            <th class="border-bottom border-top text-center">Tổng Thua</th>
+                                            <th class="border-bottom border-top text-center">Thời Gian</th>
+                                            <th class="border-bottom border-top text-center">Hành Động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-history-session"></tbody>
+                                </table>
+                                <nav class="text-center">
+                                    <ul class="pagination mt-3 text-center align-items-center justify-content-center"
+                                        id="history-session-pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="display: none;" id="history-bet-session-container">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Lịch Sử Đặt Cược Phiên #<b id="txt-view-bet-session-id"></b>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body row">
+                        <div class="col-12 mt-3">
+                            <div class="table-responsive">
+                                <table class="table customize-table table-bordered mb-0 v-middle">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-bottom border-top">Người Cược</th>
+                                            <th class="border-bottom border-top text-center">Player</th>
+                                            <th class="border-bottom border-top text-center">Player Đôi</th>
+                                            <th class="border-bottom border-top text-center">Banker</th>
+                                            <th class="border-bottom border-top text-center">Banker Đôi</th>
+                                            <th class="border-bottom border-top text-center">Hòa</th>
+                                            <th class="border-bottom border-top text-center">Super</th>
+                                            <th class="border-bottom border-top text-center">Tổng Cược</th>
+                                            <th class="border-bottom border-top text-center">Kết Quả</th>
+                                            <th class="border-bottom border-top text-center">Tổng Thắng</th>
+                                            <th class="border-bottom border-top text-center">Tổng Thua</th>
+                                            <th class="border-bottom border-top text-center">Hoàn Trả</th>
+                                            <th class="border-bottom border-top text-center">Thời gian</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-history-bet-session"></tbody>
+                                </table>
+                                <nav class="text-center">
+                                    <ul class="pagination mt-3 text-center align-items-center justify-content-center"
+                                        id="history-bet-session-pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+
+    <script src="/core/js/game/baccarat/baccarat.js"></script>
+    <script src="/core/js/game/baccarat/websocket.js"></script>
+
+
+    <%- include('../../../includes/footer') %>

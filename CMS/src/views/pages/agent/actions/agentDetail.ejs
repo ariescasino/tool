@@ -1,0 +1,463 @@
+<%- include('../../../includes/header') %>
+
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>'">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/agent-master">Trang Chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/agent-master/agent/agent-list">Danh Sách Đại Lý Tổng</a>
+                        </li>
+                        <li class="breadcrumb-item active">Chi Tiết Đại Lý</li>
+                        <li class="breadcrumb-item active">
+                            <%=dataApi.name%>
+                        </li>
+                    </ol>
+                </nav>
+
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div class="btn-backsite flex-shrink-0">
+                            <a href="<%=dataPage.session.lastUrl%>"
+                                class="btn btn-sm waves-effect waves-light btn-light-secondary text-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Cập Nhật Thông Tin Đại Lý
+                            </h4>
+                        </div>
+                        <div class="ms-auto flex-shrink-0">
+                            <button class="btn btn-info text-white text-decoration-none btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#view-actions-agent-master">
+                                <i class="fas fa-cogs"></i> Hành Động
+                            </button>
+                            <!-- Code Modal -->
+                            <div id="view-actions-agent-master" class="modal fade" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-bottom">
+                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                <i class="fas fa-cogs"></i> Hành Động
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body p-4">
+                                            <div class="text-center">
+                                                <a href="/agent-master/agent/get-profit-by-agent-master/<%=dataApi.code%>?name=<%=dataApi.name%>&id=<%=dataApi._id%>"
+                                                    class="btn waves-effect waves-light btn-info">
+                                                    <i class="fas fa-chart-pie"></i> Lợi Nhuận
+                                                </a>
+                                                <a href="/agent-master/agent/agent-view-users/<%=dataApi._id%>?nameAgentMaster=<%=dataApi.name%>"
+                                                    class="btn waves-effect waves-light btn-info">
+                                                    <i class="fa fa-users"></i> Thành Viên
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <form name="updateAgent">
+                            <div class="row">
+                                <div class="row justify-content-center mb-3">
+                                    <div class="col-md-5">
+                                        <div class="form-floating mb-3">
+                                            <input type="url" class="form-control" name="dailyUrlManager"
+                                                placeholder="Enter Tên Link Quản Lý here" value="<%=dataApi.link%>">
+                                            <label for="dailyName">Link Quản Lý (tùy chọn có link riêng hoặc dùng chung
+                                                link hiện tại)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="dailyName"
+                                            placeholder="Enter Tên Đại Lý here" value="<%=dataApi.name%>">
+                                        <label for="dailyName">Tên Đại Lý</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="dailyUsername"
+                                            placeholder="Enter here" value="<%=dataApi.username%>">
+                                        <label for="dailyUsername">Tên đăng nhập</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="dailyRefCode"
+                                            placeholder="Enter here" value="<%=dataApi.code%>">
+                                        <label for="dailyRefCode">Mã giới thiệu</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="number" class="form-control" id="dailyPhone"
+                                            placeholder="Enter here" value="<%=dataApi.phone%>">
+                                        <label for="dailyPhone">Số Điện Thoại</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="dailyTelegram"
+                                            placeholder="Enter Name here" value="<%=dataApi.telegram%>">
+                                        <label for="dailyTelegram">Telegram</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="dailyBank" placeholder="Enter here"
+                                            value="<%=dataApi.bank%>">
+                                        <label for="dailyBank">Ngân hàng</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="dailyBankName"
+                                            placeholder="Enter Name here" value="<%=dataApi.bankName%>">
+                                        <label for="dailyBankName">Chủ tài khoản</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="number" class="form-control" id="dailyBankNumber"
+                                            placeholder="Enter here" value="<%=dataApi.bankNumber%>">
+                                        <label for="dailyBankNumber">Số tài khoản</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="d-md-flex align-items-center mt-3">
+                                        <div class="ms-auto mt-3 mt-md-0">
+                                            <button type="submit"
+                                                class="btn-lg btn btn-info font-weight-medium rounded-pill px-4 ">
+                                                <div class="d-flex align-items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-send feather-sm fill-white me-2">
+                                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                                    </svg>
+                                                    Cập Nhật
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Thay Đổi Mật Khẩu Đại Lý
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Đổi mật khẩu xin hãy thông báo lại cho đại lý biết!</code><br>
+                            <code>Vui lòng đổi mật khẩu từ 6 đến 30 kí tự!</code>
+                        </h6>
+
+                        <form name="agent-master-changepass">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" name="dailyPassword"
+                                            placeholder="Enter Tên Đại Lý here">
+                                        <label for="dailyName">Mật khẩu mới</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" name="dailyPasswordConfirm"
+                                            placeholder="Enter Tên Đại Lý here">
+                                        <label for="dailyName">Nhập lại mật khẩu mới</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" style="margin-top:5px"
+                                        class="btn-lg btn btn-info font-weight-medium px-4 ">
+                                        <div class="d-flex align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-send feather-sm fill-white me-2">
+                                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                            </svg>
+                                            Cập Nhật
+                                        </div>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Chuyển Giao Thành Viên Đại Lý
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chuyển giao đại lý xin hãy thông báo lại cho đại lý biết!</code>
+                        </h6>
+
+                        <form name="transferAgent">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group mb-4">
+                                        <label class="mr-sm-2" style="margin-bottom: 10px;"
+                                            for="inlineFormCustomSelect">Chọn thành viên cần chuyển giao</label>
+                                        <select class="form-select mr-sm-2" id="listUsersUsernameByAgentMaster"
+                                            style="height: 44px;">
+                                            <option selected="" value="">Chọn thành viên...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group mb-4">
+                                        <label class="mr-sm-2" style="margin-bottom: 10px;"
+                                            for="inlineFormCustomSelect">Chọn đại lý nhận thành viên</label>
+                                        <select class="form-select mr-sm-2" id="listUsernameAgentMaster"
+                                            style="height: 44px;">
+                                            <option selected="" value="">Chọn đại lý...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" style="margin-top:31px"
+                                        class="btn-lg btn btn-info font-weight-medium px-4 ">
+                                        <div class="d-flex align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-send feather-sm fill-white me-2">
+                                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                            </svg>
+                                            Cập Nhật
+                                        </div>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+
+    <script>
+
+        $(document).ready(() => {
+            // get list users username by agent current
+            $.ajax({
+                "url": `<%=dataPage.config.API_SERVER%>/agent/list-users-username-by-agent/<%=dataApi._id%>`,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>"
+                }
+            }).then((response) => {
+                if (response.status) {
+                    $("#listUsersUsernameByAgentMaster").html(`<option selected="" value="">Chọn thành viên...</option>`);
+                    response.data.listUser.forEach((daily) => {
+                        $("#listUsersUsernameByAgentMaster").append(`<option value="${daily.id}">${daily.name}</option>`);
+                    });
+
+                }
+            }).catch((err) => {
+                console.log(err);
+            });
+
+            // get list username agent master
+            $.ajax({
+                "url": `<%=dataPage.config.API_SERVER%>/agent/list-username-agent-master`,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>"
+                }
+            }).then((response) => {
+                if (response.status) {
+                    $("#listUsernameAgentMaster").html(`<option selected="" value="">Chọn đại lý...</option>`);
+                    response.data.listUser.forEach((daily) => {
+                        $("#listUsernameAgentMaster").append(`<option value="${daily.username}">${daily.username}</option>`);
+                    });
+
+                }
+            }).catch((err) => {
+                console.log(err);
+            });
+        });
+
+        $('form[name=transferAgent]').on('submit', (e) => {
+            e.preventDefault(); // Now nothing will happen
+            const userOfAgentCurrent = $("select[id=listUsersUsernameByAgentMaster]").val();
+            const agentUsername = $("select[id=listUsernameAgentMaster]").val();
+
+            if (!userOfAgentCurrent ||
+                !agentUsername) {
+                toastr.error(
+                    "Vui lòng chọn đầy đủ thông tin.",
+                    "Error!"
+                );
+                return;
+            }
+
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có chắc chắn chuyển thành viên tới đại lý này?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": `<%=dataPage.config.API_SERVER%>/agent/transfer`,
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        "data": {
+                            uid: userOfAgentCurrent,
+                            daily: agentUsername
+                        }
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 1000);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+                }
+            });
+
+        });
+
+        $('form[name=agent-master-changepass]').on('submit', (e) => {
+            e.preventDefault(); // Now nothing will happen
+            const dailyPassword = $("input[name=dailyPassword]").val();
+            const dailyPasswordConfirm = $("input[name=dailyPasswordConfirm]").val();
+
+            if (!dailyPassword ||
+                !dailyPasswordConfirm) {
+                toastr.error(
+                    "Vui lòng điền đầy đủ thông tin.",
+                    "Error!"
+                );
+                return;
+            }
+
+            if (dailyPassword !== dailyPasswordConfirm) {
+                toastr.error(
+                    "2 mật khẩu không khớp.",
+                    "Error!"
+                );
+                return;
+            }
+
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có chắc chắn các thông tin vừa nhập?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": `<%=dataPage.config.API_SERVER%>/agent/change-password/<%=dataApi._id%>`,
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        "data": {
+                            password: dailyPassword
+                        }
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 1000);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+                }
+            });
+        });
+    </script>
+    <%- include('../../../includes/footer') %>

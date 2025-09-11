@@ -1,0 +1,469 @@
+<%- include('../../includes/header') %>
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <form action="" method="get" class="form-body row">
+                                <div class="col-lg-9 row">
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Tiêu đề</span>
+                                            <input type="text" class="form-control" name="title"
+                                                placeholder="Nhập một đoạn tiêu đề..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Nội dung</span>
+                                            <input type="text" class="form-control" name="content"
+                                                placeholder="Nhập một đoạn nội dung..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-info align-items-center">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Tổng: <%=dataApi.total%>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>#ID</th>
+                                        <th>Tên Người chơi</th>
+                                        <th>Tiêu Đề</th>
+                                        <th>Nội Dung</th>
+                                        <th>Trạng Thái</th>
+                                        <th>Ngày Tạo</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(dataApi.dataExport.length> 0) { %>
+
+                                        <% dataApi.dataExport.forEach((data)=> { %>
+                                            <tr>
+                                                <td>
+                                                    #<%=data.id%>
+                                                </td>
+                                                <td>
+                                                    <%=data.userInfo.username%>
+                                                </td>
+                                                <td>
+                                                    <%=dataPage.helpers.truncateString(dataPage.helpers.clearHtmlTag(data.title))%>
+                                                </td>
+                                                <td>
+                                                    <%=dataPage.helpers.truncateString(dataPage.helpers.clearHtmlTag(data.content))%>
+                                                </td>
+                                                <td>
+                                                    <%=(data.seen) ? 'Đã xem' : 'Chưa xem' %>
+                                                </td>
+                                                <td>
+                                                    <%= dataPage.helpers.moment(data.createdAt).format("H:m DD/MM/YYYY")
+                                                        %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button style="margin-left: 10px;"
+                                                        onclick="deleteMessageConfirm('<%=data.id%>')" type="button"
+                                                        class="btn waves-effect waves-light btn-danger btn-sm"><span
+                                                            class="btn-icon-left">
+                                                            <b><i class="fa fa-trash color-dark"></i></b>
+                                                        </span><b>Xóa</b>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bootstrap-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center" id="phantrangUser"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                Soạn Tin Nhắn Mới
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <div class="col-lg-9 row">
+                                <div class="col-md-10">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">Gửi tới người chơi</span>
+                                        <select class="form-control form-select" id="message-user"
+                                            data-placeholder="Choose a Category" tabindex="1"
+                                            aria-describedby="basic-addon1">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-info align-items-center" onclick="sendMessage()">
+                                    Gửi tin nhắn
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-md-12">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Tiêu đề tin nhắn</span>
+                                    <input type="text" class="form-control" id="message-title"
+                                        placeholder="Tiêu đề tin nhắn..." aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <textarea id="message-content" placeholder="Nội dung tin nhắn..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+
+    <!-- This Page JS -->
+    <script src="/assets/libs/tinymce/tinymce.min.js"></script>
+    <script>
+        $(function () {
+            tinymce.init({
+                selector: "textarea#message-content",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor",
+                ],
+                toolbar:
+                    "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+            });
+        });
+    </script>
+
+    <script>
+
+        $(document).ready(() => {
+            getListUserName();
+        });
+
+        const phantrang = Pagination('<%=dataApi.page%>', '<%=dataApi.total%>', '<%=dataApi.kmess%>');
+
+        let phantrangBody = '';
+        phantrang.forEach((page) => {
+            $("#phantrangUser").html(phantrangBody);
+            let active = ('<%=dataApi.page%>' == page) ? "active" : "";
+            const urlToPage = (page !== "...") ? `/message?page=${page}&limit=<%=dataApi.kmess%>` : `javascript:void(0)`;
+            phantrangBody += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="${urlToPage}"><b>${page}</b></a>
+                </li>
+            `;
+            $("#phantrangUser").html(phantrangBody);
+        });
+
+        const getListUserName = () => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/user/list-username/',
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    response.data.forEach((username) => {
+                        $('#message-user').append(`<option value="${username}">${username}</option>`);
+                    })
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const sendMessage = () => {
+            const username = $('#message-user').val();
+            const title = $('#message-title').val();
+            const content = tinyMCE.activeEditor.getContent();;
+
+            if (!username || !title || !content) {
+                toastr.error(
+                    "Vui lòng điền đầy đủ thông tin!",
+                    "Error!"
+                );
+                return;
+            }
+
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn đã kiểm tra kĩ thông tin rồi chứ?",
+                confirmText: "Gửi Tin Nhắn",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/message/create',
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            username,
+                            title,
+                            content
+                        })
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Gửi Tin nhắn thành công.",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+
+        }
+
+
+        const deleteMessageConfirm = (id) => {
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có muốn xóa nó không?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/message/delete/' + id,
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 700);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+        }
+
+        const showFormUpdateRecord = (id) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/withdraw/withdraw-info/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#elementModal').html(`
+                    <div class="modal fade" id="depositInfo-update-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center">
+                                    <h4 class="modal-title" id="exampleModalLabel1">
+                                        Cập nhật yêu cầu rút tiền
+                                    </h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Tên người chơi:</label>
+                                            <input type="text" class="form-control" id="update-username" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số dư hiện tại:</label>
+                                            <input type="number" class="form-control" id="update-coin" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số tiền rút:</label>
+                                            <input type="number" class="form-control" id="update-amount" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Ngân hàng rút về:</label>
+                                            <input type="text" class="form-control" id="update-bankProvide" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số tài khoản rút về:</label>
+                                            <input type="text" class="form-control" id="update-bankNumber" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Chủ tài khoản rút về:</label>
+                                            <input type="text" class="form-control" id="update-bankName" readonly />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Trạng thái yêu cầu:</label>
+                                            <select class="form-control form-select" id="update-status"></select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="
+                        btn btn-light-danger
+                        text-danger
+                        font-weight-medium
+                        " data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn btn-success" onclick="updateWithdraw('${id}')">
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+
+                    $('#update-username').val(response.data.userInfo.username);
+                    $('#update-coin').val(numberWithCommas(response.data.userInfo.coin));
+                    $('#update-amount').val(response.data.amount);
+                    $('#update-bankProvide').val(response.data.bankProvide);
+                    $('#update-bankName').val(response.data.bankName);
+                    $('#update-bankNumber').val(response.data.bankNumber);
+
+
+                    if (response.data.status == "success") {
+                        $('#update-status').append(`<option value="success">Thành công</option>`);
+                        $('#update-status').append(`<option value="pending">Chờ duyệt</option>`);
+                        $('#update-status').append(`<option value="error">Thất bại</option>`);
+                    } else if (response.data.status == "pending") {
+                        $('#update-status').append(`<option value="pending">Chờ duyệt</option>`);
+                        $('#update-status').append(`<option value="success">Thành công</option>`);
+                        $('#update-status').append(`<option value="error">Thất bại</option>`);
+                    } else if (response.data.status == "error") {
+                        $('#update-status').append(`<option value="error">Thất bại</option>`);
+                        $('#update-status').append(`<option value="pending">Chờ duyệt</option>`);
+                        $('#update-status').append(`<option value="success">Thành công</option>`);
+                    }
+                    $('#depositInfo-update-modal').modal('toggle');
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const updateWithdraw = (id) => {
+            const status = $('#update-status').val();
+
+            $.ajax({
+                "url": "<%=dataPage.config.API_SERVER%>/withdraw/update/" + id,
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+                "data": JSON.stringify({
+                    status
+                }),
+            }).done(function (response) {
+                if (response.status) {
+                    toastr.success(
+                        response.msg,
+                        "Success!"
+                    );
+                    setTimeout(() => {
+                        window.location = "";
+                    }, 700);
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            });
+        }
+    </script>
+    <%- include('../../includes/footer') %>

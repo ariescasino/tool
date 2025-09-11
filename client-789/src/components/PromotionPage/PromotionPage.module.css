@@ -1,0 +1,31 @@
+.itemTagPromotion:first-child {
+  margin-left: 0px;
+}
+
+.activeTag {
+  background-position: bottom;
+}
+
+.listProm {
+  display: inline-block;
+  vertical-align: top;
+  width: 135px;
+  margin-bottom: 20px;
+  margin-right: 17px;
+  line-height: 32px;
+  padding: 0 5px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #555;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #555;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.listPromActive {
+  background-color: none;
+  background-image: linear-gradient(to right, #ff4335, #ff9800);
+}

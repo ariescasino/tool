@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, nice admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, material design, material dashboard bootstrap 5 dashboard template" />
+    <meta name="description"
+        content="Nice is powerful and clean admin dashboard template, inpired from Google's Material Design" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>
+        <%=dataPage.title%>
+    </title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-size: 100%;
+            font-family: Arial;
+        }
+    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/libs/apexcharts/dist/apexcharts.css" />
+    <link href="/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="/dist/css/style.min.css" rel="stylesheet" />
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Cute Alert -->
+    <link rel="stylesheet" href="/assets/libs/cute-alert/style.css">
+    <script src="/assets/libs/cute-alert/cute-alert.js"></script>
+    <!-- Toastr CSS -->
+    <link href="/assets/extra-libs/toastr/dist/build/toastr.min.css" rel="stylesheet" />
+    <script src="/assets/extra-libs/toastr/dist/build/toastr.min.js"></script>
+    <!-- MomentJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data-1970-2030.js"></script>
+    <!-- Daterange picker plugins css -->
+    <link href="/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <script src="/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/assets/libs/bootstrap-datepicker/dist/locales/bootstrap-datepicker.vi.min.js"" type='text/javascript'></script>
+
+    <!-- UI MODE-->
+    <!-- All Helpers -->
+    <!-- ============================================================== -->
+    <script src=" /dist/js/helpers.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Custom Function -->
+    <script src="/dist/js/custom.helpers.js"></script>
+
+    <script>
+        let isLogin = false;
+        let bearerToken = "";
+        let mainApi = "<%=dataPage.config.MAIN_API%>";
+        let mainSocket = "<%=dataPage.config.MAIN_SOCKET%>";
+    </script>
+
+    <% if (dataPage.session.user) { %>
+        <script>
+            isLogin = true;
+            bearerToken = "<%=dataPage.session.accessToken%>";
+        </script>
+        <% } %>
+            <!-- <script src="/dist/js/socket/connect.js"></script> -->
+
+            <script>
+                $(document).ready(() => {
+                    // setTimeout(() => {
+                    //     // colapse sidebar
+                    //     $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
+                    //     $("#main-wrapper").addClass("mini-sidebar");
+                    // }, 500);
+                });
+            </script>
+</head>
+
+<body>
+    <!-- Modal Change Password-->
+    <!-- Code Modal -->
+    <div id="agent-change-passworrd-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="fas fa-key"></i> <b>Thay Đổi Mật Khẩu</b>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <h5 class="card-subtitle mb-3 pb-3 border-bottom">
+                            Ghi nhớ mật khẩu trước khi thay Đổi
+                        </h5>
+                        <form class="" name="agentChangePasswordForm" method="post">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control border border-primary"
+                                    placeholder="Nhập mật khẩu cũ..." name="agentOldPassword">
+                                <label><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-lock feather-sm text-primary fill-white me-2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg><span class="border-start border-primary ps-3">Mật khẩu cũ</span></label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control border border-primary"
+                                    placeholder="Nhập mật khẩu mới..." name="agentNewPassword">
+                                <label><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-lock feather-sm text-primary fill-white me-2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg><span class="border-start border-primary ps-3">Mật khẩu mới</span></label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control border border-primary"
+                                    placeholder="Nhập lại mật khẩu mới..." name="agentConfirmPassword">
+                                <label><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-lock feather-sm text-primary fill-white me-2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg><span class="border-start border-primary ps-3">Xác nhận lại mật khẩu
+                                        mới</span></label>
+                            </div>
+
+                            <div class="form-floating mb-3" id="notifyElement"></div>
+
+                            <div class="d-md-flex align-items-center">
+                                <div class="mt-3 mt-md-0 ms-auto">
+                                    <button type="submit" class="
+                                        btn btn-primary
+                                        font-weight-medium
+                                        rounded-pill
+                                        px-4
+                                      ">
+                                        <div class="d-flex align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-send feather-sm fill-white me-2">
+                                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                            </svg>
+                                            Đổi mật khẩu
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- End Modal Change Password-->
+    <script>
+        $('form[name="agentChangePasswordForm"]').on('submit', (e) => {
+            e.preventDefault(); // Now nothing will happen
+            const notifyElement = $("#notifyElement");
+            const dailyOldPassword = $("input[name=agentOldPassword]").val();
+            const dailyPassword = $("input[name=agentNewPassword]").val();
+            const dailyPasswordConfirm = $("input[name=agentConfirmPassword]").val();
+
+            if (!dailyOldPassword ||
+                !dailyPassword ||
+                !dailyPasswordConfirm) {
+                notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                            Vui lòng điền đầy đủ thông tin.
+                        </div>`);
+                return;
+            }
+
+            if (dailyPassword !== dailyPasswordConfirm) {
+                notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                            2 mật khẩu không khớp.
+                        </div>`);
+                return;
+            }
+
+            $.ajax({
+                "url": `<%=dataPage.config.API_SERVER%>/auth/change-password`,
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                "data": {
+                    oldPassword: dailyOldPassword,
+                    newPassword: dailyPassword,
+                    newPasswordConfirm: dailyPasswordConfirm
+                }
+            }).then((response) => {
+                if (response.status) {
+                    notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                                Đổi mật khẩu thành công!
+                            </div>`);
+                    return;
+                } else {
+                    notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                                ${response.msg}
+                            </div>`);
+                    return;
+                }
+            }).catch((err) => {
+                console.log(err);
+                notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                                ${err.statusText}
+                            </div>`);
+                return;
+            });
+
+
+        })
+    </script>
+
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="tea lds-ripple" width="37" height="48" viewbox="0 0 37 48" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M27.0819 17H3.02508C1.91076 17 1.01376 17.9059 1.0485 19.0197C1.15761 22.5177 1.49703 29.7374 2.5 34C4.07125 40.6778 7.18553 44.8868 8.44856 46.3845C8.79051 46.79 9.29799 47 9.82843 47H20.0218C20.639 47 21.2193 46.7159 21.5659 46.2052C22.6765 44.5687 25.2312 40.4282 27.5 34C28.9757 29.8188 29.084 22.4043 29.0441 18.9156C29.0319 17.8436 28.1539 17 27.0819 17Z"
+                stroke="#233242" stroke-width="2"></path>
+            <path
+                d="M29 23.5C29 23.5 34.5 20.5 35.5 25.4999C36.0986 28.4926 34.2033 31.5383 32 32.8713C29.4555 34.4108 28 34 28 34"
+                stroke="#233242" stroke-width="2"></path>
+            <path id="teabag" fill="#233242" fill-rule="evenodd" clip-rule="evenodd"
+                d="M16 25V17H14V25H12C10.3431 25 9 26.3431 9 28V34C9 35.6569 10.3431 37 12 37H18C19.6569 37 21 35.6569 21 34V28C21 26.3431 19.6569 25 18 25H16ZM11 28C11 27.4477 11.4477 27 12 27H18C18.5523 27 19 27.4477 19 28V34C19 34.5523 18.5523 35 18 35H12C11.4477 35 11 34.5523 11 34V28Z">
+            </path>
+            <path id="steamL" d="M17 1C17 1 17 4.5 14 6.5C11 8.5 11 12 11 12" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" stroke="#233242"></path>
+            <path id="steamR" d="M21 6C21 6 21 8.22727 19 9.5C17 10.7727 17 13 17 13" stroke="#233242" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" class="mini-sidebar" data-sidebartype="mini-sidebar" data-sidebar-position="absolute" data-header-position="relative" data-boxed-layout="boxed">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                        <i class="ri-close-line fs-6 ri-menu-2-line"></i>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-brand">
+                        <a href="/" class="logo">
+                            <!-- Logo icon -->
+                            <b class="logo-icon">
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <img src="/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo icon -->
+                                <img src="/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            </b>
+                            <!--End Logo icon -->
+                            <!-- Logo text -->
+                            <span class="logo-text">
+                                <!-- dark Logo text -->
+                                <img src="/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo text -->
+                                <img src="/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                            </span>
+                        </a>
+                        <a class="sidebartoggler d-none d-md-block" href="javascript:void(0)"
+                            data-sidebartype="mini-sidebar">
+                            <i class="mdi mdi-toggle-switch mdi-toggle-switch-off fs-6"></i>
+                        </a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i data-feather="more-horizontal" class="feather-sm"></i>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav me-auto">
+                        <!-- <li class="nav-item d-none d-md-block">
+                            <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar">
+                                <i class="mdi mdi-menu font-24"></i>
+                            </a>
+                        </li> -->
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
+                                <div class="d-flex align-items-center">
+                                    <i data-feather="search" class="feather-sm me-1"></i>
+                                    <div class="ms-1 d-none d-sm-block">
+                                        <span>Search</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav">
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" href=""
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="/assets/images/users/2.jpg" alt="user" class="rounded-circle" width="40" />
+                                <span class="ms-1 font-weight-medium d-none d-sm-inline-block">
+                                    <% if (dataPage.session.role=="admin" ) { %>
+                                        <%=dataPage.session.user.username%>
+                                            <% } %>
+                                                <% if (dataPage.session.role=="agent" ) { %>
+                                                    <%=dataPage.session.user.name%>
+                                                        <% } %> <i data-feather="chevron-down" class="feather-sm"></i>
+                                </span>
+                            </a>
+                            <div class="
+                    dropdown-menu dropdown-menu-end
+                    user-dd
+                    animated
+                    flipInY
+                  ">
+                                <span class="with-arrow">
+                                    <span class="bg-primary"></span>
+                                </span>
+                                <div class="
+                      d-flex
+                      no-block
+                      align-items-center
+                      p-3
+                      bg-primary
+                      text-white
+                      mb-2
+                    ">
+                                    <div class="">
+                                        <img src="/assets/images/users/5.jpg" alt="user" class="rounded-circle"
+                                            width="60" />
+                                    </div>
+                                    <div class="ms-2">
+                                        <h4 class="mb-0 text-white">Marken Doe</h4>
+                                        <p class="mb-0">deo@gmail.com</p>
+                                    </div>
+                                </div>
+                                <a class="dropdown-item" href="#"><i data-feather="user"
+                                        class="feather-sm text-info me-1 ms-1"></i>
+                                    My Profile</a>
+                                <a class="dropdown-item" href="#"><i data-feather="credit-card"
+                                        class="feather-sm text-info me-1 ms-1"></i>
+                                    My Balance</a>
+                                <a class="dropdown-item" href="#"><i data-feather="mail"
+                                        class="feather-sm text-success me-1 ms-1"></i>
+                                    Inbox</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" data-bs-toggle="modal"
+                                    data-bs-target="#agent-change-passworrd-modal"><i data-feather="settings"
+                                        class="feather-sm text-warning me-1 ms-1"></i> Change Password
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/auth/logout"><i data-feather="log-out"
+                                        class="feather-sm text-danger me-1 ms-1"></i>
+                                    Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="p-2">
+                                    <a href="#" class="btn d-block w-100 btn-primary rounded-pill">View
+                                        Profile</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-small-cap">
+                            <i class="mdi mdi-dots-horizontal"></i>
+                            <span class="hide-menu">Applications</span>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-chess-queen"></i>
+                                <span class="hide-menu">Quản Lý Trò Chơi</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="/game/baccarat" class="sidebar-link">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        <span class="hide-menu">Trò Chơi Baccarat</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        <span class="hide-menu">Cập nhật...</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        <span class="hide-menu">Cập nhật...</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/bankDeposit"
+                                aria-expanded="false"><i class="fas fa-piggy-bank"></i><span class="hide-menu">Quản Lý
+                                    Ngân Hàng</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/user"
+                                aria-expanded="false"><i class="fas fa-users"></i><span class="hide-menu">Quản Lý
+                                    Người Chơi</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/agency"
+                                aria-expanded="false"><i class="fas fa-people-carry"></i><span class="hide-menu">Quản Lý
+                                    Các Đại Lý</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="fas fa-history"></i>
+                                <span class="hide-menu">Giao Dịch Nạp - Rút</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="/deposit" class="sidebar-link">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        <span class="hide-menu">Giao Dịch Nạp Tiền [BANK]</span>
+                                    </a>
+                                </li>
+                                <!-- <li class="sidebar-item">
+                                    <a href="/depositCard" class="sidebar-link">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        <span class="hide-menu">Giao Dịch Nạp Tiền [CARD]</span>
+                                    </a>
+                                </li> -->
+                                <li class="sidebar-item">
+                                    <a href="/withdraw" class="sidebar-link">
+                                        <i class="fas fa-angle-double-left"></i>
+                                        <span class="hide-menu">Giao Dịch Rút Tiền</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="fas fa-inbox"></i>
+                                <span class="hide-menu">Thông Báo - Tin Nhắn</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="/message" class="sidebar-link">
+                                        <i class="fas fa-envelope"></i>
+                                        <span class="hide-menu">Quản Lý Tin Nhắn</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="/announcement" class="sidebar-link">
+                                        <i class="far fa-flag"></i>
+                                        <span class="hide-menu">Quản Lý Thông Báo</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/promotion"
+                                aria-expanded="false">
+                                <i class="mdi mdi-gift"></i>
+                                <span class="hide-menu">Quản Lý Khuyến Mãi</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/game/bet-history"
+                                aria-expanded="false"><i class="mdi mdi-bulletin-board"></i><span class="hide-menu">Lịch
+                                    Sử Đặt
+                                    Cược</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="fas fa-cogs"></i>
+                                <span class="hide-menu">Cài đặt hệ thống</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="/setting/general" class="sidebar-link">
+                                        <i class="fas fa-globe"></i>
+                                        <span class="hide-menu">Cài đặt thông tin</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="/setting/telegram" class="sidebar-link">
+                                        <i class="fab fa-telegram"></i>
+                                        <span class="hide-menu">Cài đặt Bot Telegram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/auth/logout"
+                                aria-expanded="false">
+                                <i class="mdi mdi-directions"></i>
+                                <span class="hide-menu">Đăng xuất</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">

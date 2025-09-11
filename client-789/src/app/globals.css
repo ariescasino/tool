@@ -1,0 +1,660 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles/custome.slick.css";
+@import url("../styles/homepage.module.css");
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/fonts/HelveticaNeue.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/InterFont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  src: url("/fonts/fa-regular-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  src: url("/fonts/fa-solid-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+.font-sansif {
+  font-family: sans-serif !important;
+}
+
+.f-noto {
+  font-family: "Noto Serif JP", serif;
+}
+
+.f-bank {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+:root {
+  --font-family: "Roboto", "Helvetica Neue", sans-serif;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.ant-typography,
+.ant-btn,
+.ant-input,
+.ant-select,
+.ant-dropdown-menu,
+.ant-menu {
+  font-family: "Roboto", "Helvetica Neue", sans-serif !important;
+}
+
+.mat-dialog-container {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.announcement-content-dialog-panel {
+  min-height: 100vh; /* Fallback */
+  min-height: 100dvh; /* Dynamic viewport height */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+h2 {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Định nghĩa keyframes cho animation */
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.bg-global {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 130 94 / var(--tw-bg-opacity));
+}
+
+.text-basic {
+  --tw-bg-opacity: 1;
+  color: rgb(42 202 152 / var(--tw-text-opacity));
+}
+
+/* Áp dụng animation cho div chứa các thẻ span */
+.scrolling-text {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  gap: 10px;
+  align-items: center;
+  height: 20px;
+}
+
+.scrolling-text span {
+  animation: scrollText 30s linear infinite;
+}
+
+header {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity));
+}
+
+.website {
+  background: linear-gradient(305deg, #32a374 86%, #10825e 0) top right;
+}
+
+.information {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: #129f71;
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgb(18 159 113 / 0));
+  --tw-gradient-to: #25b687;
+}
+
+.buttonRegister {
+  margin-left: 10px;
+  color: #322e2f;
+  border: none;
+  background-image: linear-gradient(to top, #086a4a, #61f0c3);
+}
+
+.modalDangNhap > div > .ant-modal-content {
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px;
+  background: #dedede;
+  border-radius: 48px;
+}
+
+.modalDangNhap .ant-modal-close {
+  background-repeat: no-repeat;
+  top: -12px;
+  right: -12px;
+}
+
+.modalDangNhap .ant-modal-body {
+  border-radius: 48px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: linear-gradient(180deg, #000 0%, #3e3e3e 100%);
+  padding: 20px 40px;
+}
+
+.modalDangKi > div > .ant-modal-content {
+  /* background-color: transparent !important; */
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background: linear-gradient(133deg, #f6f6f6 4%, #fb9e29 52%, #f6f6f6 101%);
+}
+
+.modalDangKi .ant-modal-close-x {
+  height: 40px;
+  width: 40px;
+}
+
+.modalDangKi .ant-modal-close {
+  background-repeat: no-repeat;
+  top: -16px;
+  right: -16px;
+}
+
+.modalDangKi .ant-modal-body {
+  border-radius: 8px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background: linear-gradient(to bottom, #000, #3e3e3e 67%);
+}
+
+.mobile-modal-login .ant-modal-content {
+  background-color: #000 !important;
+  padding: 0px 0px 20px 0px !important;
+  min-height: 100vh;
+  display: block;
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/login/background.jpg") no-repeat center top;
+  background-size: cover;
+  border-radius: 0px !important;
+}
+
+.modalTrail > div > .ant-modal-content {
+  background-color: transparent !important;
+  /* background-image: url('/images/modal-images/bg-modal-register.png');
+  background-repeat: no-repeat; */
+  box-shadow: none !important;
+}
+
+.modalTrail .ant-modal-close {
+  background-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/icons/modal-close-yellow.png");
+  background-repeat: no-repeat;
+  top: -16px;
+  right: 212px;
+}
+
+.modal-mobile-site-mail .ant-modal-content {
+  height: calc(100vh - 48px);
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #000;
+}
+
+.modal-mobile-site-mail .ant-modal-body {
+  height: calc(100vh - 48px);
+}
+
+.modal-mobile-bet-record .ant-modal-content {
+  min-height: calc(100vh - 48px);
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #000;
+}
+
+.modal-mobile-bet-record .ant-modal-body {
+  min-height: calc(100vh - 48px);
+}
+
+.bgruttien {
+  background-image: linear-gradient(to top, #ff9f6c, #fec882);
+}
+
+.CollapseDisIcon > div > div > .ant-collapse-expand-icon {
+  display: none !important;
+}
+
+.CollapseDisIcon .ant-collapse-header {
+  border-bottom: 1px solid transparent;
+  border-radius: 0 !important;
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+}
+
+.refundModal > div > .ant-modal-content {
+  opacity: 1 !important;
+  background-color: transparent !important;
+}
+
+.refundModal > div {
+  opacity: 1 !important;
+}
+
+.bg-btnn {
+  background-image: linear-gradient(to top, #6cffb8, #b9fe82);
+  transition: transform 300ms ease-in-out;
+}
+
+.bg-btnn:hover .fa-chevron-up {
+  /* Khi hover, quay icon từ 0 đến 90 độ */
+  transform: rotate(180deg);
+  transition: transform 300ms ease-in-out;
+}
+
+.modalNotification .ant-modal-content {
+  padding: 0px;
+  border-radius: 20px;
+}
+
+.modalNotification .ant-modal {
+  width: 100%;
+  transform-origin: 85px 43px;
+  overflow: hidden;
+  height: -webkit-fill-available;
+}
+
+.modalNotiPage .ant-modal-content {
+  width: 100vw;
+  padding: 0px;
+}
+
+.formAgentApply
+  :where(.css-dev-only-do-not-override-1okl62o).ant-select-outlined:not(
+    .ant-select-customize-input
+  )
+  .ant-select-selector {
+  background-color: #dddce3;
+}
+
+.formAgentApply
+  :where(.css-dev-only-do-not-override-1okl62o).ant-form-vertical
+  .ant-form-item-row {
+  width: 100%;
+}
+
+.button-login {
+  width: 130px;
+  height: 35px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 17px;
+  border: none;
+  background: linear-gradient(to top, #357e9f, #6bb0c8);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.group:hover .bg-center-top {
+  background-position: center bottom !important;
+}
+
+.bg-navbar {
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #4c9bb6 13.05%,
+    #4c9bb6 50.1%,
+    #4c9bb6 86.93%,
+    #fff 100%
+  );
+}
+
+.boxICDefault {
+  width: 90px;
+  height: 90px;
+  -ms-transform: scale(0.83);
+  transform: scale(0.83);
+  cursor: pointer;
+  background-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/Lobby/sport/ic-default.png") !important;
+}
+
+.formCustom {
+  position: relative;
+  margin-bottom: 0px !important;
+}
+
+.formCustom .ant-form-item-explain-error {
+  position: absolute !important;
+  top: -30px !important;
+  right: 0px !important;
+  background: rgb(178, 0, 0);
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  height: 30px;
+  border-radius: 4px 4px 0px 0px;
+  padding: 0px 4px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.ant-input-group-addon {
+  background-color: #eeeeee !important;
+}
+
+.amount .ant-form-item-label {
+  text-align: left !important;
+}
+
+.amount {
+  margin: 0px !important;
+}
+
+.ant-form-item-control-input-content > input::placeholder {
+  color: #949494 !important;
+  font-size: 14px !important;
+}
+
+.NewNotificationModal .ant-modal-content {
+  width: 100%;
+  border-radius: 0px !important;
+  padding: 0px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+  height: 625px;
+  background-color: #ff9000;
+}
+
+.NewNotificationModal .ant-modal-close {
+  top: 0px !important;
+  right: 0px !important;
+}
+
+.modalWelcome .ant-modal-content {
+  width: 100%;
+  border-radius: 5px !important;
+  padding: 0px !important;
+  /* height: 625px; */
+}
+
+.modalWelcome .ant-modal-body {
+  height: 100%;
+}
+
+.modalWelcome .ant-modal-close {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .modalWelcome .ant-modal-content {
+    padding: 24px !important;
+  }
+
+  .modalWelcome .ant-modal-close {
+    display: block;
+  }
+}
+
+.mobile-nav-custom {
+  background: linear-gradient(to bottom, #333, #171717);
+}
+
+.bg-nav {
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/nav/bg-nav.jpg") repeat-x;
+}
+
+.layoutAccount {
+  background: #0a090b url(/images/layoutAccount.png) no-repeat center top;
+}
+
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled) {
+  background: #fff;
+}
+
+.ant-input-outlined:hover {
+  background-color: #fff;
+  border-color: transparent;
+}
+
+.ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
+  background-color: #fc8f00 !important;
+}
+.checked_login_pc
+  .ant-checkbox-checked:not(.ant-checkbox-disabled)
+  .ant-checkbox-inner {
+  background-color: #0075ff !important;
+}
+
+.marquee-custom a:hover {
+  text-decoration-line: underline;
+}
+
+.rfm-initial-child-container {
+  gap: 20px;
+}
+
+.customSwiperNavigation .swiper-button-next {
+  right: 0;
+  background: url(/images/next.svg) no-repeat center;
+  position: absolute;
+  top: 50%;
+  width: 35px;
+  height: 35px;
+  z-index: 2;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.customSwiperNavigation .swiper-button-next::after {
+  display: none;
+}
+
+.customSwiperNavigation .swiper-button-prev {
+  left: 0;
+  background: url(/images/prev.svg) no-repeat center;
+  position: absolute;
+  top: 50%;
+  width: 35px;
+  height: 35px;
+  z-index: 2;
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+}
+
+.customSwiperNavigation .swiper-button-prev::after {
+  display: none;
+}
+
+.borderIntroduceLayout {
+  width: 95%;
+  height: 100%;
+  padding: 24px;
+  color: #fff;
+  text-align: left;
+  font-family: Roboto;
+  border-radius: 10px;
+  border: solid 1px #ffaa2c;
+  background-color: #333333;
+  box-shadow:
+    5px 5px 10px #000,
+    -5px -5px 10px 0px #00000080;
+}
+
+.borderRuleLayout {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  color: #fff;
+  text-align: left;
+  font-family: Roboto;
+  border-radius: 10px;
+  border: solid 1px #ffaa2c;
+  background-color: #333333;
+  box-shadow:
+    5px 5px 10px #000,
+    -5px -5px 10px 0px #00000080;
+}
+
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+.fa-lock-alt:before {
+  content: "\f30d";
+}
+
+.fa-key:before {
+  content: "\f084";
+}
+
+.fa-mobile-alt:before {
+  content: "\f3cd";
+}
+
+.fa-comment-dots:before {
+  content: "\f4ad";
+}
+
+.fa-chevron-right:before {
+  content: "\f054";
+}
+
+.fa-reply:before {
+  content: "\f3e5";
+}
+
+.fa-info-circle:before {
+  content: "\f05a";
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.inputHolderWhite::placeholder {
+  color: white !important;
+}
+
+.ant-form-item-required::before {
+  display: none !important;
+}
+
+.styleLabel .ant-form-item-required {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Ẩn scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+/* Tùy chỉnh scrollbar */
+.scrollbar-visible::-webkit-scrollbar {
+  width: 4px;
+  /* Kích thước nhỏ */
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: rgba(136, 136, 136, 0.8);
+  /* Màu thanh kéo */
+  border-radius: 4px;
+}
+
+.scrollbar-visible::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Nền track */
+}
+
+.info {
+  color: #31708f;
+  background: #d9edf7;
+  border: 1px solid #bce8f1;
+}
+
+.warning {
+  color: #8a6d3b;
+  background: #fcf8e3;
+  border: 1px solid #faebcc;
+}
+.ant-modal-root .ant-modal-wrap {
+  z-index: 10000;
+}
+.ant-notification {
+  z-index: 10025 !important;
+}

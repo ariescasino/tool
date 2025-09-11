@@ -1,0 +1,141 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" href="/mobile/nato888/css/login.css?v=1242333463">
+
+    <div class="loadding">
+        <div class="loadding-icon">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-forgetPass" style="display:none;">
+        <div class="forgetPass-container">
+            <div class="head">
+                <h2>Quên mật khẩu</h2>
+                <i class="fa-solid fa-xmark" onclick="onForgotPassword(false)"></i>
+            </div>
+            <div class="body">
+                <div class="top-link">
+                    <a href="https://tawk.to/chat/63ec973b47425128791369c3/1gpa2tgo6">
+                        <img src="https://nani88.com/web/Images/forget-pass.png" alt="">
+                        <h2>Liên hệ CSKH</h2>
+                    </a>
+                </div>
+                <div class="bot-content">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <h3>Liên hệ chăm sóc khách hàng nếu bạn quên mật khẩu</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <img class=" lazyloaded" data-src="<%=dataPage.session.siteConfig.site_logo;%>" alt=""
+            src="<%=dataPage.session.siteConfig.site_logo;%>">
+
+        <div class="container">
+            <div class="container-inner">
+                <div class="top-login" style="border: unset">
+                    <h2 style="padding: 10px 0">Đăng nhập</h2>
+                    <span>
+                        <a href="/"></a>
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </div>
+                <div class="content">
+                    <form id="customform" class="customform" method="POST" action="/auth/login">
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="">Tên đăng nhập</label>
+                            </div>
+                            <div class="form-input">
+                                <input id="customform_UserName" name="username" type="text"
+                                    placeholder="Vui lòng nhập tài khoản" required="">
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-label">
+                                <label for="">Mật khẩu</label>
+                            </div>
+                            <div class="form-input">
+                                <input type="password" id="customform_Password" name="password"
+                                    placeholder="Vui lòng nhập mật khẩu" required="">
+
+                            </div>
+                        </div>
+                        <div class="form-login">
+                            <button type="submit">Đăng nhập</button>
+                        </div>
+                        <div class="form-action">
+                            <a style="font-size: 12px" href="/auth/register">Đăng ký</a>
+                            <a style="font-size: 13px" class="forget-pass"
+                                href="javascript:void(onForgotPassword(true))">Quên mật
+                                khẩu</a>
+                            <a style="font-size: 13px" class="forget-pass"
+                                href="https://tawk.to/chat/63ec973b47425128791369c3/1gpa2tgo6">Liên hệ khách hàng</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $("form[id=customform]").on('submit', (e) => {
+            e.preventDefault();
+            try {
+                const username = $('input[name=username]').val();
+                const password = $('input[name=password]').val();
+                if (!username || !password) {
+                    alert('Vui lòng nhập tài khoản và mật khẩu!');
+                    return;
+                }
+                $(".loadding").show();
+
+                $.ajax({
+                    "url": "/auth/login",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "data": JSON.stringify({
+                        "username": username,
+                        "password": password
+                    }),
+                }).done(function (response) {
+                    if (response.status) {
+                        console.log(response);
+                        setTimeout(() => {
+                            window.location = "/";
+                        }, 200);
+                    } else {
+                        $(".loadding").hide();
+                        alert(response.msg);
+                    }
+                });
+            } catch (e) {
+                console.log(e);
+                alert('Có lỗi xảy ra, vui lòng thử lại!');
+            }
+        });
+
+        const showhidePassword = (element) => {
+            const passwordInput = $('input[id=' + element + ']');
+            const currentType = passwordInput.attr("type");
+            if (currentType == "password") {
+                passwordInput.attr("type", "text");
+            } else if (currentType == "text") {
+                passwordInput.attr("type", "password");
+            }
+        }
+
+        const onForgotPassword = (status) => {
+            (status) ? $(".popup-forgetPass").show() : $(".popup-forgetPass").hide();
+        }
+    </script>
+
+    <%- include('../../includes/footer') %>

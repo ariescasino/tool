@@ -1,0 +1,493 @@
+<%- include('../../includes/header') %>
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                        <div class="ms-auto">
+                            <div class="dl">
+                                <button type="button" class="btn btn-info align-items-center" data-bs-toggle="modal"
+                                    data-bs-target="#modal-create-promotion">
+                                    <i class="fa fa-plus"></i> Tạo mới
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <form action="" method="get" class="form-body row">
+                                <div class="col-lg-10 row">
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Tiêu đề</span>
+                                            <input type="text" class="form-control" name="title"
+                                                placeholder="Nhập một đoạn tiêu đề..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Nội dung</span>
+                                            <input type="text" class="form-control" name="content"
+                                                placeholder="Nhập một đoạn nội dung..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Thumbnail</span>
+                                            <input type="text" class="form-control" name="thumbnail"
+                                                placeholder="Nhập link thumbnail..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Trạng thái đăng ký</span>
+                                            <select class="form-control form-select" name="isRegister" tabindex="1">
+                                                <option value="true">Cho phép đăng ký</option>
+                                                <option value="false">Không cho phép</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-info align-items-center">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Tổng: <%=dataApi.total%>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>#ID</th>
+                                        <th class="text-center">Tiêu Đề</th>
+                                        <th class="text-center">Thumbnail</th>
+                                        <th class="text-center">Nội Dung</th>
+                                        <th class="text-center">Hiển Thị</th>
+                                        <th class="text-center">Đăng Ký</th>
+                                        <th class="text-center">Ngày Tạo</th>
+                                        <th class="text-center">Registered</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(dataApi.dataExport.length> 0) { %>
+
+                                        <% dataApi.dataExport.forEach((data)=> { %>
+                                            <tr>
+                                                <td class="text-center">
+                                                    #<%=data.id%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <b>
+                                                        <%=data.title%>
+                                                    </b>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img src="<%=data.thumbnail%>" style="width:126px;" />
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" class="btn btn-primary" onclick="showContentPromotion('<%=data.id%>')">Show</button>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=(data.status) ? 'Hiển thị' : 'Bị ẩn' %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%=(data.isRegister) ? 'Cho phép' : 'Không cho phép' %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <%= dataPage.helpers.moment(data.createdAt).format("H:m DD/MM/YYYY")
+                                                        %>
+                                                </td>
+                                                <td class="text-center">
+                                                    <b>
+                                                        <%=data.promotionRegisterInfo.length%>
+                                                    </b>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button type="button" class="btn btn-primary"><b><i
+                                                                class="fa fa-pencil color-dark"></i></b> Sửa</button>
+                                                    <button type="button" class="btn btn-info" onclick="showUserRegistered('<%=data.id%>', '<%=data.title%>')"><b><i
+                                                                class="fa fa-users color-dark"></i></b> Users</button>
+                                                    <button onclick="deleteMessageConfirm('<%=data.id%>')" type="button"
+                                                        class="btn waves-effect waves-light btn-danger"><span
+                                                            class="btn-icon-left">
+                                                            <b><i class="fa fa-trash color-dark"></i></b>
+                                                        </span><b>Xóa</b>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bootstrap-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center" id="phantrangUser"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+
+
+    <!-- Code Modal -->
+    <div id="modal-create-promotion" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="fas fa-gift"></i> <b>Tạo khuyến mãi mới</b>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        Vui lòng kiểm tra khuyến mãi sau khi tạo!
+                    </div>
+                </div>
+
+                <div class="row container">
+                    <div class="col-md-12">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Tiêu đề</span>
+                            <input type="text" class="form-control" id="promotion-title"
+                                placeholder="Tiêu đề của khuyễn mãi..." aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Ảnh thumbnail</span>
+                            <input type="text" class="form-control" id="promotion-thumbnail"
+                                placeholder="Vui lòng nhập Url ảnh Thumbnail định dạng đuôi .jpg, .png..."
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <br>
+                        <div class="text" style="font-weight: 700;">Nội dung khuyến mãi!</div><br>
+                        <textarea id="promotion-content" placeholder="Nội dung khuyến mãi..."></textarea>
+                    </div>
+
+                    <div class="col-md-12 text-center" style="margin-top: 20px;margin-bottom: 20px;">
+                        <button class="btn btn-success" onclick="createPromotion()"> Tạo khuyến mãi</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
+    <!-- This Page JS -->
+    <script src="/assets/libs/tinymce/tinymce.min.js"></script>
+    <script>
+        $(function () {
+            tinymce.init({
+                selector: "textarea#promotion-content",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor",
+                ],
+                toolbar:
+                    "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(() => {
+            //getListUserName();
+        });
+
+        const phantrang = Pagination('<%=dataApi.page%>', '<%=dataApi.total%>', '<%=dataApi.kmess%>');
+
+        let phantrangBody = '';
+        phantrang.forEach((page) => {
+            $("#phantrangUser").html(phantrangBody);
+            let active = ('<%=dataApi.page%>' == page) ? "active" : "";
+            const urlToPage = (page !== "...") ? `/promotion?page=${page}&limit=<%=dataApi.kmess%>` : `javascript:void(0)`;
+            phantrangBody += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="${urlToPage}"><b>${page}</b></a>
+                </li>
+            `;
+            $("#phantrangUser").html(phantrangBody);
+        });
+
+        const createPromotion = () => {
+            const title = $('#promotion-title').val();
+            const thumbnail = $('#promotion-thumbnail').val();
+            const content = tinyMCE.activeEditor.getContent();;
+
+            if (!title || !thumbnail || !content) {
+                toastr.error(
+                    "Vui lòng điền đầy đủ thông tin!",
+                    "Error!"
+                );
+                return;
+            }
+
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn đã kiểm tra kĩ thông tin rồi chứ?",
+                confirmText: "Tạo",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $('#modal-create-promotion').modal('toggle');
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/promotion/create',
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            title,
+                            thumbnail,
+                            content,
+                            isRegister: true
+                        })
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Tạo khuyến mãi thành công.",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+
+        }
+
+
+        const deleteMessageConfirm = (id) => {
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có muốn xóa nó không?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/promotion/delete/' + id,
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 700);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+        }
+
+        const showContentPromotion = (id) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/promotion/promotion-info/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#elementModal').html(`
+                    <div class="modal fade" id="promotion-content-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center">
+                                    <h4 class="modal-title" id="exampleModalLabel1">
+                                        ${response.data.title}
+                                    </h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ${response.data.content}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light-danger text-danger font-weight-medium" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+
+                    //$('#update-username').val(response.data.userInfo.username);
+
+                    $('#promotion-content-modal').modal('toggle');
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const showUserRegistered = (id, title) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/promotion/promotion-registered/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#elementModal').html(`
+                    <div class="modal fade" id="promotion-registered-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center">
+                                    <h4 class="modal-title" id="exampleModalLabel1">
+                                        Thành viên tham gia: "${title}"
+                                    </h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-4">
+                                    <div class="text-center" style="font-size: 15px;">
+                                        Số lượng tham gia: <b>${response.data.length}</b>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <table class="table customize-table table-bordered mb-0 v-middle">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col" class="text-nowrap">#UID</th>
+                                                <th scope="col" class="text-nowrap">Username</th>
+                                                <th scope="col" class="text-nowrap">Họ Và Tên</th>
+                                                <th scope="col" class="text-nowrap">Số Dư</th>
+                                                <th scope="col" class="text-nowrap">Cấp Bậc</th>
+                                                <th scope="col" class="text-nowrap">Thời Gian Tham Gia</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="promotion-registered-table">
+                                            <tr>
+                                                <td class="text-nowrap">1</td>
+                                                <td class="text-nowrap">Table cell</td>
+                                                <td class="text-nowrap">Table cell</td>
+                                                <td class="text-nowrap">Table cell</td>
+                                                <td class="text-nowrap">Table cell</td>
+                                                <td class="text-nowrap">Table cell</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light-danger text-danger font-weight-medium" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `);
+
+                    let bodyTable = '';
+                    response.data.forEach((data) => {   
+                        bodyTable += `<tr>`;
+                        bodyTable += `<td class="text-nowrap">#${data.userInfo.id}</td>`;
+                        bodyTable += `<td class="text-nowrap">${data.userInfo.username}</td>`;
+                        bodyTable += `<td class="text-nowrap">${data.userInfo.name}`;
+                        bodyTable += `<td class="text-nowrap">${numberWithCommas(data.userInfo.coin)}`;
+                        bodyTable += `<td class="text-nowrap">${(data.userInfo.role == "user") ? "Người chơi": "Đại Lý"}`;
+                        bodyTable += `<td class="text-nowrap">${moment.utc(data.userInfo.createdAt).local().format("DD/MM/YYYY HH:MM:ss")}`;
+                    });
+
+                    $("#promotion-registered-table").html(bodyTable);
+
+                    $('#promotion-registered-modal').modal('toggle');
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+    </script>
+    <%- include('../../includes/footer') %>

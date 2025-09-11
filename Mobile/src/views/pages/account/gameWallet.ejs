@@ -1,0 +1,120 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-AppContainer.96e0b4f3.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenter.d6d5563f.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenterWallets.224dfbc8.css">
+
+    <div id="root">
+        <div class="app account mywallet logined">
+            <div style="display: none;"></div>
+            <div class="app-body">
+                <div class="m-member-center-main">
+                    <div class="m-member-center-wallets">
+                        <div class="mc-navbar-wrapper">
+                            <div class="navbar ">
+                                <div class="left"><i onclick="window.location='/account'"
+                                        class="fa fa-chevron-left"></i>
+                                </div>
+                                <div class="title">Ví tiền của tôi</div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="nav-place" style="min-height: 45px;"></div>
+                        </div>
+                        <div class="content-block">
+                            <div class="top-info">
+                                <div class="label">Tổng số tiền</div>
+                                <div class="main-wallet">
+                                    <span style="margin-left: 26px;" class="value" id="totalWalletBalance">0</span>
+                                    <i style="margin-left: 10px;" id="btn-refresh" class="fa fa-refresh"
+                                        onclick="getSubnames()"></i>
+                                </div>
+                            </div>
+                            <div class="sub-wallets" id="fund-list">
+
+                                <div class="data-box">
+                                    <div class="name">AE_ES2</div>
+                                    <div class="balance">0.00</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(() => {
+            getSubnames();
+        });
+
+        const getSubnames = () => {
+            const fundListElement = $('#fund-list');
+            fundListElement.html(``);
+            const totalWalletBalance = $('#totalWalletBalance');
+            totalWalletBalance.html(`0`);
+            $('#btn-refresh').addClass('fa-spin');
+            setTimeout(() => {
+                $('#btn-refresh').removeClass('fa-spin');
+            }, 1000);
+
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/game/subnames",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    const ListSubname = response.data;
+                    for (const item of ListSubname) {
+                        fundListElement.append(`
+                            <div class="data-box">
+                                <div class="name" id="wallet-${item.toUpperCase()}">${item.toUpperCase()}</div>
+                                <div class="balance" id="balance-${item.toUpperCase()}">
+                                    <i class="fa fa-spinner fa-spin"></i>
+                                </div>
+                            </div>
+                        `);
+                        // check balance 
+                        setTimeout(() => {
+                            getWallet(item.toUpperCase());
+                        }, 800);
+                    }
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+
+        const getWallet = (gameID) => {
+            const totalWalletBalance = $('#totalWalletBalance');
+            //totalWalletBalance.html(`0.00`);
+            $.ajax({
+                "url": `<%=dataPage.config.MAIN_API%>/api/game/wallets/${gameID.toUpperCase()}`,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    $(`#balance-${gameID}`).html(response.balance);
+                    if (Number(response.balance) > 0) {
+                        const currentTotalWalletBalance = Number(totalWalletBalance.html());
+                        const addWalletBalance = currentTotalWalletBalance + Number(response.balance);
+                        totalWalletBalance.html(addWalletBalance);
+                    }
+                } else {
+                    //alert(response.msg);
+                    $(`#balance-${gameID}`).html(`0`);
+                }
+            });
+        }
+    </script>
+    <%- include('../../includes/footer') %>

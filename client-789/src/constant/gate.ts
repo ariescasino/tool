@@ -1,0 +1,1 @@
+export const API_GATE = "789bet";

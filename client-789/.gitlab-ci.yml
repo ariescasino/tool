@@ -1,0 +1,105 @@
+image: docker/compose:latest
+
+services:
+  - name: docker:dind
+    alias: docker
+    command: ["--tls=false"]
+
+variables:
+  DEV_IMAGE_APP_TAG: "$CI_REGISTRY_IMAGE:dev"
+  PROD_IMAGE_APP_TAG: "$CI_REGISTRY_IMAGE:prod"
+  DOCKER_DRIVER: overlay2
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+  #GIT_SUBMODULE_STRATEGY: recursive
+
+.docker_job:
+  before_script:
+    - docker version
+    - docker-compose --version
+    - echo $CI_REGISTRY_PASSWORD > ~/my_password.txt
+    - cat ~/my_password.txt | docker login --username $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+    - apk update && apk add openssh-client bash && apk add --no-cache curl
+    - eval $(ssh-agent -s)
+    - bash -c 'ssh-add <(echo "$PROD_SSH_KEY")'
+  after_script:
+    - >
+      ssh -o StrictHostKeyChecking=no $PROD_USER@$PROD_IP
+      "docker image prune -f;docker volume prune -f;docker network prune -f;docker container prune -f;"
+.notify_job:
+  after_script:
+    - AUTHOR_NAME=$(echo $CI_COMMIT_AUTHOR | sed 's/ <.*//');
+    - >
+      if [ $CI_PIPELINE_SOURCE == 'merge_request_event' ]; then
+        curl -X POST "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_DEV_CHAT_ID" \
+        -d "parse_mode=markdown" \
+        -d "text=#mr \[$CI_MERGE_REQUEST_TARGET_BRANCH_NAME] 🔵 $CI_PROJECT_NAME Merge Request:* $AUTHOR_NAME* - Status: $CI_JOB_STATUS - Commit Message:_ $CI_COMMIT_MESSAGE _ "
+      elif [ $CI_JOB_STATUS == 'success' ]; then
+        curl -X POST "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_DEV_CHAT_ID" \
+        -d "parse_mode=markdown" \
+        -d "text=#build \[$CI_COMMIT_BRANCH] 🟢 $CI_PROJECT_NAME Deployment:* $AUTHOR_NAME* - Commit Message:_ $CI_COMMIT_MESSAGE _ "  
+      else
+        curl -X POST "https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage" \
+        -d "chat_id=$TELEGRAM_DEV_CHAT_ID" \
+        -d "parse_mode=markdown" \
+        -d "text=\[$CI_COMMIT_BRANCH] 🔴 $CI_PROJECT_NAME Deployment:* $AUTHOR_NAME* - Commit Message:_ $CI_COMMIT_MESSAGE _ "  
+      fi
+
+stages:
+  - deploy-prod
+  - check-mr-prod
+  - deploy-cloudflare
+deploy-prod:
+  stage: deploy-prod
+  extends:
+    - .docker_job
+    - .notify_job
+  script:
+    - echo "IMAGE_APP_TAG=$PROD_IMAGE_APP_TAG" >> .env
+    - docker-compose -H "ssh://$PROD_USER@$PROD_IP" -f docker-compose.prod.yml -p dev_casino_789bet build
+    #- docker-compose -H "ssh://$PROD_USER@$PROD_IP" -f docker-compose.prod.yml -p dev_casino_789bet down --remove-orphans
+    - docker-compose -H "ssh://$PROD_USER@$PROD_IP" -f docker-compose.prod.yml -p dev_casino_789bet up -d
+  only:
+    - main
+  retry:
+    max: 2
+    when:
+      - runner_system_failure
+      - stuck_or_timeout_failure
+      - scheduler_failure
+      - api_failure
+      - job_execution_timeout
+
+check-mr-prod:
+  stage: check-mr-prod
+  extends:
+    - .docker_job
+    - .notify_job
+  script:
+    - docker-compose -f docker-compose.prod.yml build
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+      when: manual
+  retry:
+    max: 2
+    when:
+      - runner_system_failure
+      - stuck_or_timeout_failure
+      - scheduler_failure
+      - api_failure
+      - job_execution_timeout
+
+deploy-cloudflare:
+  stage: deploy-cloudflare
+  image: node:latest
+  variables:
+    CLOUDFLARE_API_TOKEN: "wldAY0QOtFU-GNGK2x4CWU-s5aR2WpAfD41y_kBb"
+    CLOUDFLARE_ACCOUNT_ID: "3c3f44f26cd193308dffe7b9c269e70e"
+  script:
+    - yarn add global wrangler
+    - yarn deploy
+  only:
+    - main
+  when: manual

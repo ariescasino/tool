@@ -1,0 +1,78 @@
+.modalTrail .ant-modal-content {
+  background: transparent !important;
+}
+
+.formTrail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  height: 50px;
+  color: #1a1a1a;
+  line-height: 50px;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.logo {
+  position: absolute;
+  top: 66px;
+}
+
+.form {
+  width: 320px;
+  position: absolute;
+  top: 140px;
+}
+
+.input {
+  width: 320px;
+  height: 40px;
+  margin-bottom: 9px;
+  color: #5e4a49;
+  font-size: 14px;
+  line-height: 40px;
+  background: #fff no-repeat 8px center;
+  border: none;
+  border-radius: 3px;
+}
+
+.buttonSubmit {
+  width: 320px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+ font-weight: 500;
+  background: #e4004f;
+  border: none;
+}
+
+.icGame {
+  background-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/modal-images/arowsw.png");
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icGame:hover {
+  background-position: bottom center;
+}
+
+.hc {
+  display: flex;
+  flex-direction: column;
+}
+
+.hcTitle {
+  color: #fff;
+}

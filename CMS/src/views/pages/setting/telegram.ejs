@@ -1,0 +1,652 @@
+<%- include('../../includes/header') %>
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Trạng Thái - Bật/Tắt Bot</label>
+                            <div class="col-9">
+                                <select id="botStatus" class="form-select">
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                <button id="btn-update-botStatus" type="button"
+                                    class="btn btn-info  px-4 waves-effect waves-light">
+                                    Cập nhật
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Mã Telegram Token</label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="botToken"
+                                    placeholder="Dán Token Telegram Bot Vào Đây...">
+                            </div>
+                            <div class="col-3">
+                                <button id="btn-update-botToken" type="button"
+                                    class="btn btn-info  px-4 waves-effect waves-light">
+                                    Cập nhật
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Chat ID Group Thống Báo Nạp Thẻ</label>
+                            <div class="col-8">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="payment-chatid-card"
+                                        placeholder="Dán ID Vào Đây...">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <div class="text-end">
+                                        <button id="btn-update-chatId-card" type="button"
+                                            class="btn btn-info  px-4 waves-effect waves-light">
+                                            Cập nhật
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h6 class="card-subtitle mb-3">
+                                Sử dụng <mark style="cursor: pointer;" data-bs-toggle="modal"
+                                    data-bs-target="#botTele-modal-hashtag-content-card"><code>HashTags</code></mark> để
+                                chèn
+                                thêm nhiều
+                                thông
+                                tin hơn.
+                            </h6>
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <textarea id="payment-message-card" class="form-control" rows="22"
+                                        placeholder="Nhập Nội Dung..."></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-end">
+                                    <button id="btn-update-content-card" type="button"
+                                        class="btn btn-info  px-4 waves-effect waves-light">
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Chat ID Group Thống Báo Nạp Ngân Hàng/Ví Điện
+                                Tử</label>
+                            <div class="col-8">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="payment-chatid-bank"
+                                        placeholder="Dán ID Vào Đây...">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <div class="text-end">
+                                        <button id="btn-update-chatId-bank" type="button"
+                                            class="btn btn-info  px-4 waves-effect waves-light">
+                                            Cập nhật
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h6 class="card-subtitle mb-3">
+                                Sử dụng <mark style="cursor: pointer;" data-bs-toggle="modal"
+                                    data-bs-target="#botTele-modal-hashtag-content-bank"><code>HashTags</code></mark> để
+                                chèn
+                                thêm nhiều
+                                thông
+                                tin hơn.
+                            </h6>
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <textarea id="payment-message-bank" class="form-control" rows="22"
+                                        placeholder="Nhập Nội Dung..."></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-end">
+                                    <button id="btn-update-content-bank" type="button"
+                                        class="btn btn-info  px-4 waves-effect waves-light">
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Chat ID Group Thống Báo Rút Tiền</label>
+                            <div class="col-8">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="payment-chatid-withdraw"
+                                        placeholder="Dán ID Vào Đây...">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <div class="text-end">
+                                        <button id="btn-update-chatId-withdraw" type="button"
+                                            class="btn btn-info  px-4 waves-effect waves-light">
+                                            Cập nhật
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h6 class="card-subtitle mb-3">
+                                Sử dụng <mark style="cursor: pointer;" data-bs-toggle="modal"
+                                    data-bs-target="#botTele-modal-hashtag-content-card"><code>HashTags</code></mark> để
+                                chèn
+                                thêm nhiều
+                                thông
+                                tin hơn.
+                            </h6>
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <textarea id="payment-message-withdraw" class="form-control" rows="22"
+                                        placeholder="Nhập Nội Dung..."></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-end">
+                                    <button id="btn-update-content-withdraw" type="button"
+                                        class="btn btn-info  px-4 waves-effect waves-light">
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Code Modal -->
+            <div id="botTele-modal-hashtag-content-card" class="modal fade" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                <i class="fas fa-tags"></i> <b>HashTags Nội Dung Tin Nhắn</b>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div class="text-center">
+                                Sử dụng <code>{{HASHTAG}}</code> để chèn hashtag.
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table customize-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap">HashTag</th>
+                                        <th scope="col" class="text-nowrap">Chức năng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{time}}</code></td>
+                                        <td class="text-nowrap">Thời gian thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{username}}</code></td>
+                                        <td class="text-nowrap">Lấy ra tên username người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{name}}</code></td>
+                                        <td class="text-nowrap">Lấy ra tên người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{phone}}</code></td>
+                                        <td class="text-nowrap">Lấy ra số điện thoại người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{email}}</code></td>
+                                        <td class="text-nowrap">Lấy ra Email người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{amount}}</code></td>
+                                        <td class="text-nowrap">Lấy ra số tiền thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{transId}}</code></td>
+                                        <td class="text-nowrap">Lấy ra mã giao dịch thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{network}}</code></td>
+                                        <td class="text-nowrap">Lấy ra nhà mạng thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{pin}}</code></td>
+                                        <td class="text-nowrap">Lấy ra số thẻ thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{seri}}</code></td>
+                                        <td class="text-nowrap">Lấy ra số seri thực hiện</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
+            <!-- Code Modal -->
+            <div id="botTele-modal-hashtag-content-bank" class="modal fade" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                <i class="fas fa-tags"></i> <b>HashTags Nội Dung Tin Nhắn</b>
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div class="text-center">
+                                Sử dụng <code>{{HASHTAG}}</code> để chèn hashtag.
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table customize-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-nowrap">HashTag</th>
+                                        <th scope="col" class="text-nowrap">Chức năng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{time}}</code></td>
+                                        <td class="text-nowrap">Thời gian thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{username}}</code></td>
+                                        <td class="text-nowrap">Lấy ra tên username người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{name}}</code></td>
+                                        <td class="text-nowrap">Lấy ra tên người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{phone}}</code></td>
+                                        <td class="text-nowrap">Lấy ra số điện thoại người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{email}}</code></td>
+                                        <td class="text-nowrap">Lấy ra Email người thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{amount}}</code></td>
+                                        <td class="text-nowrap">Lấy ra số tiền thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{transId}}</code></td>
+                                        <td class="text-nowrap">Lấy ra mã giao dịch thực hiện</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{chargeTypeCode}}</code></td>
+                                        <td class="text-nowrap">Lấy ra tên ngân hàng hoặc ví điện tử (VCB, ACB, ...)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{chargeTypeProvide}}</code></td>
+                                        <td class="text-nowrap">Lấy ra kiểu thanh toán (Bank/Momo/...)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-nowrap"><code>{{chargeTypeProvideVi}}</code></td>
+                                        <td class="text-nowrap">Lấy ra kiểu thanh toán bằng tiếng việt (Ngân Hàng/Ví
+                                            điện tử)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
+
+            <script>
+                $(document).ready(() => getConfig());
+
+                const getConfig = () => {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/setting/telegram',
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        if (response.status) {
+                            // toastr.success(
+                            //     "Thành công.",
+                            //     "Success!"
+                            // );
+                            if (void 0 !== response.data.bot) {
+                                if (response.data.bot.status) {
+                                    $('select[id=botStatus]').html(`
+                                        <option value="true">Bật Thông Báo</option>
+                                        <option value="false">Tắt Thông Báo</option>
+                                    `);
+                                } else {
+                                    $('select[id=botStatus]').html(`
+                                        <option value="false">Tắt Thông Báo</option>
+                                        <option value="true">Bật Thông Báo</option>
+                                    `);
+                                }
+
+                                $('input[id=botToken]').val(response.data.bot.token);
+                            }
+
+                            if (void 0 !== response.data.chatGroup) {
+                                $('input[id=payment-chatid-card]').val(response.data.chatGroup.paymentCard);
+                                $('input[id=payment-chatid-bank]').val(response.data.chatGroup.paymentBank);
+                                $('input[id=payment-chatid-withdraw]').val(response.data.chatGroup.paymentWithdraw);
+                            }
+
+                            if (void 0 !== response.data.message) {
+                                $('textarea[id=payment-message-card]').val(response.data.message.paymentCard);
+                                $('textarea[id=payment-message-bank]').val(response.data.message.paymentBank);
+                                $('textarea[id=payment-message-withdraw]').val(response.data.message.paymentWithdraw);
+                            }
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+                }
+
+                $('button[id=btn-update-botStatus]').on('click', () => {
+                    const currentValue = $('select[id=botStatus]').val();
+                    $('button[id=btn-update-botStatus]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            botStatus: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-botStatus]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-botToken]').on('click', () => {
+                    const currentValue = $('input[id=botToken]').val();
+                    $('button[id=btn-update-botToken]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            botToken: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-botToken]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-chatId-card]').on('click', () => {
+                    const currentValue = $('input[id=payment-chatid-card]').val();
+                    $('button[id=btn-update-chatId-card]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            paymentCard: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-chatId-card]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-chatId-bank]').on('click', () => {
+                    const currentValue = $('input[id=payment-chatid-bank]').val();
+                    $('button[id=btn-update-chatId-bank]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            paymentBank: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-chatId-bank]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-chatId-withdraw]').on('click', () => {
+                    const currentValue = $('input[id=payment-chatid-withdraw]').val();
+                    $('button[id=btn-update-chatId-withdraw]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            paymentWithdraw: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-chatId-withdraw]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-content-card]').on('click', () => {
+                    const currentValue = $('textarea[id=payment-message-card]').val();
+                    $('button[id=btn-update-content-card]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            paymentCardContent: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-content-card]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhậthành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-content-bank]').on('click', () => {
+                    const currentValue = $('textarea[id=payment-message-bank]').val();
+                    $('button[id=btn-update-content-bank]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            paymentBankContent: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-content-bank]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-content-withdraw]').on('click', () => {
+                    const currentValue = $('textarea[id=payment-message-withdraw]').val();
+                    $('button[id=btn-update-content-withdraw]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/telegram",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            paymentWithdrawContent: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-content-withdraw]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+            </script>
+            <%- include('../../includes/footer') %>

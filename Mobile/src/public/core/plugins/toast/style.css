@@ -1,0 +1,75 @@
+.notifications {
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+}
+
+.toster {
+    position: relative;
+    color: aliceblue;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: effect 0.3s ease 1 forwards;
+    margin-bottom: 1rem;
+}
+
+.success {
+    --borderColor: #0abf3055;
+    background-image: linear-gradient(to right, #0abf3055, #22242f 30%);
+}
+
+.error {
+    --borderColor: #f24d4c;
+    background-image: linear-gradient(to right, #f24d4c55, #22242F 30%);
+    ;
+}
+
+.warning {
+    --borderColor: #e9bd0c;
+    background-image: linear-gradient(to right, #e9bd0c55, #22242F 30%);
+}
+
+.info {
+    --borderColor: #3498db;
+    background-image: linear-gradient(to right, #3498db55, #22242F 30%);
+}
+
+
+@keyframes effect {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
+.toster::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background-color: var(--borderColor);
+    animation: tiumeOut 5s linear 1 forwards;
+    box-shadow: 0 0 10px var(--borderColor);
+}
+
+@keyframes tiumeOut {
+    to {
+        width: 0;
+    }
+}
+
+.icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.tosterHeading {
+    margin-right: 1.3rem;
+}

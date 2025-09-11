@@ -1,0 +1,38 @@
+.itemInfo {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+  line-height: 2.5em;
+}
+@media only screen and (max-width: 600px) {
+  .itemInfo {
+    border-bottom: 1px solid #0000001a;
+    line-height: 2.5em;
+  }
+}
+
+.modalDetail{
+  :global{
+    .ant-modal-content{
+      padding: 0 !important;
+    }
+    .alert{
+      color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    }
+    .btn_default{
+      color: #333;;
+      background: #fff;
+      border-color: #ccc;
+    }
+    .btn_default:hover{
+      color: #333 !important;
+      background: #e6e6e6 !important;
+      outline: none !important;
+      border: none !important;;
+    }
+  }
+}

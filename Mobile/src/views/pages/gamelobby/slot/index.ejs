@@ -1,0 +1,66 @@
+<%- include('../../../includes/header') %>
+
+    <script>
+        let DEFAULT_GAME_PRODUCTION = "<%=location;%>";
+    </script>
+
+
+    <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+        <app-sample-layout _nghost-serverapp-c91="">
+            <app-normal-layout _nghost-serverapp-c151="">
+
+                <!-- Header Layout -->
+                <%- include('../../../includes/header_layout') %>
+                    <!-- END Header Layout -->
+
+                    <!-- App Game Lobby-->
+
+                    <app-game-lobby _nghost-serverapp-c168="">
+                        <div _ngcontent-serverapp-c168="" class="wrapper">
+                            <a _ngcontent-serverapp-c184="" target="_blank" class="bgImg ng-star-inserted" href="https://9.789b40.com/">
+                                <img _ngcontent-serverapp-c184="" alt="" src="https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/4880b3cd5e/assets/images/home/bg_img.png"> </a>
+
+
+                            <!-- Swipper Category -->
+                            <%- include('../../../includes/game_lobby/game_lobby_cateygory') %>
+                                <!-- End Swipper Category-->                    
+
+
+                                <!-- Search Form -->
+                                <%- include('../../../includes/game_lobby/game_lobby_search') %>
+                                    <!-- End Search Form -->
+
+                                    <div _ngcontent-serverapp-c172="" class="game-lobby-content flex flex-grow">
+                                        <!-- SideBar Product -->
+                                        <%- include('../../../includes/game_lobby/slot/sidebar_right_product') %>
+                                            <!-- End SideBar Product -->
+
+                                            <!-- Content Game List -->
+                                            <%- include('../../../includes/game_lobby/slot/content_game_list') %>
+                                                <!-- End Content Game List -->
+                                    </div>
+                        </div>
+                    </app-game-lobby>
+
+                    <!-- End App Game Lobby -->
+
+                    <!-- Menu Bar -->
+                    <%- include('../../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+            </app-normal-layout>
+
+
+            <!-- SideBar Menu -->
+            <%- include('../../../includes/sidebar_menu') %>
+                <!-- END SideBar Menu -->
+
+        </app-sample-layout>
+    </app-root>
+
+    <!-- Notify Modal -->
+    <%- include('../../../includes/notify_modal') %>
+        <!-- END Notify Modal -->
+
+    <script type="text/javascript" src="/core/js/game_lobby/slot.js"></script>
+    <%- include('../../../includes/footer') %>

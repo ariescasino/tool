@@ -1,0 +1,120 @@
+.header {
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  color: #0080e3;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 60px;
+  background: #e9e9e9;
+  margin: 0px;
+  border-radius: 10px 10px 0px;
+}
+
+.content {
+  background-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/account/8fc0b1adc87eed2490b37b9966e55b7c.jpg");
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  /* padding: 10px 0px 0px 50px; */
+  height: auto;
+}
+
+.footer {
+  height: 81px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9e9e9;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.buttonClose {
+  display: inline-block;
+  width: 119px;
+  font-size: 15px;
+  font-weight: bolder;
+  line-height: 45.5px;
+  cursor: pointer;
+  background-image: url(/images/btnClose.png);
+}
+
+.buttonClose:hover {
+  background-position: 0 -45.5px;
+}
+
+.listContent {
+  list-style: circle !important;
+  max-height: 500px;
+  padding: 10px 50px;
+  overflow: auto;
+}
+
+.listContent li {
+  color: #454545;
+  font-size: 13px;
+  line-height: 27px;
+  list-style: disc;
+  white-space: pre-line;
+  border-bottom: 1px dashed #999;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    background-color: white;
+    line-height: normal;
+    margin: 10px 0px;
+    font:
+      400 24px / 32px Roboto,
+      Helvetica Neue,
+      sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .content {
+    background-image: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0px;
+  }
+
+  .listContent {
+    padding: 1rem;
+  }
+
+  .footer {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    background: none;
+  }
+
+  .buttonClose {
+    display: inline-block;
+    width: 60px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+
+  .listContent li {
+    line-height: 20px;
+    font-size: 14px;
+    padding: 0.5rem 0;
+  }
+}

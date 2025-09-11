@@ -1,0 +1,9 @@
+.customModal {
+  z-index: 20010;
+}
+.customModal :global(.ant-modal-content) {
+  padding: 0;
+}
+.customModal :global(.ant-modal-header) {
+  margin: 0;
+}

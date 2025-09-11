@@ -1,0 +1,505 @@
+<%- include('../includes/header') %>
+
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-5 align-self-center">
+                <h4 class="page-title">Doanh Số Hệ Thống</h4>
+            </div>
+            <div class="col-7 align-self-center">
+                <div class="d-flex align-items-center justify-content-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Dashboard
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+
+
+
+
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Sales chart -->
+        <!-- ============================================================== -->
+        <div class="col-md-8 row" style="margin-bottom:10px;">
+            <div class="col-md-4 row" style="margin-bottom: 10px;">
+                <h6 class="card-subtitle">Thời gian từ
+                </h6>
+                <div class="input-group">
+                    <input type="text" name="inputDashboardFrom" class="form-control mydatepicker"
+                        placeholder="mm/dd/yyyy">
+                    <span class="input-group-text">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 row" style="margin-bottom: 10px;">
+                <h6 class="card-subtitle">Thời gian đến
+                </h6>
+                <div class="input-group">
+                    <input type="text" name="inputDashboardTo" class="form-control mydatepicker"
+                        placeholder="mm/dd/yyyy">
+                    <span class="input-group-text">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-2 row">
+                <button onclick="caculatorProfit()" type="button" class="btn waves-effect waves-light btn-secondary"
+                    style="height: 30px;margin-top: 11px;">
+                    Kiểm tra
+                </button>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-bottom border-info">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <h2 id="totalDeposit">0</h2>
+                                <h6 class="text-info mb-0">Tổng Nạp (VND)</h6>
+                            </div>
+                            <div class="ms-auto">
+                                <span class="text-info display-6"><i class="fas fa-shopping-cart"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-bottom border-primary">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h2 id="totalWithdraw">0</h2>
+                                <h6 class="text-primary mb-0">Tổng Rút (VND)</h6>
+                            </div>
+                            <div class="ms-auto">
+                                <span class="text-primary display-6">
+                                    <i class="fa-solid fa-money-bill-transfer"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-bottom border-success">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h2 id="countProfit">0</h2>
+                                <h6 class="text-success mb-0">Lợi nhuận (VND)</h6>
+                            </div>
+                            <div class="ms-auto">
+                                <span class="text-success display-6">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-bottom border-orange">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <h2 id="totalVolume">0</h2>
+                                <h6 class="text-orange mb-0">Tổng Volume Giao Dịch (Điểm)</h6>
+                            </div>
+                            <div class="ms-auto">
+                                <span class="text-orange display-6"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-pie-chart feather-xl">
+                                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                                    </svg></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Ravenue - page-view-bounce rate -->
+        <!-- ============================================================== -->
+
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-start border-orange">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <span class="text-orange display-6">
+                                    <i class="fas fa-user-secret"></i>
+                                </span>
+                            </div>
+                            <div class="ms-auto">
+                                <h2 id="countDownlineAgency" style="text-align: right;">0</h2>
+                                <h6 class="text-orange mb-0">Tổng số đại lý tuyến dưới</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-start border-info">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <span class="text-info display-6">
+                                    <i class="fas fa-users"></i>
+                                </span>
+                            </div>
+                            <div class="ms-auto">
+                                <h2 id="countRefUser" style="text-align: right;">0</h2>
+                                <h6 class="text-info mb-0">Tổng số thành viên tuyến dưới</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-start border-cyan">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <span class="text-cyan display-6">
+                                    <i class="fas fa-user-plus"></i>
+                                </span>
+                            </div>
+                            <div class="ms-auto">
+                                <h2 id="countUserNew" style="text-align: right;">0</h2>
+                                <h6 class="text-cyan mb-0">Thành viên tuyến dưới đăng ký hôm nay</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-start border-success">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <span class="text-success display-6">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+                            </div>
+                            <div class="ms-auto">
+                                <h2 id="dashboard-total-users" style="text-align: right;">0</h2>
+                                <h6 class="text-success mb-0">Thành viên đăng ký của bạn</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-start border-info">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <span class="text-info display-6">
+                                    <i class="fa-solid fa-money-bill"></i>
+                                </span>
+                            </div>
+                            <div class="ms-auto">
+                                <h2 id="countSumBalance" style="text-align: right;">0</h2>
+                                <h6 class="text-info mb-0">Tổng số dư của thành viên</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-start border-cyan">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <span class="text-cyan display-6">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </span>
+                            </div>
+                            <div class="ms-auto">
+                                <h2 id="countPlayProfit" style="text-align: right;">0</h2>
+                                <h6 class="text-cyan mb-0">Tổng thắng thua thành viên (Điểm)</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card border-start border-cyan">
+                    <div class="card-body">
+                        <div class="d-flex no-block align-items-center">
+                            <div>
+                                <span class="text-cyan display-6">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </span>
+                            </div>
+                            <div class="ms-auto">
+                                <h2 id="totalComission" style="text-align: right;">0</h2>
+                                <h6 class="text-cyan mb-0">Hoa hồng thực tế nhận được</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Row -->
+                        <div class="row">
+                            <div class="col-8">
+                                <span class="display-6">35%
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="feather feather-chevron-down feather-sm text-danger">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg></span>
+                                <h6>Bounce Rate</h6>
+                            </div>
+                            <div class="col-4 align-self-center text-end ps-0">
+                                <div id="sparklinedash4"><canvas width="51" height="50"
+                                        style="display: inline-block; width: 51px; height: 50px; vertical-align: top;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-center">Unique Visit</h4>
+                        <div class="gaugejs-box">
+                            <canvas id="foo" class="gaugejs" height="133" width="265">guage</canvas>
+                        </div>
+                    </div>
+                    <div class="p-2 text-center border-top">
+                        <h4 class="font-weight-medium mb-0">12456</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-center">Total Visit</h4>
+                        <div class="gaugejs-box">
+                            <canvas id="foo2" class="gaugejs" height="133" width="265">guage</canvas>
+                        </div>
+                    </div>
+                    <div class="p-2 text-center border-top">
+                        <h4 class="font-weight-medium mb-0">$12456</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-center">Bounce rate</h4>
+                        <div class="gaugejs-box">
+                            <canvas id="foo3" class="gaugejs" height="133" width="265">guage</canvas>
+                        </div>
+                    </div>
+                    <div class="p-2 text-center border-top">
+                        <h4 class="font-weight-medium mb-0">$12456</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <!-- Column -->
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-center">Page Views</h4>
+                        <div class="gaugejs-box">
+                            <canvas id="foo4" class="gaugejs" height="133" width="265">guage</canvas>
+                        </div>
+                    </div>
+                    <div class="p-2 text-center border-top">
+                        <h4 class="font-weight-medium mb-0">$12456</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+        </div>
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+
+
+
+    <script>
+        const caculatorProfit = () => {
+            const id = "<%=dataPage.session.user.id;%>";
+            loadingStatus(true);
+
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/agency/getProfit/' + id + '?from=' + $('input[name="inputDashboardFrom"]').val() + '&to=' + $('input[name="inputDashboardTo"]').val(),
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                loadingStatus(false);
+
+                if (response.status) {
+                    const dataProfit = response.data;
+                    let totalDownlineAgency = 0,
+                        totalVolume = 0,
+                        totalValidBet = 0,
+                        totalDeposit = 0,
+                        totalWithdraw = 0,
+                        totalUserRef = 0,
+                        totalUserNew = 0,
+                        totalPlayProfit = 0,
+                        totalSumBalance = 0;
+
+                    response.data.forEach((user) => {
+                        totalUserRef++;
+
+                        // caculator downline agency
+                        if (user.userInfo.role == "agency") totalDownlineAgency++;
+                        // caculator volume
+                        user.betRecord.forEach((bet) => {
+                            totalVolume += Number(bet.betAmount);
+                            totalValidBet += Number(bet.validBetAmount);
+                            totalPlayProfit += Number(bet.netPnl);
+                        });
+                        // caculator deposit
+                        user.depositRecord.forEach((deposit) => {
+                            totalDeposit += Number(deposit.amount);
+                        });
+                        // caculator withdraw
+                        user.withdrawRecord.forEach((withdraw) => {
+                            totalWithdraw += Number(withdraw.amount);
+                        });
+                        totalSumBalance += Number(user.userInfo.coin);
+                        // caculator new user register
+                        if (moment.utc(user.userInfo.createdAt, "YYYY-MM-DDTHH:mm").local().format("DDMMYYYY") === moment.utc().local().format("DDMMYYYY")) totalUserNew++;
+                    });
+
+                    totalVolume = totalVolume * 1000;
+                    totalValidBet = totalValidBet * 1000;
+                    totalSumBalance += Number(response.totalUserRefCoin);
+
+                    $('#countDownlineAgency').html(numberWithCommas(totalDownlineAgency));
+                    $('#countRefUser').html(numberWithCommas(totalUserRef));
+                    $('#countUserNew').html(numberWithCommas(totalUserNew));
+                    $('#totalVolume').html(numberWithCommas(totalVolume));
+                    $('#totalValidBet').html(numberWithCommas(totalValidBet));
+                    $('#totalDeposit').html(numberWithCommas(totalDeposit));
+                    $('#totalWithdraw').html(numberWithCommas(totalWithdraw));
+                    $('#countProfit').html(numberWithCommas(totalDeposit - totalWithdraw));
+                    $('#countPlayProfit').html(numberWithCommas(totalPlayProfit));
+                    $('#countSumBalance').html(numberWithCommas(totalSumBalance));
+                    $('#dashboard-total-users').html(numberWithCommas(response.totalUsers.length));
+
+                    let totalCommission = 0;
+
+                    // Tính hoa hồng
+                    if (totalPlayProfit < 0) {
+                        totalCommission = (totalPlayProfit * 80) / 100;
+
+                        totalCommission = totalCommission * 1000;
+                        percentMultiply = 40;
+
+                        //if (totalDeposit > 0 && totalDeposit <= 500000000) {
+                        //    percentMultiply = 20;
+                        //} else if (totalDeposit > 500000000 && totalDeposit <= 1500000000) {
+                        //    percentMultiply = 30;
+                        //} else if (totalDeposit > 1500000000) {
+                        //    percentMultiply = 40;
+                        //}
+
+                        totalCommission = (totalCommission * percentMultiply) / 100;
+
+                        $("#totalComission").html(numberWithCommas(-totalCommission));
+                    } else { }
+
+
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+
+
+        $(document).ready(() => {
+            // Set default value
+            $('input[name="inputDashboardFrom"]').val(moment().format("DD/MM/YYYY"));
+            $('input[name="inputDashboardTo"]').val(moment().format("DD/MM/YYYY"));
+
+            // Date Picker  
+            $('input[name="inputDashboardFrom"]').datepicker({
+                language: 'vi',
+                autoclose: true,
+                todayHighlight: true,
+            });
+            $('input[name="inputDashboardTo"]').datepicker({
+                language: 'vi',
+                autoclose: true,
+                todayHighlight: true,
+            });
+            caculatorProfit();
+        });
+    </script>
+
+
+
+    <%- include('../includes/footer') %>

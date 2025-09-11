@@ -1,0 +1,3917 @@
+.country-select {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    width: 36px
+}
+
+.country-select .flag-icon-squared {
+    border-radius: 50%;
+    line-height: 20px;
+    width: 20px
+}
+
+.country-select>select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    height: 100%;
+    left: 0;
+    outline: 0;
+    position: absolute;
+    text-indent: 1000px;
+    top: 0;
+    width: 100%
+}
+
+.hot-icon-wrapper {
+    position: relative
+}
+
+.hot-icon-wrapper .hot-game-icon {
+    height: 12px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    position: absolute;
+    right: -4px;
+    top: 1px;
+    width: 23px
+}
+
+@font-face {
+    font-family: swiper-icons;
+    font-style: normal;
+    font-weight: 400;
+    src: url("data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA")
+}
+
+:root {
+    --swiper-theme-color: #007aff
+}
+
+.swiper {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1
+}
+
+.swiper-vertical>.swiper-wrapper {
+    flex-direction: column
+}
+
+.swiper-wrapper {
+    box-sizing: content-box;
+    display: flex;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 100%;
+    z-index: 1
+}
+
+.swiper-android .swiper-slide,
+.swiper-wrapper {
+    transform: translateZ(0)
+}
+
+.swiper-pointer-events {
+    touch-action: pan-y
+}
+
+.swiper-pointer-events.swiper-vertical {
+    touch-action: pan-x
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 100%
+}
+
+.swiper-slide-invisible-blank {
+    visibility: hidden
+}
+
+.swiper-autoheight,
+.swiper-autoheight .swiper-slide {
+    height: auto
+}
+
+.swiper-autoheight .swiper-wrapper {
+    align-items: flex-start;
+    transition-property: transform, height
+}
+
+.swiper-3d,
+.swiper-3d.swiper-css-mode .swiper-wrapper {
+    perspective: 1200px
+}
+
+.swiper-3d .swiper-cube-shadow,
+.swiper-3d .swiper-slide,
+.swiper-3d .swiper-slide-shadow,
+.swiper-3d .swiper-slide-shadow-bottom,
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right,
+.swiper-3d .swiper-slide-shadow-top,
+.swiper-3d .swiper-wrapper {
+    transform-style: preserve-3d
+}
+
+.swiper-3d .swiper-slide-shadow,
+.swiper-3d .swiper-slide-shadow-bottom,
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right,
+.swiper-3d .swiper-slide-shadow-top {
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10
+}
+
+.swiper-3d .swiper-slide-shadow {
+    background: rgba(0, 0, 0, .15)
+}
+
+.swiper-3d .swiper-slide-shadow-left {
+    background-image: linear-gradient(270deg, rgba(0, 0, 0, .5), transparent)
+}
+
+.swiper-3d .swiper-slide-shadow-right {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, .5), transparent)
+}
+
+.swiper-3d .swiper-slide-shadow-top {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .5), transparent)
+}
+
+.swiper-3d .swiper-slide-shadow-bottom {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .5), transparent)
+}
+
+.swiper-css-mode>.swiper-wrapper {
+    -ms-overflow-style: none;
+    overflow: auto;
+    scrollbar-width: none
+}
+
+.swiper-css-mode>.swiper-wrapper::-webkit-scrollbar {
+    display: none
+}
+
+.swiper-css-mode>.swiper-wrapper>.swiper-slide {
+    scroll-snap-align: start start
+}
+
+.swiper-horizontal.swiper-css-mode>.swiper-wrapper {
+    -ms-scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory
+}
+
+.swiper-vertical.swiper-css-mode>.swiper-wrapper {
+    -ms-scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory
+}
+
+.swiper-centered>.swiper-wrapper:before {
+    content: "";
+    flex-shrink: 0;
+    order: 9999
+}
+
+.swiper-centered.swiper-horizontal>.swiper-wrapper>.swiper-slide:first-child {
+    -webkit-margin-start: var(--swiper-centered-offset-before);
+    margin-inline-start: var(--swiper-centered-offset-before)
+}
+
+.swiper-centered.swiper-horizontal>.swiper-wrapper:before {
+    height: 100%;
+    min-height: 1px;
+    width: var(--swiper-centered-offset-after)
+}
+
+.swiper-centered.swiper-vertical>.swiper-wrapper>.swiper-slide:first-child {
+    -webkit-margin-before: var(--swiper-centered-offset-before);
+    margin-block-start: var(--swiper-centered-offset-before)
+}
+
+.swiper-centered.swiper-vertical>.swiper-wrapper:before {
+    height: var(--swiper-centered-offset-after);
+    min-width: 1px;
+    width: 100%
+}
+
+.swiper-centered>.swiper-wrapper>.swiper-slide {
+    scroll-snap-align: center center
+}
+
+.swiper-grid>.swiper-wrapper {
+    flex-wrap: wrap
+}
+
+.swiper-grid-column>.swiper-wrapper {
+    flex-direction: column;
+    flex-wrap: wrap
+}
+
+:root {
+    --swiper-navigation-size: 44px
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    align-items: center;
+    color: var(--swiper-navigation-color, var(--swiper-theme-color));
+    cursor: pointer;
+    display: flex;
+    height: var(--swiper-navigation-size);
+    justify-content: center;
+    margin-top: calc(0px - var(--swiper-navigation-size)/2);
+    position: absolute;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size)/44*27);
+    z-index: 10
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    cursor: auto;
+    opacity: .35;
+    pointer-events: none
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    font-variant: normal;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none !important;
+    text-transform: none
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+    left: 10px;
+    right: auto
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+    content: "prev"
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+    left: auto;
+    right: 10px
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+    content: "next"
+}
+
+.swiper-button-lock {
+    display: none
+}
+
+.app-home.sports.template-col1 .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.sports.template-col1 .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.sports.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.sports.template-col1 .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.live.template-col2 .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_small_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: calc(50% - 5px)
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item:nth-child(odd) {
+    margin-right: 10px
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-info {
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    left: 1%;
+    position: absolute;
+    top: 1%;
+    width: 38%;
+    z-index: 2
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 100%
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 64.709%;
+    width: 100%
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 64.709%;
+    width: 100%
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item.is-disabled .maintenance-block,
+.app-home.live.template-col2 .game-block .home-list .game-item.maintenance .maintenance-block {
+    padding: 5px 8px
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item.is-disabled .maintenance-block>*,
+.app-home.live.template-col2 .game-block .home-list .game-item.maintenance .maintenance-block>* {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+    transform: scale(.85)
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item.is-disabled .maintenance-block:before,
+.app-home.live.template-col2 .game-block .home-list .game-item.maintenance .maintenance-block:before {
+    display: none
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.live.template-col2 .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.live.template-col2 .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.live.template-col2 .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.egame.template-classic-gpk,
+.app-home.egame.template-col1-gpk,
+.app-home.egame.template-col2-gpk {
+    position: relative
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open {
+    background-color: #eff0f5;
+    height: calc(var(--window-inner-height, 100vh) - var(--top-ad-height, 0px) - 100px - env(safe-area-inset-bottom));
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: calc(50px + var(--top-ad-height, 0px));
+    width: 100% !important;
+    z-index: 501
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .home-swiper-nav,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .home-swiper-nav,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .home-swiper-nav {
+    display: none !important
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap {
+    border-radius: 0;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block {
+    height: 110%;
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate),
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate),
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate) {
+    margin-bottom: 0
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news {
+    border-bottom: 1px solid #eee;
+    height: 35px;
+    line-height: 35px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap {
+    height: 35px;
+    line-height: 35px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title {
+    height: 35px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    height: 40px;
+    margin: 0;
+    position: relative
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav {
+    margin: 0 auto;
+    overflow: visible;
+    width: calc(100% - 40px)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev {
+    color: #c8cede;
+    height: 40px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 20px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after {
+    font-size: 12px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled {
+    opacity: 1
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev {
+    left: -20px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next {
+    right: -20px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item {
+    width: auto
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3 {
+    font-size: 13px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    position: static;
+    transform: none
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before {
+    display: none
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active {
+    background: linear-gradient(200deg, #e1cbb5, #cfb498)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3 {
+    color: #fff
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex !important;
+    height: 48px;
+    padding: 8px 10px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input {
+    border-radius: 5px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    height: 48px;
+    padding: 8px 0
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main {
+    display: flex;
+    height: calc(100% - 136px)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>*,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>*,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>* {
+    height: 100%
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers {
+    display: block !important;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: inherit;
+    width: 95px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap {
+    width: calc(100% - 95px)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider {
+    position: relative
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before {
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    align-items: center;
+    background: #bdc3d2;
+    color: #fff;
+    display: flex;
+    font-family: iconmps !important;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    height: 20px;
+    justify-content: center;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    text-transform: none;
+    width: 85px;
+    z-index: 1
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before {
+    content: "";
+    top: 0
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after {
+    bottom: 0;
+    content: ""
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers {
+    padding: 23px 0 20px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li {
+    align-content: center;
+    background: linear-gradient(90deg, rgba(220, 224, 233, 0), #dce0e9 80%);
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 11px;
+    height: 70px;
+    justify-content: center;
+    margin-bottom: 3px;
+    padding: 0 10px;
+    position: relative;
+    width: 85px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all {
+    display: none
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon {
+    display: block;
+    height: 50px;
+    margin-top: -5px;
+    width: 50px
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title {
+    color: #8a94b9;
+    line-height: 1;
+    transform: scale(.9)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active {
+    background: linear-gradient(90deg, #e1cbb5, #cfb498);
+    box-shadow: none
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title {
+    color: #fff
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after {
+    background: transparent;
+    border-color: transparent transparent transparent #cfb498;
+    border-style: solid;
+    border-width: 7.5px 0 7.5px 10px;
+    content: "";
+    height: 0;
+    left: auto;
+    margin-top: -5px;
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    width: 0
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list {
+    padding: 5px !important
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span {
+    background: #fff;
+    box-shadow: none
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item {
+    width: calc(33.333% - 5px)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item {
+    border-color: rgba(0, 0, 0, .1)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3 {
+    width: calc(100% - 40px)
+}
+
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.egame.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.egame.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.egame.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon {
+    right: 5px
+}
+
+.app-home.egame.template-col2 .game-block .home-list,
+.app-home.egame.template-col2-full .game-block .home-list,
+.app-home.egame.template-col2-gpk .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item,
+.app-home.egame.template-col2-full .game-block .home-list .game-item,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_small_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: calc(50% - 5px)
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item:nth-child(odd),
+.app-home.egame.template-col2-full .game-block .home-list .game-item:nth-child(odd),
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item:nth-child(odd) {
+    margin-right: 10px
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-content .game-logo,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-content .game-logo,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-content .customized-content,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-content .customized-content,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-info,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-info,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-info {
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    left: 1%;
+    position: absolute;
+    top: 1%;
+    width: 38%;
+    z-index: 2
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-info h3,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-info h3,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 100%
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-info h3:before,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-info h3:before,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-info .pd-name,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-info .pd-name,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .game-info button,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .game-info button,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .customized-cover,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .customized-cover,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .loading-block,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .loading-block,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 64.709%;
+    width: 100%
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item .loading-block>*,
+.app-home.egame.template-col2-full .game-block .home-list .game-item .loading-block>*,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item:before,
+.app-home.egame.template-col2-full .game-block .home-list .game-item:before,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 64.709%;
+    width: 100%
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item.is-disabled .maintenance-block,
+.app-home.egame.template-col2 .game-block .home-list .game-item.maintenance .maintenance-block,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.is-disabled .maintenance-block,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.maintenance .maintenance-block,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.is-disabled .maintenance-block,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.maintenance .maintenance-block {
+    padding: 5px 8px
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item.is-disabled .maintenance-block>*,
+.app-home.egame.template-col2 .game-block .home-list .game-item.maintenance .maintenance-block>*,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.is-disabled .maintenance-block>*,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.maintenance .maintenance-block>*,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.is-disabled .maintenance-block>*,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.maintenance .maintenance-block>* {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+    transform: scale(.85)
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item.is-disabled .maintenance-block:before,
+.app-home.egame.template-col2 .game-block .home-list .game-item.maintenance .maintenance-block:before,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.is-disabled .maintenance-block:before,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.maintenance .maintenance-block:before,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.is-disabled .maintenance-block:before,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.maintenance .maintenance-block:before {
+    display: none
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.egame.template-col2 .game-block .home-list .game-item.default-col:before,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.default-col:before,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item.default-col .loading-block,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.default-col .loading-block,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.egame.template-col2 .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.customized .customized-cover,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.customized .customized-cover,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.egame.template-col2 .game-block .home-list .game-item.customized .loading-block,
+.app-home.egame.template-col2-full .game-block .home-list .game-item.customized .loading-block,
+.app-home.egame.template-col2-gpk .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.lottery.template-col1 .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.lottery.template-col1 .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.lottery.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.lottery.template-col1 .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.mpg.template-classic-gpk,
+.app-home.mpg.template-col1-gpk,
+.app-home.mpg.template-col2-gpk {
+    position: relative
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open {
+    background-color: #eff0f5;
+    height: calc(var(--window-inner-height, 100vh) - var(--top-ad-height, 0px) - 100px - env(safe-area-inset-bottom));
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: calc(50px + var(--top-ad-height, 0px));
+    width: 100% !important;
+    z-index: 501
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .home-swiper-nav,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .home-swiper-nav,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .home-swiper-nav {
+    display: none !important
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap {
+    border-radius: 0;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block {
+    height: 100%
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate),
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate),
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate) {
+    margin-bottom: 0
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news {
+    border-bottom: 1px solid #eee;
+    height: 35px;
+    line-height: 35px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap {
+    height: 35px;
+    line-height: 35px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title {
+    height: 35px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    height: 40px;
+    margin: 0;
+    position: relative
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav {
+    margin: 0 auto;
+    overflow: visible;
+    width: calc(100% - 40px)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev {
+    color: #c8cede;
+    height: 40px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 20px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after {
+    font-size: 12px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled {
+    opacity: 1
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev {
+    left: -20px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next {
+    right: -20px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item {
+    width: auto
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3 {
+    font-size: 13px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    position: static;
+    transform: none
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before {
+    display: none
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active {
+    background: linear-gradient(200deg, #e1cbb5, #cfb498)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3 {
+    color: #fff
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex !important;
+    height: 48px;
+    padding: 8px 10px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input {
+    border-radius: 5px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    height: 48px;
+    padding: 8px 0
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main {
+    display: flex;
+    height: calc(100% - 136px)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>*,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>*,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>* {
+    height: 100%
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers {
+    display: block !important;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: inherit;
+    width: 95px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap {
+    width: calc(100% - 95px)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider {
+    position: relative
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before {
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    align-items: center;
+    background: #bdc3d2;
+    color: #fff;
+    display: flex;
+    font-family: iconmps !important;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    height: 20px;
+    justify-content: center;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    text-transform: none;
+    width: 85px;
+    z-index: 1
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before {
+    content: "";
+    top: 0
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after {
+    bottom: 0;
+    content: ""
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers {
+    padding: 23px 0 20px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li {
+    align-content: center;
+    background: linear-gradient(90deg, rgba(220, 224, 233, 0), #dce0e9 80%);
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 11px;
+    height: 70px;
+    justify-content: center;
+    margin-bottom: 3px;
+    padding: 0 10px;
+    position: relative;
+    width: 85px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all {
+    display: none
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon {
+    display: block;
+    height: 50px;
+    margin-top: -5px;
+    width: 50px
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title {
+    color: #8a94b9;
+    line-height: 1;
+    transform: scale(.9)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active {
+    background: linear-gradient(90deg, #e1cbb5, #cfb498);
+    box-shadow: none
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title {
+    color: #fff
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after {
+    background: transparent;
+    border-color: transparent transparent transparent #cfb498;
+    border-style: solid;
+    border-width: 7.5px 0 7.5px 10px;
+    content: "";
+    height: 0;
+    left: auto;
+    margin-top: -5px;
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    width: 0
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list {
+    padding: 5px !important
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span {
+    background: #fff;
+    box-shadow: none
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item {
+    width: calc(33.333% - 5px)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item {
+    border-color: rgba(0, 0, 0, .1)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3 {
+    width: calc(100% - 40px)
+}
+
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.mpg.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.mpg.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.mpg.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon {
+    right: 5px
+}
+
+.app-home.mpg.template-col1 .game-block .home-list,
+.app-home.mpg.template-col1-full .game-block .home-list,
+.app-home.mpg.template-col1-gpk .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-content,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-content,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-content .game-logo,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-content .game-logo,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-content .customized-content,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-content .customized-content,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-info,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-info,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-info h3,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-info h3,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-info h3:before,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-info h3:before,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-info .pd-name,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-info .pd-name,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .game-info button,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .game-info button,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .customized-cover,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .customized-cover,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .loading-block,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .loading-block,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item .loading-block>*,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item .loading-block>*,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item:before,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item:before,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.mpg.template-col1 .game-block .home-list .game-item.default-col:before,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item.default-col:before,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item.default-col .loading-block,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item.default-col .loading-block,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.mpg.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item.customized .customized-cover,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item.customized .customized-cover,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.mpg.template-col1 .game-block .home-list .game-item.customized .loading-block,
+.app-home.mpg.template-col1-full .game-block .home-list .game-item.customized .loading-block,
+.app-home.mpg.template-col1-gpk .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.animal.template-col1 .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.animal.template-col1 .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.animal.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.animal.template-col1 .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.chess.template-classic-gpk,
+.app-home.chess.template-col1-gpk,
+.app-home.chess.template-col2-gpk {
+    position: relative
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open {
+    background-color: #eff0f5;
+    height: calc(var(--window-inner-height, 100vh) - var(--top-ad-height, 0px) - 100px - env(safe-area-inset-bottom));
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: calc(50px + var(--top-ad-height, 0px));
+    width: 100% !important;
+    z-index: 501
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .home-swiper-nav,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .home-swiper-nav,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .home-quick-nav,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .home-swiper-nav {
+    display: none !important
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap {
+    border-radius: 0;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 100%
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block {
+    height: 100%
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate),
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate),
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block>:not(:last-child):not(.home-cate) {
+    margin-bottom: 0
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news {
+    border-bottom: 1px solid #eee;
+    height: 35px;
+    line-height: 35px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .marquee-wrap {
+    height: 35px;
+    line-height: 35px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .home-news .news-title {
+    height: 35px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    height: 40px;
+    margin: 0;
+    position: relative
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .gpk-swiper-nav {
+    margin: 0 auto;
+    overflow: visible;
+    width: calc(100% - 40px)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev {
+    color: #c8cede;
+    height: 40px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 20px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next:after,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev:after {
+    font-size: 12px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next.swiper-button-disabled,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev.swiper-button-disabled {
+    opacity: 1
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-prev {
+    left: -20px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .swiper-button-next {
+    right: -20px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item {
+    width: auto
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item h3 {
+    font-size: 13px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 10px;
+    position: static;
+    transform: none
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:after,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item:before {
+    display: none
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active {
+    background: linear-gradient(200deg, #e1cbb5, #cfb498)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-nav .home-quick-item.active h3 {
+    color: #fff
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex !important;
+    height: 48px;
+    padding: 8px 10px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .search-bar-box input {
+    border-radius: 5px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .sub-menu-box {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    height: 48px;
+    padding: 8px 0
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main {
+    display: flex;
+    height: calc(100% - 136px)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>*,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>*,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main>* {
+    height: 100%
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-providers {
+    display: block !important;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: inherit;
+    width: 95px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-main .game-wrap {
+    width: calc(100% - 95px)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider {
+    position: relative
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before {
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    align-items: center;
+    background: #bdc3d2;
+    color: #fff;
+    display: flex;
+    font-family: iconmps !important;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    height: 20px;
+    justify-content: center;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    text-transform: none;
+    width: 85px;
+    z-index: 1
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:before {
+    content: "";
+    top: 0
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider:after {
+    bottom: 0;
+    content: ""
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers {
+    padding: 23px 0 20px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li {
+    align-content: center;
+    background: linear-gradient(90deg, rgba(220, 224, 233, 0), #dce0e9 80%);
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 11px;
+    height: 70px;
+    justify-content: center;
+    margin-bottom: 3px;
+    padding: 0 10px;
+    position: relative;
+    width: 85px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.all {
+    display: none
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-icon {
+    display: block;
+    height: 50px;
+    margin-top: -5px;
+    width: 50px
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li .game-provider-title {
+    color: #8a94b9;
+    line-height: 1;
+    transform: scale(.9)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active {
+    background: linear-gradient(90deg, #e1cbb5, #cfb498);
+    box-shadow: none
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active .game-provider-title {
+    color: #fff
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .gpk-provider .game-providers li.active:after {
+    background: transparent;
+    border-color: transparent transparent transparent #cfb498;
+    border-style: solid;
+    border-width: 7.5px 0 7.5px 10px;
+    content: "";
+    height: 0;
+    left: auto;
+    margin-top: -5px;
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    width: 0
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list {
+    padding: 5px !important
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .egame-list .game-group .egame-item span {
+    background: #fff;
+    box-shadow: none
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-2 .egame-list .game-group .egame-item {
+    width: calc(33.333% - 5px)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item {
+    border-color: rgba(0, 0, 0, .1)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block h3 {
+    width: calc(100% - 40px)
+}
+
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.chess.template-classic-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.chess.template-col1-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-btn,
+.app-home.chess.template-col2-gpk .home-gamelobby.game-list-open .game-wrap>.game-block .style-1 .egame-list .game-group .egame-item .name-block .fav-icon {
+    right: 5px
+}
+
+.app-home.chess.template-col1 .game-block .home-list,
+.app-home.chess.template-col1-full .game-block .home-list,
+.app-home.chess.template-col1-gpk .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item,
+.app-home.chess.template-col1-full .game-block .home-list .game-item,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-content,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-content,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-content .game-logo,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-content .game-logo,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-content .customized-content,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-content .customized-content,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-info,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-info,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-info h3,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-info h3,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-info h3:before,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-info h3:before,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-info .pd-name,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-info .pd-name,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .game-info button,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .game-info button,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .customized-cover,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .customized-cover,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .loading-block,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .loading-block,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item .loading-block>*,
+.app-home.chess.template-col1-full .game-block .home-list .game-item .loading-block>*,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item:before,
+.app-home.chess.template-col1-full .game-block .home-list .game-item:before,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.chess.template-col1 .game-block .home-list .game-item.default-col:before,
+.app-home.chess.template-col1-full .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.chess.template-col1-full .game-block .home-list .game-item.default-col:before,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item.default-col .loading-block,
+.app-home.chess.template-col1-full .game-block .home-list .game-item.default-col .loading-block,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.chess.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.chess.template-col1-full .game-block .home-list .game-item.customized .customized-cover,
+.app-home.chess.template-col1-full .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item.customized .customized-cover,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.chess.template-col1 .game-block .home-list .game-item.customized .loading-block,
+.app-home.chess.template-col1-full .game-block .home-list .game-item.customized .loading-block,
+.app-home.chess.template-col1-gpk .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.esports.template-col1 .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.esports.template-col1 .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.esports.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.esports.template-col1 .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list,
+.app-home.mini_game.template-col1-full .game-block .home-list,
+.app-home.mini_game.template-col1-gpk .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-content,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-content,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-content .game-logo,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-content .game-logo,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-content .game-col-cover,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-content .customized-content,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-content .customized-content,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-info,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-info,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-info h3,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-info h3,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-info h3:before,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-info h3:before,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-info .pd-name,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-info .pd-name,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .game-info button,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .game-info button,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .customized-cover,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .customized-cover,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .loading-block,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .loading-block,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item .loading-block>*,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item .loading-block>*,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item:before,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item:before,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.mini_game.template-col1 .game-block .home-list .game-item.default-col:before,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item.default-col:before,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item.default-col .loading-block,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item.default-col .loading-block,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.mini_game.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item.customized .customized-cover,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item.customized .game-content .customized-content,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item.customized .customized-cover,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.mini_game.template-col1 .game-block .home-list .game-item.customized .loading-block,
+.app-home.mini_game.template-col1-full .game-block .home-list .game-item.customized .loading-block,
+.app-home.mini_game.template-col1-gpk .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.app-home.finance.template-col1 .game-block .home-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_large_short.png) 0 0/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-content {
+    background-size: auto 100%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-content .game-logo {
+    background-position: 90% 5%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    display: none;
+    filter: grayscale(100%);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-content .game-col-cover {
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-content .customized-content {
+    display: none;
+    position: relative;
+    width: 100%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-info {
+    align-items: center;
+    color: #9aa4c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 2
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-info h3 {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 75%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-info h3:before {
+    content: "";
+    float: left;
+    padding-bottom: 100%;
+    width: 100%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-info .pd-name {
+    display: none;
+    font-size: 12px;
+    margin-top: 5px
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .game-info button {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    border: 1px solid #d9bfa7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(168, 135, 103, .5);
+    color: #fff;
+    display: none;
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 7px 10px;
+    width: 75%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .customized-cover {
+    display: none;
+    position: relative;
+    width: 100%;
+    z-index: 3
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .loading-block {
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item .loading-block>* {
+    bottom: auto;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item:before {
+    content: "";
+    display: none;
+    float: left;
+    padding-bottom: 40%;
+    width: 100%
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item.default-col .game-content .game-col-cover,
+.app-home.finance.template-col1 .game-block .home-list .game-item.default-col:before {
+    display: block
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item.default-col .loading-block {
+    display: none
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item.customized .customized-cover,
+.app-home.finance.template-col1 .game-block .home-list .game-item.customized .game-content .customized-content {
+    display: block
+}
+
+.app-home.finance.template-col1 .game-block .home-list .game-item.customized .loading-block {
+    display: none
+}
+
+.provider-list-box {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.provider-list-box img {
+    display: block;
+    height: 42px;
+    margin-bottom: 2px;
+    margin-right: 20px
+}
+
+.app-home.root>.home-news {
+    padding: 0 10px 0 5px
+}
+
+.app-home.root>.home-quick-nav,
+.app-home.root>.home-swiper-nav,
+.app-home.root>.wallet-item {
+    display: none !important
+}
+
+.app-home.root .home-gamelobby {
+    height: auto !important
+}
+
+.app-home.root .home-gamelobby .homepage {
+    padding-top: 5px
+}
+
+.app-home.root .home-gamelobby>.game-wrap {
+    padding: 0;
+    width: 100%
+}
+
+.homepage-title {
+    align-items: center;
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 2px;
+    padding: 0 5px
+}
+
+.homepage-title .title-icon {
+    margin-right: 5px
+}
+
+.homepage-title .title-icon:before {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: radial-gradient(ellipse farthest-corner at right bottom, #ecd4b9 0, #ecd4b9 8%, #fadfbf 30%, #d2b494 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #fff 0, #ecd4b9 8%, #fadfbf 25%, #d2b494 62.5%, #5d4a1f 100%);
+    font-size: 32px
+}
+
+.homepage-title .title-text {
+    font-weight: 700
+}
+
+.homepage-title .more-btn {
+    background: transparent;
+    border: 1px solid #9aa4c2;
+    border-radius: 50px;
+    color: #9aa4c2;
+    font-size: 12px;
+    margin-left: auto;
+    padding: 4px 10px
+}
+
+.homepage-sports {
+    margin-bottom: 10px;
+    padding: 0 10px
+}
+
+.homepage-sports .home-sports {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_medium.png) 50%/100% 100% no-repeat;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(65, 70, 92, .2);
+    overflow: hidden;
+    padding-top: 15px
+}
+
+.homepage-sports .home-sports .sports-title {
+    display: none
+}
+
+.homepage-sports .home-sports .livescore-block {
+    position: relative
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-header {
+    bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    justify-content: flex-end;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: calc(100% - 184px)
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-header h3 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 6px auto;
+    text-align: center;
+    width: calc(100% - 40px)
+}
+
+@media screen and (max-width:375px) {
+    .homepage-sports .home-sports .livescore-block .livescore-header {
+        justify-content: flex-start
+    }
+
+    .homepage-sports .home-sports .livescore-block .livescore-header h3 {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body {
+    padding: 0 10px 10px;
+    position: relative
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party {
+    display: flex;
+    justify-content: space-between;
+    position: relative
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>* {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    justify-content: center;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    width: 80px
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>* .party-cover {
+    background: #fff 50%/70% no-repeat;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>* .party-cover img {
+    border-radius: 50%
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>* .party-name {
+    font-size: 12px;
+    overflow: hidden;
+    padding-top: 5px;
+    text-align: center;
+    text-overflow: ellipsis;
+    transform: scale(.85);
+    white-space: nowrap
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>* .score {
+    bottom: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    width: calc(50% - 80px)
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>:first-child .score {
+    left: 80px
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>:first-child .score:before {
+    content: ":";
+    line-height: 30px;
+    position: absolute;
+    right: -4px;
+    top: 0
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-body .livescore-party>:nth-child(2) .score {
+    right: 80px
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-footer .time-zone {
+    bottom: 80px;
+    font-size: 13px;
+    left: 80px;
+    position: absolute;
+    text-align: center;
+    transform: scale(.85);
+    width: calc(100% - 160px)
+}
+
+@media screen and (max-width:375px) {
+    .homepage-sports .home-sports .livescore-block .livescore-footer .time-zone {
+        font-size: 0
+    }
+}
+
+.homepage-sports .home-sports .livescore-block .livescore-footer .act-btn {
+    background: linear-gradient(200deg, #f9ecdc, #e1cbb5 50%, #cfb498);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 34px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%
+}
+
+.homepage-sports .home-sports .livescore-block .btn-func>* {
+    background: #cfb498;
+    border-radius: 50%;
+    bottom: 9px;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    width: 20px
+}
+
+.homepage-sports .home-sports .livescore-block .btn-func>:before {
+    border: solid #fff;
+    border-width: 0 1px 1px 0;
+    content: "";
+    display: inline-block;
+    left: 8px;
+    padding: 4px;
+    position: absolute;
+    top: 6px;
+    transform: rotate(135deg)
+}
+
+.homepage-sports .home-sports .livescore-block .btn-func>:first-child {
+    left: -8px
+}
+
+.homepage-sports .home-sports .livescore-block .btn-func>:last-child {
+    right: -8px
+}
+
+.homepage-sports .home-sports .livescore-block .btn-func>:last-child:before {
+    left: 4px;
+    transform: rotate(-45deg)
+}
+
+.homepage-navigation .home-swiper-nav {
+    padding: 5px
+}
+
+.homepage-navigation .home-swiper-nav .home-quick-item {
+    margin: 0 5px;
+    width: 60px !important
+}
+
+.homepage-navigation .home-swiper-nav .home-quick-item .hot-game-icon {
+    z-index: 2
+}
+
+.homepage-navigation .home-swiper-nav .home-quick-item:after,
+.homepage-navigation .home-swiper-nav .home-quick-item:before {
+    border-radius: 15px;
+    height: 50px !important;
+    line-height: 50px !important;
+    margin: 0 auto !important;
+    width: 50px !important
+}
+
+.homepage-navigation .home-swiper-nav .home-quick-item:before {
+    align-items: center;
+    background-color: transparent !important;
+    background-size: auto 50px !important;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    box-shadow: 0 1px 2px rgba(65, 70, 92, .2), inset 0 0 1px #d5ddf4;
+    display: inline-block !important;
+    justify-content: center;
+    position: relative;
+    z-index: 2
+}
+
+.homepage-navigation .home-swiper-nav .home-quick-item:after {
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_small.png) 50%/120% no-repeat !important;
+    left: 50%;
+    opacity: 1 !important;
+    transform: translateX(-50%) !important;
+    z-index: 1
+}
+
+.homepage-navigation .home-swiper-nav .home-quick-item h3 {
+    padding-top: 2px
+}
+
+.homepage-navigation .home-swiper-nav .home-quick-item.active {
+    display: none
+}
+
+.homepage-type ul li {
+    margin-bottom: 5px
+}
+
+.homepage-type ul li .home-provider-list {
+    padding: 0 10px 10px
+}
+
+.homepage-type ul li .home-provider-list .provider-item {
+    margin-right: 10px;
+    position: relative;
+    width: 140px
+}
+
+.homepage-type ul li .home-provider-list .provider-item .provider-cover {
+    align-items: center;
+    background: url(https://csi.20icipp.com/img/static/mobile/temp/app/h5app22/box_bg_small.png) 50%/cover no-repeat;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(65, 70, 92, .2), inset 0 0 1px #d5ddf4;
+    display: flex;
+    height: 140px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 140px
+}
+
+.homepage-type ul li .home-provider-list .provider-item .provider-cover img {
+    max-height: 100%;
+    max-width: 100%
+}
+
+.homepage-type ul li .home-provider-list .provider-item .maintenance-block {
+    align-items: center;
+    background: rgba(0, 0, 0, .85) !important;
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 3px gold, 0 2px 6px rgba(0, 0, 0, .2) !important;
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+    justify-content: center;
+    left: 0 !important;
+    padding: 8px !important;
+    position: absolute !important;
+    text-align: center;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    z-index: 5 !important
+}
+
+.homepage-type ul li .home-provider-list .provider-item .maintenance-block:after {
+    display: none !important
+}
+
+.homepage-type ul li .home-provider-list .provider-item .maintenance-block>* {
+    display: block !important;
+    font-size: 13px;
+    font-weight: 400
+}
+
+.homepage-type ul li .home-provider-list .provider-title {
+    color: #9aa4c2;
+    font-size: 12px;
+    font-weight: 300;
+    overflow: hidden;
+    padding-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 140px
+}
+
+.homepage-jackpot {
+    background: #f3f6ff;
+    margin-bottom: 10px;
+    position: relative
+}
+
+.homepage-jackpot .jackpot-bg {
+    background: url(https://csi.20icipp.com/img/static/mobile/home-bg.jpg) 100%/auto 100% no-repeat;
+    filter: hue-rotate(285deg);
+    height: 100%;
+    left: 0;
+    opacity: .1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.homepage-jackpot .home-jp,
+.homepage-jackpot .jackpot-countup {
+    align-items: flex-end;
+    background: url(https://csi.20icipp.com/img/static/mobile/jackpot-left.png) 0 100%/auto 110% no-repeat, url(https://csi.20icipp.com/img/static/mobile/jackpot-right.png) 100% 0/auto 50px no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 30px 20px;
+    position: relative;
+    z-index: 2
+}
+
+.homepage-jackpot .home-jp .home-jp-gp h2,
+.homepage-jackpot .jackpot-countup .home-jp-gp h2 {
+    color: #9aa4c2;
+    font-size: 16px;
+    margin-bottom: 5px
+}
+
+.homepage-jackpot .home-jp .home-jp-digi i,
+.homepage-jackpot .jackpot-countup .home-jp-digi i {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 900
+}
+
+.homepage-jackpot .home-jp .home-jp-btn,
+.homepage-jackpot .jackpot-countup .home-jp-btn {
+    display: none
+}
+
+.homepage-jackpot .jackpot-countup h3.jp-tit {
+    color: #9aa4c2;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    width: 100%
+}
+
+.homepage-jackpot .jackpot-countup .content {
+    flex-wrap: wrap
+}
+
+.homepage-jackpot .jackpot-countup .content .infinite-countup {
+    background: transparent;
+    border: 0 solid #000;
+    color: #fff;
+    filter: none;
+    justify-content: flex-end;
+    padding: 0;
+    width: 100%
+}
+
+.homepage-jackpot .jackpot-countup .content .infinite-countup>div {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.homepage-jackpot .jackpot-countup .content .infinite-countup>div.digit {
+    background: transparent;
+    border: 0 solid #000;
+    font-size: 30px;
+    min-width: unset;
+    padding: 0
+}
+
+.homepage-jackpot .jackpot-countup .content .infinite-countup>div.digit:last-child {
+    margin-right: 0
+}
+
+.homepage-contact {
+    margin-bottom: 20px
+}
+
+.homepage-contact .contact-close,
+.homepage-contact .contact-title,
+.homepage-contact .home-contact-toggle {
+    display: none
+}
+
+.homepage-contact .home-contact-content ul {
+    padding: 0 10px 0 40px
+}
+
+.homepage-contact .home-contact-content ul li a {
+    border-bottom: 1px solid #eee;
+    color: #9aa4c2;
+    display: block;
+    overflow: hidden;
+    padding: 8px 0
+}
+
+.homepage-contact .home-contact-content ul li a>* {
+    float: left
+}
+
+.homepage-contact .home-contact-content ul li a>i,
+.homepage-contact .home-contact-content ul li a>img {
+    margin-right: 5px;
+    width: 30px
+}
+
+.homepage-contact .home-contact-content ul li a>i:before,
+.homepage-contact .home-contact-content ul li a>img:before {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: radial-gradient(ellipse farthest-corner at right bottom, #9aa4c2 8%, #9aa4c2 30%, #7c89ad 40%, #d6dbec 80%);
+    font-size: 30px
+}
+
+.homepage-contact .home-contact-content ul li a>div {
+    line-height: 1.4
+}
+
+.homepage-contact .home-contact-content ul li a>div h4 {
+    color: #7684af;
+    font-weight: 400
+}
+
+.homepage-contact .home-contact-content ul li a>div p {
+    font-size: 12px
+}
+
+.homepage-providerlist .provider-list-box {
+    justify-content: center;
+    padding: 10px
+}
+
+.homepage-providerlist .provider-list-box img {
+    height: 30px;
+    margin-right: 10px
+}
+
+.homepage-copy {
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    padding: 20px 10px;
+    text-align: center
+}
+
+.homepage.categories .jackpot-countup {
+    margin: 0 auto 15px;
+    width: calc(100% - 20px)
+}
+
+.homepage.categories .jackpot-countup .jp-tit {
+    font-size: 15px
+}
+
+.homepage.categories .jackpot-countup .content .infinite-countup {
+    background-color: rgba(17, 17, 17, .7);
+    border: 2px solid #ffe500;
+    filter: none;
+    justify-content: center
+}
+
+.homepage.categories .jackpot-countup .content .infinite-countup>div.digit {
+    min-width: 28px
+}
+
+.homepage.categories .homepage-title {
+    padding: 0 15px
+}
+
+.homepage.categories .homepage-type ul {
+    margin-bottom: 20px
+}
+
+.homepage.categories .homepage-type ul li[data-gp=chess] .home-provider-list .provider-item,
+.homepage.categories .homepage-type ul li[data-gp=egame] .home-provider-list .provider-item,
+.homepage.categories .homepage-type ul li[data-gp=hot] .home-provider-list .provider-item,
+.homepage.categories .homepage-type ul li[data-gp=live] .home-provider-list .provider-item,
+.homepage.categories .homepage-type ul li[data-gp=mpg] .home-provider-list .provider-item {
+    flex: 0 0 48%;
+    width: 48%
+}
+
+.homepage.categories .homepage-type ul li[data-gp=chess] .home-provider-list .provider-item .provider-logo,
+.homepage.categories .homepage-type ul li[data-gp=egame] .home-provider-list .provider-item .provider-logo,
+.homepage.categories .homepage-type ul li[data-gp=hot] .home-provider-list .provider-item .provider-logo,
+.homepage.categories .homepage-type ul li[data-gp=live] .home-provider-list .provider-item .provider-logo,
+.homepage.categories .homepage-type ul li[data-gp=mpg] .home-provider-list .provider-item .provider-logo {
+    height: 50px;
+    left: 5px;
+    top: 3px;
+    width: 50px
+}
+
+.homepage.categories .homepage-type ul li[data-gp=chess] .home-provider-list .provider-item .provider-cover,
+.homepage.categories .homepage-type ul li[data-gp=egame] .home-provider-list .provider-item .provider-cover,
+.homepage.categories .homepage-type ul li[data-gp=hot] .home-provider-list .provider-item .provider-cover,
+.homepage.categories .homepage-type ul li[data-gp=live] .home-provider-list .provider-item .provider-cover,
+.homepage.categories .homepage-type ul li[data-gp=mpg] .home-provider-list .provider-item .provider-cover {
+    align-items: flex-start;
+    height: 135px
+}
+
+.homepage.categories .homepage-type ul li[data-gp=chess] .home-provider-list .provider-item .provider-cover img,
+.homepage.categories .homepage-type ul li[data-gp=egame] .home-provider-list .provider-item .provider-cover img,
+.homepage.categories .homepage-type ul li[data-gp=hot] .home-provider-list .provider-item .provider-cover img,
+.homepage.categories .homepage-type ul li[data-gp=live] .home-provider-list .provider-item .provider-cover img,
+.homepage.categories .homepage-type ul li[data-gp=mpg] .home-provider-list .provider-item .provider-cover img {
+    margin: 0 0 0 10%;
+    max-height: 100%;
+    max-width: 100%
+}
+
+.homepage.categories .homepage-type ul li .home-provider-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 0;
+    width: calc(100% - 30px)
+}
+
+.homepage.categories .homepage-type ul li .home-provider-list .provider-item {
+    background: #3e445c;
+    border-radius: 9px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    flex: 0 0 100%;
+    margin: 0 0 15px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1
+}
+
+.homepage.categories .homepage-type ul li .home-provider-list .provider-item .provider-logo {
+    height: 85px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 85px;
+    z-index: 1
+}
+
+.homepage.categories .homepage-type ul li .home-provider-list .provider-item .provider-logo img {
+    display: block;
+    filter: drop-shadow(0 1px 1px rgba(34, 34, 34, .8));
+    height: 100%;
+    width: 100%
+}
+
+.homepage.categories .homepage-type ul li .home-provider-list .provider-item .provider-cover {
+    align-items: flex-end;
+    background: transparent;
+    height: 165px;
+    justify-content: center;
+    width: 100%
+}
+
+.homepage.categories .homepage-type ul li .home-provider-list .provider-item .provider-cover img {
+    display: block;
+    filter: drop-shadow(0 5px 8px rgba(51, 51, 51, .5));
+    margin: -25px 0 0 30%;
+    max-height: unset;
+    max-width: 70%
+}
+
+.homepage.categories .homepage-type ul li .home-provider-list .provider-item .provider-title {
+    background: #5a627e;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    bottom: 0;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    height: 35px;
+    line-height: 35px;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%
+}
+
+.signup-ads {
+    touch-action: pinch-zoom
+}
+
+.signup-ads .iconClose {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    z-index: 99
+}
+
+.signup-ads .iconClose img {
+    width: 35px
+}
+
+.signup-ads .content {
+    position: relative;
+    width: 80vw
+}
+
+.signup-ads .content img {
+    background-repeat: no-repeat;
+    width: 100%
+}

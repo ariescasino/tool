@@ -1,0 +1,155 @@
+.bonusLevel {
+  position: relative;
+  width: 120px;
+  height: 140px;
+  padding: 0 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #000;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(66deg, #fdffd1 17%, #fefff0 84%, #fff 96%);
+}
+
+.bonusLevel::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 112px;
+  height: 132px;
+  border-radius: 8px;
+  border: solid 1px #f1da6f;
+}
+
+.swiperVipDetail :global(.swiper-slide-active) {
+  transform: translateY(20px) scale(1.1);
+}
+
+.swiperVipDetail :global(.bonusTextSwiper) {
+  visibility: hidden;
+}
+
+.swiperVipDetail :global(.swiper-slide-active .bonusTextSwiper) {
+  visibility: visible;
+}
+
+.swiperVipDetail :global(.swiper-button-prev) {
+  left: -100px;
+  background: url(/images/account/505a1377d860ec46c2bb2f12986873b1.png);
+  top: 95px;
+  z-index: 1;
+  width: 22px;
+  height: 34px;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiperVipDetail :global(.swiper-button-prev:hover) {
+  background-position: bottom !important;
+}
+
+.swiperVipDetail :global(.swiper-button-prev::after) {
+  display: none;
+}
+
+.customPrev {
+  left: -100px;
+  background: url(/images/vip/prev.png);
+  top: 95px;
+  z-index: 1000;
+  width: 22px;
+  height: 34px;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customPrev:hover {
+  background-position: bottom;
+}
+
+.customNext {
+  right: -100px;
+  background: url(/images/vip/next.png);
+  top: 95px;
+  z-index: 1000;
+  width: 22px;
+  height: 34px;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customNext:hover {
+  background-position: bottom;
+}
+
+.headerCondition {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 36px;
+  padding: 0 13px 0 11px;
+  border-radius: 8px 8px 0 0;
+  background-image: linear-gradient(to bottom, #ffe980, #f1da6f);
+}
+
+.buttonCondition {
+  min-width: 80px;
+  max-width: 120px;
+  padding: 0 5px;
+  line-height: 24px;
+  color: #000;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 12px;
+  border: solid 1px #b78510;
+  background-image: linear-gradient(to bottom, #fefbb3, #ffcd51);
+}
+
+.progressBar {
+  height: 6px;
+}
+
+.progressBar :global(.ant-progress-outer) {
+  height: 6px !important;
+}
+
+.progressBar :global(.ant-progress-inner) {
+  height: 6px;
+  top: -9px;
+}
+
+.itemListInforVip {
+  width: 450px;
+  height: 75px;
+  cursor: pointer;
+  /* line-height: 75px; */
+  font-size: 26px;
+  margin: 0 auto 24px;
+  background: url(/images/vip/bgvipdetail.png) no-repeat center / cover;
+}
+
+.customModal :global(.ant-modal-content) {
+  padding: 0;
+}
+
+.customModal :global(.ant-modal-close) {
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}

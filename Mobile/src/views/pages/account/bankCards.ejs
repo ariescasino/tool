@@ -1,0 +1,234 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenter.d6d5563f.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenterBankCardList.cb9236e3.css">
+    <div id="root">
+        <div class="app account bankcards list logined">
+            <div style="display: none;"></div>
+            <div class="app-body">
+                <div class="m-member-center-main">
+                    <div class="m-bank-card-list">
+                        <div class="mc-navbar-wrapper">
+                            <div class="navbar ">
+                                <div class="left" id="element-clickback"><i onclick="window.location='/account/profile'"
+                                        class="fa fa-chevron-left"></i>
+                                </div>
+                                <div class="title">Quản lý ngân hàng</div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="nav-place" style="min-height: 45px;"></div>
+                        </div>
+                        <div class="content-block" id="content-list-bankCard">
+                            <div>
+                                <div class="add-card" onclick="showFormAddBank()">
+                                    <div class="add-icon"><i class="fa fa-plus"></i></div>
+                                    <div class="desc-1">Thêm ngân hàng</div>
+                                    <div class="dec-2">Ấn để thêm tài khoản ngân hàng</div>
+                                </div>
+                                <div id="user-card-list">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="content-block" id="content-add-bankCard" style="display:none;">
+                            <div>
+                                <div class="m-input-field">
+                                    <div class="content d-input-field-content required">
+                                        <div class="input-block">
+                                            <select class="mc-input-field-value" id="bankProvide"
+                                                style="background: transparent;border: none;color: #000000;flex: 1 100%;font-size: 15px;height: 100%;padding: 0;width: 100%;">
+                                                <option value=""> Chọn ngân hàng/Ví điện tử</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="m-input-field">
+                                    <div class="content required">
+                                        <div class="input-block">
+                                            <input id="bankName" type="text" autocomplete="new-password"
+                                                max="Sun Nov 20 2022" value="" placeholder="Tên chủ tài khoản" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="info-msg"><i class="icon-info"></i><small>Tên chủ tài khoản khi đăng
+                                            ký, phải khớp với họ và tên lúc đăng ký NATO888</small></div>
+                                </div>
+                                <div class="m-input-field">
+                                    <div class="content required">
+                                        <div class="input-block"><input id="bankNumber" type="text"
+                                                autocomplete="new-password" max="Sun Nov 20 2022" value=""
+                                                placeholder="Số tài khoản"></div>
+                                    </div>
+                                    <div class="info-msg"><i class="icon-info"></i><small>Phải gồm 6~22 số (tùy thuộc
+                                            vào ngân hàng)</small></div>
+                                </div>
+                                <div class="m-input-field">
+                                    <div class="content required">
+                                        <div class="input-block"><input id="bankBranch" type="text"
+                                                autocomplete="new-password" max="Sun Nov 20 2022" value=""
+                                                placeholder="Chi nhánh"></div>
+                                    </div>
+                                    <div class="info-msg"><i class="icon-info"></i><small>Chi nhánh đăng ký tài khoản
+                                            ngân hàng</small></div>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button title="" class="nrc-button" type="button" onclick="saveBank()"
+                                    style="background-color: #3cc2ea; border: none; border-radius: 3px; color: #fff; cursor: pointer; font-size: 16px; font-stretch: normal; font-style: normal; font-weight: 300; height: 44px; width: 100%;">Thêm
+                                    ngân
+                                    hàng</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            getListUserBank();
+            getInfo();
+        });
+
+        const getInfo = () => {
+            var settings = {
+                "url": "<%=dataPage.config.MAIN_API%>/api/auth/me",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json"
+                },
+            };
+            $.ajax(settings).done(function (response) {
+                console.log(response)
+                if (response.status) {
+                    const data = response.user;
+                    $('#bankName').val(data.name);
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const showFormAddBank = () => {
+            $('#content-list-bankCard').hide();
+            $('#content-add-bankCard').fadeIn();
+            changeClickBack(true);
+            getListBankProvide();
+        }
+
+        const showFormListbank = () => {
+            $('#content-add-bankCard').hide();
+            $('#content-list-bankCard').fadeIn();
+            changeClickBack(false);
+            getListUserBank();
+        }
+
+        const changeClickBack = (boolean) => {
+            if (boolean) {
+                $('#element-clickback').html(`<i onclick="showFormListbank()" class="fa fa-chevron-left"></i>`);
+            } else {
+                $('#element-clickback').html(`<i onclick="window.location='/account/profile'" class="fa fa-chevron-left"></i>`);
+            }
+        }
+
+        const getListUserBank = () => {
+            const listUserBank = $('#user-card-list');
+            listUserBank.html(``);
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/payment/getListUserBank",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    $('#list-user-bank').fadeIn();
+                    const ListUserBank = response.data;
+                    for (const item of ListUserBank) {
+                        listUserBank.append(`
+                            <div class="card active">
+                                <div class="no" style="margin-bottom: 6px; font-family: monospace; color: #24c55e;">${item.bankNumber}</div>
+                                <div class="name" style="font-family: monospace; color: #000000;">${item.bankName}</div>
+                                <div class="info">${item.bankProvide} / ${item.bankBranch}</div>
+                                <div class="status"><i class="d20_small_ok"></i></div>
+                            </div>
+                        `);
+                    }
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const getListBankProvide = () => {
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/payment/getListBankWithdraw",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    const ListBankDeposit = response.data;
+                    for (const item of ListBankDeposit) {
+                        $('#bankProvide').append(`
+                            <option value="${item.code}">${item.code}/${item.name}</option>
+                        `);
+                    }
+
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+        const saveBank = () => {
+            const bankProvide = $('#bankProvide').val();
+            const bankName = $('#bankName').val();
+            const bankNumber = $('#bankNumber').val();
+            const bankBranch = $('#bankBranch').val();
+
+            if (!bankProvide ||
+                !bankName ||
+                !bankNumber ||
+                !bankBranch
+            ) {
+                alert("Vui lòng nhập đầy đủ thông tin trước khi thêm ngân hàng!");
+                return;
+            }
+
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/payment/userAddBank",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+                "data": JSON.stringify({
+                    bankProvide,
+                    bankName,
+                    bankNumber,
+                    bankBranch
+                }),
+            }).done(function (response) {
+                if (response.status) {
+                    alert(response.msg);
+                    showFormListbank();
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+
+    </script>
+
+    <%- include('../../includes/footer') %>

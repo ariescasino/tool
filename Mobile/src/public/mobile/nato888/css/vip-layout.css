@@ -1,0 +1,259 @@
+.app-body {
+    padding-bottom: 0px;
+    color: #777;
+    min-height: 100%;
+}
+
+.center-main {
+    background-color: #ededed;
+    box-sizing: border-box;
+}
+
+.deposit-payment {
+    background-color: #ededed;
+    color: #454545;
+    box-sizing: border-box;
+    min-height: calc(100vh);
+}
+
+.deposit-payment .card-history {
+    padding-bottom: 70px;
+}
+
+.deposit-payment .navbar-wrapper {
+    box-sizing: border-box;
+}
+
+.deposit-payment .navbar-wrapper .navbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #454545;
+    height: 45px;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+.deposit-payment .navbar-wrapper .nav-place {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #454545;
+    height: 45px;
+    margin-top: 60px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+.deposit-payment .navbar-wrapper .nav-place .box-mess {
+    box-sizing: border-box;
+    display: block;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+    min-width: 65px;
+    padding: 9px;
+    width: 50%;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+}
+
+.deposit-payment .navbar-wrapper .nav-place .box-mess.active {
+    border-bottom: 2px solid #4868e7;
+    color: #4868e7;
+}
+
+.deposit-payment .navbar-wrapper .navbar .left {
+    cursor: pointer;
+    flex: .25;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.deposit-payment .navbar-wrapper .navbar .left i {
+    color: #403e0b;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 22px;
+    vertical-align: middle;
+
+}
+
+.deposit-payment .navbar-wrapper .navbar .title {
+    font-size: 20px;
+    line-height: 1;
+    flex: 1;
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.deposit-payment .navbar-wrapper .navbar .right {
+    flex: .25;
+    line-height: 1;
+    min-width: 35px;
+    text-align: right;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.deposit-payment .navbar-wrapper .navbar .right i {
+    color: #000682;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.content-block {
+    padding: 20px;
+    min-height: calc(100vh - 130px);
+}
+
+.content-block form .top-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.content-block.block-2 form .top-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.content-block form input[type=checkbox] {
+
+    outline: none;
+    width: 17px;
+    height: 17px;
+}
+
+.content-block form .top-block .re-delete {
+    color: #050a6e;
+    font-size: 20px;
+}
+
+.content-block form .top-block .re-delete i.fa-trash-can {
+    color: #bbb;
+
+}
+
+.msg-block{
+    padding-bottom: 40px;
+}
+
+.content-block form .msg-block .msg-card,.msg-mess {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    align-items: center;
+    border-radius: 5px;
+    margin: 15px auto;
+    height: 100px;
+}
+.content-block.block-3 form .msg-block .msg-card,.msg-mess{
+    height: 70px;
+}
+
+
+.content-block.block-2 form .msg-block .msg-card,.msg-mess {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 5px;
+    margin: 15px auto;
+    height: 80px;
+}
+
+.content-block form .msg-block .detail-msg {
+    width: 80%;
+}
+
+.content-block form .msg-block .detail-msg .msg-date {
+    color: #6b6b6b;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.content-block.block-2 form .msg-block .detail-msg .msg-date {
+    color: #6b6b6b;
+    font-size: 12px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    line-height: 1;
+}
+.content-block.block-3 form .msg-block .detail-msg .msg-title {
+    color: #0e0d0d;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.content-block form .msg-block .detail-msg .msg-title {
+    color: #454545;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.content-block form .msg-block .detail-msg .msg-content {
+    color: #6b6b6b;
+    flex: 1;
+    padding: 0 3px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+.content-block form .msg-block .detail-msg .msg-prize {
+    color: #000682;
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.content-block form .msg-block .progress-msg {
+    font-size: 18px;
+    color: #07bb07;
+    font-weight: 600;
+}
+.content-block form .msg-block i {
+    color: #12c312;
+    font-size: 22px;
+}
+
+.active-trash {
+    color: #050a6e !important;
+}
+
+.hide-content-block,
+.hide-content-block-detail {
+    display: none !important;
+}
+
+.content-block-detail .msg-detail .title {
+    color: #454545;
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    word-break: break-word;
+}
+
+.content-block-detail .msg-detail .content {
+    /* white-space: pre-wrap; */
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: auto;
+    word-break: break-word;
+}

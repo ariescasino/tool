@@ -1,0 +1,73 @@
+.bg {
+  background-image: url(/images/sport/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.boxInput {
+  /* display: grid; */
+  display: flex;
+  align-items: flex-end;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  height: 200px;
+  grid-template-rows: repeat(6, auto) 1fr auto;
+}
+
+.boxInput > div {
+  width: 90px;
+  min-width: 90px;
+  height: 90px;
+  background: no-repeat center top;
+  -ms-transform: scale(0.83);
+  cursor: pointer;
+}
+.iconActive {
+  background: no-repeat center bottom !important;
+}
+
+.troChoi {
+  margin-bottom: 16px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.5;
+  color: #1f607d;
+  text-transform: uppercase;
+}
+
+.dstt {
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.6;
+  background: linear-gradient(to right, #cff3ff, #fff);
+  color: #1f607d;
+  font-style: italic;
+}
+
+.itemGame {
+  margin: 10px 0px;
+  position: relative;
+  cursor: pointer;
+}
+
+.itemGame:hover::before {
+  content: "";
+}
+
+.itemGame::before {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/sport/bet.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,213 @@
+<% if (dataPage.session.user) { %>
+    <app-member-info-new _ngcontent-serverapp-c151="" _nghost-serverapp-c150="">
+        <section _ngcontent-serverapp-c150=""
+            class="bg-customized-bg-quaternary text-customized-text-primary flex h-[70px] items-center justify-center">
+            <div _ngcontent-serverapp-c150=""
+                class="left flex w-[28%] flex-col items-center justify-center text-center text-xs"
+                style=" margin-left: 35px;">
+                <div _ngcontent-serverapp-c150="" class="flex h-full items-center">
+                    <p _ngcontent-serverapp-c150="" class="flex flex-col text-left">
+                        <span _ngcontent-serverapp-c150="" translate="Home_Hello"></span>
+                        <span _ngcontent-serverapp-c150="" class="text-customized-text-tertiary">
+                            <%=dataPage.session.user.username%>
+                        </span>
+                    <div _ngcontent-serverapp-c151="" class="balance">
+                        <span _ngcontent-serverapp-c151="" class="text-customized-text-secondary mx-0.5">
+                            <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%>
+                        </span>
+                        <span _ngcontent-serverapp-c151="" class="currency">VND</span>
+                    </div>
+                    </p>
+                </div>
+            </div>
+            <ul _ngcontent-serverapp-c185="" class="relative box-border flex h-full w-[61%] items-center justify-center"
+                style=" margin-left: 55px;">
+                <li _ngcontent-serverapp-c185=""
+                    class="discount text-customized-text-primary-400 mx-[2%] inline-block text-center align-top text-xs">
+                    <a href="/account/withdraw" class="block">
+                        <i _ngcontent-serverapp-c185=""
+                            class="text-customized-bg-tertiary mb-1 block text-2xl"></i><!---->
+                        <span _ngcontent-serverapp-c185="" translate="Footer_AnyTimeDiscount"
+                            class="whitespace-nowrap">RÚT TIỀN</span></a>
+                </li>
+                <li _ngcontent-serverapp-c185=""
+                    class="vip text-customized-text-primary-400 mx-[2%] inline-block text-center align-top text-xs">
+                    <a href="/" class="block"></a>
+                    <div _ngcontent-serverapp-c185="" class="relative inline"><!---->
+                        <i _ngcontent-serverapp-c185="" class="text-customized-bg-tertiary mb-1 block text-2xl"></i>
+                    </div>
+                    <span _ngcontent-serverapp-c185="">VIP</span></a>
+                </li><!---->
+                <li _ngcontent-serverapp-c185=""
+                    class="promotion text-customized-text-primary-400 mx-[2%] inline-block text-center align-top text-xs">
+                    <a href="/account/wallet-transfer" class="block">
+                        <i _ngcontent-serverapp-c185="" class="text-customized-bg-tertiary mb-1 block text-2xl"></i>
+                        <span _ngcontent-serverapp-c185="" translate="Shared_ReceivePromotion">CHUYỂN QUỸ</span>
+                </li></a>
+            </ul>
+
+            <style>
+                [_nghost-serverApp-c154] {
+                    display: block;
+                    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+                    --tw-gradient-from: #7bbfd4 var(--tw-gradient-from-position);
+                    --tw-gradient-to: rgb(123 191 212 / 0) var(--tw-gradient-to-position);
+                    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+                    --tw-gradient-to: #2d7699 var(--tw-gradient-to-position)
+                }
+
+                .account-box[_ngcontent-serverApp-c154] {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 34%;
+                    height: 100%;
+                    padding: 5px;
+                    --tw-text-opacity: 1;
+                    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+                    font-size: 11px;
+                    text-align: center;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    vertical-align: top;
+                    overflow: hidden
+                }
+
+                .account-box[_ngcontent-serverApp-c154]>p[_ngcontent-serverApp-c154] {
+                    margin: 0
+                }
+
+                .section-account[_ngcontent-serverApp-c154] {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 60px;
+                    font-size: 0
+                }
+
+                .section-account[_ngcontent-serverApp-c154]>div[_ngcontent-serverApp-c154] {
+                    position: relative;
+                    z-index: 1
+                }
+
+                .btns[_ngcontent-serverApp-c154] {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 33px
+                }
+
+                .btns[_ngcontent-serverApp-c154] a[_ngcontent-serverApp-c154] {
+                    width: 50%;
+                    height: 100%;
+                    line-height: 33px;
+                    text-align: center
+                }
+
+                .btns[_ngcontent-serverApp-c154] span[_ngcontent-serverApp-c154] {
+                    font-size: 15.5px;
+                    font-weight: 500;
+                    background: linear-gradient(to top, #fbcd2c 7%, #fffccc 89%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent
+                }
+
+                .btn-login[_ngcontent-serverApp-c154] {
+                    --tw-bg-opacity: 1;
+                    background-color: rgb(108 175 201 / var(--tw-bg-opacity, 1))
+                }
+
+                .btn-reg[_ngcontent-serverApp-c154] {
+                    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+                    --tw-gradient-from: #6cafc9 var(--tw-gradient-from-position);
+                    --tw-gradient-to: rgb(108 175 201 / 0) var(--tw-gradient-to-position);
+                    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+                    --tw-gradient-to: #347d9e var(--tw-gradient-to-position)
+                }
+
+                .detail[_ngcontent-serverApp-c154] {
+                    --tw-text-opacity: 1;
+                    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+                    font-size: 11px;
+                    font-weight: 700;
+                    line-height: 20px
+                }
+
+                .detail[_ngcontent-serverApp-c154] i[_ngcontent-serverApp-c154] {
+                    --tw-text-opacity: 1;
+                    color: rgb(255 255 0 / var(--tw-text-opacity, 1));
+                    font-size: 12px
+                }
+
+                .detail[_ngcontent-serverApp-c154] span[_ngcontent-serverApp-c154] {
+                    display: inline-block;
+                    max-width: 7em;
+                    --tw-text-opacity: 1;
+                    color: rgb(255 255 0 / var(--tw-text-opacity, 1));
+                    font-size: 13px;
+                    font-weight: 700;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    vertical-align: top
+                }
+
+                .account-nav[_ngcontent-serverApp-c154] {
+                    position: relative;
+                    z-index: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 66%;
+                    height: 100%
+                }
+
+                .account-nav[_ngcontent-serverApp-c154]:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 113%;
+                    height: 100%;
+                    background: linear-gradient(110deg, transparent 35px, #7bbfd4 0) left
+                }
+
+                .account-nav[_ngcontent-serverApp-c154] ul[_ngcontent-serverApp-c154] {
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    justify-content: space-around;
+                    align-items: center
+                }
+
+                .account-nav[_ngcontent-serverApp-c154] ul[_ngcontent-serverApp-c154] li[_ngcontent-serverApp-c154] {
+                    display: inline-block;
+                    position: relative;
+                    vertical-align: top
+                }
+
+                .account-nav[_ngcontent-serverApp-c154] ul[_ngcontent-serverApp-c154] li[_ngcontent-serverApp-c154] img[_ngcontent-serverApp-c154] {
+                    height: 40px
+                }
+            </style>
+
+        </section>
+        <% }else{ %>
+            <app-member-info _ngcontent-serverapp-c155="" _nghost-serverapp-c154="">
+                <section _ngcontent-serverapp-c154="" class="btns ng-star-inserted">
+                    <a _ngcontent-serverapp-c154="" routerlink="/Account/Register" class="btn-reg"
+                        href="/Account/Register" style=" background: #4d8fa9;">
+                        <span _ngcontent-serverapp-c154="" translate="Register_Register">ĐĂNG KÝ</span></a>
+                    <a _ngcontent-serverapp-c154="" routerlink="/Account/Login" class="btn-login" href="/Account/Login">
+                        <span _ngcontent-serverapp-c154="" translate="Login_LoginTitle">ĐĂNG NHẬP</span>
+                    </a>
+                </section>
+                <!---->
+                <!---->
+            </app-member-info>
+            <% } %>

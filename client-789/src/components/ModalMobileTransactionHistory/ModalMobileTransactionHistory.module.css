@@ -1,0 +1,9 @@
+.modalWarp {
+  overflow: hidden !important;
+}
+
+.ng-star-inserted {
+  color: #8a6d3b;
+  background: #fcf8e3;
+  border: 1px solid #faebcc;
+}

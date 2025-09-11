@@ -1,0 +1,1237 @@
+<%- include('../../includes/header') %>
+    <script>
+        $(document).ready(() => {
+            setTimeout(() => {
+                // colapse sidebar
+                $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
+                $("#main-wrapper").addClass("mini-sidebar");
+            }, 100);
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://alesmit.github.io/jquery-hortree/jquery.hortree.min.css">
+    <!-- jQuery Line plugin : https://github.com/tbem/jquery.line -->
+    <script src="https://alesmit.github.io/jquery-hortree/jquery.line.js" type="text/javascript"></script>
+    <!-- jQuery HorTree plugin : https://github.com/alesmit/jquery-hortree -->
+    <script src="https://alesmit.github.io/jquery-hortree/jquery.hortree.min.js" type="text/javascript"></script>
+
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Chỉ chỉnh sửa khi biết rõ mình đang làm gì!</code>
+                        </h6>
+                        <div class="row">
+                            <form action="" method="get" class="form-body row">
+                                <div class="col-lg-9 row">
+                                    <div class="col-md-2">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Name</span>
+                                            <input type="text" class="form-control" name="name" placeholder="Name..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Username</span>
+                                            <input type="text" class="form-control" name="username"
+                                                placeholder="Username..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Phone</span>
+                                            <input type="text" class="form-control" name="phone" placeholder="Phone..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Email</span>
+                                            <input type="text" class="form-control" name="email" placeholder="Email..."
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Mã Đại Lý</span>
+                                            <input type="text" class="form-control" name="code"
+                                                placeholder="Mã đại lý..." aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-info align-items-center">
+                                        <i class="fa fa-search"></i> Tìm kiếm
+                                    </button>
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Tổng: <%=dataApi.total%>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>Cấp Độ</th>
+                                        <th>Các Cấp Bên Trên</th>
+                                        <th>#UID</th>
+                                        <th>Tên Đại Lý</th>
+                                        <th>Mã Đại Lý</th>
+                                        <th>Tên Đăng Nhập</th>
+                                        <th>Số Dư</th>
+                                        <th>Tiền Nạp</th>
+                                        <th>Tiền Rút</th>
+                                        <th>Trạng Thái</th>
+                                        <th>Ngày Đăng Ký</th>
+                                        <th class="text-center">Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if(dataApi.dataExport.length> 0) { %>
+
+                                        <% dataApi.dataExport.forEach((data)=> { %>
+                                            <tr>
+                                                <td>
+                                                    Cấp F<%=data.agencyLevel.level%>
+                                                </td>
+                                                <td>
+                                                    <%=data.agencyLevel.upLineAgencyText.slice(0, -1)%>
+                                                </td>
+                                                <td>
+                                                    #<%=data.id%>
+                                                </td>
+                                                <td>
+                                                    <%=data.name%>
+                                                </td>
+                                                <td>
+                                                    <%=data.AgencyInfo.code%>
+                                                </td>
+                                                <td>
+                                                    <%=data.username%>
+                                                </td>
+                                                <td>
+                                                    <%=dataPage.helpers.numberWithCommas(data.coin)%>
+                                                </td>
+                                                <td>
+                                                    <%=dataPage.helpers.numberWithCommas(data.totalDeposit)%>
+                                                </td>
+                                                <td>
+                                                    <%=dataPage.helpers.numberWithCommas(data.totalWithdraw)%>
+                                                </td>
+                                                <td>
+                                                    <%=(data.status=="active" ) ? 'Hoạt động' : 'Bị khóa' %>
+                                                </td>
+                                                <td>
+                                                    <%=dataPage.helpers.moment(data.createdAt).format("DD /MM/YYYY HH:MM:ss")%>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button style="margin-left: 10px;"
+                                                        onclick="showFormUpdateUser('<%=data.id%>', '<%=data.username%>')"
+                                                        class="btn waves-effect waves-light btn-primary">
+                                                        <span class="btn-icon-left"> <b><i
+                                                                    class="fa fa-pencil color-dark"></i></b>
+                                                        </span>
+                                                    </button>
+                                                    <!-- <button style="margin-left: 10px;"
+                                                        onclick="deleteDailyConfirm('<%=data.id%>')" type="button"
+                                                        class="btn waves-effect waves-light btn-danger"><span
+                                                            class="btn-icon-left">
+                                                            <b><i class="fa fa-trash color-dark"></i></b>
+                                                        </span><b>Xóa</b>
+                                                    </button> -->
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bootstrap-pagination">
+                            <nav>
+                                <ul class="pagination justify-content-center" id="phantrangUser"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+    <script>
+        const offCanvas = (elementDom, status = true) => {
+            if (status) elementDom.offcanvas('show');
+            if (!status) elementDom.offcanvas('hide');
+        }
+
+        const phantrang = Pagination('<%=dataApi.page%>', '<%=dataApi.total%>', '<%=dataApi.kmess%>');
+
+        let phantrangBody = '';
+        phantrang.forEach((page) => {
+            $("#phantrangUser").html(phantrangBody);
+            let active = ('<%=dataApi.page%>' == page) ? "active" : "";
+            const urlToPage = (page !== "...") ? `/agency?page=${page}&limit=<%=dataApi.kmess%>` : `javascript:void(0)`;
+            phantrangBody += `
+                <li class="page-item ${active}">
+                    <a class="page-link" href="${urlToPage}"><b>${page}</b></a>
+                </li>
+            `;
+            $("#phantrangUser").html(phantrangBody);
+        });
+
+        const deleteDailyConfirm = (id) => {
+            cuteAlert({
+                type: "question",
+                title: "Hành Động",
+                message: "Bạn có muốn xóa nó không?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    return;
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/user/delete/' + id,
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        if (response.status) {
+                            toastr.success(
+                                "Thành công.",
+                                "Success!"
+                            );
+                            setTimeout(() => {
+                                window.location = "";
+                            }, 700);
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+
+                }
+            });
+        }
+
+        const showFormUpdateUser = (id, name) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/agency/agency-info/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#elementModal').html(`
+                    <div class="modal fade" id="userInfo-update-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog modal-md" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center">
+                                    <h4 class="modal-title" id="exampleModalLabel1">
+                                        Cập nhật đại lý - ${response.data.username}
+                                    </h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Họ và tên:</label>
+                                            <input type="text" class="form-control" id="update-name" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Mã đại lý:</label>
+                                            <input type="text" class="form-control" id="update-code" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Tên đăng nhập:</label>
+                                            <input type="text" class="form-control" id="update-username" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Địa chỉ Email:</label>
+                                            <input type="email" class="form-control" id="update-email" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số điện thoại:</label>
+                                            <input type="text" class="form-control" id="update-phone" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Số dư:</label>
+                                            <input type="number" class="form-control" id="update-coin" />
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="recipient-name" class="control-label">Tổng đã nạp:</label>
+                                                <input type="text" class="form-control" id="update-totalDeposit" readonly/>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="recipient-name" class="control-label">Tổng đã rút:</label>
+                                                <input type="text" class="form-control" id="update-totalWithdraw" readonly/>
+                                            </div>                                        
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Trạng thái tài khoản:</label>
+                                            <select class="form-control form-select" id="update-status"></select>
+                                        </div>   
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Xác minh tài khoản:</label>
+                                            <select class="form-control form-select" id="update-verify"></select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Loại tài khoản:</label>
+                                            <select class="form-control form-select" id="update-role"></select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="control-label">Quỹ trò chơi hiện tại:</label>
+                                            <div class="row" style="padding: 10px;">
+                                                <div class="col-12" style="" id="game-wallet-body">
+                                                </div>      
+                                            </div>
+                                        </div>   
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-success" event-target="offcanvas-show-curent-tree" data-id="${id}" href="javascript:getCurrentTree('${id}')">
+                                        Sơ đồ liên kết
+                                    </a>
+                                    <a class="btn btn-danger" event-target="offcanvas-show-below-tree" data-id="${id}" href="javascript:getBelowTree('${id}')">
+                                        Sơ đồ tuyến dưới
+                                    </a>
+                                    <a class="btn btn-info" href="javascript:showFormChangePass('${id}', '${name}');">
+                                        Đổi mật khẩu
+                                    </a>
+                                    <button class="btn btn-warning" onclick="showFormProfit('${id}')">
+                                        Lợi nhuận
+                                    </button>
+                                    <a class="btn btn-info" href="/game/bet-history/${id}">
+                                        Lịch sử cược
+                                    </a>
+                                    <button type="button" class="btn btn-success" onclick="updateUser('${id}')" >
+                                        Cập nhật
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal -->
+                    `);
+
+                    $('#update-name').val(response.data.name);
+                    $('#update-code').val(response.data.AgencyInfo.code);
+                    $('#update-username').val(response.data.username);
+                    $('#update-email').val(response.data.email);
+                    $('#update-phone').val(response.data.phone);
+                    $('#update-coin').val(response.data.coin);
+
+
+                    $('#update-totalDeposit').val(numberWithCommas(response.data.totalDeposit));     
+                    $('#update-totalWithdraw').val(numberWithCommas(response.data.totalWithdraw));       
+
+
+                    //$('#update-status').val();
+                    //$('#update-varify').val();
+
+                    if (response.data.status == "active") {
+                        $('#update-status').append(`<option value="active">Hoạt động</option>`);
+                        $('#update-status').append(`<option value="blocked">Bị khóa</option>`);
+                    } else {
+                        $('#update-status').append(`<option value="blocked">Bị khóa</option>`);
+                        $('#update-status').append(`<option value="active">Hoạt động</option>`);
+                    }
+
+                    if (response.data.verify) {
+                        $('#update-verify').append(`<option value="true">Đã xác minh</option>`);
+                        $('#update-verify').append(`<option value="false">Chưa xác minh</option>`);
+                    } else {
+                        $('#update-verify').append(`<option value="false">Chưa xác minh</option>`);
+                        $('#update-verify').append(`<option value="true">Đã xác minh</option>`);
+                    }
+
+                    $('#update-role').append(`<option value="agency">Đại lý</option>`);
+                    $('#update-role').append(`<option value="user">Người chơi</option>`);
+
+
+                    getGameWallet(response.data.username);
+
+                    $('#userInfo-update-modal').modal('toggle');
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const updateUser = (id) => {
+            const name = $('#update-name').val();
+            const username = $('#update-username').val();
+            const code = $('#update-code').val();
+            const email = $('#update-email').val();
+            const phone = $('#update-phone').val();
+            const coin = $('#update-coin').val();
+            const status = $('#update-status').val();
+            const verify = $('#update-verify').val();
+            const role = $('#update-role').val();
+
+            if (!name || !username || !code || !email || !phone || !coin || !role) {
+                toastr.error(
+                    "Vui lòng điền đầy đủ thông tin!",
+                    "Error!"
+                );
+                return;
+            }
+
+            if (Number(coin) < 0) {
+                toastr.error(
+                    "Số dư không hợp lệ!",
+                    "Error!"
+                );
+                return;
+            }
+
+            $.ajax({
+                "url": "<%=dataPage.config.API_SERVER%>/agency/update/" + id,
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+                "data": JSON.stringify({
+                    name,
+                    username,
+                    code,
+                    email,
+                    phone,
+                    coin: Number(coin),
+                    status,
+                    verify: JSON.parse(verify),
+                    role
+                }),
+            }).done(function (response) {
+                if (response.status) {
+                    toastr.success(
+                        response.msg,
+                        "Success!"
+                    );
+                    setTimeout(() => {
+                        window.location = "";
+                    }, 700);
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            });
+        }
+
+        const showFormProfit = (id) => {
+            $('.modal-backdrop').remove();
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/agency/getProfit/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#tableProfitUser').html(``);
+
+                    countRefUser(id);
+                    countRefUserToday(id);
+
+                    $('#elementModal').html(`
+                    <style>
+                        @media (min-width: 1055px)
+                        .modal-lg, .modal-xl {
+                            max-width: 1055px;
+                        }
+                        .text-white-50 {
+                            color: rgb(255 255 255) !important;
+                        }
+                    </style>
+                    <div class="modal fade" id="userInfo-update-modal" tabindex="-1" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog modal-lg" role="document" style="min-width: 1099px;">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center">
+                                    <h4 class="modal-title" id="exampleModalLabel1">
+                                        Thống kê đại lý - ${response.agency.userInfo.username}
+                                    </h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">    
+                                    <div class="row">
+                                        <div class="col-md-8 row">  
+                                            <div class="col-md-4 row">  
+                                                <h6 class="card-subtitle">Thời gian từ
+                                                </h6>
+
+                                                <div class="input-group">
+                                                    <input type="text" name="inputProfitFrom" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+                                                    <span class="input-group-text">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar feather-sm"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 row">  
+                                                <h6 class="card-subtitle">Thời gian đến
+                                                </h6>
+
+                                                <div class="input-group">
+                                                    <input type="text" name="inputProfitTo" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+                                                    <span class="input-group-text">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar feather-sm"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 row"> 
+                                                <button onclick="getProfitAgencyByTime('${id}')" type="button" class="btn waves-effect waves-light btn-info" style="height: 30px;margin-top: 11px;">
+                                                Tìm kiếm
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4 row"></div>
+
+                                        <div style="margin-bottom:20px;"></div>
+                                        <div class="col-md-4 row">  
+                                            <div class="col-md-12">
+                                                <div class="card bg-info">
+                                                    <div class="card-body text-white">
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <div class="ms-3">
+                                                            <h4 class="mb-0 text-white">Tổng đã nạp</h4>
+                                                            </div>
+                                                            <div class="ms-auto">
+                                                            <h2 class="font-weight-medium mb-0 text-white" id="totalDeposit"></h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card bg-success">
+                                                    <div class="card-body text-white">
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <div class="ms-3">
+                                                            <h4 class="mb-0 text-white">Tổng đã rút</h4>
+                                                            </div>
+                                                            <div class="ms-auto">
+                                                            <h2 class="font-weight-medium mb-0 text-white" id="totalWithdraw"></h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card bg-primary">
+                                                    <div class="card-body text-white">
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <div class="ms-3">
+                                                            <h4 class="mb-0 text-white">Tổng volume cược</h4>
+                                                            </div>
+                                                            <div class="ms-auto">
+                                                            <h2 class="font-weight-medium mb-0 text-white" id="totalVolume"></h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card bg-danger">
+                                                    <div class="card-body text-white">
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <div class="ms-3">
+                                                            <h4 class="mb-0 text-white">Tổng cược hợp lệ</h4>
+                                                            </div>
+                                                            <div class="ms-auto">
+                                                            <h2 class="font-weight-medium mb-0 text-white" id="totalValidBet"></h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card bg-info">
+                                                    <div class="card-body text-white">
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <div class="ms-3">
+                                                            <h4 class="mb-0 text-white">Hoa hồng thực tế</h4>
+                                                            </div>
+                                                            <div class="ms-auto">
+                                                            <h2 class="font-weight-medium mb-0 text-white" id="totalComission">0</h2>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 row">
+                                            <div class="col-md-4">
+                                                <div class="card bg-orange text-white">
+                                                    <div class="card-body">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <a href="JavaScript: void(0);"><i class="display-6 cc ETH text-white" title="ETH"></i></a>
+                                                        <div class="ms-3 mt-2">
+                                                        <h4 class="font-weight-medium mb-0 text-white">
+                                                            Tổng thành viên
+                                                        </h4>
+                                                        <h5 class="text-white-50" id="countRefUser">0</h5>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card bg-cyan text-white">
+                                                    <div class="card-body">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <a href="JavaScript: void(0);"><i class="display-6 cc ETH text-white" title="ETH"></i></a>
+                                                        <div class="ms-3 mt-2">
+                                                        <h4 class="font-weight-medium mb-0 text-white">
+                                                            Đăng ký hôm nay
+                                                        </h4>
+                                                        <h5 class="text-white-50" id="countRefUser3"></h5>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card bg-dark text-white">
+                                                    <div class="card-body">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <a href="JavaScript: void(0);"><i class="display-6 cc ETH text-white" title="ETH"></i></a>
+                                                        <div class="ms-3 mt-2">
+                                                        <h4 class="font-weight-medium mb-0 text-white">
+                                                            Lợi nhuận
+                                                        </h4>
+                                                        <h5 class="text-white-50" id="countProfit"></h5>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="table-responsive" style="border: groove;">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="border-top-0">USERNAME</th>
+                                                            <th class="border-top-0">TỔNG NẠP</th>
+                                                            <th class="border-top-0">TỔNG RÚT</th>
+                                                            <th class="border-top-0">VOLUME CƯỢC</th>
+                                                            <th class="border-top-0">CƯỢC HỢP</th>
+                                                            <th class="border-top-0">LỢI NUẬN</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody id="tableProfitUser">
+                                                        </tbody>
+                                                    </table>
+                                                    </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+                                        Đóng
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.modal -->
+                    `);
+
+                    $('#userInfo-update-modal').modal('toggle');
+
+                    $(document).ready(() => {
+                        // Set default value
+                        $('input[name="inputProfitFrom"]').val(moment().format("DD/MM/YYYY"));
+                        $('input[name="inputProfitTo"]').val(moment().format("DD/MM/YYYY"));
+
+                        // Date Picker  
+                        $('input[name="inputProfitFrom"]').datepicker({
+                            language: 'vi',
+                            autoclose: true,
+                            todayHighlight: true,
+                        });
+                        $('input[name="inputProfitTo"]').datepicker({
+                            language: 'vi',
+                            autoclose: true,
+                            todayHighlight: true,
+                        });
+                    });
+
+                    const dataProfit = response.data;
+                    let totalVolume = 0, totalValidBet = 0, totalDeposit = 0, totalWithdraw = 0, totalPlayProfit = 0, percentMultiply = 0;
+
+                    response.data.forEach((user) => {
+                        // caculator volume
+                        user.betRecord.forEach((bet) => {
+                            totalVolume += Number(bet.betAmount);
+                            totalValidBet += Number(bet.validBetAmount);
+                            totalPlayProfit += Number(bet.netPnl);
+                        });
+                        // caculator deposit
+                        user.depositRecord.forEach((deposit) => {
+                            totalDeposit += Number(deposit.amount);
+                        });
+                        // caculator withdraw
+                        user.withdrawRecord.forEach((withdraw) => {
+                            totalWithdraw += Number(withdraw.amount);
+                        });
+                    });
+                    totalVolume = totalVolume * 1000;
+                    totalValidBet = totalValidBet * 1000;
+                    $('#totalVolume').html(numberWithCommas(totalVolume));
+                    $('#totalValidBet').html(numberWithCommas(totalValidBet));
+                    $('#totalDeposit').html(numberWithCommas(totalDeposit));
+                    $('#totalWithdraw').html(numberWithCommas(totalWithdraw));
+                    $('#countProfit').html(numberWithCommas(totalDeposit - totalWithdraw));
+                    $("#totalComission").html(numberWithCommas(response.percentCommission));
+                    // Tính hoa hồng
+                    // if (totalPlayProfit > 0) {
+                    //     totalCommission = (totalPlayProfit * 79) / 100;
+
+                    //     totalCommission = totalCommission * 1000;
+
+                    //     if (totalDeposit > 0 && totalDeposit <= 500000000) {
+                    //         percentMultiply = 20;
+                    //     } else if (totalDeposit > 500000000 && totalDeposit <= 1500000000) {
+                    //         percentMultiply = 30;
+                    //     } else if (totalDeposit > 1500000000) {
+                    //         percentMultiply = 40;
+                    //     }
+
+                    //     totalCommission = (totalCommission * percentMultiply) / 100;
+
+                    //     $("#totalComission").html(numberWithCommas(totalCommission));
+                    // } else { }
+
+                    response.data.forEach((user) => {
+                        const username = user.userInfo.username;
+                        let totalDepositUser = 0, totalWithdrawUser = 0, totalValidBetUser = 0, totalVolumeUser = 0;
+
+
+                        // caculator volume
+                        user.betRecord.forEach((bet) => {
+                            totalVolumeUser += Number(bet.betAmount);
+                            totalVolumeUser += Number(bet.validBetAmount);
+                        });
+                        // caculator deposit
+                        user.depositRecord.forEach((deposit) => {
+                            totalDepositUser += Number(deposit.amount);
+                        });
+                        // caculator withdraw
+                        user.withdrawRecord.forEach((withdraw) => {
+                            totalWithdrawUser += Number(withdraw.amount);
+                        });
+
+                        totalVolumeUser = totalVolumeUser * 1000;
+                        totalValidBetUser = totalValidBetUser * 1000;
+
+                        $('#tableProfitUser').append(`
+                            <tr>
+                                <td class="txt-oflo">${username}</td>
+                                <td>
+                                    <span class="font-weight-medium">${totalDepositUser}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${totalWithdrawUser}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${totalVolumeUser}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${totalValidBetUser}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${totalDepositUser - totalWithdrawUser}</span>
+                                </td>
+                            </tr>
+                        `);
+                    });
+
+
+
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const getProfitAgencyByTime = (id) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/agency/getProfit/' + id + '?from=' + $('input[name="inputProfitFrom"]').val() + '&to=' + $('input[name="inputProfitTo"]').val(),
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    const dataProfit = response.data;
+                    let totalVolume = 0, totalValidBet = 0, totalDeposit = 0, totalWithdraw = 0;
+
+                    response.data.forEach((user) => {
+                        // caculator volume
+                        user.betRecord.forEach((bet) => {
+                            totalVolume += Number(bet.betAmount);
+                            totalValidBet += Number(bet.validBetAmount);
+                        });
+                        // caculator deposit
+                        user.depositRecord.forEach((deposit) => {
+                            totalDeposit += Number(deposit.amount);
+                        });
+                        // caculator withdraw
+                        user.withdrawRecord.forEach((withdraw) => {
+                            totalWithdraw += Number(withdraw.amount);
+                        });
+                    });
+                    totalVolume = totalVolume * 1000;
+                    totalValidBet = totalValidBet * 1000;
+                    $('#totalVolume').html(numberWithCommas(totalVolume));
+                    $('#totalValidBet').html(numberWithCommas(totalValidBet));
+                    $('#totalDeposit').html(numberWithCommas(totalDeposit));
+                    $('#totalWithdraw').html(numberWithCommas(totalWithdraw));
+                    $('#countProfit').html(numberWithCommas(totalDeposit - totalWithdraw));
+
+
+                    response.data.forEach((user) => {
+                        const username = user.userInfo.username;
+                        let totalDepositUser = 0, totalWithdrawUser = 0, totalValidBetUser = 0, totalVolumeUser = 0;
+
+
+                        // caculator volume
+                        user.betRecord.forEach((bet) => {
+                            totalVolumeUser += Number(bet.betAmount);
+                            totalVolumeUser += Number(bet.validBetAmount);
+                        });
+                        // caculator deposit
+                        user.depositRecord.forEach((deposit) => {
+                            totalDepositUser += Number(deposit.amount);
+                        });
+                        // caculator withdraw
+                        user.withdrawRecord.forEach((withdraw) => {
+                            totalWithdrawUser += Number(withdraw.amount);
+                        });
+
+                        totalVolumeUser = totalVolumeUser * 1000;
+                        totalValidBetUser = totalValidBetUser * 1000;
+
+                        $('#tableProfitUser').append(`
+                            <tr>
+                                <td class="txt-oflo">${username}</td>
+                                <td>
+                                    <span class="font-weight-medium">${numberWithCommas(totalDepositUser)}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${numberWithCommas(totalWithdrawUser)}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${numberWithCommas(totalVolumeUser)}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${numberWithCommas(totalValidBetUser)}</span>
+                                </td>
+                                <td>
+                                    <span class="font-weight-medium">${numberWithCommas(totalDepositUser - totalWithdrawUser)}</span>
+                                </td>
+                            </tr>
+                        `);
+                    });
+
+                } else {
+                    toastr.error(
+                        response.msg,
+                        "Error!"
+                    );
+                }
+            }).catch((err) => {
+                console.log(err);
+                toastr.error(
+                    err.responseJSON.msg,
+                    "Error!"
+                );
+            });
+        }
+
+        const countRefUser = (id) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/agency/countRefUser/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#countRefUser').html(numberWithCommas(response.count));
+                }
+            });
+        }
+
+        const countRefUserToday = (id) => {
+            $.ajax({
+                "url": '<%=dataPage.config.API_SERVER%>/agency/countRefUserToday/' + id,
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                },
+            }).then((response) => {
+                if (response.status) {
+                    $('#countRefUser3').html(numberWithCommas(response.count));
+                }
+            });
+        }
+
+        const showFormChangePass = (id, name) => {
+            $("div.modal-backdrop").remove();
+
+            $('#elementModal').html(`
+                <!-- Modal Change Password-->
+                <!-- Code Modal -->
+                <div id="user-change-passworrd-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header border-bottom">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    <i class="fas fa-key"></i> <b>Đổi Mật Khẩu - ${name}</b>
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <div class="text-center">
+                                    <h5 class="card-subtitle mb-3 pb-3 border-bottom">
+                                        Ghi nhớ mật khẩu trước khi thay Đổi
+                                    </h5>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control border border-primary"
+                                                placeholder="Nhập mật khẩu mới..." name="newPassword">
+                                            <label><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="feather feather-lock feather-sm text-primary fill-white me-2">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg><span class="border-start border-primary ps-3">Mật khẩu mới</span></label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control border border-primary"
+                                                placeholder="Nhập lại mật khẩu mới..." name="confirmPassword">
+                                            <label><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="feather feather-lock feather-sm text-primary fill-white me-2">
+                                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                </svg><span class="border-start border-primary ps-3">Xác nhận lại mật khẩu
+                                                    mới</span></label>
+                                        </div>
+
+                                        <div class="form-floating mb-3" id="notifyElement-changepassword"></div>
+
+                                        <div class="d-md-flex align-items-center">
+                                            <div class="mt-3 mt-md-0 ms-auto">
+                                                <button onclick="changePassword('${id}')" type="submit" class="btn btn-primary font-weight-medium rounded-pill px-4">
+                                                    <div class="d-flex align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            class="feather feather-send feather-sm fill-white me-2">
+                                                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                                        </svg>
+                                                        Đổi mật khẩu
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+                <!-- End Modal Change Password-->
+            `);
+
+            $('#user-change-passworrd-modal').modal('toggle');
+        }
+
+        const changePassword = (id) => {
+            const notifyElement = $("#notifyElement-changepassword");
+            const dailyPassword = $("input[name=newPassword]").val();
+            const dailyPasswordConfirm = $("input[name=confirmPassword]").val();
+
+            if (!dailyPassword ||
+                !dailyPasswordConfirm) {
+                notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                            Vui lòng điền đầy đủ thông tin.
+                        </div>`);
+                return;
+            }
+
+            if (dailyPassword !== dailyPasswordConfirm) {
+                notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                            2 mật khẩu không khớp.
+                        </div>`);
+                return;
+            }
+
+            $.ajax({
+                "url": `<%=dataPage.config.API_SERVER%>/agency/change-password/${id}`,
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                "data": {
+                    newPassword: dailyPassword,
+                    newPasswordConfirm: dailyPasswordConfirm
+                }
+            }).then((response) => {
+                if (response.status) {
+                    notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                                Đổi mật khẩu thành công!
+                            </div>`);
+                    return;
+                } else {
+                    notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                                ${response.msg}
+                            </div>`);
+                    return;
+                }
+            }).catch((err) => {
+                console.log(err);
+                notifyElement.html(`<div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                                ${err.statusText}
+                            </div>`);
+                return;
+            });
+        }
+
+        const getBelowTree = (id) => {
+            // show bet history
+            blockUI();
+            
+            try {
+                $.ajax({
+                    "url": `<%=dataPage.config.API_SERVER%>/agency/getBelowTree/${id}`,
+                    "method": "GET",
+                    "timeout": 0,
+                    "headers": {
+                        "Authorization": `Bearer <%=dataPage.session.accessToken%>`,
+                        "Content-Type": "application/json"
+                    },
+                }).done((response) => {
+                    blockUI(false);
+                    const data = response;
+                    $('#userInfo-update-modal').modal('toggle');
+
+                    $(".offCanvasElement").html(`
+                            <!-- OffCanvas Tree Below -->
+                            <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" tabindex="-1" id="offcanvas-below-tree"
+                            aria-labelledby="offcanvas-below-label" style="min-height: 100%;">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title"><i class="fas fa-chart-line me-1 ms-1"></i> SƠ ĐỒ TUYẾN DƯỚI </h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="" id="offcanvas-below-tree-body" style="margin-top: 35px;"></div>
+                            </div>
+                        </div>
+                    `);
+
+                    $('#offcanvas-below-tree-body').hortree({
+                        data: data,
+                        lineStrokeWidth: 2,
+                        lineZindex: 9,
+                        //lineColor: "#ffff",
+                        onComplete: () => {
+                            //alert("Red")
+                        }
+                    });
+
+                    offCanvas($("#offcanvas-below-tree"));
+                }).fail((xhr, status, error) => {
+                    blockUI(false);
+                    // error handling
+                    toastr.error(
+                        "Đã có lỗi xảy ra, vui lòng thử lại!",
+                        "Error!"
+                    );
+                });
+            } catch (e) {
+                //blockUI(false);
+                console.log(e);
+                toastr.error(
+                    "Đã có lỗi xảy ra, vui lòng thử lại!",
+                    "Error!"
+                );
+            }
+        }
+
+        const getCurrentTree = (id) => {
+            // show bet history
+            blockUI();
+
+            try {
+                $.ajax({
+                    "url": `<%=dataPage.config.API_SERVER%>/agency/getCurrentTree/${id}`,
+                    "method": "GET",
+                    "timeout": 0,
+                    "headers": {
+                        "Authorization": `Bearer <%=dataPage.session.accessToken%>`,
+                        "Content-Type": "application/json"
+                    },
+                }).done((response) => {
+                    blockUI(false);
+                    const data = response;
+                    $('#userInfo-update-modal').modal('toggle');
+
+                    $(".offCanvasElement").html(`
+                            <!-- OffCanvas Tree Below -->
+                            <div class="offcanvas offcanvas-bottom" data-bs-scroll="true" tabindex="-1" id="offcanvas-current-tree"
+                            aria-labelledby="offcanvas-below-label" style="min-height: 100%;">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title"><i class="fas fa-chart-line me-1 ms-1"></i> SƠ ĐỒ LIÊN KẾT TUYẾN </h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="" id="offcanvas-current-tree-body" style="margin-top: 35px;"></div>
+                            </div>
+                        </div>
+                    `);
+
+                    $('#offcanvas-current-tree-body').hortree({
+                        data: data,
+                        lineStrokeWidth: 2,
+                        lineZindex: 9,
+                        //lineColor: "#ffff",
+                        onComplete: () => {
+                            //alert("Red")
+                        }
+                    });
+
+                    offCanvas($("#offcanvas-current-tree"));
+                }).fail((xhr, status, error) => {
+                    blockUI(false);
+                    // error handling
+                    toastr.error(
+                        "Đã có lỗi xảy ra, vui lòng thử lại!",
+                        "Error!"
+                    );
+                });
+            } catch (e) {
+                //blockUI(false);
+                console.log(e);
+                toastr.error(
+                    "Đã có lỗi xảy ra, vui lòng thử lại!",
+                    "Error!"
+                );
+            }
+        }
+
+        const getGameWallet = (username) => {
+            const fundListElement = $('#game-wallet-body');
+            fundListElement.html(``);
+            $.ajax({
+                "url": "<%=dataPage.config.API_SERVER%>/game/gameAvalible",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    const ListSubname = response.data;
+                    
+                    for (const item in ListSubname) {
+                        $.ajax({
+                            "url": `<%=dataPage.config.API_SERVER%>/game/wallets/${item.toUpperCase()}/${username}`,
+                            "method": "GET",
+                            "timeout": 0,
+                            "headers": {
+                                "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                                "Content-Type": "application/json",
+                            },
+                        }).done((response) => {
+                            if (response.status) {
+                                const balance = response.balance;
+                                fundListElement.append(`
+                                    <button type="button" class="btn waves-effect waves-light btn-dark mb-1">${ListSubname[item].name.toUpperCase()} [${balance}]</button>
+                                `);
+                            }
+                        });
+                    }
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+    </script>
+    <%- include('../../includes/footer') %>

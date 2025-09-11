@@ -1,0 +1,196 @@
+<%- include('../../includes/header') %>
+
+    <div id="mobile">
+        <div class="loadding">
+            <div class="loadding-icon">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU BAR -->
+        <%- include('../../includes/menu_bar') %>
+            <!-- END MENU BAR -->
+
+            <header>
+                <div
+                    style="position: absolute;right: 0;top: 0;height: 100%;background-image: url('https://i.ibb.co/MNkk9T6/caudoi2-2.png');background-position: top right;background-repeat: no-repeat;width: 60px;background-size: contain;z-index: 9999999;">
+                </div>
+                <div
+                    style="background-image: url('https://i.ibb.co/xs143f2/mai.png');background-repeat: no-repeat;background-size: contain;width: 172px;height: 76px;left: -6px;background-position: top left;position: absolute;top: 0px;z-index: 999999999999;">
+                </div>
+                <div class="header__logo" onclick="window.location='/'">
+                    <img style="width: 120px;max-width:unset" src="<%=dataPage.session.siteConfig.site_logo;%>">
+                </div>
+                <div class="header__login">
+                    <% if (dataPage.session.user) { %>
+                        <a href="/account" class="item">
+                            <i class="fa-solid fa-wallet"></i>
+                            <span>
+                                <%=dataPage.helpers.numberWithCommas(dataPage.session.user.coin)%> VNĐ
+                            </span>
+                        </a>
+                        <a href="/account/inbox">
+                            <img class="lazyload" data-src="/mobile/nato888/img/icon_msg_center.png" alt="mess">
+                            <span class="red-dot">0</span>
+                        </a>
+                        <% }else{ %>
+                            <a href="/auth/login" class="item">
+                                <span>Đăng nhập</span>
+                            </a>
+                            <a href="/auth/register" class="item active">
+                                <span>Đăng ký</span>
+                            </a>
+                            <% } %>
+                </div>
+            </header>
+
+
+            <section id="content">
+                <div class="banner">
+                    <div class="swiper banner__swiper">
+                        <div class="swiper-wrapper">
+                            <% dataPage.session.siteConfig.site_banner.forEach((item)=> { %>
+                                <div class="swiper-slide">
+                                    <a href="javascript:;">
+                                        <img class="lazyload" data-src="<%= item.image_url %>"
+                                            style="width: 100%;height:100%;object-fit:cover; cursor: pointer;" />
+                                    </a>
+                                </div>
+                                <% }); %>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="notification">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <div class="marquee-wrap">
+                            <div class="visible-area">
+                                <div class="marquee-content scrollLeft">
+                                    <%=dataPage.session.siteConfig.site_brand_marquee;%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-action">
+                        <a target="_blank" href="<%=dataPage.session.siteConfig.telegram;%>" class="telegram">
+                            <img class="lazyload" data-src="https://i.imgur.com/7hgkbrf.png" alt="">
+                        </a>
+                        <div class="action">
+                            <a href="#" class="action-item">
+                                <img class="lazyload" data-src="https://i.imgur.com/5EZW34s.png" alt="">
+                                <h3>NKNV</h3>
+                            </a>
+
+                            <a href="//tai.nato888.com" class="action-item">
+                                <img class="lazyload" data-src="https://i.imgur.com/876W1Db.png" alt="">
+                                <h3>Tải App</h3>
+                            </a>
+                            <a href="/account/deposit" class="action-item">
+                                <img class="lazyload" data-src="https://i.imgur.com/m5kKSNH.png" alt="">
+                                <h3>Nạp tiền</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list-game">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item <%=(location == 'JL') ? 'active': ''%>"
+                                onclick="window.location='/gamelobby/chess/JL'">
+                                <a class="nav-link" data-toggle="tab" href="#categoryItem0" role="tab"
+                                    aria-controls="categoryItem0" aria-selected="true">
+                                    <img class="lazyload"
+                                        data-src="https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/jili.png"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="javascript:;">
+                                    <img class="lazyload"
+                                        data-src="https://csi.20icipp.com/img/static/gplogo/v-dark/ag.png" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#categoryItem0">
+                                    <img class="lazyload"
+                                        data-src="https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/cq9.png"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#categoryItem7" role="tab"
+                                    aria-controls="categoryItem7" aria-selected="true">
+                                    <img class="lazyload"
+                                        data-src="https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/bng.png"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#categoryItem2" role="tab"
+                                    aria-controls="categoryItem2" aria-selected="true">
+                                    <img class="lazyload"
+                                        data-src="https://www.gpi.it/app/uploads/2019/01/company_logo.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#categoryItem3" role="tab"
+                                    aria-controls="categoryItem3" aria-selected="true">
+                                    <img class="lazyload"
+                                        data-src="https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/ka.png"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#categoryItem4" role="tab"
+                                    aria-controls="categoryItem4" aria-selected="true">
+                                    <img class="lazyload"
+                                        data-src="https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/pg.png"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#categoryItem5" role="tab"
+                                    aria-controls="categoryItem5" aria-selected="true">
+                                    <img class="lazyload"
+                                        data-src="https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/pt.png"
+                                        alt="">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#categoryItem6" role="tab"
+                                    aria-controls="categoryItem6" aria-selected="true">
+                                    <img class="lazyload"
+                                        data-src="https://haon-jp.cdn-dysxb.com/system-requirement/Web.Portal/_Common/Supplier/30x30/pp.png"
+                                        alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div class="tab-pane fade active in show" id="categoryItemHot" role="tabpanel">
+
+                                <% if(dataApi.data.games.length> 0) { %>
+                                    <% dataApi.data.games.forEach((data)=> { %>
+                                        <a href="javascript:launchgame(`<%=data.productCode%>`, `<%=data.tcgGameCode%>`);"
+                                            class="item">
+                                            <div class="game-title"
+                                                style="background-image: linear-gradient(to bottom, #e25d03, rgba(247, 147, 57, 0.3294117647));">
+                                                <%=data.gameName%>
+                                            </div>
+                                            <img class="lazyload" data-src="<%=data.icon%>" alt="">
+                                        </a>
+                                        <% }); %>
+                                            <% } %>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    </div>
+
+
+    <%- include('../../includes/footer') %>

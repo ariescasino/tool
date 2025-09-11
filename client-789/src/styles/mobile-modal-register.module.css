@@ -1,0 +1,151 @@
+.formInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(210 210 210 / var(--tw-text-opacity));
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 48px;
+  outline-style: none;
+  border-radius: 8px !important;
+  border: solid 1px !important;
+  --tw-border-opacity: 1;
+  border-color: rgb(210 210 210 / var(--tw-border-opacity));
+  background: #000 !important;
+}
+
+.formInput:hover:active:where:focus {
+  background: #000 !important;
+}
+
+.formInput > input {
+  background: #000 !important ;
+  background-color: #000 !important;
+  color: white !important;
+  font-size: 14px !important;
+}
+
+.formInput input::placeholder {
+  color: white !important;
+}
+
+.formInput::placeholder {
+  color: white !important;
+}
+
+.formInput input::-webkit-input-placeholder {
+  color: #d2d2d2 !important;
+  opacity: 80% !important;
+}
+
+.submitButton {
+  position: relative;
+  width: 157px;
+  height: 40px;
+  margin-left: 50%;
+  margin-top: 10px;
+  transform: translate(-50%);
+  --tw-text-opacity: 1;
+  color: rgb(252 143 0 / var(--tw-text-opacity));
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  left: -1.5px;
+  top: -1.5px;
+  width: 160px;
+  height: 43px;
+  border-radius: 55px;
+  background: linear-gradient(to right, #f90, #ffc96d 49%, #f90);
+}
+
+.submitButton::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 55px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  z-index: 1;
+}
+
+.submitButton > span {
+  position: relative;
+  z-index: 2;
+}
+
+.labelFormInput {
+  font-size: 17px;
+  color: #fc8f00;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.p1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: hd1 2s steps(1, start) infinite;
+}
+
+.p2 {
+  animation: hd1 2s steps(1, start) infinite;
+  animation-delay: 1s;
+}
+.lg1 {
+  position: absolute;
+
+  animation: hd1 2s steps(1, start) infinite;
+  color: white;
+}
+.lg2 {
+  animation: hd1 2s steps(1, start) infinite;
+  animation-delay: 1s;
+  color: white;
+}
+
+@keyframes hd1 {
+  50% {
+    visibility: hidden;
+  }
+}
+
+.formLogin {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  /* box-shadow:
+    inset 3px 5px 16.9px #f7f0f040,
+    inset -3px -3px 16.9px #f7f0f040;
+  border-style: solid;
+  border-width: 0.5px;
+  background-image: linear-gradient(to bottom, #000, #000),
+    linear-gradient(160deg, #a19999 -73%, #fff 96%); */
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.helptext {
+  margin: 0.2rem 0 1em;
+  padding: 0 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(210 210 210 / var(--tw-text-opacity));
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1rem;
+}
+
+.spinRegister i {
+  background-color: #fff !important;
+}

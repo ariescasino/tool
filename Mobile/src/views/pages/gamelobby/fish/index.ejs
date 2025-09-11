@@ -1,0 +1,634 @@
+<%- include('../../../includes/header') %>
+
+    <style>
+        [_nghost-serverApp-c171] {
+            display: block;
+            height: 100%;
+            --tw-bg-opacity: 1;
+            background-color: rgb(47 44 44 / var(--tw-bg-opacity));
+        }
+
+        [_nghost-serverApp-c188] {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity));
+        }
+
+        .search[_ngcontent-serverApp-c188] {
+            padding: 3% 2%;
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity));
+        }
+
+        ul[_ngcontent-serverapp-c171] {
+            padding: 10px;
+        }
+
+        .p-2\.5 {
+            padding: 0.1rem;
+        }
+
+        .w-1\/3 {
+            width: 32%;
+        }
+
+        .icon[_ngcontent-serverApp-c171] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <style>
+        [_nghost-serverApp-c188] {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .wrapper[_ngcontent-serverApp-c188] {
+            padding-top: 60px
+        }
+
+        .wrapper[_ngcontent-serverApp-c188]>div[_ngcontent-serverApp-c188] {
+            z-index: 2
+        }
+
+        .wrapper[_ngcontent-serverApp-c188] .swiper.list {
+            position: fixed;
+            top: 52px;
+            width: 100%;
+            height: 60px;
+            margin: 0 auto;
+            padding: 0 3%;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb
+        }
+
+        .wrapper[_ngcontent-serverApp-c188] .swiper.no-arrow {
+            width: 100%;
+            margin: 0;
+            padding: 0
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c188],
+        .swiper-button-prev[_ngcontent-serverApp-c188] {
+            position: fixed;
+            top: 52px;
+            width: 3%;
+            height: 60px;
+            margin-top: 0;
+            --tw-bg-opacity: 1;
+            background-color: #e7f1fb;
+            opacity: 1;
+            z-index: 2
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c188]:before,
+        .swiper-button-prev[_ngcontent-serverApp-c188]:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            width: 7px;
+            height: 12px;
+            font-size: 12px;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center top;
+            mask-position: center top;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity))
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c188]:after,
+        .swiper-button-prev[_ngcontent-serverApp-c188]:after {
+            display: none
+        }
+
+        .swiper-button-prev[_ngcontent-serverApp-c188] {
+            left: 0
+        }
+
+        .swiper-button-prev[_ngcontent-serverApp-c188]:before {
+            -webkit-mask-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/arrow_l.36f4675ba9619eb7.svg);
+            mask-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/arrow_l.36f4675ba9619eb7.svg)
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c188] {
+            right: 0
+        }
+
+        .swiper-button-next[_ngcontent-serverApp-c188]:before {
+            -webkit-mask-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/arrow_r.075a1296c82e281f.svg);
+            mask-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/arrow_r.075a1296c82e281f.svg)
+        }
+
+        .kind[_ngcontent-serverApp-c188] {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            --tw-text-opacity: 1;
+            color: rgb(137 145 160 / var(--tw-text-opacity))
+        }
+
+        .kind[_ngcontent-serverApp-c188] i[_ngcontent-serverApp-c188] {
+            margin: 3px 0;
+            font-size: 16px
+        }
+
+        .kind[_ngcontent-serverApp-c188] span[_ngcontent-serverApp-c188] {
+            position: relative;
+            width: 100%;
+            font-size: 12px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden
+        }
+
+        .kind.active[_ngcontent-serverApp-c188] {
+            --tw-text-opacity: 1;
+            color:  #ef5a00
+        }
+
+        .kind.active[_ngcontent-serverApp-c188] .svg[_ngcontent-serverApp-c188] {
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .svg[_ngcontent-serverApp-c188] {
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin: 3px 0;
+            --tw-bg-opacity: 1;
+            background-color: rgb(137 145 160 / var(--tw-bg-opacity));
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat
+        }
+
+        .svg.svg-cock[_ngcontent-serverApp-c188] {
+            -webkit-mask-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/cock.2b73dc4810770360.svg);
+            mask-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/cock.2b73dc4810770360.svg)
+        }
+
+        @media (max-width: 370px) {
+            .list[_ngcontent-serverApp-c188] li.long[_ngcontent-serverApp-c188] span[_ngcontent-serverApp-c188] {
+                transform: scale(.9)
+            }
+        }
+
+        @media (max-width: 340px) {
+            .list[_ngcontent-serverApp-c188] li.long[_ngcontent-serverApp-c188] span[_ngcontent-serverApp-c188] {
+                transform: scale(.8)
+            }
+        }
+
+        [_nghost-serverApp-c188] {
+            flex-grow: 1
+        }
+
+        .search[_ngcontent-serverApp-c188] {
+            padding: 3% 2%;
+            --tw-bg-opacity: 1;
+            background-color: rgb(29 30 31 / var(--tw-bg-opacity))
+        }
+
+        .search[_ngcontent-serverApp-c188] button[_ngcontent-serverApp-c188]:not([type=submit]) {
+            line-height: 10px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .search[_ngcontent-serverApp-c188] select[_ngcontent-serverApp-c188] {
+            color: #757575
+        }
+
+        .input-wrapper[_ngcontent-serverApp-c188] {
+            display: flex;
+            flex-grow: 1
+        }
+
+        .input-wrapper[_ngcontent-serverApp-c188] input[_ngcontent-serverApp-c188] {
+            border: 1px solid #e1e1e5
+        }
+
+        .input-wrapper[_ngcontent-serverApp-c188] button[_ngcontent-serverApp-c188] {
+            background: linear-gradient(to bottom, #fefefe 0, #fefefe 37%, #ececec 67%, #e2e2e3 89%, #e0e0e0 96%, #e5e5e5 100%);
+            border: 1px solid #c8c8c8
+        }
+
+        .entrance-wrapper[_ngcontent-serverApp-c188] {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0
+        }
+
+        .entrance-wrapper[_ngcontent-serverApp-c188]:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 88%;
+            height: 100%
+        }
+
+        .entrance-wrapper.fix[_ngcontent-serverApp-c188] {
+            position: fixed;
+            top: 112px;
+            bottom: 62px;
+            right: auto;
+            width: 25%
+        }
+
+        .entrance-wrapper[_ngcontent-serverApp-c188] .btn[_ngcontent-serverApp-c188] {
+            width: 88%;
+            height: 20px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00;
+            text-align: center;
+            z-index: 1
+        }
+
+        .entrance-wrapper[_ngcontent-serverApp-c188] li[_ngcontent-serverApp-c188] {
+            position: relative;
+            width: 88%;
+            margin: 3px 0;
+            padding: 3px 0;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            text-align: center;
+            border-radius: 0 10px 10px 0;
+            background: linear-gradient(to right, #1d1e1f 0%, rgba(0, 0, 0, .3) 100%);
+            --tw-bg-opacity: 1;
+            background-color: rgb(73 74 77 / var(--tw-bg-opacity))
+        }
+
+        .entrance-wrapper[_ngcontent-serverApp-c188] li.active[_ngcontent-serverApp-c188] {
+            --tw-bg-opacity: 1;
+            background-color:  #ef5a00
+        }
+
+        .entrance-wrapper[_ngcontent-serverApp-c188] li.active[_ngcontent-serverApp-c188]:before {
+            content: "";
+            position: absolute;
+            top: calc(50% - 7px);
+            right: -8px;
+            width: 0;
+            height: 0;
+            border-width: 7px 0 7px 8px;
+            border-style: solid;
+            border-color: transparent;
+            --tw-border-opacity: 1;
+            border-left-color: rgb(255 77 0 / var(--tw-border-opacity))
+        }
+
+        .list-title[_ngcontent-serverApp-c188] {
+            position: relative;
+            width: 90%;
+            margin: 0 auto 5px;
+            text-align: left
+        }
+
+        .list-title[_ngcontent-serverApp-c188]:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 10px;
+            display: inline-block;
+            height: 1px;
+            background-color: #ff000f
+        }
+
+        .list-title[_ngcontent-serverApp-c188]>span[_ngcontent-serverApp-c188] {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 5px;
+            color: #fff;
+            font-size: 13px;
+            line-height: 30px;
+            background-color: #ff000f;
+            border-radius: 10px
+        }
+
+        .list-title.recommend[_ngcontent-serverApp-c188]:after {
+            background-color: #b9006d
+        }
+
+        .list-title.recommend[_ngcontent-serverApp-c188]>span[_ngcontent-serverApp-c188] {
+            background-color: #b9006d
+        }
+
+        .list-title.other[_ngcontent-serverApp-c188]:after {
+            background-color: #ff7c54
+        }
+
+        .list-title.other[_ngcontent-serverApp-c188]>span[_ngcontent-serverApp-c188] {
+            background-color: #ff7c54
+        }
+
+        .icon[_ngcontent-serverApp-c188] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .icon[_ngcontent-serverApp-c188] i[_ngcontent-serverApp-c188] {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background: no-repeat center top;
+            background-size: contain
+        }
+
+        .icon[_ngcontent-serverApp-c188] i.hot[_ngcontent-serverApp-c188] {
+            top: -5px;
+            left: 0;
+            background-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/hot.0cd38f347d2485db.png)
+        }
+
+        .icon[_ngcontent-serverApp-c188] i.event[_ngcontent-serverApp-c188] {
+            top: -5px;
+            right: -5px;
+            background-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/events.e23c01f7521fdab9.png)
+        }
+
+        .icon[_ngcontent-serverApp-c188] i.new[_ngcontent-serverApp-c188] {
+            bottom: 0;
+            right: -5px;
+            background-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/prize.c3f3768bcac8ed7e.png)
+        }
+
+        .more-btn[_ngcontent-serverApp-c188] {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: #b9006d;
+            height: 26px;
+            text-decoration: none;
+            line-height: 26px
+        }
+
+        .more-btn[_ngcontent-serverApp-c188]:after {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 5px;
+            border: 5px solid transparent;
+            border-left: 10px solid #b9006d
+        }
+
+        .more-btn[_ngcontent-serverApp-c188]>span[_ngcontent-serverApp-c188] {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 4.2rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden
+        }
+
+        .review-btn[_ngcontent-serverApp-c188] {
+            flex: 0 0 33%
+        }
+    </style>
+
+    <style>
+        .game-item[_ngcontent-serverApp-c80] .text[_ngcontent-serverApp-c80] {
+            word-break: break-word;
+        }
+    </style>
+    <style>
+        .full-width[_ngcontent-serverApp-c80] {
+            width: 100%
+        }
+
+        .icon[_ngcontent-serverApp-c80] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .icon[_ngcontent-serverApp-c80] i[_ngcontent-serverApp-c80] {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: no-repeat center;
+            background-size: contain
+        }
+
+        .icon[_ngcontent-serverApp-c80] i.icon1[_ngcontent-serverApp-c80] {
+            top: 0;
+            left: 0;
+            background-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/icon1_Activity.ad69955162dd5c81.gif)
+        }
+
+        .icon[_ngcontent-serverApp-c80] i.icon2[_ngcontent-serverApp-c80] {
+            top: 0;
+            right: 0;
+            background-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/icon2_HotGame.40d0e51e1dd978cf.gif)
+        }
+
+        .icon[_ngcontent-serverApp-c80] i.icon3[_ngcontent-serverApp-c80] {
+            bottom: 0;
+            right: 0;
+            background-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/icon3_Jackpot.c4b3118f97f6639f.gif)
+        }
+
+        .icon[_ngcontent-serverApp-c80] i.icon4[_ngcontent-serverApp-c80] {
+            bottom: 0;
+            left: 0;
+            background-image: url(https://haon2020.earvf.net/system-requirement/Web.MobileNew/UA531-01/88ab2e5a2e/icon4_ChosenGame.2632ba8c28d4ca0a.png)
+        }
+
+        .game-item[_ngcontent-serverApp-c80] {
+            padding-left: .5rem;
+            padding-right: .5rem
+        }
+
+        .game-item[_ngcontent-serverApp-c80] .text[_ngcontent-serverApp-c80] {
+            word-break: break-word
+        }
+
+        .supplier[_ngcontent-serverApp-c80] {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            min-width: 20px;
+            height: 13px;
+            padding: 0 2px;
+            color: #000;
+            font-size: 12px;
+            line-height: 13px;
+            text-align: center;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px #0006;
+            border: solid 1px #ffd13b;
+            background-image: linear-gradient(to bottom, #ffffc7, #ffd13b)
+        }
+    </style>
+    <style>
+        .tip[_ngcontent-serverApp-c79] {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 55;
+            font-size: 0;
+            text-align: center
+        }
+
+        .tip[_ngcontent-serverApp-c79]:before {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle
+        }
+
+        .tip[_ngcontent-serverApp-c79] div[_ngcontent-serverApp-c79] {
+            display: inline-block;
+            width: 90px;
+            height: 110px;
+            vertical-align: middle;
+            padding-top: 15px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            background-color: #1a1a1ae6;
+            border-radius: 10px
+        }
+
+        .tip[_ngcontent-serverApp-c79] div[_ngcontent-serverApp-c79] i[_ngcontent-serverApp-c79] {
+            margin-bottom: 5px;
+            font-size: 40px
+        }
+
+        .tip[_ngcontent-serverApp-c79] div[_ngcontent-serverApp-c79] p[_ngcontent-serverApp-c79] {
+            margin: 0
+        }
+
+        .favorite[_ngcontent-serverApp-c79] {
+            position: absolute;
+            right: -2px;
+            bottom: -2px
+        }
+
+        .favorite[_ngcontent-serverApp-c79] i[_ngcontent-serverApp-c79] {
+            padding: 5px;
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+            border-radius: 100%
+        }
+    </style>
+
+    <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+        <app-sample-layout _nghost-serverapp-c91="">
+            <app-normal-layout _nghost-serverapp-c151="">
+
+                <!-- Header Layout -->
+                <%- include('../../../includes/header_layout') %>
+                    <!-- END Header Layout -->
+
+                    <!-- App Game Lobby-->
+
+                    <app-game-lobby _nghost-serverapp-c168="">
+                        <div _ngcontent-serverapp-c168="" class="wrapper">
+
+
+                            <a _ngcontent-serverapp-c184="" target="_blank" class="bgImg ng-star-inserted" href="https://9.789b40.com/">
+                                <img _ngcontent-serverapp-c184="" alt="" src="https://qk3x72.katawee.net/system-requirement/Web.MobileNew/UK251-01/4880b3cd5e/assets/images/home/bg_img.png"> </a>
+
+                                <!-- Swipper Category -->
+                                <%- include('../../../includes/game_lobby/game_lobby_cateygory') %>
+                                <!-- End Swipper Category-->                    
+
+
+                                <!-- Search Form -->
+                                <%- include('../../../includes/game_lobby/game_lobby_search') %>
+                                    <!-- End Search Form -->
+
+
+                                    <div _ngcontent-serverapp-c188="" class="game-lobby-content flex flex-grow">
+                                        <section _ngcontent-serverapp-c188="" class="h-full w-full">
+                                            <div _ngcontent-serverapp-c188=""
+                                                class="game-lobby-scroll relative min-h-full">
+                                                <div _ngcontent-serverapp-c188="" class="min-h-[500px]">
+                                                    
+                                                    <section _ngcontent-serverapp-c188="">
+                                                        <p _ngcontent-serverapp-c188=""
+                                                            class="list-title ng-star-inserted">
+                                                            <span _ngcontent-serverapp-c188="">
+                                                                DANH SÁCH TRÒ CHƠI BẮN CÁ
+                                                            </span>
+                                                        </p>
+
+                                                        <app-game-lobby-game-list _ngcontent-serverapp-c188=""
+                                                            _nghost-serverapp-c185="">
+                                                            <section _ngcontent-serverapp-c185=""
+                                                                class="ng-star-inserted list-product-fish" style="padding: 10px;">
+                                                            </section>
+                                                        </app-game-lobby-game-list>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    
+
+
+                        </div>
+                    </app-game-lobby>
+
+                    <!-- End App Game Lobby -->
+
+                    <!-- Menu Bar -->
+                    <%- include('../../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+            </app-normal-layout>
+
+
+            <!-- SideBar Menu -->
+            <%- include('../../../includes/sidebar_menu') %>
+                <!-- END SideBar Menu -->
+
+        </app-sample-layout>
+    </app-root>
+
+    <!-- Notify Modal -->
+    <%- include('../../../includes/notify_modal') %>
+        <!-- END Notify Modal -->
+
+        <script type="text/javascript" src="/core/js/game_lobby/fish.js"></script>
+        <%- include('../../../includes/footer') %>

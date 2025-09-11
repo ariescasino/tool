@@ -1,0 +1,124 @@
+.box a:nth-child(1) i {
+  mask-image: url(/images/rule/gioithieu.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(2) i {
+  mask-image: url(/images/rule/dieukhoan.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(3) i {
+  mask-image: url(/images/rule/choi.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(4) i {
+  mask-image: url(/images/rule/mien.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(5) i {
+  mask-image: url(/images/rule/quyen.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(6) i {
+  mask-image: url(/images/rule/naprut.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(7) i {
+  mask-image: url(/images/rule/naprut.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(8) i {
+  mask-image: url(/images/rule/hoi.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(9) i {
+  mask-image: url(/images/rule/daisu.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(10) i {
+  mask-image: url(/images/rule/lienhe.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.box a:nth-child(11) i {
+  mask-image: url(/images/rule/doitac.svg);
+  mask-repeat: no-repeat;
+  mask-size: auto;
+}
+
+.itemNav {
+  line-height: 58px;
+  padding: 0 8px;
+  color: white;
+  min-height: 58px;
+  height: 58px;
+}
+
+.itemNav::after {
+  width: inherit;
+  content: "";
+  display: block;
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    #ffaa2c 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-image-slice: 1;
+}
+
+.active {
+  background: linear-gradient(to bottom, #f7b922, #f49a25) !important;
+  color: #170e02;
+}
+
+.active > i {
+  background-color: #170e02 !important;
+}
+
+.itemNav > i {
+  background-color: white;
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  margin: 9px 8px 9px 0px;
+}
+
+.btn {
+  width: 86px;
+  height: 32px;
+  margin: 24px 0;
+  padding: 0;
+  border: 0;
+  background: url(/images/rule/btn.png) no-repeat center / contain;
+}
+
+.btn:hover {
+  width: 86px;
+  height: 32px;
+  margin: 24px 0;
+  padding: 0;
+  border: 0;
+  background: url(/images/rule/btn.png) no-repeat center / contain !important;
+}

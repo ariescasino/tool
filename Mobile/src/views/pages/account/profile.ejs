@@ -1,0 +1,116 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenter.d6d5563f.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenterProfile.941075e0.css">
+    <div id="root">
+        <div class="app account personalInfo logined">
+            <div style="display: none;"></div>
+            <div class="app-body">
+                <div class="m-member-center-main">
+                    <div class="m-member-center-profile">
+                        <div class="mc-navbar-wrapper">
+                            <div class="navbar ">
+                                <div class="left"><i onclick="window.location='/account'"
+                                        class="fa fa-chevron-left"></i>
+                                </div>
+                                <div class="title">Hồ sơ</div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="nav-place" style="min-height: 45px;"></div>
+                        </div>
+                        <div class="member-center-personal-info">
+                            <div class="btns">
+                                <div class="setting-btn" onclick="window.location='/account/change-password'">Đổi Mật
+                                    khẩu đăng nhập</div>
+                                <div class="setting-btn" onclick="window.location='/account/bankcards'">Quản Lý Ngân
+                                    Hàng</div>
+                            </div>
+                            <div class="info-block">
+                                <div class="data-box flex">
+                                    <div>
+                                        <div class="label">Tên đăng nhập</div>
+                                        <div class="value" id="username"></div>
+                                    </div>
+                                </div>
+                                <div class="data-box">
+                                    <div class="label">Cấp thành viên</div>
+                                    <div class="value">PHỔ THÔNG</div>
+                                </div>
+                                <div class="data-box">
+                                    <div class="label">Bảng xếp hạng nạp tiền</div>
+                                    <div class="value">Thứ hạng 50 khác</div>
+                                </div>
+                                <div class="data-box flex">
+                                    <div>
+                                        <div class="label">Họ Và Tên</div>
+                                        <div class="value" id="name"></div>
+                                    </div>
+                                </div>
+                                <div class="data-box flex">
+                                    <div>
+                                        <div class="label">Số điện thoại</div>
+                                        <div class="form-block">
+                                            <div class="nrc-u-1-1 readOnly tel read-only-mobile-field">
+                                                <div class="react-tel-input readOnly">
+                                                    <div class="flag-dropdown">
+                                                        <div class="selected-flag">
+                                                            <div class="flag vn">
+                                                                <div class="arrow"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div><label></label><input type="tel" class="form-control"
+                                                        disabled="" id="phone" value="">
+                                                </div><input type="hidden" class="nrc-invisible">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data-box flex">
+                                    <div>
+                                        <div class="label">Email</div>
+                                        <div class="value" id="email"></div>
+                                    </div>
+                                </div>
+                                <div class="data-box">
+                                    <div class="label">Thời gian đăng ký</div>
+                                    <div class="value" id="joined"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            getInfo();
+        });
+
+        const getInfo = () => {
+            var settings = {
+                "url": "<%=dataPage.config.MAIN_API%>/api/auth/me",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json"
+                },
+            };
+            $.ajax(settings).done(function (response) {
+                if (response.status) {
+                    const data = response.user;
+                    $('#username').html(data.username);
+                    $('#name').html(data.name);
+                    $('#phone').val(data.phone);
+                    $('#email').html(data.email);
+                    $('#joined').html(moment(data.createdAt).format("DD/MM/YYYY hh:m:s"));
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+    </script>
+
+
+    <%- include('../../includes/footer') %>

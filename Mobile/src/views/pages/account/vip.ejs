@@ -1,0 +1,201 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" href="/mobile/nato888/css/vip-layout.css">
+
+    <div id="mobile">
+        <div class="app">
+            <div class="app-body">
+                <div class="center-main">
+                    <div class="deposit-payment">
+                        <div class="navbar-wrapper">
+                            <div class="navbar">
+                                <div class="left" style="position: relative">
+                                    <a style="display: block; width: 100%; height: 100%; position: absolute;"
+                                        href="/account"></a>
+                                    <i style="color: #e95016;" class="fa fa-chevron-left"></i>
+                                </div>
+                                <div class="title font-weight-bold">
+                                    VIP
+                                </div>
+                                <div class="right">
+                                    <i style="margin-right: -18px;color: #e95016;" class="fa fa-history"></i>
+                                </div>
+                            </div>
+                            <div id="body-web-info-vip">
+                                <div class="wrap-info">
+                                    <div class="info-container">
+                                        <div class="right">
+                                            <div class="main-content">
+                                                <div class="title">Cấp độ VIP
+                                                    <span><a href="/vip-privileges">Đặc quyền VIP</a></span>
+                                                </div>
+                                                <div class="vip-display">
+                                                    <div class="vip-level">
+                                                        <div class="info-display">
+                                                            <div class="top-box">
+                                                                <div class="">Cấp độ hiện tại</div>
+                                                                <div class="level"></div>
+                                                                <p>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="bottom-box"></div>
+                                                        </div>
+                                                        <div class="badge-image">
+                                                            <img id="armorial" class=" ls-is-cached lazyloaded"
+                                                                data-src="https://i.stack.imgur.com/kOnzy.gif"
+                                                                alt="Vip User"
+                                                                src="https://i.stack.imgur.com/kOnzy.gif">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="vip-condition">
+                                                    <div class="detail-card">
+                                                        <div class="card-content">
+                                                            <div class="content-codition">
+                                                                <b id="next_vip_level">Điều kiện thăng cấp</b>
+                                                            </div>
+                                                            <div class="msg-btn">Chưa đủ điều kiện</div>
+                                                        </div>
+                                                        <div class="card-detail">
+                                                            <div class="">
+                                                                <div class="title">Nạp tiền thăng cấp</div>
+                                                                <div class="point">
+                                                                    <div class="current-point">
+                                                                        <span id="total_deposit"
+                                                                            style="color:rgb(154, 193, 67)">0</span> /
+                                                                        <span id="deposit_require"
+                                                                            style="color:rgb(255, 21, 21)">0</span>
+                                                                    </div>
+                                                                    <div class="codition-point"></div>
+                                                                </div>
+                                                                <div class="progress-bar">
+                                                                    <div class="prog-2" style="width:0%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="vip-privilege">
+                                                    <div class="title">
+                                                        Đặc quyền riêng của bạn
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="vip-privilege-item">
+                                                            <img class=" lazyloaded"
+                                                                data-src="/mobile/nato888/web/Images/vip/privileg_upgrade.png"
+                                                                alt=""
+                                                                src="/mobile/nato888/web/Images/vip/privileg_upgrade.png">
+                                                            <div class="item-title">
+                                                                Quà thăng cấp
+                                                            </div>
+                                                            <button>Không có</button>
+                                                        </div>
+                                                        <div class="vip-privilege-item">
+                                                            <img class=" lazyloaded"
+                                                                data-src=/mobile/nato888/web/Images/vip/privileg_envelope.png"
+                                                                alt=""
+                                                                src="/mobile/nato888/web/Images/vip/privileg_envelope.png">
+                                                            <div class="item-title">
+                                                                Bonus tháng
+                                                            </div>
+                                                            <button>Không có</button>
+                                                        </div>
+                                                        <div class="vip-privilege-item">
+                                                            <img class=" lazyloaded"
+                                                                data-src="/mobile/nato888/web/Images/vip/privileg_relief_fund.png"
+                                                                alt=""
+                                                                src="/mobile/nato888/web/Images/vip/privileg_relief_fund.png">
+                                                            <div class="item-title">
+                                                                Bonus cứu trợ
+                                                            </div>
+                                                            <button>Không có</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            $(document).ready(() => {
+                getVipUser();
+            });
+
+            const getVipUser = () => {
+                $.ajax({
+                    "url": "<%=dataPage.config.MAIN_API%>/api/vip",
+                    "method": "GET",
+                    "timeout": 0,
+                    "headers": {
+                        "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        "Content-Type": "application/json",
+                    },
+                }).done((response) => {
+                    if (response.status) {
+                        const VipData = response.data;
+                        let armorialImg = null;
+                        switch (VipData.current_vip) {
+                            case 0:
+                                armorialImg = "/mobile/nato888/web/Images/badge_21.png";
+                                break;
+                            case 1:
+                                armorialImg = "/mobile/nato888/storage/vip-icon/vip1.png";
+                                break;
+                            case 2:
+                                armorialImg = "/mobile/nato888/storage/vip-icon/vip2.png";
+                                break;
+                            case 3:
+                                armorialImg = "/mobile/nato888/storage/vip-icon/vip3.png";
+                                break;
+                            case 4:
+                                armorialImg = "/mobile/nato888/storage/vip-icon/vip4.png";
+                                break;
+                            case 5:
+                                armorialImg = "/mobile/nato888/storage/vip-icon/vip5.png";
+                                break;
+                            case 6:
+                                armorialImg = "/mobile/nato888/storage/vip-icon/vip6.png";
+                                break;
+                        }
+                        $("#armorial").attr("data-src", armorialImg).attr("src", armorialImg);
+
+                        let totalDeposit = (VipData.total_deposit >= VipData.next_vip_deposit_require) ? VipData.next_vip_deposit_require : VipData.total_deposit;
+
+                        $(".level").html(`VIP ${VipData.current_vip}`);
+                        $("#next_vip_level").html(`Điều kiện lên VIP ${VipData.next_vip_level}`);
+                        $("#total_deposit").html(numberWithCommas(totalDeposit));
+                        $("#deposit_require").html(numberWithCommas(VipData.next_vip_deposit_require));
+                        $(".codition-point").html(`Còn thiếu ${numberWithCommas(VipData.next_vip_deposit_require - VipData.total_deposit)}`)
+                        $(".bottom-box").html(`<p>Thưởng tháng = ${numberWithCommas(VipData.coin_monthly)}</p> <p>Nạp tiền >= ${numberWithCommas(VipData.deposit_require)}</p>`);
+                        $(".prog-2").css("width", (totalDeposit / VipData.next_vip_deposit_require) * 100 + "%");
+
+                        // nhận thưởng
+                        if (totalDeposit >= VipData.next_vip_deposit_require) {
+                            $(".msg-btn").attr("style", "color: rgb(24 190 57);border: 1px solid rgb(24 190 57);cursor: pointer;");
+                            $(".msg-btn").html(`Nhận thưởng & Thăng cấp`);
+                            $(".msg-btn").attr("onClick", `getReward(${VipData.current_vip + 1})`);
+                        }
+                    } else {
+                        alert(response.msg);
+                    }
+                });
+            }
+
+        </script>
+
+        <%- include('../../includes/footer') %>

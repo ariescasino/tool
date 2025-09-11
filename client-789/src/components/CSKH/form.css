@@ -1,0 +1,260 @@
+.form-search {
+    margin-bottom: 20px;
+}
+
+.layout-elform.active {
+    background-color: #000;
+    opacity: 0.6;
+    width: 100%;
+    display: block;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    height: 400px;
+    position: fixed;
+}
+
+.input-text {
+    width: 100%;
+    border-radius: 19px;
+    border: 1px solid #25abe0;
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: rgba(152, 152, 152, 0.3);
+    font-family: "Roboto";
+    font-size: 16px;
+    color: #000;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 6px 20px;
+    padding-right: 100px;
+}
+
+.input-text:focus-visible {
+    outline: 0.5px solid #0daae7;
+}
+
+.nut-search {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    transition: transform 0.2s ease-in-out;
+    border: unset;
+    padding: 0px 5px;
+    background: transparent;
+    outline: none;
+}
+
+.nut-search svg {
+    width: 24px;
+}
+
+.btn.nut-search:active {
+    border: unset;
+}
+
+.btn.nut-search:active svg path,
+.btn.nut-search:hover svg path {
+    fill: #25a9df;
+}
+
+.handle {
+    display: none;
+}
+
+.wp-form-mp {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .btn-checklink {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-checklink span {
+        background: var(--Linear, linear-gradient(180deg, #FF9A00 0%, #FF4929 100%));
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 20px;
+        text-align: center;
+        margin: auto;
+        color: #fff;
+        font-weight: 700;
+        font-size: 4.5vw;
+    }
+
+    @-webkit-keyframes my {
+        0% {
+            color: #000;
+        }
+
+        50% {
+            color: #fff;
+        }
+
+        100% {
+            color: #000;
+        }
+    }
+
+    @-moz-keyframes my {
+        0% {
+            color: #000;
+        }
+
+        50% {
+            color: #fff;
+        }
+
+        100% {
+            color: #000;
+        }
+    }
+
+    @-o-keyframes my {
+        0% {
+            color: #000;
+        }
+
+        50% {
+            color: #fff;
+        }
+
+        100% {
+            color: #000;
+        }
+    }
+
+    @keyframes my {
+        0% {
+            color: #000;
+        }
+
+        50% {
+            color: #fff;
+        }
+
+        100% {
+            color: #000;
+        }
+    }
+
+    .btn-checklink span {
+        -webkit-animation: my 1000ms infinite;
+        -moz-animation: my 1000ms infinite;
+        -o-animation: my 1000ms infinite;
+        animation: my 1000ms infinite;
+    }
+
+    .wp-form-mp {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        top: 0px;
+        left: 0px;
+    }
+
+    .layout-form {
+        background-color: #000;
+        opacity: 0.85;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .nut-search svg {
+        border: 2px solid #000;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+    }
+
+    .wp-form-mp .form-search {
+        transform: translate(50%, -50%);
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        position: absolute;
+        max-width: 425px;
+        width: calc(100% - 20px);
+    }
+
+    .input-text {
+        padding: 10px 23px;
+    }
+
+    .btn-search-show {
+        margin-top: 0px !important;
+        position: absolute !important;
+        padding: 8px 15px !important;
+    }
+
+    .form-search-ct {
+        margin-bottom: 15px;
+        display: none;
+    }
+
+    .icon-close-form {
+        position: absolute;
+        top: -42px;
+        right: 0px;
+        z-index: 100;
+        border-radius: 50%;
+        border: 2px solid #FF4929;
+    }
+
+    .icon-close-form-step2 {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+
+    .message-rp {
+        border: 1px solid #25abe0;
+        background: #fff;
+        margin-top: 10px;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: justify;
+    }
+
+    .wp_img--size {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text.error {
+        text-align: center;
+    }
+
+    .nut-search-form {
+        margin: 15px auto auto;
+        position: relative;
+        top: 0;
+        right: 0;
+        max-width: 140px;
+        border: 1.751px solid #FFF;
+        font-weight: 700;
+        background: var(--Linear, linear-gradient(180deg, #FF9A00 0%, #FF4929 100%));
+        box-shadow: -4px 4.953px 23px 3px #00000040;
+        display: flex;
+        justify-content: center;
+        border-radius: 50px;
+        padding: 8px 25px;
+        height: 100%;
+        cursor: pointer;
+        color: #fff;
+        z-index: 99;
+    }
+
+    .nut-search-form:hover,
+    .nut-search-form:focus {
+        background: var(--Linear, linear-gradient(180deg, #FF9A00 0%, #FF4929 100%));
+        color: #fff;
+    }
+
+}

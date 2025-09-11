@@ -1,0 +1,203 @@
+.button-register {
+  width: 50%;
+  height: 100%;
+  line-height: 33px;
+  text-align: center;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #6cafc9;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(108 175 201 / 0));
+  --tw-gradient-to: #347d9e;
+}
+
+.button-login {
+  width: 50%;
+  height: 100%;
+  line-height: 33px;
+  text-align: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(108 175 201 / var(--tw-bg-opacity));
+}
+
+.button-register>span,
+.button-login>span {
+  font-size: 15.5px;
+  font-weight: 500;
+  background: linear-gradient(to top, #fbcd2c 7%, #fffccc 89%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.swiper-button {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 3% !important;
+  white-space: nowrap;
+  --tw-bg-opacity: 1;
+  background-color: rgb(53 53 53 / var(--tw-bg-opacity));
+}
+
+.custom-swiper :global(.swiper-button-prev) {
+  position: absolute;
+  top: 0;
+  width: 13px;
+  height: 100%;
+  margin-top: 0;
+  opacity: 1;
+  z-index: 2;
+  left: 0;
+}
+
+.custom-swiper :global(.swiper-button-next) {
+  position: absolute;
+  top: 0;
+  width: 13px;
+  height: 100%;
+  margin-top: 0;
+  opacity: 1;
+  z-index: 2;
+  right: 0;
+}
+
+.custom-swiper :global(.swiper-button-prev > svg) {
+  width: 4.5px;
+}
+
+.custom-swiper :global(.swiper-button-next > svg) {
+  width: 4.5px;
+}
+
+.custom-swiper :global(.swiper-button-prev::after) {
+  content: none;
+  display: "";
+}
+
+.custom-swiper :global(.swiper-button-next::after) {
+  display: none;
+  content: "";
+}
+
+.slideSize {
+  width: 25px;
+  height: 25px;
+}
+
+.button-togggle-bg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  z-index: 2;
+  width: 98px;
+  height: 14px;
+  background: rgba(24, 128, 164, 0.5);
+  border-radius: 0 0 5px 5px;
+}
+
+.button-togggle-bg-icon-open {
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/account/codicon_fold-down.svg");
+  height: 50%;
+  margin: 0 auto;
+  width: 7px;
+  background-size: cover;
+}
+
+.button-togggle-bg-icon-close {
+  background: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/account/codicon_fold-up.svg");
+  height: 50%;
+  margin: 0 auto;
+  width: 7px;
+  background-size: cover;
+}
+
+.active {
+  background-color: rgb(107 176 200 / 1);
+}
+
+.list-game {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px 10px 0;
+}
+
+.game-item-hot {
+  position: relative;
+  width: 31%;
+  min-height: 80px;
+  margin: 7px 3.5% 0 0;
+}
+
+.game-item-hot:nth-child(3n) {
+  margin-right: 0;
+}
+
+.label-item-game-hot {
+  width: 100%;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 2px;
+  padding: 0 3px;
+  transform: none;
+  --tw-text-opacity: 1;
+  color: rgb(31 96 124 / var(--tw-text-opacity));
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.image-item-game-hot {
+  padding: 1px;
+  background: linear-gradient(306deg, #357e9f 25%, #ffffff 50%, #357e9f 80%, #ffffff 100%);
+  border-radius: 16px;
+}
+
+.image-item-game-hot img {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  object-fit: contain;
+  background: linear-gradient(358deg, #cff3ff 5%, #ffffff 65%);
+}
+
+.game-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  min-height: 90px;
+  margin: 0.65rem 0;
+  --tw-text-opacity: 1;
+  color: rgb(45 118 153 / var(--tw-text-opacity));
+  text-align: center;
+}
+
+.game-item-container {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98%;
+  height: 100%;
+  max-width: 170px;
+  max-height: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.label-item-game {
+  position: absolute;
+  top: 63%;
+  left: 3%;
+  width: 46%;
+  --tw-text-opacity: 1;
+  color: rgb(45 118 153 / var(--tw-text-opacity));
+  font-size: 9px;
+  line-height: 14px;
+  text-transform: uppercase;
+}

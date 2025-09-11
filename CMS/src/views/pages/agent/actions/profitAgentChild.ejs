@@ -1,0 +1,412 @@
+<%- include('../../../includes/header') %>
+
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>'">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/agent-master">Trang Chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/agent-master/agent/agent-list">Danh Sách Đại Lý Tổng</a></li>
+                        <li class="breadcrumb-item active">Lợi Nhuận Đại Lý Con ( RefCode: <b><%=data.code%></b> )</li>
+                    </ol>
+                </nav>
+
+                <div class="card">
+                    <div class="d-flex border-bottom title-part-padding align-items-center">
+                        <div class="btn-backsite flex-shrink-0">
+                            <a href="<%=dataPage.session.lastUrl%>"
+                                class="btn btn-sm waves-effect waves-light btn-light-secondary text-secondary">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <h4 class="card-title mb-0">
+                                <%=dataPage.title%>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3">
+                            <code>Nhấn vào nút tra cứu và chờ kết quả hoàn thành!.</code><br>
+                            <code>Khoảng thời gian tra cứu càng xa thì kết quả càng chậm.</code>
+                        </h6>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-bottom border-success">
+                                    <div class="card-body">
+                                        <div class="d-flex no-block align-items-center">
+                                            <div>
+                                                <h2 id="totalNap">...</h2>
+                                                <h6 class="text-success mb-0">Tổng Nạp</h6>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <span class="text-success display-6"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-trending-up feather-xl">
+                                                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                                        <polyline points="17 6 23 6 23 12"></polyline>
+                                                    </svg></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-bottom border-info">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <h2 id="totalRut">...</h2>
+                                                <h6 class="text-info mb-0">Tổng Rút</h6>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <span class="text-info display-6"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-trending-down feather-xl">
+                                                        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                                                        <polyline points="17 18 23 18 23 12"></polyline>
+                                                    </svg></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-bottom border-primary">
+                                    <div class="card-body">
+                                        <div class="d-flex no-block align-items-center">
+                                            <div>
+                                                <h2 id="totalProfit">...</h2>
+                                                <h6 class="text-primary mb-0">Tổng Lợi Nhuận</h6>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <span class="text-primary display-6"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-pie-chart feather-xl">
+                                                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                                                    </svg></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-bottom border-orange">
+                                    <div class="card-body">
+                                        <div class="d-flex no-block align-items-center">
+                                            <div>
+                                                <h2 id="totalSpended">...</h2>
+                                                <h6 class="text-orange mb-0">Tổng Chơi</h6>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <span class="text-orange display-6"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-flag feather-xl">
+                                                        <path
+                                                            d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z">
+                                                        </path>
+                                                        <line x1="4" y1="22" x2="4" y2="15"></line>
+                                                    </svg></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form name="getProfitAgentMaster" class="form-body row">
+                                <div class="col-lg-8 row">
+                                    <div class="col-md-5">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Từ ngày</span>
+                                            <input class="form-control" type="text" name="inputProfitAgentMasterFrom"
+                                                value="" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Đến ngày</span>
+                                            <input class="form-control" type="text" name="inputProfitAgentMasterTo"
+                                                value="" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" id="submitFilter" class="btn btn-info align-items-center">
+                                            <i class="fa fa-search"></i> Tra cứu
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button" class="btn btn-info align-items-center">
+                                        <i class="fa fa-users"></i> Thành viên: <b id="totalUsers"></b>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <p id="loaded_users">0</p>
+                        <div class="progress">
+                            <div id="processUsersLoaded"
+                                class="progress-bar progress-bar-striped bg-primary progress-bar-animated"
+                                style="width: 0%;" role="progressbar">
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="table-responsive" style="overflow: auto; height: 490px;">
+                            <table class="table">
+                                <thead class="bg-danger text-white">
+                                    <tr>
+                                        <th>#UID</th>
+                                        <th class="text-center">Tên Nhân Vật</th>
+                                        <th class="text-center">Số Dư</th>
+                                        <th class="text-center">Tổng Nạp</th>
+                                        <th class="text-center">Tổng Rút</th>
+                                        <th class="text-center">Tổng Chơi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyProfitAgentMaster">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- row -->
+        <!-- -------------------------------------------------------------- -->
+        <!-- End PAge Content -->
+        <!-- -------------------------------------------------------------- -->
+    </div>
+    <script>
+        $(document).ready(() => {
+            $('#loaded_users').hide();
+            $('.progress').hide();
+            // Set default value
+            $('input[name="inputProfitAgentMasterFrom"]').val(moment().format("DD/MM/YYYY"));
+            $('input[name="inputProfitAgentMasterTo"]').val(moment().format("DD/MM/YYYY"));
+
+            // Date Picker  
+            $('input[name="inputProfitAgentMasterFrom"]').datepicker({
+                language: 'vi',
+                autoclose: true,
+                todayHighlight: true,
+                orientation: "top right"
+            });
+            $('input[name="inputProfitAgentMasterTo"]').datepicker({
+                language: 'vi',
+                autoclose: true,
+                todayHighlight: true,
+                orientation: "top right"
+            });
+
+
+            $('form[name=getProfitAgentMaster]').on('submit', (e) => {
+                e.preventDefault(); // Now nothing will happen
+                getProfitAgentMasterByTime();
+            });
+        });
+
+        const SocketUrl = `<%=dataPage.config.SOCKET_AGENT_MASTER%>`;
+        // Let us open a web socket
+        let ws = new WebSocket(SocketUrl);
+        ws.onopen = function () {
+            console.log("Connected!");
+            ws.send(JSON.stringify({
+                authentication: {
+                    token: '<%=dataPage.session.accessToken%>'
+                }
+            }));
+        };
+
+        // SOCKET NHẬN TỪ SV VỀ
+        ws.onmessage = (_data) => {
+            var dataSocket = JSON.parse(_data.data);
+
+            // error login 
+            if (void 0 !== dataSocket.unauth) {
+                toastr.error(
+                    "Connect Thất Bại.",
+                    "Error!"
+                );
+            }
+            // login success
+            if (void 0 !== dataSocket.Authorized) {
+                toastr.success(
+                    "Connect Thành Công.",
+                    "Success!"
+                );
+
+                ws.send(JSON.stringify({
+                    getProfitByAgentMaster: {
+                        getTotalUsers: true,
+                        code: "<%=data.code%>",
+                        from: `01/01/1970`,
+                        to: `01/01/1970`
+                    }
+                }));
+            }
+
+            if (void 0 !== dataSocket.getProfitByAgentMaster) {
+                if (void 0 !== dataSocket.getProfitByAgentMaster.count_user) {
+                    $('#totalUsers').html(numberWithCommas(dataSocket.getProfitByAgentMaster.count_user))
+                }
+                if (void 0 !== dataSocket.getProfitByAgentMaster.user_profit) {
+                    const data = dataSocket.getProfitByAgentMaster;
+                    try {
+                        $('.progress').show();
+                        var element = $("#loaded_users");
+                        currentLoaded = Number(element.html());
+                        var nextLoaded = currentLoaded + 1;
+                        var totalUsers = Number($("#totalUsers").html());
+                        element.html(nextLoaded);
+                        document.getElementById("processUsersLoaded").style.width = Math.ceil((nextLoaded / totalUsers) * 100) + "%";
+                        $("#percentLoadedUser").html(Math.ceil((nextLoaded / totalUsers) * 100) + "%");
+
+                        var totalNap = $("#totalNap");
+                        var totalRut = $("#totalRut");
+                        var totalProfit = $("#totalProfit");
+                        var totalSpended = $("#totalSpended");
+
+                        // append nap
+                        totalNap.html(numberWithCommas(Number(getOnlyNumberInString(totalNap.html())) + data.user_profit.totalNap));
+                        // append nap
+                        totalRut.html(numberWithCommas(Number(getOnlyNumberInString(totalRut.html())) + data.user_profit.totalRut));
+                        // append doanh thu 
+                        totalProfit.html(numberWithCommas(Number(getOnlyNumberInString(totalNap.html())) - getOnlyNumberInString(totalRut.html())));
+
+                        totalSpended.html(numberWithCommas(Number(getOnlyNumberInString(totalSpended.html())) + data.user_profit.totalSpend));
+
+                        $("#bodyProfitAgentMaster").prepend(`
+                                            <tr>
+                                                <td>#${data.user_profit.UID}</td>
+                                                <td class="text-center">${data.user_profit.name}</td>
+                                                <td class="text-center">${numberWithCommas(data.user_profit.red)}</td>
+                                                <td class="text-center">${numberWithCommas(data.user_profit.totalNap)}</td>
+                                                <td class="text-center">${numberWithCommas(data.user_profit.totalRut)}</td>
+                                                <td class="text-center">${numberWithCommas(data.user_profit.totalSpend)}</td>
+                                            </tr>
+                        `);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
+                if (void 0 !== dataSocket.getProfitByAgentMaster.data) {
+                    $('#submitFilter').prop('disabled', false);
+                    $('#submitFilter').html('<i class="fa fa-search"></i> Tra cứu');
+
+                    const dataProfit = dataSocket.getProfitByAgentMaster.data.users;
+                    let totalNap = 0;
+                    let totalNapBank = 0;
+                    let totalNapThe = 0;
+                    let totalRut = 0;
+                    let totalSpend = 0;
+                    let profit = 0;
+
+                    for (const data of dataProfit) {
+                        totalNapBank += data.totalNapBank;
+                        totalNapThe += data.totalNapThe;
+                        totalRut += data.totalRut;
+                        totalSpend += data.totalSpend;
+                    };
+
+                    totalNap = totalNapBank + totalNapThe;
+                    profit = totalNap - totalRut;
+
+                    $("#totalNap").html(numberWithCommas(totalNap));
+                    $("#totalRut").html(numberWithCommas(totalRut));
+                    $("#totalProfit").html(numberWithCommas(profit));
+                    $("#totalSpended").html(numberWithCommas(totalSpend));
+                }
+
+            }
+
+        };
+
+        ws.onclose = (e) => {
+            console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
+            cuteAlert({
+                type: "question",
+                title: "Bạn vừa mất kết nối",
+                message: "Bạn có muốn kết nối lại không ?",
+                confirmText: "Đồng ý",
+                cancelText: "Hủy"
+            }).then((e) => {
+                if (e == 'confirm') {
+                    setTimeout(function () {
+                        location.reload();
+                    }, 500);
+                }
+            });
+        };
+
+        ws.onerror = (err) => {
+            console.error('Socket encountered error: ', err.message, 'Closing socket');
+            ws.close();
+        };
+
+        let resetAllDataProfitAgentMaster = () => {
+            $('#loaded_users').hide();
+            $('.progress').hide();
+            $("#totalNap").html("0");
+            $("#totalRut").html("0");
+            $("#totalProfit").html("0");
+            $("#totalSpended").html("0");
+            $("#bodyProfitAgentMaster").html("");
+        }
+
+        const getProfitAgentMasterByTime = () => {
+            const inputProfitAgentMasterFrom = $('input[name="inputProfitAgentMasterFrom"]').val();
+            const inputProfitAgentMasterTo = $('input[name="inputProfitAgentMasterTo"]').val();
+
+            if (inputProfitAgentMasterFrom && inputProfitAgentMasterTo) {
+                const momentStartTime = moment(inputProfitAgentMasterFrom, ["DD/MM/YYYY"]);
+                const momentEndTime = moment(inputProfitAgentMasterTo, ["DD/MM/YYYY"]);
+
+                if (!momentStartTime.isSameOrBefore(momentEndTime)) {
+                    toastr.error(
+                        "Chuỗi thời gian không hợp lệ",
+                        "Error!"
+                    );
+                    return;
+                }
+
+                $('#submitFilter').prop('disabled', true);
+                $('#submitFilter').html('Loading...');
+
+
+                resetAllDataProfitAgentMaster();
+
+                ws.send(JSON.stringify({
+                    getProfitByAgentMaster: {
+                        getTotalUsers: false,
+                        code: "<%=data.code%>",
+                        from: `${momentStartTime.format("DD/MM/YYYY")}`,
+                        to: `${momentEndTime.format("DD/MM/YYYY")}`
+                    }
+                }));
+            } else {
+                toastr.error(
+                    "Chuỗi thời gian không hợp lệ",
+                    "Error!"
+                );
+                return;
+            }
+
+        }
+    </script>
+    <%- include('../../../includes/footer') %>

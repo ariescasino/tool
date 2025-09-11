@@ -1,0 +1,559 @@
+<%- include('../../includes/header') %>
+    <div id="elementModal"> </div>
+    <div class="container-fluid">
+        <!-- -------------------------------------------------------------- -->
+        <!-- Start Page Content -->
+        <!-- -------------------------------------------------------------- -->
+        <div class="row">
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Tên website: </label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="site-name" placeholder="Domain.com">
+                            </div>
+                            <div class="col-3">
+                                <button id="btn-update-site-name" type="button"
+                                    class="btn btn-info  px-4 waves-effect waves-light">
+                                    Cập nhật
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Logo Url: </label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="site-logo" placeholder="https://imgur.com">
+                            </div>
+                            <div class="col-3">
+                                <button id="btn-update-site-logo" type="button"
+                                    class="btn btn-info  px-4 waves-effect waves-light">
+                                    Cập nhật
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Banner Website: </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="site-banner" class="form-control" rows="10"
+                                        placeholder="Text Here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-update-site-banner" type="button"
+                        class="btn btn-light-info text-info font-weight-medium"
+                        style="width: 50%; margin: auto; margin-bottom: 21px;">
+                        Cập nhật
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Thông báo chạy: </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="brand-marquee" class="form-control" rows="10"
+                                        placeholder="Text Here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-update-brand-marquee" type="button"
+                        class="btn btn-light-info text-info font-weight-medium"
+                        style="width: 50%; margin: auto; margin-bottom: 21px;">
+                        Cập nhật
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Thông báo PopUp (Khi mở website): </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="site-annoucement" class="form-control" rows="10"
+                                        placeholder="Text Here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-update-site-annoucement" type="submit"
+                        class="btn btn-light-info text-info font-weight-medium"
+                        style="width: 50%; margin: auto; margin-bottom: 21px;">
+                        Cập nhật
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-3 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Bản quyền (Copyright): </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="site-copyright" class="form-control" rows="10"
+                                        placeholder="Text Here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-update-site-copyright" type="button"
+                        class="btn btn-light-info text-info font-weight-medium"
+                        style="width: 50%; margin: auto; margin-bottom: 21px;">
+                        Cập nhật
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Contact Us (Liên hệ): </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="site-contact" class="form-control" rows="10"
+                                        placeholder="Text Here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-update-site-contact" type="button"
+                        class="btn btn-light-info text-info font-weight-medium"
+                        style="width: 50%; margin: auto; margin-bottom: 21px;">
+                        Cập nhật
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Mô tả website: </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="site-description" class="form-control" rows="10"
+                                        placeholder="Text Here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-update-site-description" type="button"
+                        class="btn btn-light-info text-info font-weight-medium"
+                        style="width: 50%; margin: auto; margin-bottom: 21px;">
+                        Cập nhật
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="row">
+                            <label class="control-label col-form-label">Keyword: </label>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="site-keyword" class="form-control" rows="10"
+                                        placeholder="Text Here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn-update-site-keyword" type="button"
+                        class="btn btn-light-info text-info font-weight-medium"
+                        style="width: 50%; margin: auto; margin-bottom: 21px;">
+                        Cập nhật
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <script>
+                $(document).ready(() => getConfig());
+
+                const getConfig = () => {
+                    $.ajax({
+                        "url": '<%=dataPage.config.API_SERVER%>/setting/general',
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                    }).then((response) => {
+                        console.log(response)
+                        if (response.status) {
+                            if (void 0 !== response.data.site_name) {
+                                $('input[id=site-name]').val(response.data.site_name);
+                            }
+                            if (void 0 !== response.data.site_logo) {
+                                $('input[id=site-logo]').val(response.data.site_logo);
+                            }
+                            if (void 0 !== response.data.site_banner) {
+                                $('textarea[id=site-banner]').val(JSON.stringify(response.data.site_banner));
+                            }
+                            if (void 0 !== response.data.announcement) {
+                                $('textarea[id=site-annoucement]').val(JSON.stringify(response.data.announcement));
+                            }
+                            if (void 0 !== response.data.contact) {
+                                $('textarea[id=site-contact]').val(JSON.stringify(response.data.contact));
+                            }
+                            if (void 0 !== response.data.site_brand_marquee) {
+                                $('textarea[id=brand-marquee]').val(response.data.site_brand_marquee);
+                            }
+                            if (void 0 !== response.data.site_description) {
+                                $('textarea[id=site-description]').val(response.data.site_description);
+                            }
+                            if (void 0 !== response.data.site_keyword) {
+                                $('textarea[id=site-keyword]').val(response.data.site_keyword);
+                            }
+                            if (void 0 !== response.data.copyright) {
+                                $('textarea[id=site-copyright]').val(response.data.copyright);
+                            }
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                        toastr.error(
+                            err.responseJSON.msg,
+                            "Error!"
+                        );
+                    });
+                }
+
+                $('button[id=btn-update-site-name]').on('click', () => {
+                    const currentValue = $('input[id=site-name]').val();
+                    $('button[id=btn-update-site-name]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            siteName: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-name]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-site-logo]').on('click', () => {
+                    const currentValue = $('input[id=site-logo]').val();
+                    $('button[id=btn-update-site-logo]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            siteLogo: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-logo]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-site-banner]').on('click', () => {
+                    const currentValue = $('textarea[id=site-banner]').val();
+                    let dataValue = null;
+                    try {
+                        const jsonValue = JSON.parse(currentValue);
+                        dataValue = jsonValue;
+                    } catch (e) {
+                        toastr.error(
+                            "Nội dung phải là định dạng Json!",
+                            "Error!"
+                        );
+                        return;
+                    }
+                    $('button[id=btn-update-site-banner]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            siteBanner: dataValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-banner]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-brand-marquee]').on('click', () => {
+                    const currentValue = $('textarea[id=brand-marquee]').val();
+                    $('button[id=btn-update-brand-marquee]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            siteBrandMarquee: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-brand-marquee]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-site-copyright]').on('click', () => {
+                    const currentValue = $('textarea[id=site-copyright]').val();
+                    $('button[id=btn-update-site-copyright]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            copyright: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-copyright]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-site-description]').on('click', () => {
+                    const currentValue = $('textarea[id=site-description]').val();
+                    $('button[id=btn-update-site-description]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            siteDescription: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-description]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-site-keyword]').on('click', () => {
+                    const currentValue = $('textarea[id=site-keyword]').val();
+                    $('button[id=btn-update-site-keyword]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            siteKeyword: currentValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-keyword]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-site-annoucement]').on('click', () => {
+                    const currentValue = $('textarea[id=site-annoucement]').val();
+                    let dataValue = null;
+                    try {
+                        const jsonValue = JSON.parse(currentValue);
+                        dataValue = jsonValue;
+                    } catch (e) {
+                        toastr.error(
+                            "Nội dung phải là định dạng Json!",
+                            "Error!"
+                        );
+                        return;
+                    }
+                    $('button[id=btn-update-site-annoucement]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            announcement: dataValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-annoucement]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+
+                $('button[id=btn-update-site-contact]').on('click', () => {
+                    const currentValue = $('textarea[id=site-contact]').val();
+                    let dataValue = null;
+                    try {
+                        const jsonValue = JSON.parse(currentValue);
+                        dataValue = jsonValue;
+                    } catch (e) {
+                        toastr.error(
+                            "Nội dung phải là định dạng Json!",
+                            "Error!"
+                        );
+                        return;
+                    }
+                    $('button[id=btn-update-site-contact]').prop('disabled', true);
+                    $.ajax({
+                        "url": "<%=dataPage.config.API_SERVER%>/setting/general",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                        },
+                        "data": JSON.stringify({
+                            contact: dataValue
+                        }),
+                    }).done(function (response) {
+                        $('button[id=btn-update-site-contact]').prop('disabled', false);
+                        if (response.status) {
+                            toastr.success(
+                                "Cập nhật thành công!",
+                                "Success!"
+                            );
+                        } else {
+                            toastr.error(
+                                response.msg,
+                                "Error!"
+                            );
+                        }
+                    });
+                })
+            </script>
+
+            <%- include('../../includes/footer') %>

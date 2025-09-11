@@ -1,0 +1,105 @@
+.popupContainer {
+  position: fixed;
+  bottom: 0;
+  top: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10000;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.popupContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+}
+
+.popupShow {
+  top: 26px;
+}
+
+.overlayPromition {
+  visibility: visible;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.32);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.boxTitle {
+  position: relative;
+  width: calc(100vw - 40px);
+  height: 52px;
+  margin: 0 auto 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 52px;
+  z-index: 99;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(45 118 153 / var(--tw-bg-opacity));
+}
+
+.buttonClose {
+  position: absolute;
+  right: 0.5rem;
+  z-index: 10;
+  font-size: 1.5rem;
+  line-height: 52px;
+  top: 0;
+}
+
+.listPromotion {
+  height: 100vh;
+  padding: 8px 0;
+  color: #000;
+  overflow-y: hidden;
+  background: white;
+  position: absolute;
+  top: 26px;
+  width: 100%;
+}
+
+.bonusLevel {
+  position: relative;
+  width: 30%;
+  height: 110px;
+  padding: 0 5px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #000;
+  box-shadow: 0 0 3px #0003;
+  background-image: linear-gradient(66deg, #fdffd1 17%, #fefff0 84%, #fff 96%);
+}
+
+.swiperVipDetail :global(.swiper-slide-active) {
+  transform: translateY(20px) scale(1.1);
+}
+.swiperVipDetail :global(.bonusTextSwiper) {
+  visibility: hidden;
+}
+
+.swiperVipDetail :global(.swiper-slide-active .bonusTextSwiper) {
+  visibility: visible;
+}

@@ -1,0 +1,48 @@
+.home {
+    mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/footer/home.svg");
+  }
+  .guide {
+    mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/footer/guide.svg");
+  }
+  .promotion {
+    mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/footer/promotion.svg");
+  }
+  .app {
+    mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/footer/download.png");
+  }
+  .cskh {
+    mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/footer/cskh.svg");
+  }
+  .naprut {
+    mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/footer/TabBar_financial.svg");
+  }
+  
+  .account {
+    mask-image: url("https://cdn.jsdelivr.net/gh/snail5555/akv@main/789bet/images/footer/account.png");
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+  
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    --tw-bg-opacity: 1;
+    position: relative;
+    display: block;
+    background-color: rgb(170 170 170 / var(--tw-bg-opacity));
+  }
+  .isActive{
+      color: rgb(255 182 39 / var(--tw-text-opacity));
+    position: relative;
+  }
+  .isActive  .icon{
+      --tw-text-opacity: 1;
+      color: rgb(255 182 39 / var(--tw-text-opacity));
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 182 39 / var(--tw-text-opacity));
+  }

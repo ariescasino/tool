@@ -1,0 +1,114 @@
+<%- include('../../includes/header') %>
+    <style>
+        .app.login .hover-container:not(.mission-calendar):before,
+        .app.signup .hover-container:not(.mission-calendar):before {
+            background: url(<%=dataPage.session.siteConfig.site_logo;%>) 50%/contain no-repeat;
+            content: "";
+            display: block;
+            margin-bottom: 40px;
+            padding-bottom: 32%;
+            width: 70%;
+        }
+    </style>
+
+    <div id="root">
+        <div class="app login">
+            <div style="display: none;"></div>
+            <div class="app-body">
+                <section class="hover-container login">
+                    <div class="container">
+                        <div class="container-inner">
+                            <div class="text-right" onclick="window.location='/'"><img alt="close"
+                                    src="https://csi.20icipp.com/img/static/ic-cancel.svg"></div>
+                            <h2 class="title-center">Đăng nhập</h2>
+                            <div style="margin-bottom: 10px;">
+                                <form class="nrc-form nrc-form-block ">
+                                    <div class="nrc-form-item input-group">
+                                        <div class="nrc-form-label "><label for="login" class="form-require">Tên Đăng
+                                                Nhập</label></div>
+                                        <div class="nrc-form-input nrc-u-1-1 "><input
+                                                placeholder="Vui lòng nhập tài khoản" type="text" autocapitalize="none"
+                                                id="login" class="" maxlength="13" value=""><small
+                                                class="info-msg"></small></div>
+                                    </div>
+                                    <div class="nrc-form-item input-group">
+                                        <div class="nrc-form-label "><label for="password" class="form-require">Mật
+                                                Khẩu</label></div>
+                                        <div class="nrc-form-input nrc-u-1-1 nrc-form-password">
+                                            <div><input placeholder="Vui lòng nhập mật mã" autocomplete="new-password"
+                                                    type="password" id="password" class="" maxlength="20" value=""><i
+                                                    class="mps-readable" onclick="showhidePassword()"></i></div><small
+                                                class="info-msg"></small>
+                                        </div>
+                                    </div>
+                                    <div class="login-btn-group" style="margin-top: 40px;"><button title=""
+                                            class="nrc-button" type="button" onclick="loginFunc()">Đăng nhập</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <p class=" bottom-text">Tham gia ngay!<a class="signup-hint account-link"
+                                    href="/auth/register">Đăng ký</a></p>
+                            <div class="text-center forget-options"><a
+                                    href="javascript:void(window.location='/auth/forgot-password')"><span>Quên mật
+                                        khẩu</span></a>
+                            </div>
+                        </div>
+                        <div class="fast-login-wrapper">
+                            <div class="icons"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginFunc = () => {
+            try {
+                const username = $('input[id=login]').val();
+                const password = $('input[id=password]').val();
+                if (!username || !password) {
+                    alert('Vui lòng nhập tài khoản và mật khẩu!');
+                    return;
+                }
+
+                $.ajax({
+                    "url": "/auth/login",
+                    "method": "POST",
+                    "timeout": 0,
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "data": JSON.stringify({
+                        "username": username,
+                        "password": password
+                    }),
+                }).done(function (response) {
+                    if (response.status) {
+                        console.log(response);
+                        setTimeout(() => {
+                            window.location = "/";
+                        }, 200);
+                    } else {
+                        alert(response.msg);
+                    }
+                });
+
+            } catch (e) {
+                console.log(e);
+                alert('Có lỗi xảy ra, vui lòng thử lại!');
+            }
+        }
+
+        const showhidePassword = () => {
+            const passwordInput = $('input[id=password]');
+            const currentType = passwordInput.attr("type");
+            if (currentType == "password") {
+                passwordInput.attr("type", "text");
+            } else if (currentType == "text") {
+                passwordInput.attr("type", "password");
+            }
+        }
+    </script>
+
+    <%- include('../../includes/footer') %>

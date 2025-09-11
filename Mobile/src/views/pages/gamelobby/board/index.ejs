@@ -1,0 +1,64 @@
+<%- include('../../../includes/header') %>
+
+    <script>
+        let DEFAULT_GAME_PRODUCTION = "<%=location;%>";
+    </script>
+
+
+    <app-root _nghost-sc178="" ng-version="14.2.12" ng-server-context="other" _nghost-serverapp-c157="">
+        <app-sample-layout _nghost-serverapp-c91="">
+            <app-normal-layout _nghost-serverapp-c151="">
+
+                <!-- Header Layout -->
+                <%- include('../../../includes/header_layout') %>
+                    <!-- END Header Layout -->
+
+                    <!-- App Game Lobby-->
+
+                    <app-game-lobby _nghost-serverapp-c168="">
+                        <div _ngcontent-serverapp-c168="" class="wrapper">
+
+
+                            <!-- Swipper Category -->
+                            <%- include('../../../includes/game_lobby/game_lobby_cateygory') %>
+                                <!-- End Swipper Category-->
+
+
+                                <!-- Search Form -->
+                                <%- include('../../../includes/game_lobby/game_lobby_search') %>
+                                    <!-- End Search Form -->
+
+                                    <div _ngcontent-serverapp-c172="" class="game-lobby-content flex flex-grow">
+                                        <!-- SideBar Product -->
+                                        <%- include('../../../includes/game_lobby/board/sidebar_right_product') %>
+                                            <!-- End SideBar Product -->
+
+                                            <!-- Content Game List -->
+                                            <%- include('../../../includes/game_lobby/board/content_game_list') %>
+                                                <!-- End Content Game List -->
+                                    </div>
+                        </div>
+                    </app-game-lobby>
+
+                    <!-- End App Game Lobby -->
+
+                    <!-- Menu Bar -->
+                    <%- include('../../../includes/menu_bar') %>
+                        <!-- END Menu Bar -->
+
+            </app-normal-layout>
+
+
+            <!-- SideBar Menu -->
+            <%- include('../../../includes/sidebar_menu') %>
+                <!-- END SideBar Menu -->
+
+        </app-sample-layout>
+    </app-root>
+
+    <!-- Notify Modal -->
+    <%- include('../../../includes/notify_modal') %>
+        <!-- END Notify Modal -->
+
+    <script type="text/javascript" src="/core/js/game_lobby/board.js"></script>
+    <%- include('../../../includes/footer') %>

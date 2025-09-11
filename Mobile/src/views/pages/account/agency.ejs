@@ -1,0 +1,225 @@
+<%- include('../../includes/header') %>
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenter.d6d5563f.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenter.39560b00.css">
+    <link rel="stylesheet" type="text/css" href="/mobile/static/stylesheets/m-MemberCenterAffiliate.7bbc36ec.css">
+    <div id="root">
+        <div id="cricket-page-wrapper" class="sport-page-wrapper page-hide"></div>
+        <div class="app affiliate logined">
+            <div style="display: none;"></div>
+            <div class="app-body">
+                <div class="m-member-center-main">
+                    <div class="m-affiliate-promo">
+                        <div class="mc-navbar-wrapper">
+                            <div class="navbar " style="padding: 10px;">
+                                <div class="left">
+                                    <i onclick="window.location='/account'" class="fa fa-chevron-left"></i>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="nav-place" style="min-height: 45px;"></div>
+                        </div>
+                        <div class="top-block">
+                            <div class="data-box">
+                                <div>
+                                    <div class="label">ID giới thiệu của bạn</div>
+                                    <div class="data"><span class="affiliateid"></span></div>
+                                </div>
+                                <div class="copy-text"><i class="fa fa-2x fa-clone" aria-hidden="true"
+                                        onclick="javascript:void(coppyToClipboard($('.affiliateid').html()))"></i>
+                                </div>
+                            </div>
+                            <div class="data-box">
+                                <div>
+                                    <div class="label">Liên kết giới thiệu của bạn</div>
+                                    <div class="data"><span class="link" id="affilate-link"></span></div>
+                                </div>
+                                <div class="copy-text"><i class="fa fa-2x fa-clone" aria-hidden="true"
+                                        onclick="javascript:void(coppyToClipboard($('#affilate-link').html()))"></i>
+                                </div>
+                            </div>
+                            <div class="data-box">
+                                <div>
+                                    <div class="label" style="text-align: center;">Mã giới thiệu QR của bạn</div>
+                                    <div class="data">
+                                        <div class="link-qr-code">
+                                            <img id="qr-affilate-share" src="" height="128" width="128"
+                                                style="height: 128px; width: 128px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><button class="download-btn" id="qr-affilate-download">
+                                        <div class="icon"><i class="fa fa-download" aria-hidden="true"
+                                                style="font-size: 14px;"></i></div>Tải xuống
+                                    </button></div>
+                            </div>
+                        </div>
+                        <div class="title-container" style="padding: 10px; margin: auto; text-align: center;">
+                            <div class="title"
+                                style="margin-top: 10px;color: #474747; font-weight: 600; font-size: 22px; font-family: system-ui;">
+                                Thống
+                                kê đại lý tháng </div>
+                        </div>
+
+                        <div class="content-block">
+                            <div class="bottom-block">
+                                <div class="nav">
+                                    <div class="tab"><img src="/mobile/static/media/mypeople.1965fee6..svg"
+                                            alt="direct-members" style="width: 50%; height: auto;"><span> Tuyến
+                                            dưới</span><span id="countRefUser">0</span></div>
+                                    <div class="tab"><img src="/mobile/static/media/commission.2bd9b4c9..svg"
+                                            alt="commission" style="width: 50%; height: auto;"><span>Lợi
+                                            nhuận</span><span id="countProfit">0</span></div>
+                                    <div class="tab"><img src="/mobile/static/media/info.5fa7930d..svg"
+                                            alt="rule-description" style="width: 50%; height: auto;"><span>Hướng
+                                            dẫn</span><span style="margin-bottom: 17px;"></span></div>
+                                </div>
+                                <div class="info">
+                                    <div class="data-box">
+                                        <div class="label">Tổng số thành viên của bạn</div>
+                                        <div class="value" id="countRefUser2">0</div>
+                                    </div>
+                                    <div class="data-box">
+                                        <div class="label">Số thành viên đăng ký hôm nay</div>
+                                        <div class="value" id="countRefUser3">0</div>
+                                    </div>
+
+                                    <div class="data-box">
+                                        <div class="label">Tổng nạp tháng này</div>
+                                        <div class="value" id="totalDeposit">0.00</div>
+                                    </div>
+
+                                    <div class="data-box">
+                                        <div class="label">Tổng rút tháng này</div>
+                                        <div class="value" id="totalWithdraw">0.00</div>
+                                    </div>
+
+                                    <div class="data-box">
+                                        <div class="label">Tổng volume cược tháng này</div>
+                                        <div class="value" id="totalVolume">0.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const coppyToClipboard = (text) => {
+            var input = document.createElement('input');
+            input.setAttribute('value', text);
+            document.body.appendChild(input);
+            input.select();
+            var result = document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('Đã copy vào bộ nhớ tạm!');
+            return result;
+        }
+
+        $(document).ready(() => {
+            getMyRefInfo();
+            countRefererUser();
+            countRefererUserToday();
+            caculatorProfit();
+            $('.title').html(`Thống kê đại lý tháng ${moment().format("MM")}`);
+        });
+
+        const countRefererUser = () => {
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/agency/countRefUser",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    $('#countRefUser').html(numberWithCommas(response.count));
+                    $('#countRefUser2').html(numberWithCommas(response.count));
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+        const countRefererUserToday = () => {
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/agency/countRefUserToday",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    $('#countRefUser3').html(numberWithCommas(response.count));
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+        const getMyRefInfo = () => {
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/agency/myRefShare",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    $('.affiliateid').html(response.agency.code);
+                    $('#affilate-link').html(`<%=dataPage.config.SITE_URL;%>?affilate_id=${response.agency.code}`);
+                    $('#qr-affilate-share').attr("src", `https://quickchart.io/qr?text=<%=dataPage.config.SITE_URL;%>?affilate_id=${response.agency.code}&ecLevel=H&margin=1&size=128`);
+                    $('#qr-affilate-download').attr("onclick", `window.location='https://quickchart.io/qr?text=<%=dataPage.config.SITE_URL;%>?affilate_id=${response.agency.code}&ecLevel=H&margin=1&size=128'`);
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+        const caculatorProfit = () => {
+            $.ajax({
+                "url": "<%=dataPage.config.MAIN_API%>/api/agency/calculatorProfit",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer <%=dataPage.session.accessToken%>",
+                    "Content-Type": "application/json",
+                },
+            }).done((response) => {
+                if (response.status) {
+                    const dataProfit = response.data;
+                    let totalVolume = 0, totalDeposit = 0, totalWithdraw = 0;
+
+                    response.data.forEach((user) => {
+                        // caculator volume
+                        user.betRecord.forEach((bet) => {
+                            totalVolume += Number(bet.betAmount);
+                        });
+                        // caculator deposit
+                        user.depositRecord.forEach((deposit) => {
+                            totalDeposit += Number(deposit.amount);
+                        });
+                        // caculator withdraw
+                        user.withdrawRecord.forEach((withdraw) => {
+                            totalWithdraw += Number(withdraw.amount);
+                        });
+                    });
+                    totalVolume = totalVolume * 1000;
+                    $('#totalVolume').html(numberWithCommas(totalVolume));
+                    $('#totalDeposit').html(numberWithCommas(totalDeposit));
+                    $('#totalWithdraw').html(numberWithCommas(totalWithdraw));
+                    $('#countProfit').html(numberWithCommas(totalDeposit - totalWithdraw));
+                } else {
+                    alert(response.msg);
+                }
+            });
+        }
+    </script>
+    <%- include('../../includes/footer') %>

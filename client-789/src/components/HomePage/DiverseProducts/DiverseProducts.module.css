@@ -1,0 +1,115 @@
+.main {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.head {
+    position: relative;
+    height: 48px;
+    margin: 0;
+    padding-left: 20px;
+    color: #fc8f00;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 48px;
+    background-image: url(/images/account/30606dfc8c7775a8530fac4d10ca70e0.png);
+}
+
+.casino {
+    background-image: url('/images/home-feature/products/casino.png');
+    height: 230px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.casino:hover {
+    background-position: center bottom !important;
+}
+
+.tt {
+    background-image: url('/images/home-feature/products/tt.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.tt:hover {
+    background-position: center bottom !important;
+}
+
+.nh {
+    background-image: url('/images/home-feature/products/nh.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.nh:hover {
+    background-position: center bottom !important;
+}
+
+.bc {
+    background-image: url('/images/home-feature/products/bc.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.bc:hover {
+    background-position: center bottom !important;
+}
+
+.gb {
+    background-image: url('/images/home-feature/products/gb.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.gb:hover {
+    background-position: center bottom !important;
+}
+
+.xs {
+    background-image: url('/images/home-feature/products/xs.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.xs:hover {
+    background-position: center bottom !important;
+}
+
+.dg {
+    background-image: url('/images/home-feature/products/dg.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.dg:hover {
+    background-position: center bottom !important;
+}
+
+.dl {
+    background-image: url('/images/home-feature/products/dl.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.dl:hover {
+    background-position: center bottom !important;
+}
+
+.km {
+    background-image: url('/images/home-feature/products/km.png');
+    height: 231px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.km:hover {
+    background-position: center bottom !important;
+}

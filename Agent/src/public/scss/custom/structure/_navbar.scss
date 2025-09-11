@@ -1,0 +1,209 @@
+//
+// Topbar
+//
+.topbar {
+  position: relative;
+  z-index: 50;
+  transition: $transitions;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.05);
+  background: $topbar;
+  height: $topbar-height;
+  .navbar-collapse {
+    padding: 0px 10px 0 0;
+  }
+  .top-navbar {
+    min-height: $topbar-height;
+    padding: 0px;
+    .dropdown-toggle::after {
+      display: none;
+    }
+    .navbar-header {
+      line-height: $topbar-navlink-height;
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        margin: 0px;
+        padding: $topbar-navbrand-padding;
+        justify-content: space-between;
+        .dark-logo {
+          display: none;
+        }
+        .logo-icon {
+          margin-right: 5px;
+        }
+        .sidebartoggler {
+          color: $white;
+        }
+      }
+    }
+    .navbar-nav > .nav-item > .nav-link {
+      padding: $topbar-navlink-padding;
+      font-size: $topbar-navlink-font-size;
+      line-height: $topbar-navlink-height;
+      height: $topbar-navlink-height;
+      i,
+      .feather {
+        width: 21px;
+        height: 21px;
+        fill: rgba(255, 255, 255, 0.1);
+      }
+      .noti {
+        position: absolute;
+        top: 11px;
+        left: 28px;
+        font-size: 60%;
+        padding: 0.2em 0.6em;
+        line-height: 11px;
+      }
+    }
+    .navbar-nav > .nav-item {
+      transition: 0.2s ease-in;
+      &:hover {
+        background: $transparent-dark-bg;
+      }
+    }
+  }
+  .user-dd,
+  .mailbox {
+    min-width: 280px;
+  }
+  .nav-toggler,
+  .topbartoggler {
+    color: $theme-light;
+    padding: 0 15px;
+  }
+}
+
+//
+// Search box
+//
+.search-box {
+  .feather-sm {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .app-search {
+    z-index: 110;
+    width: 100%;
+    top: -1px;
+    box-shadow: $shadow;
+    display: none;
+    left: 0px;
+    .form-control {
+      padding: 23px 40px 20px 23px;
+      @extend %square;
+      transition: $transitions;
+      height: $topbar-height;
+      &:focus {
+        border-color: transparent;
+      }
+    }
+    .srh-btn {
+      position: absolute;
+      top: 23px;
+      cursor: pointer;
+      right: 20px;
+    }
+  }
+}
+
+//
+// Mega Dropdown
+//
+.topbar {
+  .mega-dropdown {
+    position: static;
+    .dropdown-menu {
+      padding: 30px;
+      @extend %square;
+      width: 100%;
+      max-height: $mega-dd-height;
+      overflow: auto;
+    }
+  }
+}
+
+//
+// Topbar Dropdown
+//
+.topbar {
+  .dropdown-menu {
+    padding-top: 0;
+    border: 0;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+    .with-arrow {
+      position: absolute;
+      top: -10px;
+      width: 40px;
+      height: 10px;
+      overflow: hidden;
+      > span {
+        @extend %rotate45;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        content: "";
+        top: 3px;
+        left: 15px;
+        background-color: $white;
+        border-radius: 6px 0 0 0;
+      }
+    }
+    &.dropdown-menu-end {
+      .with-arrow {
+        right: 0px;
+        > span {
+          right: 20px;
+          left: auto;
+        }
+      }
+    }
+  }
+}
+
+//
+// Mobile View Responsive
+//
+@include media-breakpoint-down(sm) {
+  .topbar .top-navbar {
+    .navbar-collapse.show,
+    .navbar-collapse.collapsing {
+      display: flex;
+      width: 100%;
+      border-top: 1px solid $border-color;
+    }
+    .navbar-nav {
+      flex-direction: row;
+      .dropdown {
+        position: static;
+      }
+    }
+    .navbar-nav > .nav-item > .nav-link {
+      padding: 0 10px;
+    }
+    .navbar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .dropdown-menu {
+      position: absolute;
+      width: 100%;
+      .with-arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+//
+// Landspace
+//
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .mailbox {
+    .message-center {
+      height: 110px !important;
+    }
+  }
+}
